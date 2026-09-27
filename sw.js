@@ -1,4 +1,4 @@
-const CACHE_NAME = 'msds-lite-v1.5.0';
+const CACHE_NAME = 'msds-lite-v1.5.1';
 const APP_SHELL = [
   './',
   './index.html',
@@ -11,6 +11,7 @@ const APP_SHELL = [
 ];
 
 self.addEventListener('install', (event) => {
+  self.skipWaiting();
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
     for (const url of APP_SHELL) {
@@ -20,7 +21,6 @@ self.addEventListener('install', (event) => {
         console.warn('SW cache.add skipped:', url, err);
       }
     }
-    await self.skipWaiting();
   })());
 });
 
@@ -38,11 +38,31 @@ self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
   event.respondWith((async () => {
-    // 1. Return from cache immediately if available
+    // 1. Navigation requests (HTML document) - Stale-While-Revalidate with instant cache return
+    if (event.request.mode === 'navigate') {
+      const cached = (await caches.match(event.request)) || (await caches.match('./index.html')) || (await caches.match('./'));
+      const networkFetch = fetch(event.request)
+        .then((response) => {
+          if (response && response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, copy)).catch(() => {});
+          }
+          return response;
+        })
+        .catch(() => null);
+
+      // If cached, return immediately for instant 0ms load; revalidate in background
+      if (cached) {
+        return cached;
+      }
+      return (await networkFetch) || (await caches.match('./index.html')) || (await caches.match('./'));
+    }
+
+    // 2. Static Assets (Cache-First)
     const cached = await caches.match(event.request);
     if (cached) return cached;
 
-    // 2. Fetch from network
+    // 3. Network fallback
     try {
       const response = await fetch(event.request);
       if (response && (response.ok || response.type === 'opaque')) {
@@ -51,11 +71,8 @@ self.addEventListener('fetch', (event) => {
       }
       return response;
     } catch (err) {
-      // 3. Fallback for navigation requests
-      if (event.request.mode === 'navigate') {
-        return (await caches.match('./index.html')) || (await caches.match('./'));
-      }
       return null;
     }
   })());
 });
+
