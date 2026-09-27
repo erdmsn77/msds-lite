@@ -123,20 +123,7 @@ Kobalt naftenat kaydında MEKP/peroksitlerle doğrudan temas veya aynı kapta ka
 - Acil yıkama sayacı
 - Sayaç başlatma, durdurma/devam ettirme ve sıfırlama
 
-Kategori etiketleri `categoryLabels` içinde tanımlıdır:
-
-```js
-all: 'Tümü'
-peroksit: 'Peroksit'
-recine: 'Reçine'
-solvent: 'Solvent'
-toz: 'Toz'
-sertlestirici: 'Sertleştirici'
-hizlandirici: 'Hızlandırıcı'
-ayirici: 'Ayırıcı Ajan'
-```
-
-Yeni kategori eklenirse veri şeması ve arayüzdeki ilgili etiketler birlikte güncellenmelidir.
+Kategori değerleri veri filtreleme için tutulur; mevcut arayüzde kategori filtre sekmeleri kaldırılmıştır. Yeni bir kategori eklenirse veri şeması, kimyasal satırındaki gösterim ve drawer içindeki kategori metni birlikte güncellenmelidir.
 
 ## Veri Yükleme Davranışı
 
@@ -187,3 +174,25 @@ Kontrol edilmesi gerekenler:
 ## Çalışma İlkesi
 
 Güvenlik açısından kritik kimyasal bilgisinde emin olunmayan değerleri uydurma. Kaynak veya ürün SDS'i yoksa bunu kullanıcıya açıkça belirt ve doğrulama placeholder'ı kullan. UI değişikliklerini mevcut sade, koyu ve mobil tasarımla uyumlu tut.
+
+## Güncel Kullanıcı Akışı
+
+1. Kullanıcı karbon temalı ana ekranda acil erişim kısayollarını veya kimyasal envanterindeki bir satırı seçer.
+2. Kimyasal satırı seçilirse sağdan drawer açılır; sayfa aşağı itilmez.
+3. Drawer sekmeleri Özet, KKD, İlk yardım ve Kaynak bölümleridir.
+4. Drawer yalnızca `[data-chemical]` satırına tıklanınca açılır. Başlık, boş alan, dil düğmesi veya kapalı drawer tıklaması drawer açmamalıdır.
+5. TR/EN değişimi drawer kapalıysa kapalı kalır; açıksa seçili kimyasalı ve sekmeyi korur.
+6. Kimyasal seçilmeden acil erişim kullanılırsa rastgele veya varsayılan MEK-P kartı açılmaz; kullanıcıdan önce kimyasal seçmesi istenir.
+7. Sayaç yalnızca seçili kimyasalın drawer'ındaki Özet sekmesinde çalışır; başlatma, durdurma/devam ve sıfırlama görünür süreyle eşzamanlı güncellenir.
+
+## PWA ve Cache
+
+- Canlı adres: `https://erdmsn77.github.io/msds-lite/`
+- PWA kurulumu yalnızca HTTPS veya localhost üzerinde yapılabilir; `file://` Service Worker çalıştırmaz.
+- Güncel Service Worker cache adı: `msds-lite-v1.1.2-timer-fix`.
+- `sw.js` güncellenirse cache adı da yükseltilmeli; aksi halde kullanıcı eski arayüzü görebilir.
+- Deployment workflow'u: `.github/workflows/deploy-pages.yml`.
+
+## Devir Notu
+
+Başka bir AI ajanı değişiklik yapmadan önce [README.md](./README.md) ve bu dosyayı okumalıdır. Kimyasal verisinde her zaman `data/chemicals.json` ile `fallbackChemicals` birlikte güncellenmeli; yalnızca UI değişikliğinde veri dosyalarına dokunulmamalıdır. Kod değişikliğinden sonra JSON parse, tanı kontrolü, drawer olay akışı, sayaç ve PWA deployment'ı doğrulanmalıdır.
