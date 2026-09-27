@@ -9,38 +9,38 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="manifest" href="./manifest.json">
   <link rel="apple-touch-icon" href="./icons/icon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;750;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
   <title>MSDS-Lite | Kompozit & Tekne İSG</title>
   <style>
     :root {
-      --bg-base: #070a0d;
-      --bg-surface: #0e141a;
-      --bg-card: #141c24;
-      --bg-card-hover: #1b2631;
-      --bg-active: #22303e;
-      --border-subtle: rgba(255, 255, 255, 0.08);
-      --border-focus: #ff7828;
-      --text-main: #f8fafc;
-      --text-muted: #94a3b8;
+      --bg-base: #F8FAFC;
+      --bg-surface: #ffffff;
+      --bg-card: #ffffff;
+      --bg-card-hover: #f1f5f9;
+      --bg-active: #e2e8f0;
+      --border-subtle: rgba(0, 0, 0, 0.1);
+      --border-focus: #3B82F6;
+      --text-main: #1E293B;
+      --text-muted: #475569;
       --text-dim: #64748b;
       
-      --marine-orange: #ff7828;
-      --marine-orange-glow: rgba(255, 120, 40, 0.18);
-      --marine-amber: #f59e0b;
-      --marine-red: #ef4444;
-      --marine-emerald: #10b981;
-      --marine-cyan: #38bdf8;
+      --marine-orange: #F59E0B;
+      --marine-orange-glow: rgba(245, 158, 11, 0.18);
+      --marine-amber: #F59E0B;
+      --marine-red: #EF4444;
+      --marine-emerald: #10B981;
+      --marine-cyan: #3B82F6;
       
-      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+      --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: "Roboto Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
     body {
       background-color: var(--bg-base);
-      background-image: 
-        radial-gradient(circle at 50% 0%, #172430 0%, #070a0d 70%),
-        linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 100%);
       color: var(--text-main);
       font-family: var(--font-sans);
       min-height: 100vh;
@@ -104,7 +104,7 @@
       font-weight: 800;
       letter-spacing: -0.03em;
       line-height: 1.2;
-      color: #fff;
+      color: var(--text-main);
     }
     .brand-subtitle {
       font-size: 12px;
@@ -206,13 +206,13 @@
       font-size: 10px;
       font-weight: 700;
       color: var(--text-dim);
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.05);
       padding: 2px 6px;
       border-radius: 8px;
     }
     .category-card.active .category-card-count {
       color: var(--marine-orange);
-      background: rgba(255, 120, 40, 0.12);
+      background: rgba(245, 158, 11, 0.12);
     }
 
 
@@ -301,25 +301,25 @@
       letter-spacing: 0.06em;
     }
     .card-risk-pill.risk-critical {
-      color: #fecaca;
-      background: rgba(239, 68, 68, 0.18);
-      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #7F1D1D;
+      background: #FEE2E2;
+      border: 1px solid #F87171;
     }
     .card-risk-pill.risk-high {
-      color: #ffedd5;
-      background: rgba(255, 120, 40, 0.18);
-      border: 1px solid rgba(255, 120, 40, 0.3);
+      color: #78350F;
+      background: #FEF3C7;
+      border: 1px solid #FBBF24;
     }
     .card-risk-pill.risk-medium {
-      color: #fef3c7;
-      background: rgba(245, 158, 11, 0.18);
-      border: 1px solid rgba(245, 158, 11, 0.3);
+      color: #064E3B;
+      background: #D1FAE5;
+      border: 1px solid #34D399;
     }
 
     .card-name {
       font-size: 15px;
       font-weight: 750;
-      color: #fff;
+      color: var(--text-main);
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -362,7 +362,7 @@
       font-size: 10px;
       font-weight: 700;
       color: var(--text-muted);
-      background: rgba(255, 255, 255, 0.05);
+      background: rgba(0, 0, 0, 0.05);
       padding: 2px 7px;
       border-radius: 4px;
       display: inline-flex;
@@ -370,8 +370,8 @@
       gap: 3px;
     }
     .stat-badge.timer-badge {
-      color: var(--marine-orange);
-      background: rgba(255, 120, 40, 0.1);
+      color: var(--marine-red);
+      background: #FEE2E2;
     }
     .card-open-arrow {
       color: var(--text-dim);
@@ -415,39 +415,20 @@
       text-align: center;
     }
 
-    /* Fast, Hardware Accelerated Drawer System */
-    .drawer-backdrop {
-      position: fixed;
-      inset: 0;
-      background: rgba(4, 7, 10, 0.75);
-      z-index: 90;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.2s ease;
+    /* Accordion System */
+    .accordion-content {
+      display: none;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+      margin-top: 12px;
+      cursor: default;
     }
-    .drawer-backdrop.open {
-      opacity: 1;
-      pointer-events: auto;
+    .chemical-card.expanded .accordion-content {
+      display: block;
     }
-
-    .drawer {
-      position: fixed;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      width: min(92vw, 490px);
-      background: var(--bg-surface);
-      border-left: 1px solid var(--border-subtle);
-      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
-      z-index: 100;
-      display: flex;
-      flex-direction: column;
-      transform: translate3d(100%, 0, 0);
-      will-change: transform;
-      transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    .drawer.open {
-      transform: translate3d(0, 0, 0);
+    .chemical-card.expanded {
+      border-color: var(--marine-cyan);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     }
 
     .drawer-header {
@@ -1639,6 +1620,14 @@
           const riskText = chem.risk_level === 'KRİTİK' ? t('riskCritical') : chem.risk_level === 'YÜKSEK' ? t('riskHigh') : t('riskMedium');
           const catLabel = (CATEGORIES[chem.category] && CATEGORIES[chem.category][state.language]) || chem.category;
           const ghsMiniHtml = chem.ghs_codes.map(c => renderGhsDiamond(c, 'ghs-diamond-mini')).join('');
+          let hasFire = chem.ghs_codes.includes('GHS02') || chem.ghs_codes.includes('GHS03') || chem.ghs_codes.includes('GHS01');
+          let hasHealth = chem.ghs_codes.includes('GHS05') || chem.ghs_codes.includes('GHS06') || chem.ghs_codes.includes('GHS07') || chem.ghs_codes.includes('GHS08');
+          let hasEnv = chem.ghs_codes.includes('GHS09');
+          let badgeHtml = '';
+          if (hasFire) badgeHtml += `<span class="stat-badge" style="color:#B91C1C; background:#FEE2E2;">🔥 ${state.language === 'tr' ? 'Yangın' : (state.language === 'de' ? 'Feuer' : 'Fire')}</span>`;
+          if (hasHealth) badgeHtml += `<span class="stat-badge" style="color:#1D4ED8; background:#DBEAFE;">⚕️ ${state.language === 'tr' ? 'Sağlık' : (state.language === 'de' ? 'Gesundheit' : 'Health')}</span>`;
+          if (hasEnv) badgeHtml += `<span class="stat-badge" style="color:#047857; background:#D1FAE5;">🌿 ${state.language === 'tr' ? 'Çevre' : (state.language === 'de' ? 'Umwelt' : 'Environment')}</span>`;
+
 
           return `
             <button type="button" class="chemical-card" data-chemical-id="${escape(chem.id)}">
@@ -1646,17 +1635,18 @@
               <div class="card-content">
                 <div class="card-header-row">
                   <span class="card-category">${escape(catLabel)}</span>
-                  <span class="card-risk-pill ${riskClass}">${escape(riskText)}</span>
+                  <span class="card-risk-pill ${riskClass}">${chem.risk_level === 'KRİTİK' ? 'TEHLİKE' : (chem.risk_level === 'YÜKSEK' ? 'TEHLİKE' : 'UYARI')}</span>
                 </div>
-                <div class="card-name">${escape(getL(chem.name))}</div>
-                <div class="card-chemical-name">${escape(getL(chem.chemical_name))}</div>
+                <div class="card-name">${escape(getL(chem.name))} <span style="font-size:11px; color:var(--text-dim); font-family:var(--font-mono); font-weight:normal;">| ${escape(getL(chem.chemical_name).split(';')[0])}</span></div>
+                <div style="margin-top: 6px; display: flex; gap: 6px; flex-wrap: wrap;">${badgeHtml}</div>
                 <div class="card-footer">
                   <div class="card-ghs-chips">${ghsMiniHtml}</div>
                   <div class="card-badges">
                     <span class="stat-badge timer-badge">⏱ ${chem.emergency_timer_min} ${t('minutes')}</span>
-                    <span class="card-open-arrow">›</span>
+                    <span class="card-open-arrow">▼</span>
                   </div>
                 </div>
+                <div class="accordion-content" id="acc-${escape(chem.id)}"></div>
               </div>
             </button>
           `;
@@ -1729,21 +1719,18 @@
             </footer>
           </div>
 
-          <div id="drawerBackdrop" class="drawer-backdrop"></div>
-          <aside id="detailDrawer" class="drawer" aria-hidden="true" role="dialog"></aside>
+          
         `;
 
         bindShellEvents();
         renderChemicalList();
       }
 
-      // Render Drawer Content
+      // Render Drawer Content (Now Accordion Content)
       function renderDrawerContent(chem) {
-        const riskClass = chem.risk_level === 'KRİTİK' ? 'risk-critical' : chem.risk_level === 'YÜKSEK' ? 'risk-high' : 'risk-medium';
-        const riskText = chem.risk_level === 'KRİTİK' ? t('riskCritical') : chem.risk_level === 'YÜKSEK' ? t('riskHigh') : t('riskMedium');
         const catLabel = (CATEGORIES[chem.category] && CATEGORIES[chem.category][state.language]) || chem.category;
 
-        // Incompatibility alert
+        // 1. Depolama & Uyuşmazlık
         const incomp = INCOMPATIBILITY_ALERTS[chem.id];
         let incompHtml = '';
         if (incomp) {
@@ -1752,7 +1739,7 @@
           const title = state.language === 'tr' ? incomp.title_tr : (state.language === 'de' ? incomp.title_de : incomp.title_en);
           const text = state.language === 'tr' ? incomp.text_tr : (state.language === 'de' ? incomp.text_de : incomp.text_en);
           incompHtml = `
-            <div class="incompatibility-box ${isCrit ? '' : 'warning-box'}">
+            <div class="incompatibility-box ${isCrit ? '' : 'warning-box'}" style="margin-bottom:12px;">
               <div class="incompatibility-header">⚠️ ${escape(header)}</div>
               <div class="incompatibility-title">${escape(title)}</div>
               <div class="incompatibility-text">${escape(text)}</div>
@@ -1761,79 +1748,96 @@
           `;
         }
 
-        // GHS large cards
+        // 2. İlk Yardım & Timer
+        const firstAidHtml = `
+          <div class="drawer-section" style="border:1px solid var(--border-subtle); padding:12px; border-radius:8px; margin-bottom:12px; background:var(--bg-card);">
+            <div class="section-title-row" style="margin-bottom:12px;">
+              <span class="section-icon">🚑</span>
+              <span class="section-title">${state.language === 'tr' ? 'İLK YARDIM (Acil Eylem)' : (state.language === 'de' ? 'ERSTE HILFE' : 'FIRST AID')}</span>
+            </div>
+            
+            <div class="timer-console ${state.alarmActive ? 'alarm-active' : ''}" id="timerConsole" style="margin-bottom:16px;">
+              <div class="timer-label">⏱ ${t('rinseTimer')}</div>
+              <div class="timer-clock" id="timerClock">${formatTime(state.timerSeconds)}</div>
+              <div class="timer-btn-row">
+                <button type="button" class="timer-btn timer-btn-primary" id="timerToggleBtn">
+                  ${state.timerSeconds <= 0 ? t('resetTimer') : (state.timerRunning ? t('pauseTimer') : t('startTimer'))}
+                </button>
+                <button type="button" class="timer-btn timer-btn-secondary" id="timerResetBtn">
+                  ${t('resetTimer')}
+                </button>
+              </div>
+              <div class="timer-alarm-notice ${state.alarmActive ? '' : 'hidden'}" id="timerAlarmNotice">
+                🚨 ${t('timeCompleted')}
+              </div>
+            </div>
+
+            <div class="aid-block">
+              <div class="aid-label" style="color:var(--text-main); font-weight:600;">👁️ ${t('firstAidEye')} <span style="font-size:11px; color:var(--marine-cyan);">(Min ${chem.emergency_timer_min} ${t('minutes')})</span></div>
+              <div class="aid-text" style="color:var(--text-dim);">${escape(getL(chem.first_aid.eye))}</div>
+            </div>
+            <div class="aid-block">
+              <div class="aid-label" style="color:var(--text-main); font-weight:600;">✋ ${t('firstAidSkin')}</div>
+              <div class="aid-text" style="color:var(--text-dim);">${escape(getL(chem.first_aid.skin))}</div>
+            </div>
+            <div class="aid-block">
+              <div class="aid-label" style="color:var(--text-main); font-weight:600;">🫁 ${t('firstAidInhalation')}</div>
+              <div class="aid-text" style="color:var(--text-dim);">${escape(getL(chem.first_aid.inhalation))}</div>
+            </div>
+          </div>
+        `;
+
+        // 3. Yangın & Müdahale
         const ghsCardsHtml = chem.ghs_codes.map(c => {
           const meta = GHS_METADATA[c] || GHS_METADATA.GHS07;
           const title = state.language === 'tr' ? meta.title_tr : (state.language === 'de' ? meta.title_de : meta.title_en);
           const desc = state.language === 'tr' ? meta.desc_tr : (state.language === 'de' ? meta.desc_de : meta.desc_en);
           return `
-            <div class="ghs-card-item">
+            <div class="ghs-card-item" style="display:flex; align-items:center; gap:8px; margin-bottom:8px; background:var(--bg-main); padding:8px; border-radius:6px;">
               ${renderGhsDiamond(c, 'ghs-diamond-large')}
               <div class="ghs-card-meta">
-                <div class="ghs-card-code">${escape(c)}</div>
-                <div class="ghs-card-name">${escape(title)}</div>
-                <div class="ghs-card-desc">${escape(desc)}</div>
+                <div class="ghs-card-code" style="font-size:10px; color:var(--text-muted); font-weight:bold;">${escape(c)}</div>
+                <div class="ghs-card-name" style="font-size:12px; font-weight:600; color:var(--text-main);">${escape(title)}</div>
+                <div class="ghs-card-desc" style="font-size:11px; color:var(--text-dim);">${escape(desc)}</div>
               </div>
             </div>
           `;
         }).join('');
+        
+        const fireHtml = `
+          <div class="drawer-section" style="border:1px solid var(--border-subtle); padding:12px; border-radius:8px; margin-bottom:12px; background:var(--bg-card);">
+            <div class="section-title-row" style="margin-bottom:12px;">
+              <span class="section-icon">🔥</span>
+              <span class="section-title">${state.language === 'tr' ? 'YANGIN & MÜDAHALE' : (state.language === 'de' ? 'FEUERBEKÄMPFUNG' : 'FIRE & RESPONSE')}</span>
+            </div>
+            <div style="margin-bottom:12px; font-size:13px;">
+              <span class="metric-label" style="color:var(--text-dim);">${t('flashPoint')}:</span>
+              <span class="metric-val" style="color:var(--text-main); font-weight:bold; margin-left:4px;">${escape(getL(chem.flash_point))}</span>
+            </div>
+            <div class="ghs-cards-grid">${ghsCardsHtml}</div>
+          </div>
+        `;
 
+        // 4. KKD (Kişisel Koruyucu Donanım)
         const gloves = chem.ppe.gloves;
-        const sourceLinkHtml = chem.source_url 
-          ? `<a href="${escape(chem.source_url)}" class="source-link-btn" target="_blank" rel="noopener noreferrer">${t('openSource')} ↗</a>`
-          : `<span style="color:var(--text-dim);">${t('canonicalSource')}</span>`;
-
-        const tabBodyHtml = `
-          ${incompHtml}
-
-          <!-- Timer Console -->
-          <div class="timer-console ${state.alarmActive ? 'alarm-active' : ''}" id="timerConsole">
-            <div class="timer-label">⏱ ${t('rinseTimer')}</div>
-            <div class="timer-clock" id="timerClock">${formatTime(state.timerSeconds)}</div>
-            <div class="timer-btn-row">
-              <button type="button" class="timer-btn timer-btn-primary" id="timerToggleBtn">
-                ${state.timerSeconds <= 0 ? t('resetTimer') : (state.timerRunning ? t('pauseTimer') : t('startTimer'))}
-              </button>
-              <button type="button" class="timer-btn timer-btn-secondary" id="timerResetBtn">
-                ${t('resetTimer')}
-              </button>
-            </div>
-            <div class="timer-alarm-notice ${state.alarmActive ? '' : 'hidden'}" id="timerAlarmNotice">
-              🚨 ${t('timeCompleted')} - ${t('timeCompletedHint')}
-            </div>
-          </div>
-
-          <div class="drawer-section">
-            <div class="metric-grid">
-              <div class="metric-box">
-                <div class="metric-label">${t('flashPoint')}</div>
-                <div class="metric-val">${escape(getL(chem.flash_point))}</div>
-              </div>
-              <div class="metric-box">
-                <div class="metric-label">${t('emergencyWash')}</div>
-                <div class="metric-val">${chem.emergency_timer_min} ${t('minutes')}</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="drawer-section">
-            <div class="section-title-row">
+        const ppeHtml = `
+          <div class="drawer-section" style="border:1px solid var(--border-subtle); padding:12px; border-radius:8px; margin-bottom:12px; background:var(--bg-card);">
+            <div class="section-title-row" style="margin-bottom:12px;">
               <span class="section-icon">🤿</span>
               <span class="section-title">${t('ppe').toUpperCase()}</span>
             </div>
-            
-            <div style="margin-bottom: 12px;">
-              <div style="font-size:11px; color:var(--text-dim); margin-bottom:2px;">${t('mask')}</div>
-              <div style="font-size:13px; font-weight:600; color:#fff;">${escape(getL(chem.ppe.mask))}</div>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-bottom:12px;">
+              <div>
+                <div style="font-size:11px; color:var(--text-dim); margin-bottom:2px;">${t('mask')}</div>
+                <div style="font-size:13px; font-weight:600; color:var(--text-main);">${escape(getL(chem.ppe.mask))}</div>
+              </div>
+              <div>
+                <div style="font-size:11px; color:var(--text-dim); margin-bottom:2px;">${t('eyeProtection')}</div>
+                <div style="font-size:13px; font-weight:600; color:var(--text-main);">${escape(getL(chem.ppe.eye))}</div>
+              </div>
             </div>
-            
-            <div style="margin-bottom: 12px;">
-              <div style="font-size:11px; color:var(--text-dim); margin-bottom:2px;">${t('eyeProtection')}</div>
-              <div style="font-size:13px; font-weight:600; color:#fff;">${escape(getL(chem.ppe.eye))}</div>
-            </div>
-
             <div style="font-size:11px; color:var(--text-dim); margin-bottom:4px;">${t('gloves')}</div>
-            <div class="glove-list">
+            <div class="glove-list" style="display:flex; gap:6px; margin-bottom:8px;">
               <div class="glove-item">
                 <span class="glove-name">${t('latex')}</span>
                 <span class="glove-badge ${gloves.latex ? 'safe' : 'unsafe'}">${gloves.latex ? t('suitable') : t('unsuitable')}</span>
@@ -1851,72 +1855,45 @@
               <strong>${t('warning')}:</strong> ${escape(getL(gloves.warning))}
             </div>
           </div>
+        `;
 
-          <div class="drawer-section">
-            <div class="section-title-row">
-              <span class="section-icon">🚑</span>
-              <span class="section-title">${t('firstAid').toUpperCase()}</span>
-            </div>
-            <div class="aid-block">
-              <div class="aid-label">👁️ ${t('firstAidEye')} (En az ${chem.emergency_timer_min} ${t('minutes')})</div>
-              <div class="aid-text">${escape(getL(chem.first_aid.eye))}</div>
-            </div>
-            <div class="aid-block">
-              <div class="aid-label">✋ ${t('firstAidSkin')}</div>
-              <div class="aid-text">${escape(getL(chem.first_aid.skin))}</div>
-            </div>
-            <div class="aid-block">
-              <div class="aid-label">🫁 ${t('firstAidInhalation')}</div>
-              <div class="aid-text">${escape(getL(chem.first_aid.inhalation))}</div>
-            </div>
-          </div>
-
-          <div class="drawer-section">
-            <div class="section-title-row">
-              <span class="section-icon">⚠️</span>
-              <span class="section-title">${t('ghsHazards').toUpperCase()}</span>
-            </div>
-            <div class="ghs-cards-grid">${ghsCardsHtml}</div>
-          </div>
-
-          <div class="drawer-section">
+        // 5. Source Information
+        const sourceLinkHtml = chem.source_url 
+          ? `<a href="${escape(chem.source_url)}" class="source-link-btn" target="_blank" rel="noopener noreferrer">${t('openSource')} ↗</a>`
+          : `<span style="color:var(--text-dim);">${t('canonicalSource')}</span>`;
+          
+        const sourceHtml = `
+          <div class="drawer-section" style="border:1px solid var(--border-subtle); padding:12px; border-radius:8px; background:var(--bg-card);">
             <div class="source-block">
-              <div class="source-row">
+              <div class="source-row" style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
                 <span style="color:var(--text-muted);">${t('sourceStatus')}:</span>
                 <strong style="color:${getL(chem.verification_status).includes('bekleniyor') || getL(chem.verification_status).includes('pending') || getL(chem.verification_status).includes('ausstehend') ? 'var(--marine-amber)' : 'var(--marine-emerald)'};">${escape(getL(chem.verification_status))}</strong>
               </div>
-              <div class="source-row">
+              <div class="source-row" style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
                 <span style="color:var(--text-muted);">${t('verifiedAt')}:</span>
-                <span>${escape(chem.verified_at || '—')}</span>
+                <span style="color:var(--text-dim);">${escape(chem.verified_at || '—')}</span>
               </div>
-              <div class="source-row">
+              <div class="source-row" style="display:flex; justify-content:space-between; font-size:12px; margin-bottom:4px;">
                 <span style="color:var(--text-muted);">${t('canonicalSource')}:</span>
-                <span style="text-align:right; max-width:65%; color:#fff; font-weight:600;">${escape(getL(chem.source))}</span>
+                <span style="text-align:right; max-width:65%; color:var(--text-main); font-weight:600;">${escape(getL(chem.source))}</span>
               </div>
-              <div style="margin-top:4px; text-align:right;">
+              <div style="margin-top:8px; text-align:right;">
                 ${sourceLinkHtml}
               </div>
             </div>
-            
-            <div style="margin-top:16px; font-size:11px; color:#94a3b8; line-height:1.5;">
+            <div style="margin-top:12px; font-size:11px; color:#94a3b8; line-height:1.4;">
               <strong>ℹ️ ${t('scopeNote')}:</strong> ${escape(getL(chem.verification_note) || t('disclaimer'))}
             </div>
           </div>
         `;
 
         return `
-          <div class="drawer-header">
-            <div class="drawer-header-top">
-              <div>
-                <span class="drawer-category-tag">${escape(catLabel)}</span>
-                <h2 class="drawer-title" id="drawerTitle">${escape(getL(chem.name))}</h2>
-                <div class="drawer-chemical-name">${escape(getL(chem.chemical_name))}</div>
-              </div>
-              <button type="button" class="drawer-close" id="drawerCloseBtn" aria-label="${t('close')}">✕</button>
-            </div>
-          </div>
-          <div class="drawer-body">
-            ${tabBodyHtml}
+          <div class="accordion-inner" style="text-align:left; padding:8px 0;">
+            ${incompHtml}
+            ${firstAidHtml}
+            ${fireHtml}
+            ${ppeHtml}
+            ${sourceHtml}
           </div>
         `;
       }
