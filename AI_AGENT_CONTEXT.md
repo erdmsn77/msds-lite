@@ -51,6 +51,11 @@ Her kayıt şu yapıyı kullanır:
   "chemical_name": "Tam kimyasal veya teknik ad",
   "category": "peroksit | recine | solvent | toz | sertlestirici | hizlandirici | ayirici",
   "risk_level": "KRİTİK | YÜKSEK | ORTA",
+  "source": "Verinin kaynağı veya SDS gereklilik notu",
+  "source_url": "https://... veya boş string",
+  "verified_at": "YYYY-MM-DD",
+  "verification_status": "Doğrulama durumu",
+  "verification_note": "Kaynağın kapsamı ve sınırlamaları",
   "ghs_codes": ["GHS02", "GHS05", "GHS06", "GHS07"],
   "flash_point": "Parlama noktası veya ürün SDS doğrulama notu",
   "ppe": {
@@ -92,7 +97,9 @@ Her kayıt şu yapıyı kullanır:
 
 Bekleyen kayıt yoktur.
 
-Bazı ürünler tek bir saf kimyasal değil, üreticiye göre değişen karışımlardır. Özellikle epoksi ürünleri, vinilester, PVA, kalıp wax ve gelcoat için ürün SDS'i yoksa parlama noktası veya tam GHS sınıflandırması tahmin edilmemelidir. Bunun yerine `flash_point` içinde açık bir SDS doğrulama notu kullanılmalıdır.
+Bazı ürünler tek bir saf kimyasal değil, üreticiye göre değişen karışımlardır. Özellikle epoksi ürünleri, vinilester, PVA, kalıp wax ve gelcoat için ürün SDS'i yoksa parlama noktası veya tam GHS sınıflandırması tahmin edilmemelidir. Bunun yerine `flash_point`, `source`, `verification_status` ve `verification_note` alanlarında açık bir SDS doğrulama notu kullanılmalıdır.
+
+`source_url` yalnızca doğrulanmış HTTPS kaynaklarında doldurulur. Ürün SDS'i olmayan kayıtlarda `verification_status` mutlaka belirsizliği açıkça belirtmelidir; ana bileşen verisi tam ürün verisi gibi sunulmamalıdır.
 
 Kobalt naftenat kaydında MEKP/peroksitlerle doğrudan temas veya aynı kapta karıştırma yasağı ve ayrı depolama uyarısı korunmalıdır.
 
@@ -109,6 +116,8 @@ Kobalt naftenat kaydında MEKP/peroksitlerle doğrudan temas veya aynı kapta ka
 - Parlama noktası ve acil yıkama süresi
 - KKD kartı ve lateks/nitril/bütil uyumluluk matrisi
 - Göz, cilt ve solunum ilk yardım protokolü
+- Kaynak, doğrulama durumu, doğrulama tarihi ve kapsam notu
+- Daha yoğun atölye kontrol paneli görsel dili
 - Acil yıkama sayacı
 - Sayaç başlatma, durdurma/devam ettirme ve sıfırlama
 
