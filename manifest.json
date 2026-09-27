@@ -1,12 +1,13 @@
 {
-  "name": "MSDS-Lite Atölye İSG",
+  "name": "MSDS-Lite: Kompozit Atölyesi İSG Asistanı",
   "short_name": "MSDS-Lite",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
-  "background_color": "#0b0f0e",
-  "theme_color": "#0b0f0e",
-  "description": "Kompozit atölyesi kimyasal güvenlik ve acil müdahale kartları.",
+  "orientation": "portrait-primary",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f172a",
+  "description": "Kompozit tekne imalat atölyesi kimyasal güvenlik ve acil müdahale rehberi.",
   "icons": [
     {
       "src": "./icons/icon.svg",
