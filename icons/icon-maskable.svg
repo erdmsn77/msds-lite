@@ -1,6 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <!-- Full-bleed background for Android Adaptive Launcher masking -->
   <rect width="192" height="192" fill="#0f172a"/>
-  <circle cx="96" cy="96" r="66" fill="#22d3ee"/>
-  <path d="M76 50h40M82 50v30l-30 50c-5 9 2 20 12 20h64c10 0 17-11 12-20l-30-50V50" fill="none" stroke="#0f172a" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M65 111h62M72 96h48" fill="none" stroke="#0f172a" stroke-width="8" stroke-linecap="round"/>
+
+  <!-- GHS Hazard Diamond inside Maskable Safe Zone -->
+  <polygon points="96,36 156,96 96,156 36,96" fill="#ffffff" stroke="#dc2626" stroke-width="11" stroke-linejoin="round"/>
+
+  <!-- GHS Flame Hazard Symbol centered in Safe Zone -->
+  <g transform="translate(96, 96) scale(1.15) translate(-50, -50)">
+    <path d="M50 24 c-2 7 -7 11 -7 18 c0 6 3 9 6 11 c-4 -2 -6 -7 -5 -12 c-4 5 -7 13 -4 20 c3 6 9 9 15 9 c8 -1 14 -8 13 -16 c-1 -7 -6 -12 -11 -15 c2 3 2 8 0 10 c-2 -4 -4 -12 -7 -25 z" fill="#0f172a"/>
+  </g>
 </svg>
