@@ -2606,8 +2606,9 @@
           flashPoint: 'Parlama Noktası',
           emergencyWash: 'Acil Göz Yıkama',
           emergencyWashShort: 'Yıkama',
+          atLeast: 'En az',
           mandatoryWashTitle: 'ZORUNLU KESİNTİSİZ YIKAMA SÜRESİ',
-          mandatoryWashSub: 'Kalıcı körlük ve kimyasal doku hasarını önlemek için yıkama ASLA erken kesilmemelidir. Eşzamanlı 112 Acil Servis aranmalıdır.',
+          mandatoryWashSub: 'Kalıcı körlük ve kimyasal doku hasarını önlemek için yıkama ASLA erken kesilmemelidir. Eşzamanlı 112 Acil Servis (veya 114 Zehir Danışma) aranmalıdır.',
           incompatibilityNotice: 'KRİTİK ATÖLYE UYUŞMAZLIĞI',
           warningNotice: 'GÜVENLİK İKAZI',
           mask: 'Solunum Maskesi',
@@ -2663,8 +2664,9 @@
           flashPoint: 'Flash Point',
           emergencyWash: 'Emergency Eyewash',
           emergencyWashShort: 'Rinse',
+          atLeast: 'At least',
           mandatoryWashTitle: 'MANDATORY UNINTERRUPTED RINSE TIME',
-          mandatoryWashSub: 'To prevent blindness and chemical burns, flushing must not be stopped prematurely. Call emergency services concurrently.',
+          mandatoryWashSub: 'To prevent blindness and chemical burns, flushing must not be stopped prematurely. Call emergency services (112 / Poison Control) concurrently.',
           incompatibilityNotice: 'CRITICAL INCOMPATIBILITY',
           warningNotice: 'SAFETY WARNING',
           mask: 'Respirator Mask',
@@ -2720,8 +2722,9 @@
           flashPoint: 'Flammpunkt',
           emergencyWash: 'Notfall-Augenspülung',
           emergencyWashShort: 'Spülung',
+          atLeast: 'Mindestens',
           mandatoryWashTitle: 'PFLICHT-SPÜLDAUER OHNE UNTERBRECHUNG',
-          mandatoryWashSub: 'Um Erblindung und Verätzungen zu vermeiden, darf die Spülung nicht vorzeitig abgebrochen werden. Notruf verständigen.',
+          mandatoryWashSub: 'Um Erblindung und Verätzungen zu vermeiden, darf die Spülung nicht vorzeitig abgebrochen werden. Zeitgleich Notruf (112 / Giftnotruf) verständigen.',
           incompatibilityNotice: 'KRITISCHE INKOMPATIBILITÄT',
           warningNotice: 'SICHERHEITSWARNUNG',
           mask: 'Atemschutzmaske',
@@ -2851,7 +2854,7 @@
                 </div>
 
                 <div class="card-footer-row">
-                  <span class="card-timer-badge">⏱ En az ${chem.emergency_timer_min || 15} ${t('minutes')} ${t('emergencyWashShort')}</span>
+                  <span class="card-timer-badge">⏱ ${t('atLeast')} ${chem.emergency_timer_min || 15} ${t('minutes')} ${t('emergencyWashShort')}</span>
                   <span class="card-action-cta">${t('viewDetails')} →</span>
                 </div>
               </div>
@@ -3028,7 +3031,7 @@
               <div class="emergency-time-banner">
                 <div class="emergency-time-icon">⏱</div>
                 <div>
-                  <div class="emergency-time-title">🚨 ${t('mandatoryWashTitle')}: ${chem.emergency_timer_min || 15} ${t('minutes').toUpperCase()}</div>
+                  <div class="emergency-time-title">🚨 ${t('mandatoryWashTitle')}: ${t('atLeast').toUpperCase()} ${chem.emergency_timer_min || 15} ${t('minutes').toUpperCase()}</div>
                   <div class="emergency-time-desc">${t('mandatoryWashSub')}</div>
                 </div>
               </div>
