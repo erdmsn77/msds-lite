@@ -660,6 +660,8 @@
       border-bottom: 1px solid var(--border-subtle);
       flex-shrink: 0;
       scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      touch-action: pan-x;
     }
     .drawer-nav-pills::-webkit-scrollbar { display: none; }
     .drawer-nav-pill {
@@ -3238,28 +3240,46 @@
           });
         });
 
-        // Swipe-to-dismiss gesture on mobile (yandan çekerek kapatma)
+        // Swipe-to-dismiss gesture on mobile (yalnızca sol kenardan veya başlıktan çekildiğinde kapatır)
         let touchStartX = 0;
         let touchStartY = 0;
         let touchCurrentX = 0;
+        let canSwipeDismiss = false;
 
         drawer.ontouchstart = (e) => {
+          // Yatay kaydırılan menü çubuğu (pills), buton veya form alanlarında asla kapatma tetikleme
+          if (e.target.closest('.drawer-nav-pills') || e.target.closest('button') || e.target.closest('input')) {
+            canSwipeDismiss = false;
+            return;
+          }
+
           touchStartX = e.touches[0].clientX;
           touchStartY = e.touches[0].clientY;
           touchCurrentX = touchStartX;
+
+          // Yalnızca ekranın sol kenarından çekiliyorsa (iOS/Android native geri alanı: ilk 45px)
+          // VEYA üst başlıktan (drawer-header) çekiliyorsa izin ver. Ekranın ortasındaki kaydırmalarda kapatma.
+          const isEdgeSwipe = touchStartX <= 45;
+          const isHeaderDrag = !!e.target.closest('.drawer-header');
+
+          canSwipeDismiss = isEdgeSwipe || isHeaderDrag;
         };
 
         drawer.ontouchmove = (e) => {
+          if (!canSwipeDismiss) return;
           touchCurrentX = e.touches[0].clientX;
         };
 
         drawer.ontouchend = (e) => {
+          if (!canSwipeDismiss) return;
           const deltaX = touchCurrentX - touchStartX;
           const deltaY = Math.abs((e.changedTouches[0]?.clientY || touchStartY) - touchStartY);
-          // If swiped right at least 70px and horizontal movement is dominant
-          if (deltaX > 70 && deltaX > deltaY) {
+
+          // Yalnızca sağa doğru kararlı çekme varsa (en az 80px ve yatay hareket dikey hareketten belirgin biçimde fazlaysa)
+          if (deltaX > 80 && deltaX > deltaY * 1.4) {
             handleUserClose();
           }
+          canSwipeDismiss = false;
         };
       }
 

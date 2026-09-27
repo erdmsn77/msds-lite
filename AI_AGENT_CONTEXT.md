@@ -180,7 +180,7 @@ Güvenlik açısından kritik kimyasal bilgisinde emin olunmayan değerleri uydu
 
 - Canlı adres: `https://erdmsn77.github.io/msds-lite/`
 - PWA kurulumu yalnızca HTTPS veya localhost üzerinde yapılabilir; `file://` Service Worker çalıştırmaz.
-- Güncel Service Worker cache adı: `msds-lite-v1.4.0`.
+- Güncel Service Worker cache adı: `msds-lite-v1.4.1`.
 - `sw.js` güncellenirse cache adı da yükseltilmeli; aksi halde kullanıcı eski arayüzü görebilir.
 - Deployment workflow'u: `.github/workflows/deploy-pages.yml`.
 
