@@ -1,19 +1,17 @@
 # MSDS-Lite: Kompozit ve Tekne İmalat Atölyesi İSG Asistanı
 
-Kompozit tekne imalat atölyelerinde (infüzyon, el yatırması, vakum torbalama ve kalıphane) kullanılan tehlikeli kimyasallar için geliştirilmiş, mobil odaklı ve çevrimdışı (offline) çalışabilen hızlı bir iş sağlığı ve güvenliği (İSG) rehberidir.
+Bu proje; kompozit tekne imalat atölyelerinde (infüzyon, el yatırması, vakum torbalama ve kalıphane) kullanılan tehlikeli kimyasallarla çalışırken hayat kurtarabilecek, mobil odaklı ve çevrimdışı (offline) çalışabilen hızlı bir iş sağlığı ve güvenliği (İSG) rehberidir.
 
-Sahada çalışan laminasyon ustaları, teknisyenler ve kompozit tekne imalatı öğrencilerinin kimyasal maruziyeti veya acil durumlarda doğru bilgiye saniyeler içinde ulaşabilmesi hedeflenmiştir.
+Fiber tekne ve kompozit teknolojileri öğrencisi olarak, atölyedeki ve stajdaki kişisel deneyimlerimden yola çıkarak; sahada çalışan laminasyon ustaları, teknisyenler ve öğrencilerin kimyasal kazalarda doğru bilgiye saniyeler içinde ulaşabilmesi için bu projeyi geliştirdim.
 
 > **Canlı Uygulama:** https://erdmsn77.github.io/msds-lite/  
-> **Önemli Not:** Bu proje üretici güvenlik bilgi formlarının (SDS/MSDS) veya yetkili İSG uzmanı değerlendirmesinin yerine geçmez; atölye içi hızlı saha referansı niteliğindedir.
+> **Önemli Not:** Bu uygulama üretici güvenlik bilgi formlarının (SDS/MSDS) yerine geçmez; acil durumlarda kullanılabilecek atölye içi hızlı saha referansı niteliğindedir.
 
 ---
 
 ## Neden Geliştirildi?
 
-Kompozit ve yat atölyelerinde çalışan kişilerin elleri çoğunlukla eldivenli, reçineli veya tozludur. Sayfalarca süren teknik SDS PDF'lerini cep telefonundan okumak sahada pratik değildir. Ayrıca bir kaza anında (örneğin göze MEK-P sıçraması veya cilde reçine dökülmesi) saniyeler çok değerlidir.
-
-Bu proje şu temel ihtiyaçları çözmek için hazırlandı:
+Kompozit ve yat atölyelerinde çalışan kişilerin elleri çoğunlukla eldivenli, reçineli veya tozludur. Sayfalarca süren teknik SDS PDF'lerini o şartlarda cep telefonundan okumak imkansızdır. Ayrıca bir kaza anında (örneğin göze MEK-P sıçraması) saniyeler çok değerlidir.
 
 1. **Hızlı Erişim:** Kimyasalları kategoriye (Reçine, Peroksit, Solvent vb.) göre tek dokunuşla filtreleyebilmek veya arayabilmek.
 2. **GHS Piktogramları:** Kimyasalın risk seviyesini ve tehlike kodlarını (Alev, Aşındırıcı, Toksik vb.) uluslararası standart kırmızı baklava sembolleriyle görsel olarak hemen anlamak.
@@ -28,7 +26,7 @@ Bu proje şu temel ihtiyaçları çözmek için hazırlandı:
 * **Karanlık & Yüksek Kontrastlı Tasarım:** Atölye ışığında ve mobil ekranda kolay okunur, sade ve göz yormayan arayüz.
 * **Sıfır Dış Bağımlılık:** Harici CSS kütüphanesi veya CDN yükü yoktur; saf HTML, optimize CSS ve Vanilla JS ile anında açılır.
 * **Tam Çevrimdışı Çalışma (PWA):** Service Worker sayesinde internet bağlantısı olmayan atölye veya tersane sahalarında da sorunsuz çalışır.
-* **İki Dilli Arayüz (TR / EN):** Dil tercihi cihaz hafızasında tutulur.
+* **Üç Dilli Arayüz (TR / EN / DE):** Dil tercihi cihaz hafızasında tutulur. Almanya ve Avrupa'daki staj/çalışma alanları için özel olarak eklendi.
 * **Doğrudan Link Desteği (Deep-Linking):** URL sonuna kimyasal ID'si eklenerek (örneğin `/#mek-p`) doğrudan ilgili kimyasal kartı açılabilir.
 
 ---
