@@ -27,7 +27,6 @@
       --marine-orange-glow: rgba(255, 120, 40, 0.18);
       --marine-amber: #f59e0b;
       --marine-red: #ef4444;
-      --marine-red-glow: rgba(239, 68, 68, 0.2);
       --marine-emerald: #10b981;
       --marine-cyan: #38bdf8;
       
@@ -48,6 +47,7 @@
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: transparent;
+      overflow-x: hidden;
     }
 
     .marine-shell {
@@ -129,7 +129,8 @@
       font-weight: 750;
       border-radius: 6px;
       cursor: pointer;
-      transition: all 0.15s ease;
+      touch-action: manipulation;
+      transition: background-color 0.12s ease, color 0.12s ease;
     }
     .lang-btn.active {
       background: var(--marine-orange);
@@ -170,7 +171,7 @@
       font-size: 14px;
       font-family: inherit;
       outline: none;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
     }
     .search-input:focus {
       border-color: var(--marine-orange);
@@ -189,6 +190,9 @@
       display: grid;
       place-items: center;
       cursor: pointer;
+    }
+    .search-clear.hidden {
+      display: none;
     }
     .search-clear:hover {
       background: rgba(255,255,255,0.18);
@@ -225,8 +229,9 @@
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      transition: all 0.15s ease;
       user-select: none;
+      touch-action: manipulation;
+      transition: border-color 0.12s ease, color 0.12s ease, background-color 0.12s ease;
     }
     .category-chip:hover {
       border-color: rgba(255, 120, 40, 0.4);
@@ -272,20 +277,21 @@
       width: 100%;
       background: var(--bg-card);
       border: 1px solid var(--border-subtle);
-      border-radius: 12px;
+      border-radius: 10px;
       padding: 0;
       text-align: left;
       cursor: pointer;
       overflow: hidden;
-      transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      contain: content;
+      touch-action: manipulation;
+      transition: border-color 0.12s ease, background-color 0.12s ease;
     }
     .chemical-card:hover {
-      transform: translateY(-1px);
-      border-color: rgba(255, 120, 40, 0.35);
+      border-color: rgba(255, 120, 40, 0.4);
       background: var(--bg-card-hover);
     }
     .chemical-card:active {
-      transform: scale(0.99);
+      background: var(--bg-active);
     }
 
     .card-risk-bar {
@@ -298,7 +304,7 @@
 
     .card-content {
       flex: 1;
-      padding: 13px 14px 13px 14px;
+      padding: 13px 14px;
       min-width: 0;
       display: flex;
       flex-direction: column;
@@ -440,16 +446,15 @@
       text-align: center;
     }
 
-    /* Drawer System */
+    /* Fast, Hardware Accelerated Drawer System */
     .drawer-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0, 0, 0, 0.7);
-      backdrop-filter: blur(4px);
+      background: rgba(4, 7, 10, 0.75);
       z-index: 90;
       opacity: 0;
       pointer-events: none;
-      transition: opacity 0.25s ease;
+      transition: opacity 0.2s ease;
     }
     .drawer-backdrop.open {
       opacity: 1;
@@ -464,15 +469,16 @@
       width: min(92vw, 490px);
       background: var(--bg-surface);
       border-left: 1px solid var(--border-subtle);
-      box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+      box-shadow: -10px 0 30px rgba(0, 0, 0, 0.7);
       z-index: 100;
       display: flex;
       flex-direction: column;
-      transform: translateX(100%);
-      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      transform: translate3d(100%, 0, 0);
+      will-change: transform;
+      transition: transform 0.24s cubic-bezier(0.16, 1, 0.3, 1);
     }
     .drawer.open {
-      transform: translateX(0);
+      transform: translate3d(0, 0, 0);
     }
 
     .drawer-header {
@@ -518,7 +524,7 @@
       place-items: center;
       cursor: pointer;
       line-height: 1;
-      transition: all 0.15s ease;
+      transition: background-color 0.12s ease, color 0.12s ease;
       flex-shrink: 0;
     }
     .drawer-close:hover {
@@ -542,7 +548,8 @@
       padding: 12px 4px;
       cursor: pointer;
       border-bottom: 2px solid transparent;
-      transition: all 0.15s ease;
+      touch-action: manipulation;
+      transition: color 0.12s ease, border-color 0.12s ease;
       text-align: center;
     }
     .drawer-tab.active {
@@ -558,6 +565,7 @@
       display: flex;
       flex-direction: column;
       gap: 16px;
+      -webkit-overflow-scrolling: touch;
     }
 
     /* Incompatibility Alert Box */
@@ -748,7 +756,8 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      transition: all 0.15s ease;
+      touch-action: manipulation;
+      transition: background-color 0.12s ease;
     }
     .timer-btn-primary {
       background: var(--marine-orange);
@@ -772,6 +781,9 @@
       color: #fca5a5;
       font-weight: 700;
       animation: emergencyPulse 1s infinite alternate;
+    }
+    .timer-alarm-notice.hidden {
+      display: none;
     }
 
     /* Gloves Table */
@@ -1490,7 +1502,7 @@
         if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
           try { navigator.vibrate([300, 150, 300, 150, 600]); } catch (e) {}
         }
-        // Web Audio synthetic marine horn
+        // Web Audio synthetic horn
         try {
           const AudioContextClass = window.AudioContext || window.webkitAudioContext;
           if (AudioContextClass) {
@@ -1596,10 +1608,68 @@
         });
       }
 
-      // Render Shell
-      function renderApp() {
-        const app = document.getElementById('marineApp');
+      // Fast, targeted list renderer (Only updates list container without re-rendering the shell)
+      function renderChemicalList() {
+        const listEl = document.getElementById('chemicalList');
+        const countEl = document.getElementById('resultsCount');
+        if (!listEl) return;
+
         const filtered = getFilteredChemicals();
+        if (countEl) countEl.textContent = `${filtered.length} ${t('records')}`;
+
+        if (filtered.length === 0) {
+          listEl.innerHTML = `
+            <div class="empty-state">
+              <p class="empty-title">${t('noResults')}</p>
+              <button type="button" class="empty-btn" id="emptyResetBtn">${t('clearSearch')}</button>
+            </div>
+          `;
+          document.getElementById('emptyResetBtn')?.addEventListener('click', () => {
+            state.searchQuery = '';
+            state.category = 'all';
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) searchInput.value = '';
+            document.getElementById('searchClear')?.classList.add('hidden');
+            document.querySelectorAll('.category-chip').forEach(c => {
+              c.classList.toggle('active', c.dataset.cat === 'all');
+            });
+            renderChemicalList();
+          });
+          return;
+        }
+
+        listEl.innerHTML = filtered.map((chem) => {
+          const riskClass = chem.risk_level === 'KRİTİK' ? 'risk-critical' : chem.risk_level === 'YÜKSEK' ? 'risk-high' : 'risk-medium';
+          const riskText = chem.risk_level === 'KRİTİK' ? t('riskCritical') : chem.risk_level === 'YÜKSEK' ? t('riskHigh') : t('riskMedium');
+          const catLabel = (CATEGORIES[chem.category] && CATEGORIES[chem.category][state.language]) || chem.category;
+          const ghsMiniHtml = chem.ghs_codes.map(c => renderGhsDiamond(c, 'ghs-diamond-mini')).join('');
+
+          return `
+            <button type="button" class="chemical-card" data-chemical-id="${escape(chem.id)}">
+              <div class="card-risk-bar ${riskClass}"></div>
+              <div class="card-content">
+                <div class="card-header-row">
+                  <span class="card-category">${escape(catLabel)}</span>
+                  <span class="card-risk-pill ${riskClass}">${escape(riskText)}</span>
+                </div>
+                <div class="card-name">${escape(chem.name)}</div>
+                <div class="card-chemical-name">${escape(chem.chemical_name)}</div>
+                <div class="card-footer">
+                  <div class="card-ghs-chips">${ghsMiniHtml}</div>
+                  <div class="card-badges">
+                    <span class="stat-badge timer-badge">⏱ ${chem.emergency_timer_min} ${state.language === 'tr' ? 'dk' : 'min'}</span>
+                    <span class="card-open-arrow">›</span>
+                  </div>
+                </div>
+              </div>
+            </button>
+          `;
+        }).join('');
+      }
+
+      // Render Shell (Only runs on initial boot or language change)
+      function renderShell() {
+        const app = document.getElementById('marineApp');
         const totalCount = state.chemicals.length;
 
         // Categories chip buttons
@@ -1610,46 +1680,6 @@
             : state.chemicals.filter(c => c.category === catKey).length;
           return `<button type="button" class="category-chip ${isSelected ? 'active' : ''}" data-cat="${catKey}">${labelObj[state.language]} <span class="chip-count">${count}</span></button>`;
         }).join('');
-
-        // Chemical Cards
-        let listHtml = '';
-        if (filtered.length === 0) {
-          listHtml = `
-            <div class="empty-state">
-              <p class="empty-title">${t('noResults')}</p>
-              <button type="button" class="empty-btn" id="emptyResetBtn">${t('clearSearch')}</button>
-            </div>
-          `;
-        } else {
-          listHtml = filtered.map((chem) => {
-            const riskClass = chem.risk_level === 'KRİTİK' ? 'risk-critical' : chem.risk_level === 'YÜKSEK' ? 'risk-high' : 'risk-medium';
-            const riskText = chem.risk_level === 'KRİTİK' ? t('riskCritical') : chem.risk_level === 'YÜKSEK' ? t('riskHigh') : t('riskMedium');
-            const catLabel = (CATEGORIES[chem.category] && CATEGORIES[chem.category][state.language]) || chem.category;
-
-            const ghsMiniHtml = chem.ghs_codes.map(c => renderGhsDiamond(c, 'ghs-diamond-mini')).join('');
-
-            return `
-              <button type="button" class="chemical-card" data-chemical-id="${escape(chem.id)}">
-                <div class="card-risk-bar ${riskClass}"></div>
-                <div class="card-content">
-                  <div class="card-header-row">
-                    <span class="card-category">${escape(catLabel)}</span>
-                    <span class="card-risk-pill ${riskClass}">${escape(riskText)}</span>
-                  </div>
-                  <div class="card-name">${escape(chem.name)}</div>
-                  <div class="card-chemical-name">${escape(chem.chemical_name)}</div>
-                  <div class="card-footer">
-                    <div class="card-ghs-chips">${ghsMiniHtml}</div>
-                    <div class="card-badges">
-                      <span class="stat-badge timer-badge">⏱ ${chem.emergency_timer_min} ${state.language === 'tr' ? 'dk' : 'min'}</span>
-                      <span class="card-open-arrow">›</span>
-                    </div>
-                  </div>
-                </div>
-              </button>
-            `;
-          }).join('');
-        }
 
         app.innerHTML = `
           <div class="marine-shell">
@@ -1688,14 +1718,12 @@
               </div>
 
               <div class="list-meta">
-                <span id="resultsCount">${filtered.length} ${t('records')}</span>
+                <span id="resultsCount">0 ${t('records')}</span>
                 <span>${t('touchHint')}</span>
               </div>
             </section>
 
-            <main class="chemical-list" id="chemicalList" aria-live="polite">
-              ${listHtml}
-            </main>
+            <main class="chemical-list" id="chemicalList" aria-live="polite"></main>
 
             <footer class="marine-footer">
               <p>${t('disclaimer')}</p>
@@ -1706,7 +1734,8 @@
           <aside id="detailDrawer" class="drawer" aria-hidden="true" role="dialog"></aside>
         `;
 
-        bindEvents();
+        bindShellEvents();
+        renderChemicalList();
       }
 
       // Render Drawer Content
@@ -1948,7 +1977,6 @@
           drawer.classList.add('open');
           drawer.setAttribute('aria-hidden', 'false');
           backdrop.classList.add('open');
-          document.body.style.overflow = 'hidden';
           bindDrawerEvents();
         }
       }
@@ -1965,7 +1993,6 @@
         if (backdrop) {
           backdrop.classList.remove('open');
         }
-        document.body.style.overflow = '';
         try {
           history.replaceState(null, '', window.location.pathname + window.location.search);
         } catch (e) {}
@@ -1996,7 +2023,7 @@
         });
       }
 
-      function bindEvents() {
+      function bindShellEvents() {
         const app = document.getElementById('marineApp');
         if (!app) return;
 
@@ -2010,7 +2037,7 @@
               const drawerWasOpen = document.getElementById('detailDrawer')?.classList.contains('open');
               const selectedId = state.selectedChemical?.id;
               const selectedTab = state.tab;
-              renderApp();
+              renderShell();
               if (drawerWasOpen && selectedId) {
                 openDrawer(selectedId, selectedTab);
               }
@@ -2018,47 +2045,48 @@
           });
         });
 
-        // Search Input
+        // Instant, 0ms latency Search Input (does NOT re-render the shell!)
         const searchInput = document.getElementById('searchInput');
         const searchClear = document.getElementById('searchClear');
         if (searchInput) {
           searchInput.addEventListener('input', (e) => {
             state.searchQuery = e.target.value;
             if (searchClear) searchClear.classList.toggle('hidden', !state.searchQuery);
-            renderApp();
-            document.getElementById('searchInput')?.focus();
+            renderChemicalList();
           });
         }
         if (searchClear) {
           searchClear.addEventListener('click', () => {
             state.searchQuery = '';
-            renderApp();
-            document.getElementById('searchInput')?.focus();
+            if (searchInput) searchInput.value = '';
+            searchClear.classList.add('hidden');
+            renderChemicalList();
+            searchInput?.focus();
           });
         }
 
-        // Category Chips
+        // Category Chips (only toggles class and renders list)
         app.querySelectorAll('.category-chip').forEach(chip => {
           chip.addEventListener('click', () => {
             state.category = chip.dataset.cat;
-            renderApp();
+            app.querySelectorAll('.category-chip').forEach(c => {
+              c.classList.toggle('active', c.dataset.cat === state.category);
+            });
+            renderChemicalList();
           });
         });
 
-        // Empty reset button
-        document.getElementById('emptyResetBtn')?.addEventListener('click', () => {
-          state.searchQuery = '';
-          state.category = 'all';
-          renderApp();
-        });
-
-        // Chemical Cards Click
-        app.querySelectorAll('.chemical-card').forEach(card => {
-          card.addEventListener('click', () => {
-            const chemId = card.dataset.chemicalId;
-            openDrawer(chemId, 'summary');
+        // Event delegation on chemicalList (Fast, zero re-binding)
+        const chemicalList = document.getElementById('chemicalList');
+        if (chemicalList) {
+          chemicalList.addEventListener('click', (e) => {
+            const card = e.target.closest('.chemical-card');
+            if (card) {
+              const chemId = card.dataset.chemicalId;
+              openDrawer(chemId, 'summary');
+            }
           });
-        });
+        }
 
         // Backdrop click closes drawer
         document.getElementById('drawerBackdrop')?.addEventListener('click', closeDrawer);
@@ -2096,7 +2124,7 @@
           }
         }
         state.chemicals = loaded;
-        renderApp();
+        renderShell();
 
         // Check initial hash
         const initialHash = window.location.hash.replace('#', '');
