@@ -1,4 +1,4 @@
-const CACHE_NAME = 'msds-lite-v1.1.1-language-emergency-fix';
+const CACHE_NAME = 'msds-lite-v1.1.2-timer-fix';
 const APP_SHELL = [
   './index.html',
   './data/chemicals.json',

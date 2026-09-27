@@ -531,6 +531,19 @@
 
       function formatSeconds(seconds) { return `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`; }
       function closeDrawer() { clearInterval(state.timerId); state.timerId = null; document.getElementById('detailDrawer')?.classList.remove('open'); document.getElementById('drawerBackdrop')?.classList.remove('open'); document.body.style.overflow = ''; }
+      function updateCarbonTimer(chemical) {
+        const drawer = document.getElementById('detailDrawer');
+        const timer = drawer?.querySelector('#carbonTimer');
+        const toggle = drawer?.querySelector('#carbonTimerToggle');
+        if (timer) timer.textContent = formatSeconds(state.timer);
+        if (toggle) toggle.textContent = state.timerId ? t('stop') : t('start');
+        if (state.timer <= 0 && toggle) {
+          toggle.textContent = t('reset');
+          toggle.disabled = true;
+        } else if (toggle) {
+          toggle.disabled = false;
+        }
+      }
       function openDrawer(id, tab) {
         const chemical = state.chemicals.find((item) => item.id === id); if (!chemical) return;
         clearInterval(state.timerId); state.timerId = null; state.selected = chemical; state.tab = tab || 'summary'; state.timer = chemical.emergency_timer_min * 60;
@@ -542,8 +555,29 @@
         const drawer = document.getElementById('detailDrawer');
         drawer.querySelector('#drawerClose')?.addEventListener('click', closeDrawer);
         drawer.querySelectorAll('[data-tab]').forEach((button) => button.addEventListener('click', () => { state.tab = button.dataset.tab; drawer.innerHTML = renderDrawer(chemical); bindDrawer(chemical); }));
-        drawer.querySelector('#carbonTimerToggle')?.addEventListener('click', () => { if (state.timerId) { clearInterval(state.timerId); state.timerId = null; } else { state.timerId = setInterval(() => { state.timer = Math.max(0, state.timer - 1); const timer = drawer.querySelector('#carbonTimer'); if (timer) timer.textContent = formatSeconds(state.timer); if (state.timer === 0) { clearInterval(state.timerId); state.timerId = null; } }, 1000); } bindDrawer(chemical); });
-        drawer.querySelector('#carbonTimerReset')?.addEventListener('click', () => { clearInterval(state.timerId); state.timerId = null; state.timer = chemical.emergency_timer_min * 60; bindDrawer(chemical); });
+        drawer.querySelector('#carbonTimerToggle')?.addEventListener('click', () => {
+          if (state.timerId) {
+            clearInterval(state.timerId);
+            state.timerId = null;
+          } else if (state.timer > 0) {
+            state.timerId = setInterval(() => {
+              state.timer = Math.max(0, state.timer - 1);
+              if (state.timer === 0) {
+                clearInterval(state.timerId);
+                state.timerId = null;
+              }
+              updateCarbonTimer(chemical);
+            }, 1000);
+          }
+          updateCarbonTimer(chemical);
+        });
+        drawer.querySelector('#carbonTimerReset')?.addEventListener('click', () => {
+          clearInterval(state.timerId);
+          state.timerId = null;
+          state.timer = chemical.emergency_timer_min * 60;
+          updateCarbonTimer(chemical);
+        });
+        updateCarbonTimer(chemical);
       }
       document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeDrawer(); });
       app.addEventListener('click', (event) => {
