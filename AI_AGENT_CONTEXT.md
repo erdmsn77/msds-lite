@@ -108,7 +108,7 @@ Kobalt naftenat kaydında MEKP/peroksitlerle doğrudan temas veya aynı kapta ka
 `index.html` şu özellikleri içerir:
 
 - Tailwind CSS CDN
-- Koyu, mobil odaklı `max-w-md` tasarım
+- Koyu, karbon temalı, mobil öncelikli responsive tasarım
 - Kompakt kimyasal envanteri
 - Sağdan açılan detay drawer'ı
 - TR/EN dil geçişi ve karbon/industrial görsel tema
@@ -136,7 +136,7 @@ hizlandirici: 'Hızlandırıcı'
 ayirici: 'Ayırıcı Ajan'
 ```
 
-Yeni kategori eklenirse hem `categoryLabels` hem de veri kayıtları güncellenmelidir.
+Yeni kategori eklenirse veri şeması ve arayüzdeki ilgili etiketler birlikte güncellenmelidir.
 
 ## Veri Yükleme Davranışı
 
@@ -176,9 +176,11 @@ Kontrol edilmesi gerekenler:
 
 - JSON parse ediliyor mu?
 - ID'ler benzersiz mi?
-- `index.html` ve JSON aynı sayıda kayıt içeriyor mu?
-- Yeni kategoriler filtrelerde görünüyor mu?
-- Yeni kart tarayıcıda açılıyor mu?
+- `index.html` fallback ve JSON aynı kayıtları içeriyor mu?
+- Kimyasal satırına tıklayınca drawer açılıyor, diğer alanlarda açılmıyor mu?
+- TR/EN değişimi kapalı drawer'ı açmadan çalışıyor mu?
+- Acil erişim kimyasal seçilmeden varsayılan bir kimyasal açıyor mu?
+- Yeni kimyasal drawer içinde açılıyor mu?
 - Sayaç başlat/durdur/devam/sıfırla akışı bozuldu mu?
 - HTML/JavaScript diagnostic hatası var mı?
 

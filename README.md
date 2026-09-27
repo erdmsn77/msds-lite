@@ -58,5 +58,4 @@ Repository GitHub’a gönderildikten sonra `.github/workflows/deploy-pages.yml`
 - PNG ikonlar ve iOS uyumluluk testi
 - Playwright smoke testleri
 - GitHub Actions içinde JSON senkronizasyon kontrolü
-- Ürün/SDS kaynağı ve güncelleme tarihi alanları
 - Büyük yazı ve acil durum erişilebilirlik modu
