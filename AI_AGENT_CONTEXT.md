@@ -109,8 +109,9 @@ Kobalt naftenat kaydında MEKP/peroksitlerle doğrudan temas veya aynı kapta ka
 
 - Tailwind CSS CDN
 - Koyu, mobil odaklı `max-w-md` tasarım
-- Kimyasal arama
-- Kategori filtreleri
+- Kompakt kimyasal envanteri
+- Sağdan açılan detay drawer'ı
+- TR/EN dil geçişi ve karbon/industrial görsel tema
 - Risk seviyesine göre renkli badge
 - GHS kodlarının piktogram benzeri gösterimi
 - Parlama noktası ve acil yıkama süresi

@@ -22,7 +22,9 @@
   </script>
 </head>
 <body class="min-h-screen bg-[#151816] text-slate-100 antialiased">
-  <main class="mx-auto flex min-h-screen w-full max-w-md flex-col px-4 py-7 sm:py-10">
+  <div id="carbonApp" class="carbon-app"></div>
+
+  <main id="legacyApp" class="hidden mx-auto flex min-h-screen w-full max-w-md flex-col px-4 py-7 sm:py-10">
     <header class="mb-6">
       <div class="mb-5 flex items-center justify-between gap-3">
         <div class="flex items-center gap-3">
@@ -338,6 +340,7 @@
 
     ui.searchInput.addEventListener('input', (event) => { state.query = event.target.value.trim(); renderButtons(); });
     loadChemicals();
+    window.__fallbackChemicals = fallbackChemicals;
 
     if ('serviceWorker' in navigator && window.location.protocol !== 'file:') {
       window.addEventListener('load', () => {
@@ -350,5 +353,184 @@
   <style>
     @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
   </style>
+
+  <style>
+    :root {
+      --carbon-0: #0b0f0e;
+      --carbon-1: #111716;
+      --carbon-2: #18201e;
+      --carbon-3: #26312e;
+      --carbon-text: #eef4ef;
+      --carbon-muted: #91a09a;
+      --carbon-line: rgba(196, 214, 204, .14);
+      --carbon-yellow: #e8bd58;
+      --carbon-red: #df6b62;
+      --carbon-green: #93bd91;
+      --carbon-blue: #83b5c1;
+    }
+
+    body {
+      background: var(--carbon-0) !important;
+      color: var(--carbon-text);
+    }
+
+    .carbon-app {
+      min-height: 100vh;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.018) 25%, transparent 25%) 0 0 / 8px 8px,
+        linear-gradient(315deg, rgba(255,255,255,.014) 25%, transparent 25%) 0 0 / 8px 8px,
+        var(--carbon-0);
+    }
+
+    .carbon-shell { width: min(100%, 760px); margin: 0 auto; padding: 20px 16px 40px; }
+    .carbon-topbar { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--carbon-line); padding-bottom: 18px; }
+    .brand-mark { display: grid; place-items: center; width: 38px; height: 38px; border: 1px solid rgba(232,189,88,.45); color: var(--carbon-yellow); background: #171b18; }
+    .eyebrow { color: var(--carbon-yellow); font-size: 10px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
+    .brand-title { margin: 3px 0 0; font-size: 24px; font-weight: 800; letter-spacing: -.04em; }
+    .brand-subtitle { margin-top: 4px; color: var(--carbon-muted); font-size: 12px; line-height: 1.5; }
+    .language-switch { display: inline-flex; border: 1px solid var(--carbon-line); background: rgba(24,32,30,.8); }
+    .language-switch button { border: 0; background: transparent; color: var(--carbon-muted); padding: 7px 9px; font-size: 11px; font-weight: 800; cursor: pointer; }
+    .language-switch button.active { background: var(--carbon-yellow); color: #161b17; }
+    .status-line { display: flex; align-items: center; gap: 7px; margin: 14px 0 24px; color: var(--carbon-muted); font-size: 11px; }
+    .status-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--carbon-green); box-shadow: 0 0 0 3px rgba(147,189,145,.12); }
+    .section-label { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin: 0 0 10px; }
+    .section-label h2 { margin: 0; font-size: 12px; letter-spacing: .14em; text-transform: uppercase; }
+    .section-label span { color: var(--carbon-muted); font-size: 11px; }
+    .emergency-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 7px; margin-bottom: 28px; }
+    .emergency-action { min-height: 74px; border: 1px solid var(--carbon-line); background: var(--carbon-2); color: var(--carbon-text); padding: 10px 8px; text-align: left; cursor: pointer; transition: border-color .2s, background .2s, transform .2s; }
+    .emergency-action:hover, .emergency-action:focus-visible { border-color: var(--carbon-yellow); background: #222a26; transform: translateY(-1px); outline: none; }
+    .emergency-action strong { display: block; margin-top: 8px; font-size: 11px; line-height: 1.25; }
+    .emergency-action small { display: block; margin-top: 3px; color: var(--carbon-muted); font-size: 9px; }
+    .action-icon { color: var(--carbon-yellow); font-size: 16px; font-weight: 800; }
+    .chemical-list { border-top: 1px solid var(--carbon-line); }
+    .chemical-row { display: flex; align-items: center; gap: 12px; width: 100%; border: 0; border-bottom: 1px solid var(--carbon-line); background: transparent; color: var(--carbon-text); padding: 13px 2px; text-align: left; cursor: pointer; }
+    .chemical-row:hover, .chemical-row:focus-visible { background: rgba(232,189,88,.06); outline: none; }
+    .risk-bar { width: 3px; align-self: stretch; min-height: 34px; background: var(--carbon-yellow); }
+    .risk-bar.critical { background: var(--carbon-red); }
+    .risk-bar.high { background: #d89258; }
+    .risk-bar.medium { background: var(--carbon-yellow); }
+    .chemical-row-main { min-width: 0; flex: 1; }
+    .chemical-row-name { display: block; overflow: hidden; font-size: 13px; font-weight: 750; text-overflow: ellipsis; white-space: nowrap; }
+    .chemical-row-meta { display: block; margin-top: 3px; color: var(--carbon-muted); font-size: 10px; }
+    .row-risk { color: var(--carbon-muted); font-size: 9px; font-weight: 800; letter-spacing: .08em; }
+    .row-arrow { color: var(--carbon-yellow); font-size: 18px; }
+    .carbon-footer { margin-top: 28px; border-top: 1px solid var(--carbon-line); padding-top: 14px; color: #718078; font-size: 10px; line-height: 1.55; }
+    .drawer-backdrop { position: fixed; inset: 0; z-index: 40; background: rgba(0,0,0,.62); opacity: 0; pointer-events: none; transition: opacity .25s ease; }
+    .drawer-backdrop.open { opacity: 1; pointer-events: auto; }
+    .drawer { position: fixed; z-index: 50; top: 0; right: 0; display: flex; height: 100dvh; width: min(92vw, 480px); flex-direction: column; border-left: 1px solid var(--carbon-line); background: var(--carbon-1); box-shadow: -20px 0 60px rgba(0,0,0,.35); transform: translateX(100%); transition: transform .28s cubic-bezier(.22,.61,.36,1); }
+    .drawer.open { transform: translateX(0); }
+    .drawer-head { border-bottom: 1px solid var(--carbon-line); padding: 22px 18px 16px; }
+    .drawer-head-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 14px; }
+    .drawer-close { width: 32px; height: 32px; border: 1px solid var(--carbon-line); background: transparent; color: var(--carbon-muted); font-size: 20px; line-height: 1; cursor: pointer; }
+    .drawer-close:hover { color: var(--carbon-text); border-color: var(--carbon-yellow); }
+    .drawer-title { margin: 4px 0 0; font-size: 21px; font-weight: 800; letter-spacing: -.03em; }
+    .drawer-chemical { margin-top: 4px; color: var(--carbon-muted); font-size: 11px; line-height: 1.45; }
+    .drawer-risk { display: inline-block; margin-top: 12px; border: 1px solid rgba(223,107,98,.45); color: var(--carbon-red); padding: 4px 7px; font-size: 10px; font-weight: 800; letter-spacing: .08em; }
+    .drawer-tabs { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 1px solid var(--carbon-line); }
+    .drawer-tab { border: 0; border-bottom: 2px solid transparent; background: transparent; color: var(--carbon-muted); padding: 12px 5px; font-size: 10px; font-weight: 800; cursor: pointer; }
+    .drawer-tab.active { border-bottom-color: var(--carbon-yellow); color: var(--carbon-yellow); }
+    .drawer-body { overflow-y: auto; flex: 1; padding: 18px; }
+    .info-block { border-top: 1px solid var(--carbon-line); padding: 14px 0; }
+    .info-block:first-child { border-top: 0; padding-top: 0; }
+    .info-label { color: var(--carbon-muted); font-size: 10px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; }
+    .info-value { margin-top: 6px; color: var(--carbon-text); font-size: 13px; line-height: 1.55; }
+    .summary-grid { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--carbon-line); margin-bottom: 17px; }
+    .summary-cell { padding: 13px; }
+    .summary-cell + .summary-cell { border-left: 1px solid var(--carbon-line); }
+    .timer-panel { margin-top: 18px; border: 1px solid rgba(232,189,88,.38); background: rgba(232,189,88,.06); padding: 16px; }
+    .timer-value { margin: 5px 0 14px; color: var(--carbon-yellow); font-family: ui-monospace, monospace; font-size: 30px; font-weight: 800; letter-spacing: .08em; }
+    .timer-actions { display: flex; gap: 8px; }
+    .timer-actions button { flex: 1; border: 1px solid var(--carbon-line); background: var(--carbon-2); color: var(--carbon-text); padding: 10px; font-size: 11px; font-weight: 800; cursor: pointer; }
+    .timer-actions button:first-child { border-color: rgba(232,189,88,.45); color: var(--carbon-yellow); }
+    .ghs-list { display: flex; flex-wrap: wrap; gap: 7px; }
+    .ghs-chip { border: 1px solid var(--carbon-line); color: var(--carbon-muted); padding: 5px 7px; font-size: 10px; font-weight: 800; }
+    .glove-row { display: flex; justify-content: space-between; border-bottom: 1px solid var(--carbon-line); padding: 9px 0; font-size: 12px; }
+    .safe { color: var(--carbon-green); } .unsafe { color: var(--carbon-red); }
+    .source-link { color: var(--carbon-blue); text-decoration: underline; text-underline-offset: 3px; }
+    .drawer-note { border-left: 2px solid var(--carbon-yellow); background: rgba(232,189,88,.06); margin-top: 12px; padding: 10px 12px; color: #d6c58e; font-size: 11px; line-height: 1.5; }
+    @media (max-width: 500px) {
+      .carbon-shell { padding: 16px 14px 30px; }
+      .emergency-grid { grid-template-columns: repeat(2, 1fr); }
+      .brand-title { font-size: 21px; }
+    }
+  </style>
+
+  <script>
+    (() => {
+      const fallback = window.__fallbackChemicals || [];
+      const app = document.getElementById('carbonApp');
+      const translations = {
+        tr: { lang: 'Türkçe', other: 'English', subtitle: 'Kompozit atölyesi için saha güvenliği', ready: 'Çevrimdışı hazır', emergency: 'Acil erişim', eye: 'Göz teması', skin: 'Cilt teması', inhalation: 'Solunum', timer: 'Yıkama sayacı', chemicalSelect: 'Kimyasal envanteri', records: 'kayıt', details: 'Detay', summary: 'Özet', ppe: 'KKD', firstAid: 'İlk yardım', source: 'Kaynak', category: 'Kategori', flash: 'Parlama noktası', wash: 'Acil yıkama', mask: 'Maske', eyeProtection: 'Göz koruması', gloves: 'Eldiven uyumluluğu', suitable: 'Uygun', unsuitable: 'Uygun değil', warning: 'Uyarı', start: 'Sayacı başlat', stop: 'Sayacı durdur', reset: 'Sıfırla', sourceStatus: 'Doğrulama', verified: 'Doğrulandı', pending: 'SDS bekleniyor', sourceNote: 'Bu kayıt üretici SDS’inin yerine geçmez.', close: 'Kapat' },
+        en: { lang: 'English', other: 'Türkçe', subtitle: 'Field safety for composite workshops', ready: 'Offline ready', emergency: 'Emergency access', eye: 'Eye contact', skin: 'Skin contact', inhalation: 'Inhalation', timer: 'Rinse timer', chemicalSelect: 'Chemical inventory', records: 'records', details: 'Details', summary: 'Summary', ppe: 'PPE', firstAid: 'First aid', source: 'Source', category: 'Category', flash: 'Flash point', wash: 'Emergency rinse', mask: 'Respirator', eyeProtection: 'Eye protection', gloves: 'Glove compatibility', suitable: 'Suitable', unsuitable: 'Not suitable', warning: 'Warning', start: 'Start timer', stop: 'Pause timer', reset: 'Reset', sourceStatus: 'Verification', verified: 'Verified', pending: 'SDS pending', sourceNote: 'This record does not replace the manufacturer SDS.', close: 'Close' }
+      };
+      const state = { chemicals: [], language: localStorage.getItem('msds-language') || 'tr', selected: null, tab: 'summary', timer: 0, timerId: null };
+      const t = (key) => translations[state.language][key] || key;
+      const escape = (value) => String(value).replace(/[&<>"']/g, (character) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[character]));
+      const riskClass = (risk) => risk === 'KRİTİK' ? 'critical' : risk === 'YÜKSEK' ? 'high' : 'medium';
+
+      function validDatabase(value) {
+        return Array.isArray(value) && value.length > 0 && value.every((item) => item && typeof item.id === 'string' && item.ppe && item.first_aid);
+      }
+
+      function renderShell() {
+        app.innerHTML = `<div class="carbon-shell">
+          <header class="carbon-topbar">
+            <div class="flex items-start gap-3"><div class="brand-mark" aria-hidden="true">+</div><div><div class="eyebrow">MSDS / FIELD SAFETY</div><h1 class="brand-title">MSDS-Lite</h1><p class="brand-subtitle">${t('subtitle')}</p></div></div>
+            <div class="language-switch" role="group" aria-label="Language"><button type="button" data-language="tr" class="${state.language === 'tr' ? 'active' : ''}" aria-pressed="${state.language === 'tr'}">🇹🇷 TR</button><button type="button" data-language="en" class="${state.language === 'en' ? 'active' : ''}" aria-pressed="${state.language === 'en'}">🇬🇧 EN</button></div>
+          </header>
+          <div class="status-line"><span class="status-dot"></span><span>${t('ready')}</span><span aria-hidden="true">•</span><span>${state.chemicals.length} ${t('records')}</span></div>
+          <section aria-labelledby="emergency-title"><div class="section-label"><h2 id="emergency-title">${t('emergency')}</h2><span>01 / 04</span></div><div class="emergency-grid">
+            <button class="emergency-action" type="button" data-emergency="eye"><span class="action-icon">◎</span><strong>${t('eye')}</strong><small>${t('timer')}</small></button>
+            <button class="emergency-action" type="button" data-emergency="skin"><span class="action-icon">◇</span><strong>${t('skin')}</strong><small>${t('timer')}</small></button>
+            <button class="emergency-action" type="button" data-emergency="inhalation"><span class="action-icon">≋</span><strong>${t('inhalation')}</strong><small>${t('details')}</small></button>
+            <button class="emergency-action" type="button" data-emergency="timer"><span class="action-icon">◷</span><strong>${t('timer')}</strong><small>${t('start')}</small></button>
+          </div></section>
+          <section aria-labelledby="inventory-title"><div class="section-label"><h2 id="inventory-title">${t('chemicalSelect')}</h2><span>${state.chemicals.length} ${t('records')}</span></div><div class="chemical-list">${state.chemicals.map((chemical) => `<button type="button" class="chemical-row" data-chemical="${escape(chemical.id)}"><span class="risk-bar ${riskClass(chemical.risk_level)}"></span><span class="chemical-row-main"><span class="chemical-row-name">${escape(chemical.name)}</span><span class="chemical-row-meta">${escape(chemical.chemical_name)} · ${escape(chemical.category)}</span></span><span class="row-risk">${escape(chemical.risk_level)}</span><span class="row-arrow" aria-hidden="true">›</span></button>`).join('')}</div></section>
+          <footer class="carbon-footer">Hızlı saha referansı. Gerçek uygulamada üretici SDS’i, kurum prosedürleri ve yetkili İSG yönlendirmesi esastır.</footer>
+        </div>
+        <div id="drawerBackdrop" class="drawer-backdrop"></div>
+        <aside id="detailDrawer" class="drawer" aria-hidden="true" aria-labelledby="drawerTitle" role="dialog"></aside>`;
+        app.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => { state.language = button.dataset.language; localStorage.setItem('msds-language', state.language); renderShell(); if (state.selected) openDrawer(state.selected.id, state.tab); }));
+        app.querySelectorAll('[data-chemical]').forEach((button) => button.addEventListener('click', () => openDrawer(button.dataset.chemical, 'summary')));
+        app.querySelectorAll('[data-emergency]').forEach((button) => button.addEventListener('click', () => openDrawer(state.chemicals[0]?.id, button.dataset.emergency === 'timer' ? 'summary' : 'firstAid')));
+      }
+
+      function renderGhs(chemical) { return chemical.ghs_codes.map((code) => `<span class="ghs-chip">${escape(code)}</span>`).join(''); }
+      function renderDrawer(chemical) {
+        const status = chemical.verification_status && chemical.verification_status.includes('bekleniyor') ? t('pending') : t('verified');
+        const tab = (key, label) => `<button type="button" class="drawer-tab ${state.tab === key ? 'active' : ''}" data-tab="${key}">${label}</button>`;
+        const body = state.tab === 'ppe' ? `<div class="info-block"><div class="info-label">${t('mask')}</div><div class="info-value">${escape(chemical.ppe.mask)}</div></div><div class="info-block"><div class="info-label">${t('eyeProtection')}</div><div class="info-value">${escape(chemical.ppe.eye)}</div></div><div class="info-block"><div class="info-label">${t('gloves')}</div>${[['latex', 'Lateks / Latex'], ['nitrile', 'Nitril / Nitrile'], ['butyl', 'Bütil / Butyl']].map(([key, label]) => `<div class="glove-row"><span>${label}</span><strong class="${chemical.ppe.gloves[key] ? 'safe' : 'unsafe'}">${chemical.ppe.gloves[key] ? t('suitable') : t('unsuitable')}</strong></div>`).join('')}<div class="drawer-note">${escape(chemical.ppe.gloves.warning)}</div></div>` :
+          state.tab === 'firstAid' ? `<div class="info-block"><div class="info-label">${t('eye')}</div><div class="info-value">${escape(chemical.first_aid.eye)}</div></div><div class="info-block"><div class="info-label">${t('skin')}</div><div class="info-value">${escape(chemical.first_aid.skin)}</div></div><div class="info-block"><div class="info-label">${t('inhalation')}</div><div class="info-value">${escape(chemical.first_aid.inhalation)}</div></div>` :
+          state.tab === 'source' ? `<div class="info-block"><div class="info-label">${t('sourceStatus')}</div><div class="info-value">${escape(status)} · ${escape(chemical.verified_at || '—')}</div></div><div class="info-block"><div class="info-label">${t('source')}</div><div class="info-value">${chemical.source_url ? `<a class="source-link" href="${escape(chemical.source_url)}" target="_blank" rel="noopener noreferrer">${escape(chemical.source)}</a>` : escape(chemical.source)}</div></div><div class="drawer-note">${escape(chemical.verification_note || t('sourceNote'))}</div>` :
+          `<div class="summary-grid"><div class="summary-cell"><div class="info-label">${t('flash')}</div><div class="info-value">${escape(chemical.flash_point)}</div></div><div class="summary-cell"><div class="info-label">${t('wash')}</div><div class="info-value">${chemical.emergency_timer_min} min</div></div></div><div class="info-block"><div class="info-label">${t('category')}</div><div class="info-value">${escape(chemical.category)} · ${escape(chemical.chemical_name)}</div></div><div class="info-block"><div class="info-label">GHS</div><div class="ghs-list">${renderGhs(chemical)}</div></div><div class="timer-panel"><div class="info-label">${t('timer')}</div><div id="carbonTimer" class="timer-value">${formatSeconds(state.timer || chemical.emergency_timer_min * 60)}</div><div class="timer-actions"><button type="button" id="carbonTimerToggle">${state.timerId ? t('stop') : t('start')}</button><button type="button" id="carbonTimerReset">${t('reset')}</button></div></div>`;
+        return `<div class="drawer-head"><div class="drawer-head-top"><div><div class="eyebrow">${escape(chemical.category)}</div><h2 id="drawerTitle" class="drawer-title">${escape(chemical.name)}</h2><p class="drawer-chemical">${escape(chemical.chemical_name)}</p><span class="drawer-risk">${escape(chemical.risk_level)}</span></div><button type="button" class="drawer-close" id="drawerClose" aria-label="${t('close')}">×</button></div></div><nav class="drawer-tabs" aria-label="${t('details')}">${tab('summary', t('summary'))}${tab('ppe', t('ppe'))}${tab('firstAid', t('firstAid'))}${tab('source', t('source'))}</nav><div class="drawer-body">${body}</div>`;
+      }
+
+      function formatSeconds(seconds) { return `${String(Math.floor(seconds / 60)).padStart(2, '0')}:${String(seconds % 60).padStart(2, '0')}`; }
+      function closeDrawer() { clearInterval(state.timerId); state.timerId = null; document.getElementById('detailDrawer')?.classList.remove('open'); document.getElementById('drawerBackdrop')?.classList.remove('open'); document.body.style.overflow = ''; }
+      function openDrawer(id, tab) {
+        const chemical = state.chemicals.find((item) => item.id === id); if (!chemical) return;
+        clearInterval(state.timerId); state.timerId = null; state.selected = chemical; state.tab = tab || 'summary'; state.timer = chemical.emergency_timer_min * 60;
+        const drawer = document.getElementById('detailDrawer'); drawer.innerHTML = renderDrawer(chemical); drawer.classList.add('open'); drawer.setAttribute('aria-hidden', 'false'); document.getElementById('drawerBackdrop').classList.add('open'); document.body.style.overflow = 'hidden';
+        drawer.querySelector('#drawerClose').addEventListener('click', closeDrawer); drawer.querySelectorAll('[data-tab]').forEach((button) => button.addEventListener('click', () => { state.tab = button.dataset.tab; drawer.innerHTML = renderDrawer(chemical); bindDrawer(chemical); }));
+        bindDrawer(chemical);
+      }
+      function bindDrawer(chemical) {
+        const drawer = document.getElementById('detailDrawer');
+        drawer.querySelector('#drawerClose')?.addEventListener('click', closeDrawer);
+        drawer.querySelectorAll('[data-tab]').forEach((button) => button.addEventListener('click', () => { state.tab = button.dataset.tab; drawer.innerHTML = renderDrawer(chemical); bindDrawer(chemical); }));
+        drawer.querySelector('#carbonTimerToggle')?.addEventListener('click', () => { if (state.timerId) { clearInterval(state.timerId); state.timerId = null; } else { state.timerId = setInterval(() => { state.timer = Math.max(0, state.timer - 1); const timer = drawer.querySelector('#carbonTimer'); if (timer) timer.textContent = formatSeconds(state.timer); if (state.timer === 0) { clearInterval(state.timerId); state.timerId = null; } }, 1000); } bindDrawer(chemical); });
+        drawer.querySelector('#carbonTimerReset')?.addEventListener('click', () => { clearInterval(state.timerId); state.timerId = null; state.timer = chemical.emergency_timer_min * 60; bindDrawer(chemical); });
+      }
+      document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeDrawer(); });
+      app.addEventListener('click', (event) => { if (event.target.id === 'drawerBackdrop') closeDrawer(); });
+      async function init() {
+        let chemicals = fallback;
+        if (window.location.protocol !== 'file:') { try { const response = await fetch('./data/chemicals.json', { cache: 'no-store' }); const candidate = await response.json(); if (validDatabase(candidate)) chemicals = candidate; } catch (error) { console.warn('JSON verisi kullanılamadı; fallback kullanılıyor.', error); } }
+        state.chemicals = chemicals; renderShell();
+      }
+      init();
+    })();
+  </script>
 </body>
 </html>

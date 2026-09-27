@@ -1,4 +1,4 @@
-const CACHE_NAME = 'msds-lite-v1.0.0';
+const CACHE_NAME = 'msds-lite-v1.1.0-carbon-drawer';
 const APP_SHELL = [
   './index.html',
   './data/chemicals.json',

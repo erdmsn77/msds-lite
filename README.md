@@ -8,7 +8,8 @@ Uygulama HTTPS üzerinden yayınlandığında telefonda tarayıcı menüsünden 
 
 ## Özellikler
 
-- 11 kimyasal için arama ve kategori filtreleri
+- 11 kimyasal için kompakt saha envanteri
+- Sağdan açılan detay drawer'ı ve TR/EN dil geçişi
 - GHS tehlike kodları ve risk seviyesi kartları
 - Parlama noktası ve acil yıkama süresi
 - Maske, gözlük ve lateks/nitril/bütil eldiven uyumluluk matrisi
@@ -39,7 +40,7 @@ Bir kayıt değiştirildiğinde iki kaynak aynı anda güncellenmelidir. Veri ş
 ## PWA Dosyaları
 
 - `manifest.json`: Uygulama adı, tema ve ikon tanımları
-- `sw.js`: `msds-lite-v1.0.0` cache sürümü ve offline fallback
+- `sw.js`: `msds-lite-v1.1.0-carbon-drawer` cache sürümü ve offline fallback
 - `icons/`: any ve maskable SVG ikonları
 
 ## Güvenlik ve İSG Notu
