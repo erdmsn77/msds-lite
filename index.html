@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
-  <meta name="description" content="Tersane ve kompozit atölyesi kimyasal güvenlik rehberi (MSDS-Lite). Acil göz yıkama sayacı, KKD ve yangın müdahale talimatları.">
+  <meta name="description" content="Tersane ve kompozit atölyesi kimyasal güvenlik rehberi (MSDS-Lite). KKD, ilk yardım ve yangın müdahale talimatları.">
   <title>MSDS-Lite | Kompozit & Tekne İSG</title>
   
   <meta name="theme-color" content="#f8fafc" id="themeColorMeta">
@@ -502,7 +502,7 @@
       border-color: var(--badge-env-border);
     }
 
-    /* Card Footer: Timer + Action CTA */
+    /* Card Footer: Timer info + Action CTA */
     .card-footer-row {
       display: flex;
       justify-content: space-between;
@@ -593,6 +593,7 @@
       display: flex;
       flex-direction: column;
       overflow: hidden;
+      touch-action: pan-y;
     }
     .drawer.open {
       transform: translateX(0);
@@ -631,13 +632,13 @@
       margin-top: 2px;
     }
     .drawer-close {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       border-radius: 8px;
       background: var(--bg-base);
       border: 1px solid var(--border-subtle);
       color: var(--text-main);
-      font-size: 16px;
+      font-size: 18px;
       display: grid;
       place-items: center;
       cursor: pointer;
@@ -726,76 +727,33 @@
       margin-top: 6px;
     }
 
-    /* Timer Console */
-    .timer-console {
-      background: var(--bg-card);
-      border: 1px solid var(--border-subtle);
-      border-radius: 10px;
-      padding: 14px;
-      text-align: center;
-      box-shadow: var(--card-shadow);
-    }
-    .timer-console.alarm-active {
-      border-color: var(--marine-red);
-      background: rgba(220, 38, 38, 0.12);
-      animation: pulseAlert 0.8s infinite alternate;
-    }
-    @keyframes pulseAlert {
-      from { box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4); }
-      to { box-shadow: 0 0 0 10px rgba(220, 38, 38, 0); }
-    }
-    .timer-label {
-      font-size: 11px;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
-    }
-    .timer-clock {
-      font-family: var(--font-mono);
-      font-size: 38px;
-      font-weight: 850;
-      color: var(--text-main);
-      margin: 6px 0 10px;
-      letter-spacing: 0.05em;
-    }
-    .timer-btn-row {
+    /* High-Visibility Emergency Rinse Banner (Replaces Timer Console) */
+    .emergency-time-banner {
       display: flex;
-      justify-content: center;
-      gap: 10px;
-    }
-    .timer-btn {
-      padding: 8px 16px;
+      align-items: center;
+      gap: 12px;
+      background: rgba(220, 38, 38, 0.08);
+      border: 1.5px solid var(--marine-red);
       border-radius: 8px;
-      font-size: 12px;
-      font-weight: 750;
-      cursor: pointer;
-      border: 0;
-      transition: background-color 0.12s ease;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      color: var(--text-main);
     }
-    .timer-btn-primary {
-      background: var(--marine-orange);
-      color: #fff;
+    .emergency-time-icon {
+      font-size: 26px;
+      flex-shrink: 0;
     }
-    .timer-btn-primary:hover {
-      background: #c2410c;
-    }
-    .timer-btn-secondary {
-      background: var(--bg-base);
-      color: var(--text-body);
-      border: 1px solid var(--border-subtle);
-    }
-    .timer-btn-secondary:hover {
-      background: var(--bg-active);
-    }
-    .timer-alarm-notice {
-      margin-top: 10px;
-      font-size: 12px;
-      font-weight: 800;
+    .emergency-time-title {
+      font-size: 12.5px;
+      font-weight: 850;
       color: var(--marine-red);
+      letter-spacing: 0.02em;
     }
-    .timer-alarm-notice.hidden {
-      display: none;
+    .emergency-time-desc {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+      line-height: 1.4;
     }
 
     /* Section Cards inside Drawer */
@@ -2648,12 +2606,8 @@
           flashPoint: 'Parlama Noktası',
           emergencyWash: 'Acil Göz Yıkama',
           emergencyWashShort: 'Yıkama',
-          rinseTimer: 'Acil Göz Yıkama Sayacı',
-          startTimer: 'Sayacı Başlat',
-          pauseTimer: 'Sayacı Durdur',
-          resetTimer: 'Sıfırla',
-          timeCompleted: 'SÜRE TAMAMLANDI!',
-          timeCompletedHint: 'Yıkamayı tamamlayın, gözü ovalamayın ve derhal tıbbi yardım alın.',
+          mandatoryWashTitle: 'ZORUNLU KESİNTİSİZ YIKAMA SÜRESİ',
+          mandatoryWashSub: 'Kalıcı körlük ve kimyasal doku hasarını önlemek için yıkama ASLA erken kesilmemelidir. Eşzamanlı 112 Acil Servis aranmalıdır.',
           incompatibilityNotice: 'KRİTİK ATÖLYE UYUŞMAZLIĞI',
           warningNotice: 'GÜVENLİK İKAZI',
           mask: 'Solunum Maskesi',
@@ -2709,12 +2663,8 @@
           flashPoint: 'Flash Point',
           emergencyWash: 'Emergency Eyewash',
           emergencyWashShort: 'Rinse',
-          rinseTimer: 'Emergency Eyewash Timer',
-          startTimer: 'Start Timer',
-          pauseTimer: 'Pause Timer',
-          resetTimer: 'Reset',
-          timeCompleted: 'TIME COMPLETED!',
-          timeCompletedHint: 'Complete flushing, do not rub eyes, seek immediate medical aid.',
+          mandatoryWashTitle: 'MANDATORY UNINTERRUPTED RINSE TIME',
+          mandatoryWashSub: 'To prevent blindness and chemical burns, flushing must not be stopped prematurely. Call emergency services concurrently.',
           incompatibilityNotice: 'CRITICAL INCOMPATIBILITY',
           warningNotice: 'SAFETY WARNING',
           mask: 'Respirator Mask',
@@ -2770,12 +2720,8 @@
           flashPoint: 'Flammpunkt',
           emergencyWash: 'Notfall-Augenspülung',
           emergencyWashShort: 'Spülung',
-          rinseTimer: 'Notfall-Augenspül-Timer',
-          startTimer: 'Timer Starten',
-          pauseTimer: 'Timer Pausieren',
-          resetTimer: 'Zurücksetzen',
-          timeCompleted: 'ZEIT ABGELAUFEN!',
-          timeCompletedHint: 'Spülung beenden, Augen nicht reiben, sofort Notarzt rufen.',
+          mandatoryWashTitle: 'PFLICHT-SPÜLDAUER OHNE UNTERBRECHUNG',
+          mandatoryWashSub: 'Um Erblindung und Verätzungen zu vermeiden, darf die Spülung nicht vorzeitig abgebrochen werden. Notruf verständigen.',
           incompatibilityNotice: 'KRITISCHE INKOMPATIBILITÄT',
           warningNotice: 'SICHERHEITSWARNUNG',
           mask: 'Atemschutzmaske',
@@ -2819,11 +2765,7 @@
         language: localStorage.getItem('msds-language') || 'tr',
         theme: localStorage.getItem('msds-theme') || 'light',
         category: 'all',
-        selectedChemical: null,
-        timerSeconds: 0,
-        timerId: null,
-        timerRunning: false,
-        alarmActive: false
+        selectedChemical: null
       };
 
       const t = (key) => (translations[state.language] && translations[state.language][key]) || key;
@@ -2833,109 +2775,6 @@
       function renderGhsDiamond(code, sizeClass = 'ghs-diamond-mini') {
         const meta = GHS_METADATA[code] || GHS_METADATA.GHS07;
         return `<svg viewBox="0 0 100 100" class="${sizeClass}" aria-label="${escape(code)}"><polygon points="50,6 94,50 50,94 6,50" fill="#ffffff" stroke="#ef4444" stroke-width="7" stroke-linejoin="round"/>${meta.svg}</svg>`;
-      }
-
-      function formatTime(seconds) {
-        const m = Math.floor(seconds / 60);
-        const s = seconds % 60;
-        return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
-      }
-
-      // Audio Alarm Generator
-      function triggerAlarm() {
-        state.alarmActive = true;
-        if (typeof navigator !== 'undefined' && 'vibrate' in navigator) {
-          try { navigator.vibrate([300, 150, 300, 150, 600]); } catch (e) {}
-        }
-        try {
-          const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-          if (AudioContextClass) {
-            const ctx = new AudioContextClass();
-            const now = ctx.currentTime;
-            const playBeep = (freq, startOffset, duration) => {
-              const osc = ctx.createOscillator();
-              const gain = ctx.createGain();
-              osc.type = 'sawtooth';
-              osc.frequency.setValueAtTime(freq, now + startOffset);
-              gain.gain.setValueAtTime(0.25, now + startOffset);
-              gain.gain.exponentialRampToValueAtTime(0.001, now + startOffset + duration);
-              osc.connect(gain);
-              gain.connect(ctx.destination);
-              osc.start(now + startOffset);
-              osc.stop(now + startOffset + duration);
-            };
-            playBeep(880, 0.0, 0.18);
-            playBeep(880, 0.25, 0.18);
-            playBeep(1100, 0.5, 0.35);
-          }
-        } catch (e) {
-          console.warn('Alarm audio note:', e);
-        }
-      }
-
-      function stopTimer() {
-        if (state.timerId) clearInterval(state.timerId);
-        state.timerId = null;
-        state.timerRunning = false;
-      }
-
-      function startTimer() {
-        if (state.timerRunning || state.timerSeconds <= 0) return;
-        state.timerRunning = true;
-        state.alarmActive = false;
-        state.timerId = setInterval(() => {
-          if (state.timerSeconds > 0) {
-            state.timerSeconds -= 1;
-            updateTimerDisplay();
-            if (state.timerSeconds === 0) {
-              stopTimer();
-              triggerAlarm();
-              updateTimerDisplay();
-            }
-          }
-        }, 1000);
-        updateTimerDisplay();
-      }
-
-      function toggleTimer() {
-        if (state.timerRunning) {
-          stopTimer();
-          updateTimerDisplay();
-        } else {
-          if (state.timerSeconds <= 0 && state.selectedChemical) {
-            state.timerSeconds = state.selectedChemical.emergency_timer_min * 60;
-          }
-          startTimer();
-        }
-      }
-
-      function resetTimer() {
-        stopTimer();
-        state.alarmActive = false;
-        if (state.selectedChemical) {
-          state.timerSeconds = state.selectedChemical.emergency_timer_min * 60;
-        }
-        updateTimerDisplay();
-      }
-
-      function updateTimerDisplay() {
-        const clockEl = document.getElementById('timerClock');
-        const toggleBtn = document.getElementById('timerToggleBtn');
-        const noticeEl = document.getElementById('timerAlarmNotice');
-        const consoleEl = document.getElementById('timerConsole');
-
-        if (clockEl) clockEl.textContent = formatTime(state.timerSeconds);
-        if (toggleBtn) {
-          toggleBtn.textContent = state.timerSeconds <= 0 
-            ? t('resetTimer') 
-            : (state.timerRunning ? t('pauseTimer') : t('startTimer'));
-        }
-        if (noticeEl) {
-          noticeEl.classList.toggle('hidden', !state.alarmActive);
-        }
-        if (consoleEl) {
-          consoleEl.classList.toggle('alarm-active', state.alarmActive);
-        }
       }
 
       function getFilteredChemicals() {
@@ -3012,7 +2851,7 @@
                 </div>
 
                 <div class="card-footer-row">
-                  <span class="card-timer-badge">⏱ ${chem.emergency_timer_min} ${t('minutes')} ${t('emergencyWashShort')}</span>
+                  <span class="card-timer-badge">⏱ En az ${chem.emergency_timer_min || 15} ${t('minutes')} ${t('emergencyWashShort')}</span>
                   <span class="card-action-cta">${t('viewDetails')} →</span>
                 </div>
               </div>
@@ -3178,32 +3017,25 @@
           <div class="drawer-body">
             ${incompHtml}
 
-            <!-- Timer Console -->
-            <div class="timer-console ${state.alarmActive ? 'alarm-active' : ''}" id="timerConsole">
-              <div class="timer-label">⏱ ${t('rinseTimer')}</div>
-              <div class="timer-clock" id="timerClock">${formatTime(state.timerSeconds)}</div>
-              <div class="timer-btn-row">
-                <button type="button" class="timer-btn timer-btn-primary" id="timerToggleBtn">
-                  ${state.timerSeconds <= 0 ? t('resetTimer') : (state.timerRunning ? t('pauseTimer') : t('startTimer'))}
-                </button>
-                <button type="button" class="timer-btn timer-btn-secondary" id="timerResetBtn">
-                  ${t('resetTimer')}
-                </button>
-              </div>
-              <div class="timer-alarm-notice ${state.alarmActive ? '' : 'hidden'}" id="timerAlarmNotice">
-                🚨 ${t('timeCompleted')} - ${t('timeCompletedHint')}
-              </div>
-            </div>
-
-            <!-- 1. İLK YARDIM -->
+            <!-- 1. İLK YARDIM (İLK 60 SANİYE) -->
             <div class="drawer-section" id="sectionFirstAid">
               <div class="section-title-row">
                 <span class="section-icon">🚑</span>
                 <span>${t('firstAid').toUpperCase()}</span>
               </div>
+
+              <!-- High-Visibility Eyewash Time Banner -->
+              <div class="emergency-time-banner">
+                <div class="emergency-time-icon">⏱</div>
+                <div>
+                  <div class="emergency-time-title">🚨 ${t('mandatoryWashTitle')}: ${chem.emergency_timer_min || 15} ${t('minutes').toUpperCase()}</div>
+                  <div class="emergency-time-desc">${t('mandatoryWashSub')}</div>
+                </div>
+              </div>
+
               <div class="detail-item-block">
-                <div class="detail-item-label">👁️ ${t('firstAidEye')} (${t('emergencyWash')}: ${chem.emergency_timer_min} ${t('minutes')})</div>
-                <div class="detail-item-val" style="font-weight:600;">${escape(getL(chem.first_aid?.eye))}</div>
+                <div class="detail-item-label">👁️ ${t('firstAidEye')}</div>
+                <div class="detail-item-val" style="font-weight:700; color:var(--text-main);">${escape(getL(chem.first_aid?.eye))}</div>
               </div>
               <div class="detail-item-block">
                 <div class="detail-item-label">✋ ${t('firstAidSkin')}</div>
@@ -3231,7 +3063,7 @@
               </div>
               <div class="detail-item-block">
                 <div class="detail-item-label" style="color:var(--marine-red);">🚫 ${t('prohibitedExtinguishers')}</div>
-                <div class="detail-item-val" style="font-weight:600; color:var(--marine-red);">${escape(getL(chem.fire_fighting?.prohibited))}</div>
+                <div class="detail-item-val" style="font-weight:700; color:var(--marine-red);">${escape(getL(chem.fire_fighting?.prohibited))}</div>
               </div>
               <div class="detail-item-block">
                 <div class="detail-item-label">⚠️ ${t('fireHazards')}</div>
@@ -3291,7 +3123,7 @@
               </div>
               <div class="detail-item-block">
                 <div class="detail-item-label" style="color:var(--marine-red);">⚡ ${t('incompatibleMaterials')}</div>
-                <div class="detail-item-val" style="font-weight:600;">${escape(getL(chem.storage_incompatibility?.incompatible))}</div>
+                <div class="detail-item-val" style="font-weight:700;">${escape(getL(chem.storage_incompatibility?.incompatible))}</div>
               </div>
             </div>
 
@@ -3335,18 +3167,16 @@
         `;
       }
 
-      function openDrawer(chemicalId) {
+      function openDrawer(chemicalId, shouldPushHistory = true) {
         const chem = state.chemicals.find(c => c.id === chemicalId);
         if (!chem) return;
 
         state.selectedChemical = chem;
-        state.timerSeconds = (chem.emergency_timer_min || 15) * 60;
-        state.alarmActive = false;
-        stopTimer();
 
-        try {
-          history.replaceState(null, '', '#' + chem.id);
-        } catch (e) {}
+        // Push history state so phone back button/gesture returns to main menu instead of closing app
+        if (shouldPushHistory && window.location.hash !== '#' + chem.id) {
+          history.pushState({ drawerOpen: true, chemId: chem.id }, '', '#' + chem.id);
+        }
 
         const drawer = document.getElementById('detailDrawer');
         const backdrop = document.getElementById('drawerBackdrop');
@@ -3359,9 +3189,7 @@
         }
       }
 
-      function closeDrawer() {
-        stopTimer();
-        state.alarmActive = false;
+      function closeDrawer(syncHistory = false) {
         const drawer = document.getElementById('detailDrawer');
         const backdrop = document.getElementById('drawerBackdrop');
         if (drawer) {
@@ -3371,24 +3199,28 @@
         if (backdrop) {
           backdrop.classList.remove('open');
         }
-        try {
-          history.replaceState(null, '', window.location.pathname + window.location.search);
-        } catch (e) {}
+        if (syncHistory && window.location.hash) {
+          try {
+            history.replaceState(null, '', window.location.pathname + window.location.search);
+          } catch (e) {}
+        }
+      }
+
+      // Safe user-initiated close (Backdrop, Close Button or Swipe)
+      function handleUserClose() {
+        if (window.location.hash) {
+          // Pops history naturally, triggering popstate which closes drawer cleanly
+          history.back();
+        } else {
+          closeDrawer(true);
+        }
       }
 
       function bindDrawerEvents() {
         const drawer = document.getElementById('detailDrawer');
         if (!drawer) return;
 
-        drawer.querySelector('#drawerCloseBtn')?.addEventListener('click', closeDrawer);
-
-        drawer.querySelector('#timerToggleBtn')?.addEventListener('click', () => {
-          toggleTimer();
-        });
-
-        drawer.querySelector('#timerResetBtn')?.addEventListener('click', () => {
-          resetTimer();
-        });
+        drawer.querySelector('#drawerCloseBtn')?.addEventListener('click', handleUserClose);
 
         // Smooth scroll for nav pills inside drawer
         drawer.querySelectorAll('.drawer-nav-pill').forEach(pill => {
@@ -3401,6 +3233,30 @@
             }
           });
         });
+
+        // Swipe-to-dismiss gesture on mobile (yandan çekerek kapatma)
+        let touchStartX = 0;
+        let touchStartY = 0;
+        let touchCurrentX = 0;
+
+        drawer.ontouchstart = (e) => {
+          touchStartX = e.touches[0].clientX;
+          touchStartY = e.touches[0].clientY;
+          touchCurrentX = touchStartX;
+        };
+
+        drawer.ontouchmove = (e) => {
+          touchCurrentX = e.touches[0].clientX;
+        };
+
+        drawer.ontouchend = (e) => {
+          const deltaX = touchCurrentX - touchStartX;
+          const deltaY = Math.abs((e.changedTouches[0]?.clientY || touchStartY) - touchStartY);
+          // If swiped right at least 70px and horizontal movement is dominant
+          if (deltaX > 70 && deltaX > deltaY) {
+            handleUserClose();
+          }
+        };
       }
 
       function bindShellEvents() {
@@ -3429,7 +3285,7 @@
               const selectedId = state.selectedChemical?.id;
               renderShell();
               if (drawerWasOpen && selectedId) {
-                openDrawer(selectedId);
+                openDrawer(selectedId, false);
               }
             }
           });
@@ -3483,7 +3339,7 @@
             const card = e.target.closest('.chemical-card');
             if (card) {
               const chemId = card.dataset.chemicalId;
-              openDrawer(chemId);
+              openDrawer(chemId, true);
             }
           });
           // Keyboard Enter / Space support for accessibility
@@ -3493,28 +3349,31 @@
               if (card) {
                 e.preventDefault();
                 const chemId = card.dataset.chemicalId;
-                openDrawer(chemId);
+                openDrawer(chemId, true);
               }
             }
           });
         }
 
         // Backdrop click closes drawer
-        document.getElementById('drawerBackdrop')?.addEventListener('click', closeDrawer);
+        document.getElementById('drawerBackdrop')?.addEventListener('click', handleUserClose);
       }
 
       // Keyboard Esc to close drawer
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') closeDrawer();
+        if (e.key === 'Escape') handleUserClose();
       });
 
-      // Window Hash change listener (deep-linking)
-      window.addEventListener('hashchange', () => {
+      // Phone Back Button & Gesture (popstate handles phone back navigation cleanly)
+      window.addEventListener('popstate', () => {
         const hash = window.location.hash.replace('#', '');
+        const drawer = document.getElementById('detailDrawer');
+        const isDrawerOpen = drawer && drawer.classList.contains('open');
+
         if (hash) {
-          openDrawer(hash);
-        } else {
-          closeDrawer();
+          openDrawer(hash, false);
+        } else if (isDrawerOpen) {
+          closeDrawer(false);
         }
       });
 
@@ -3540,7 +3399,7 @@
         // Check initial hash for deep link
         const initialHash = window.location.hash.replace('#', '');
         if (initialHash) {
-          openDrawer(initialHash);
+          openDrawer(initialHash, false);
         }
       }
 
