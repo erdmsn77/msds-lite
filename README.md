@@ -40,7 +40,7 @@ Bir kayıt değiştirildiğinde iki kaynak aynı anda güncellenmelidir. Veri ş
 ## PWA Dosyaları
 
 - `manifest.json`: Uygulama adı, tema ve ikon tanımları
-- `sw.js`: `msds-lite-v1.1.0-carbon-drawer` cache sürümü ve offline fallback
+- `sw.js`: `msds-lite-v1.1.1-language-emergency-fix` cache sürümü ve offline fallback
 - `icons/`: any ve maskable SVG ikonları
 
 ## Güvenlik ve İSG Notu

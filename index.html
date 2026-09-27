@@ -460,8 +460,8 @@
       const fallback = window.__fallbackChemicals || [];
       const app = document.getElementById('carbonApp');
       const translations = {
-        tr: { lang: 'Türkçe', other: 'English', subtitle: 'Kompozit atölyesi için saha güvenliği', ready: 'Çevrimdışı hazır', emergency: 'Acil erişim', eye: 'Göz teması', skin: 'Cilt teması', inhalation: 'Solunum', timer: 'Yıkama sayacı', chemicalSelect: 'Kimyasal envanteri', records: 'kayıt', details: 'Detay', summary: 'Özet', ppe: 'KKD', firstAid: 'İlk yardım', source: 'Kaynak', category: 'Kategori', flash: 'Parlama noktası', wash: 'Acil yıkama', mask: 'Maske', eyeProtection: 'Göz koruması', gloves: 'Eldiven uyumluluğu', suitable: 'Uygun', unsuitable: 'Uygun değil', warning: 'Uyarı', start: 'Sayacı başlat', stop: 'Sayacı durdur', reset: 'Sıfırla', sourceStatus: 'Doğrulama', verified: 'Doğrulandı', pending: 'SDS bekleniyor', sourceNote: 'Bu kayıt üretici SDS’inin yerine geçmez.', close: 'Kapat' },
-        en: { lang: 'English', other: 'Türkçe', subtitle: 'Field safety for composite workshops', ready: 'Offline ready', emergency: 'Emergency access', eye: 'Eye contact', skin: 'Skin contact', inhalation: 'Inhalation', timer: 'Rinse timer', chemicalSelect: 'Chemical inventory', records: 'records', details: 'Details', summary: 'Summary', ppe: 'PPE', firstAid: 'First aid', source: 'Source', category: 'Category', flash: 'Flash point', wash: 'Emergency rinse', mask: 'Respirator', eyeProtection: 'Eye protection', gloves: 'Glove compatibility', suitable: 'Suitable', unsuitable: 'Not suitable', warning: 'Warning', start: 'Start timer', stop: 'Pause timer', reset: 'Reset', sourceStatus: 'Verification', verified: 'Verified', pending: 'SDS pending', sourceNote: 'This record does not replace the manufacturer SDS.', close: 'Close' }
+        tr: { lang: 'Türkçe', other: 'English', subtitle: 'Kompozit atölyesi için saha güvenliği', ready: 'Çevrimdışı hazır', emergency: 'Acil erişim', eye: 'Göz teması', skin: 'Cilt teması', inhalation: 'Solunum', timer: 'Yıkama sayacı', chemicalSelect: 'Kimyasal envanteri', records: 'kayıt', details: 'Detay', summary: 'Özet', ppe: 'KKD', firstAid: 'İlk yardım', source: 'Kaynak', category: 'Kategori', flash: 'Parlama noktası', wash: 'Acil yıkama', mask: 'Maske', eyeProtection: 'Göz koruması', gloves: 'Eldiven uyumluluğu', suitable: 'Uygun', unsuitable: 'Uygun değil', warning: 'Uyarı', start: 'Sayacı başlat', stop: 'Sayacı durdur', reset: 'Sıfırla', sourceStatus: 'Doğrulama', verified: 'Doğrulandı', pending: 'SDS bekleniyor', sourceNote: 'Bu kayıt üretici SDS’inin yerine geçmez.', close: 'Kapat', chooseChemical: 'Önce bir kimyasal seçin', emergencyHint: 'Kimyasal seçmeden genel bir kart açılmaz; doğru ilk yardım adımı ürüne göre değişir.' },
+        en: { lang: 'English', other: 'Türkçe', subtitle: 'Field safety for composite workshops', ready: 'Offline ready', emergency: 'Emergency access', eye: 'Eye contact', skin: 'Skin contact', inhalation: 'Inhalation', timer: 'Rinse timer', chemicalSelect: 'Chemical inventory', records: 'records', details: 'Details', summary: 'Summary', ppe: 'PPE', firstAid: 'First aid', source: 'Source', category: 'Category', flash: 'Flash point', wash: 'Emergency rinse', mask: 'Respirator', eyeProtection: 'Eye protection', gloves: 'Glove compatibility', suitable: 'Suitable', unsuitable: 'Not suitable', warning: 'Warning', start: 'Start timer', stop: 'Pause timer', reset: 'Reset', sourceStatus: 'Verification', verified: 'Verified', pending: 'SDS pending', sourceNote: 'This record does not replace the manufacturer SDS.', close: 'Close', chooseChemical: 'Select a chemical first', emergencyHint: 'A general card is not opened without a chemical; the correct first-aid action depends on the product.' }
       };
       const state = { chemicals: [], language: localStorage.getItem('msds-language') || 'tr', selected: null, tab: 'summary', timer: 0, timerId: null };
       const t = (key) => translations[state.language][key] || key;
@@ -475,8 +475,8 @@
       function renderShell() {
         app.innerHTML = `<div class="carbon-shell">
           <header class="carbon-topbar">
-            <div class="flex items-start gap-3"><div class="brand-mark" aria-hidden="true">+</div><div><div class="eyebrow">MSDS / FIELD SAFETY</div><h1 class="brand-title">MSDS-Lite</h1><p class="brand-subtitle">${t('subtitle')}</p></div></div>
-            <div class="language-switch" role="group" aria-label="Language"><button type="button" data-language="tr" class="${state.language === 'tr' ? 'active' : ''}" aria-pressed="${state.language === 'tr'}">🇹🇷 TR</button><button type="button" data-language="en" class="${state.language === 'en' ? 'active' : ''}" aria-pressed="${state.language === 'en'}">🇬🇧 EN</button></div>
+            <div class="flex items-start gap-3"><div class="brand-mark" aria-hidden="true"><svg width="20" height="22" viewBox="0 0 24 26" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 2 21 5v7c0 5.8-3.8 10-9 12C6.8 22 3 17.8 3 12V5l9-3Z"/><path d="M12 7v7M8.5 10.5h7"/></svg></div><div><div class="eyebrow">MSDS / FIELD SAFETY</div><h1 class="brand-title">MSDS-Lite</h1><p class="brand-subtitle">${t('subtitle')}</p></div></div>
+            <div class="language-switch" role="group" aria-label="Language"><button type="button" data-language="tr" class="${state.language === 'tr' ? 'active' : ''}" aria-pressed="${state.language === 'tr'}">TR</button><button type="button" data-language="en" class="${state.language === 'en' ? 'active' : ''}" aria-pressed="${state.language === 'en'}">EN</button></div>
           </header>
           <div class="status-line"><span class="status-dot"></span><span>${t('ready')}</span><span aria-hidden="true">•</span><span>${state.chemicals.length} ${t('records')}</span></div>
           <section aria-labelledby="emergency-title"><div class="section-label"><h2 id="emergency-title">${t('emergency')}</h2><span>01 / 04</span></div><div class="emergency-grid">
@@ -490,11 +490,35 @@
         </div>
         <div id="drawerBackdrop" class="drawer-backdrop"></div>
         <aside id="detailDrawer" class="drawer" aria-hidden="true" aria-labelledby="drawerTitle" role="dialog"></aside>`;
-        app.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => { state.language = button.dataset.language; localStorage.setItem('msds-language', state.language); renderShell(); if (state.selected) openDrawer(state.selected.id, state.tab); }));
-        app.querySelectorAll('[data-emergency]').forEach((button) => button.addEventListener('click', () => openDrawer(state.chemicals[0]?.id, button.dataset.emergency === 'timer' ? 'summary' : 'firstAid')));
+        app.querySelectorAll('[data-language]').forEach((button) => button.addEventListener('click', () => {
+          const drawerWasOpen = document.getElementById('detailDrawer')?.classList.contains('open');
+          const selectedId = state.selected?.id;
+          const selectedTab = state.tab;
+          state.language = button.dataset.language;
+          localStorage.setItem('msds-language', state.language);
+          renderShell();
+          if (drawerWasOpen && selectedId) openDrawer(selectedId, selectedTab);
+        }));
+        app.querySelectorAll('[data-emergency]').forEach((button) => button.addEventListener('click', () => {
+          const emergencyTab = button.dataset.emergency === 'timer' ? 'summary' : 'firstAid';
+          if (state.selected) openDrawer(state.selected.id, emergencyTab);
+          else openEmergencyPanel();
+        }));
       }
 
       function renderGhs(chemical) { return chemical.ghs_codes.map((code) => `<span class="ghs-chip">${escape(code)}</span>`).join(''); }
+      function openEmergencyPanel() {
+        const drawer = document.getElementById('detailDrawer');
+        state.selected = null;
+        clearInterval(state.timerId);
+        state.timerId = null;
+        drawer.innerHTML = `<div class="drawer-head"><div class="drawer-head-top"><div><div class="eyebrow">${t('emergency')}</div><h2 id="drawerTitle" class="drawer-title">${t('chooseChemical')}</h2></div><button type="button" class="drawer-close" id="drawerClose" aria-label="${t('close')}">×</button></div></div><div class="drawer-body"><div class="drawer-note">${t('emergencyHint')}</div><div class="info-block"><div class="info-label">${t('chemicalSelect')}</div><div class="info-value">${state.chemicals.length} ${t('records')}</div></div></div>`;
+        drawer.classList.add('open');
+        drawer.setAttribute('aria-hidden', 'false');
+        document.getElementById('drawerBackdrop').classList.add('open');
+        document.body.style.overflow = 'hidden';
+        drawer.querySelector('#drawerClose').addEventListener('click', closeDrawer);
+      }
       function renderDrawer(chemical) {
         const status = chemical.verification_status && chemical.verification_status.includes('bekleniyor') ? t('pending') : t('verified');
         const tab = (key, label) => `<button type="button" class="drawer-tab ${state.tab === key ? 'active' : ''}" data-tab="${key}">${label}</button>`;

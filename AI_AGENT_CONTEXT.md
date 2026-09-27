@@ -112,6 +112,7 @@ Kobalt naftenat kaydında MEKP/peroksitlerle doğrudan temas veya aynı kapta ka
 - Kompakt kimyasal envanteri
 - Sağdan açılan detay drawer'ı
 - TR/EN dil geçişi ve karbon/industrial görsel tema
+- Dil değişimi kapalı drawer'ı yeniden açmaz; acil erişim seçili kimyasal olmadan MEK-P varsaymaz.
 - Risk seviyesine göre renkli badge
 - GHS kodlarının piktogram benzeri gösterimi
 - Parlama noktası ve acil yıkama süresi
