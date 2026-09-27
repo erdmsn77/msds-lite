@@ -146,25 +146,34 @@
       gap: 12px;
     }
 
-    /* Category Filter Grid */
+    /* Category Filter Ribbon */
     .category-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 8px;
+      display: flex;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      gap: 10px;
+      padding-bottom: 4px;
+      scrollbar-width: none; /* Firefox */
+      -ms-overflow-style: none; /* IE/Edge */
+      -webkit-overflow-scrolling: touch;
+    }
+    .category-grid::-webkit-scrollbar {
+      display: none;
     }
     .category-card {
       display: flex;
-      flex-direction: column;
+      flex-direction: row;
       align-items: center;
-      justify-content: center;
-      gap: 5px;
-      padding: 14px 6px 10px;
+      gap: 8px;
+      padding: 10px 16px;
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
-      border-radius: 12px;
+      border-radius: 20px; /* Pill shape */
       cursor: pointer;
       user-select: none;
       touch-action: manipulation;
+      white-space: nowrap;
+      flex-shrink: 0;
       transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.1s ease;
     }
     .category-card:hover {
@@ -180,28 +189,26 @@
       box-shadow: 0 0 0 1px rgba(255, 120, 40, 0.15), 0 4px 12px rgba(255, 120, 40, 0.08);
     }
     .category-card-icon {
-      font-size: 22px;
+      font-size: 16px;
       line-height: 1;
     }
     .category-card-label {
-      font-size: 10px;
+      font-size: 12px;
       font-weight: 750;
       text-transform: uppercase;
       letter-spacing: 0.04em;
       color: var(--text-muted);
-      text-align: center;
-      line-height: 1.2;
     }
     .category-card.active .category-card-label {
       color: var(--marine-orange);
     }
     .category-card-count {
-      font-size: 9px;
+      font-size: 10px;
       font-weight: 700;
       color: var(--text-dim);
       background: rgba(255, 255, 255, 0.05);
-      padding: 1px 6px;
-      border-radius: 4px;
+      padding: 2px 6px;
+      border-radius: 8px;
     }
     .category-card.active .category-card-count {
       color: var(--marine-orange);
@@ -846,8 +853,8 @@
       .marine-shell { padding: 12px 12px 48px; }
       .brand-title { font-size: 19px; }
       .brand-subtitle { font-size: 11px; }
-      .category-grid { gap: 6px; }
-      .category-card { padding: 10px 4px 8px; }
+      .category-grid { gap: 8px; }
+      .category-card { padding: 8px 14px; }
       .category-card-icon { font-size: 18px; }
       .timer-clock { font-size: 32px; }
     }
@@ -1391,13 +1398,13 @@
 
       const CATEGORIES = {
         all: { tr: 'Tümü', en: 'All', icon: '📋' },
-        peroksit: { tr: 'Peroksit', en: 'Peroxide', icon: '💥' },
-        recine: { tr: 'Reçine', en: 'Resin', icon: '🧪' },
-        solvent: { tr: 'Solvent', en: 'Solvent', icon: '💧' },
-        hizlandirici: { tr: 'Hızlandırıcı', en: 'Promoter', icon: '⚡' },
-        sertlestirici: { tr: 'Sertleştirici', en: 'Hardener', icon: '🔗' },
-        toz: { tr: 'Toz & Elyaf', en: 'Dust & Fiber', icon: '🌫️' },
-        ayirici: { tr: 'Kalıp Ayırıcı', en: 'Release Agent', icon: '🛡️' }
+        peroksit: { tr: 'Peroksit', en: 'Peroxide', icon: '' },
+        recine: { tr: 'Reçine', en: 'Resin', icon: '' },
+        solvent: { tr: 'Solvent', en: 'Solvent', icon: '' },
+        hizlandirici: { tr: 'Hızlandırıcı', en: 'Promoter', icon: '' },
+        sertlestirici: { tr: 'Sertleştirici', en: 'Hardener', icon: '' },
+        toz: { tr: 'Toz & Elyaf', en: 'Dust & Fiber', icon: '' },
+        ayirici: { tr: 'Kalıp Ayırıcı', en: 'Release Agent', icon: '' }
       };
 
       const GHS_METADATA = {
@@ -1639,8 +1646,9 @@
           const count = catKey === 'all' 
             ? totalCount 
             : state.chemicals.filter(c => c.category === catKey).length;
+          const iconHtml = labelObj.icon ? `<span class="category-card-icon">${labelObj.icon}</span>` : '';
           return `<button type="button" class="category-card ${isSelected ? 'active' : ''}" data-cat="${catKey}">
-            <span class="category-card-icon">${labelObj.icon}</span>
+            ${iconHtml}
             <span class="category-card-label">${labelObj[state.language]}</span>
             <span class="category-card-count">${count}</span>
           </button>`;
