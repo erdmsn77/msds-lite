@@ -1,332 +1,310 @@
 [
   {
     "id": "mek-p",
-    "name": "MEK-P",
-    "chemical_name": "Metil Etil Keton Peroksit",
+    "name": { "tr": "MEK-P", "en": "MEK-P", "de": "MEK-P" },
+    "chemical_name": { "tr": "Metil Etil Keton Peroksit", "en": "Methyl Ethyl Ketone Peroxide", "de": "Methylethylketonperoxid" },
     "category": "peroksit",
     "risk_level": "KRİTİK",
-    "source": "Ürün SDS'i gerekli; genel MEK-P tehlike profili",
+    "source": { "tr": "Ürün SDS'i gerekli; genel MEK-P tehlike profili", "en": "Product SDS required; general MEK-P hazard profile", "de": "Produkt-SDB erforderlich; allgemeines MEK-P-Gefahrenprofil" },
     "source_url": "",
     "verified_at": "2026-09-27",
-    "verification_status": "Ürün SDS'i bekleniyor",
-    "verification_note": "Üretici ve ürün konsantrasyonu belirtilmeden parlama noktası ve tam GHS sınıflandırması kesinleştirilemez.",
-    "ghs_codes": ["GHS02", "GHS05", "GHS06"],
-    "flash_point": "Yaklaşık 50 °C (ürün formülasyonuna göre değişebilir)",
+    "verification_status": { "tr": "Ürün SDS'i bekleniyor", "en": "Pending Product SDS", "de": "Produkt-SDB ausstehend" },
+    "verification_note": { "tr": "Üretici ve ürün konsantrasyonu belirtilmeden parlama noktası ve tam GHS sınıflandırması kesinleştirilemez.", "en": "Flash point and full GHS classification cannot be finalized without manufacturer and product concentration.", "de": "Flammpunkt und vollständige GHS-Einstufung können ohne Hersteller- und Produktkonzentration nicht abgeschlossen werden." },
+    "ghs_codes": [ "GHS02", "GHS05", "GHS06" ],
+    "flash_point": { "tr": "Yaklaşık 50 °C (ürün formülasyonuna göre değişebilir)", "en": "Approx. 50 °C (varies by formulation)", "de": "Ca. 50 °C (variiert je nach Formulierung)" },
     "ppe": {
-      "mask": "A1/A2 organik gaz filtresi",
-      "eye": "Sızdırmaz kimyasal gözlük",
+      "mask": { "tr": "A1/A2 organik gaz filtresi", "en": "A1/A2 organic gas filter", "de": "A1/A2 organischer Gasfilter" },
+      "eye": { "tr": "Sızdırmaz kimyasal gözlük", "en": "Sealed chemical goggles", "de": "Dicht schließende Chemikalienschutzbrille" },
       "gloves": {
-        "latex": false,
-        "nitrile": true,
-        "butyl": true,
-        "warning": "Kalın nitril veya bütil kullanın. Lateks eldiven kullanmayın."
+        "latex": false, "nitrile": true, "butyl": true,
+        "warning": { "tr": "Kalın nitril veya bütil kullanın. Lateks eldiven kullanmayın.", "en": "Use thick nitrile or butyl. Do not use latex gloves.", "de": "Dicke Nitril- oder Butylhandschuhe verwenden. Keine Latexhandschuhe." }
       }
     },
     "emergency_timer_min": 15,
     "first_aid": {
-      "eye": "Göz kapaklarını açık tutarak en az 15 dakika bol suyla yıkayın; gözü ovalamayın ve derhal acil servise başvurun.",
-      "skin": "Bulaşan kıyafetleri çıkarın ve cildi bol suyla yıkayın. Aseton veya başka çözücü sürmeyin.",
-      "inhalation": "Kişiyi temiz havaya çıkarın. Solunum güçlüğü varsa acil tıbbi yardım çağırın."
+      "eye": { "tr": "Göz kapaklarını açık tutarak en az 15 dakika bol suyla yıkayın; gözü ovalamayın ve derhal acil servise başvurun.", "en": "Rinse with plenty of water for at least 15 minutes holding eyelids open; do not rub eye and seek emergency medical attention.", "de": "Mindestens 15 Minuten lang mit viel Wasser spülen und Augenlider offen halten; Auge nicht reiben und sofort den Notarzt aufsuchen." },
+      "skin": { "tr": "Bulaşan kıyafetleri çıkarın ve cildi bol suyla yıkayın. Aseton veya başka çözücü sürmeyin.", "en": "Remove contaminated clothing and wash skin with plenty of water. Do not apply acetone or other solvents.", "de": "Kontaminierte Kleidung ausziehen und Haut mit viel Wasser waschen. Kein Aceton oder andere Lösungsmittel auftragen." },
+      "inhalation": { "tr": "Kişiyi temiz havaya çıkarın. Solunum güçlüğü varsa acil tıbbi yardım çağırın.", "en": "Move person to fresh air. If breathing is difficult, call for emergency medical help.", "de": "Person an die frische Luft bringen. Bei Atemnot sofort medizinische Hilfe rufen." }
     }
   },
   {
     "id": "polyester-resin",
-    "name": "Ortoftalik Polyester Reçine",
-    "chemical_name": "Stiren içeren doymamış polyester reçine",
+    "name": { "tr": "Ortoftalik Polyester Reçine", "en": "Orthophthalic Polyester Resin", "de": "Orthophthalsäure-Polyesterharz" },
+    "chemical_name": { "tr": "Stiren içeren doymamış polyester reçine", "en": "Unsaturated polyester resin containing styrene", "de": "Styrolhaltiges ungesättigtes Polyesterharz" },
     "category": "recine",
     "risk_level": "YÜKSEK",
-    "source": "Ürün SDS'i gerekli; stiren bazlı reçine genel profili",
+    "source": { "tr": "Ürün SDS'i gerekli; stiren bazlı reçine genel profili", "en": "Product SDS required; styrene-based resin general profile", "de": "Produkt-SDB erforderlich; styrolbasiertes Harz allgemeines Profil" },
     "source_url": "",
     "verified_at": "2026-09-27",
-    "verification_status": "Ürün SDS'i bekleniyor",
-    "verification_note": "Polyester reçinenin stiren oranı ve ürün katkıları üreticiye göre değişir; kart ürün SDS'inin yerine geçmez.",
-    "ghs_codes": ["GHS02", "GHS07"],
-    "flash_point": "Yaklaşık 31 °C",
+    "verification_status": { "tr": "Ürün SDS'i bekleniyor", "en": "Pending Product SDS", "de": "Produkt-SDB ausstehend" },
+    "verification_note": { "tr": "Polyester reçinenin stiren oranı ve ürün katkıları üreticiye göre değişir; kart ürün SDS'inin yerine geçmez.", "en": "Styrene content and additives vary by manufacturer; this card does not replace the product SDS.", "de": "Styrolgehalt und Additive variieren je nach Hersteller; diese Karte ersetzt nicht das Produkt-SDB." },
+    "ghs_codes": [ "GHS02", "GHS07" ],
+    "flash_point": { "tr": "Yaklaşık 31 °C", "en": "Approx. 31 °C", "de": "Ca. 31 °C" },
     "ppe": {
-      "mask": "A2 organik buhar filtresi",
-      "eye": "Koruyucu kimyasal gözlük",
+      "mask": { "tr": "A2 organik buhar filtresi", "en": "A2 organic vapor filter", "de": "A2 organischer Dampffilter" },
+      "eye": { "tr": "Koruyucu kimyasal gözlük", "en": "Protective chemical goggles", "de": "Chemikalienschutzbrille" },
       "gloves": {
-        "latex": false,
-        "nitrile": true,
-        "butyl": true,
-        "warning": "Nitril veya bütil eldiven kullanın; kirlenen eldiveni hemen değiştirin."
+        "latex": false, "nitrile": true, "butyl": true,
+        "warning": { "tr": "Nitril veya bütil eldiven kullanın; kirlenen eldiveni hemen değiştirin.", "en": "Use nitrile or butyl gloves; replace contaminated gloves immediately.", "de": "Nitril- oder Butylhandschuhe verwenden; kontaminierte Handschuhe sofort ersetzen." }
       }
     },
     "emergency_timer_min": 15,
     "first_aid": {
-      "eye": "Gözleri en az 15 dakika bol suyla yıkayın ve tıbbi yardım alın. Gözleri ovalamayın.",
-      "skin": "Cildi sabun ve bol suyla yıkayın. Reçineyi çıkarmak için aseton sürmeyin.",
-      "inhalation": "Kişiyi temiz havaya çıkarın, dinlendirin ve belirtiler sürerse tıbbi yardım alın."
+      "eye": { "tr": "Gözleri en az 15 dakika bol suyla yıkayın ve tıbbi yardım alın. Gözleri ovalamayın.", "en": "Wash eyes with plenty of water for at least 15 minutes and seek medical help. Do not rub eyes.", "de": "Augen mindestens 15 Minuten lang mit viel Wasser spülen und ärztliche Hilfe hinzuziehen. Augen nicht reiben." },
+      "skin": { "tr": "Cildi sabun ve bol suyla yıkayın. Reçineyi çıkarmak için aseton sürmeyin.", "en": "Wash skin with soap and plenty of water. Do not apply acetone to remove resin.", "de": "Haut mit Seife und viel Wasser waschen. Kein Aceton auftragen, um Harz zu entfernen." },
+      "inhalation": { "tr": "Kişiyi temiz havaya çıkarın, dinlendirin ve belirtiler sürerse tıbbi yardım alın.", "en": "Move person to fresh air, let them rest, and seek medical help if symptoms persist.", "de": "Person an die frische Luft bringen, ruhen lassen und bei anhaltenden Beschwerden ärztliche Hilfe hinzuziehen." }
     }
   },
   {
     "id": "technical-acetone",
-    "name": "Teknik Aseton",
-    "chemical_name": "Propan-2-on (Aseton)",
+    "name": { "tr": "Teknik Aseton", "en": "Technical Acetone", "de": "Technisches Aceton" },
+    "chemical_name": { "tr": "Propan-2-on (Aseton)", "en": "Propan-2-one (Acetone)", "de": "Propan-2-on (Aceton)" },
     "category": "solvent",
     "risk_level": "ORTA",
-    "source": "NIOSH Pocket Guide to Chemical Hazards - Acetone",
+    "source": { "tr": "NIOSH Pocket Guide to Chemical Hazards - Acetone", "en": "NIOSH Pocket Guide to Chemical Hazards - Acetone", "de": "NIOSH Pocket Guide to Chemical Hazards - Aceton" },
     "source_url": "https://www.cdc.gov/niosh/npg/npgd0004.html",
     "verified_at": "2026-09-27",
-    "verification_status": "Kurumsal kaynak doğrulandı",
-    "verification_note": "NIOSH kaynağı saf asetona aittir; kullanılan ticari ürünün SDS'i ayrıca kontrol edilmelidir.",
-    "ghs_codes": ["GHS02", "GHS07"],
-    "flash_point": "-17 °C",
+    "verification_status": { "tr": "Kurumsal kaynak doğrulandı", "en": "Institutional source verified", "de": "Institutionelle Quelle verifiziert" },
+    "verification_note": { "tr": "NIOSH kaynağı saf asetona aittir; kullanılan ticari ürünün SDS'i ayrıca kontrol edilmelidir.", "en": "NIOSH source applies to pure acetone; commercial product SDS should also be checked.", "de": "Die NIOSH-Quelle gilt für reines Aceton; das SDB des verwendeten Handelsprodukts sollte ebenfalls überprüft werden." },
+    "ghs_codes": [ "GHS02", "GHS07" ],
+    "flash_point": { "tr": "-17 °C", "en": "-17 °C", "de": "-17 °C" },
     "ppe": {
-      "mask": "Organik buhar filtresi",
-      "eye": "Kimyasal sıçrama gözlüğü",
+      "mask": { "tr": "Organik buhar filtresi", "en": "Organic vapor filter", "de": "Organischer Dampffilter" },
+      "eye": { "tr": "Kimyasal sıçrama gözlüğü", "en": "Chemical splash goggles", "de": "Chemikalienspritzschutzbrille" },
       "gloves": {
-        "latex": false,
-        "nitrile": true,
-        "butyl": true,
-        "warning": "Bütil veya çift kat nitril kullanın; ince nitril eldiven asetonda hızla zayıflayabilir."
+        "latex": false, "nitrile": true, "butyl": true,
+        "warning": { "tr": "Bütil veya çift kat nitril kullanın; ince nitril eldiven asetonda hızla zayıflayabilir.", "en": "Use butyl or double nitrile; thin nitrile gloves can quickly degrade in acetone.", "de": "Butyl oder doppeltes Nitril verwenden; dünne Nitrilhandschuhe können in Aceton schnell abbauen." }
       }
     },
     "emergency_timer_min": 10,
     "first_aid": {
-      "eye": "Gözleri en az 10 dakika bol suyla yıkayın ve tahriş devam ederse tıbbi yardım alın. Gözleri ovalamayın.",
-      "skin": "Cildi bol suyla yıkayın; ardından nemlendirici veya bariyer kremi kullanın. Temizlemek için cilde tekrar aseton sürmeyin.",
-      "inhalation": "Kişiyi temiz havaya çıkarın. Baş dönmesi veya rahatsızlık sürerse tıbbi yardım alın."
+      "eye": { "tr": "Gözleri en az 10 dakika bol suyla yıkayın ve tahriş devam ederse tıbbi yardım alın. Gözleri ovalamayın.", "en": "Wash eyes with plenty of water for at least 10 minutes and seek medical help if irritation persists. Do not rub eyes.", "de": "Augen mindestens 10 Minuten lang mit viel Wasser spülen und bei anhaltender Reizung ärztliche Hilfe hinzuziehen. Augen nicht reiben." },
+      "skin": { "tr": "Cildi bol suyla yıkayın; ardından nemlendirici veya bariyer kremi kullanın. Temizlemek için cilde tekrar aseton sürmeyin.", "en": "Wash skin with plenty of water; then use moisturizer or barrier cream. Do not apply acetone to skin again to clean.", "de": "Haut mit viel Wasser waschen; danach Feuchtigkeitscreme oder Barrierecreme verwenden. Zur Reinigung kein Aceton mehr auf die Haut auftragen." },
+      "inhalation": { "tr": "Kişiyi temiz havaya çıkarın. Baş dönmesi veya rahatsızlık sürerse tıbbi yardım alın.", "en": "Move person to fresh air. If dizziness or discomfort persists, seek medical help.", "de": "Person an die frische Luft bringen. Bei anhaltendem Schwindel oder Unwohlsein ärztliche Hilfe hinzuziehen." }
     }
   },
   {
     "id": "carbon-fiber-dust",
-    "name": "Karbon Elyaf Tozu",
-    "chemical_name": "Karbon fiber partikülleri",
+    "name": { "tr": "Karbon Elyaf Tozu", "en": "Carbon Fiber Dust", "de": "Kohlefaserstaub" },
+    "chemical_name": { "tr": "Karbon fiber partikülleri", "en": "Carbon fiber particles", "de": "Kohlefaserpartikel" },
     "category": "toz",
     "risk_level": "YÜKSEK",
-    "source": "Ürün SDS'i ve elyaf üreticisi güvenlik dokümanı gerekli",
+    "source": { "tr": "Ürün SDS'i ve elyaf üreticisi güvenlik dokümanı gerekli", "en": "Product SDS and fiber manufacturer safety document required", "de": "Produkt-SDB und Sicherheitsdatenblatt des Faserherstellers erforderlich" },
     "source_url": "",
     "verified_at": "2026-09-27",
-    "verification_status": "Ürün SDS'i bekleniyor",
-    "verification_note": "Partikül boyutu, reçine kalıntısı ve çalışma yöntemi maruziyet profilini değiştirir.",
-    "ghs_codes": ["GHS07"],
-    "flash_point": "Uygulanamaz; toz bulutu ve elektriksel iletkenlik riski",
+    "verification_status": { "tr": "Ürün SDS'i bekleniyor", "en": "Pending Product SDS", "de": "Produkt-SDB ausstehend" },
+    "verification_note": { "tr": "Partikül boyutu, reçine kalıntısı ve çalışma yöntemi maruziyet profilini değiştirir.", "en": "Particle size, resin residue, and work method alter the exposure profile.", "de": "Partikelgröße, Harzrückstände und Arbeitsmethode verändern das Expositionsprofil." },
+    "ghs_codes": [ "GHS07" ],
+    "flash_point": { "tr": "Uygulanamaz; toz bulutu ve elektriksel iletkenlik riski", "en": "Not applicable; dust cloud and electrical conductivity risk", "de": "Nicht anwendbar; Gefahr durch Staubwolke und elektrische Leitfähigkeit" },
     "ppe": {
-      "mask": "P3/FFP3 toz maskesi",
-      "eye": "Toz geçirmez koruyucu gözlük",
+      "mask": { "tr": "P3/FFP3 toz maskesi", "en": "P3/FFP3 dust mask", "de": "P3/FFP3 Staubmaske" },
+      "eye": { "tr": "Toz geçirmez koruyucu gözlük", "en": "Dust-proof protective goggles", "de": "Staubdichte Schutzbrille" },
       "gloves": {
-        "latex": true,
-        "nitrile": true,
-        "butyl": false,
-        "warning": "Montaj eldiveni veya nitril kullanın; çalışma alanını süpürmek yerine uygun emiş sistemi kullanın."
+        "latex": true, "nitrile": true, "butyl": false,
+        "warning": { "tr": "Montaj eldiveni veya nitril kullanın; çalışma alanını süpürmek yerine uygun emiş sistemi kullanın.", "en": "Use assembly gloves or nitrile; use proper suction instead of sweeping the work area.", "de": "Montagehandschuhe oder Nitril verwenden; geeignete Absaugung anstelle des Fegens des Arbeitsbereichs verwenden." }
       }
     },
     "emergency_timer_min": 15,
     "first_aid": {
-      "eye": "Gözü ovalamayın. Göz kapaklarını açık tutarak soğuk ve temiz suyla yıkayın; tahriş sürerse tıbbi yardım alın.",
-      "skin": "Soğuk suyla yıkayın. Lifleri cilde bastırmayın ve sıcak su kullanmayın.",
-      "inhalation": "Kişiyi tozlu ortamdan temiz havaya çıkarın. Öksürük veya nefes darlığı sürerse tıbbi yardım alın."
+      "eye": { "tr": "Gözü ovalamayın. Göz kapaklarını açık tutarak soğuk ve temiz suyla yıkayın; tahriş sürerse tıbbi yardım alın.", "en": "Do not rub eyes. Wash with clean, cold water holding eyelids open; if irritation persists, seek medical help.", "de": "Auge nicht reiben. Mit sauberem, kaltem Wasser spülen und Augenlider offen halten; bei anhaltender Reizung ärztliche Hilfe hinzuziehen." },
+      "skin": { "tr": "Soğuk suyla yıkayın. Lifleri cilde bastırmayın ve sıcak su kullanmayın.", "en": "Wash with cold water. Do not press fibers into skin and do not use hot water.", "de": "Mit kaltem Wasser waschen. Fasern nicht in die Haut drücken und kein heißes Wasser verwenden." },
+      "inhalation": { "tr": "Kişiyi tozlu ortamdan temiz havaya çıkarın. Öksürük veya nefes darlığı sürerse tıbbi yardım alın.", "en": "Move person from dusty environment to fresh air. Seek medical help if coughing or shortness of breath persists.", "de": "Person aus der staubigen Umgebung an die frische Luft bringen. Bei anhaltendem Husten oder Atemnot ärztliche Hilfe hinzuziehen." }
     }
   },
   {
     "id": "cobalt-naphthenate",
-    "name": "KOBALT NAFTENAT",
-    "chemical_name": "Kobalt naftenat (CAS 61789-51-3)",
+    "name": { "tr": "KOBALT NAFTENAT", "en": "COBALT NAPHTHENATE", "de": "KOBALTNAPHTHENAT" },
+    "chemical_name": { "tr": "Kobalt naftenat (CAS 61789-51-3)", "en": "Cobalt naphthenate (CAS 61789-51-3)", "de": "Kobaltnaphthenat (CAS 61789-51-3)" },
     "category": "hizlandirici",
     "risk_level": "KRİTİK",
-    "source": "Üretici SDS'i gerekli; CAS 61789-51-3 genel profili",
+    "source": { "tr": "Üretici SDS'i gerekli; CAS 61789-51-3 genel profili", "en": "Manufacturer SDS required; CAS 61789-51-3 general profile", "de": "Hersteller-SDB erforderlich; CAS 61789-51-3 allgemeines Profil" },
     "source_url": "",
     "verified_at": "2026-09-27",
-    "verification_status": "Ürün SDS'i bekleniyor",
-    "verification_note": "Kobalt naftenat ürün konsantrasyonu ve solvent taşıyıcısına göre sınıflandırma değişebilir.",
-    "ghs_codes": ["GHS02", "GHS05", "GHS07"],
-    "flash_point": "48.89 °C",
+    "verification_status": { "tr": "Ürün SDS'i bekleniyor", "en": "Pending Product SDS", "de": "Produkt-SDB ausstehend" },
+    "verification_note": { "tr": "Kobalt naftenat ürün konsantrasyonu ve solvent taşıyıcısına göre sınıflandırma değişebilir.", "en": "Classification may change depending on cobalt naphthenate product concentration and solvent carrier.", "de": "Die Einstufung kann je nach Produktkonzentration von Kobaltnaphthenat und Lösungsmittelträger abweichen." },
+    "ghs_codes": [ "GHS02", "GHS05", "GHS07" ],
+    "flash_point": { "tr": "48.89 °C", "en": "48.89 °C", "de": "48.89 °C" },
     "ppe": {
-      "mask": "Ürün SDS'ine göre uygun organik buhar filtresi",
-      "eye": "Sızdırmaz kimyasal gözlük ve yüz siperi",
+      "mask": { "tr": "Ürün SDS'ine göre uygun organik buhar filtresi", "en": "Suitable organic vapor filter according to product SDS", "de": "Geeigneter organischer Dampffilter gemäß Produkt-SDB" },
+      "eye": { "tr": "Sızdırmaz kimyasal gözlük ve yüz siperi", "en": "Sealed chemical goggles and face shield", "de": "Dicht schließende Chemikalienschutzbrille und Gesichtsschutz" },
       "gloves": {
-        "latex": false,
-        "nitrile": true,
-        "butyl": true,
-        "warning": "Nitril/bütil eldiven kullanılmalı; MEKP veya diğer peroksit/hızlandırıcılarla ASLA aynı kapta veya doğrudan temas halinde karıştırılmamalı (yangın/ayrışma riski). MEKP/peroksitlerden ayrı depolanmalı."
+        "latex": false, "nitrile": true, "butyl": true,
+        "warning": { "tr": "Nitril/bütil eldiven kullanılmalı; MEKP veya diğer peroksit/hızlandırıcılarla ASLA aynı kapta veya doğrudan temas halinde karıştırılmamalı (yangın/ayrışma riski). MEKP/peroksitlerden ayrı depolanmalı.", "en": "Use nitrile/butyl gloves; NEVER mix in the same container or directly with MEK-P or other peroxides/accelerators (fire/decomposition risk). Must be stored separately from peroxides.", "de": "Nitril-/Butylhandschuhe verwenden; NIEMALS im selben Behälter oder direkt mit MEKP oder anderen Peroxiden/Beschleunigern mischen (Brand-/Zersetzungsgefahr). Muss getrennt von Peroxiden gelagert werden." }
       }
     },
     "emergency_timer_min": 15,
     "first_aid": {
-      "eye": "En az 15 dakika bol suyla yıkamaya devam edin. Gözü ovalamayın ve tıbbi yardım alın. MEKP/peroksitlerle temas veya karışma şüphesinde alanı boşaltın; ayrı depolama kuralını uygulayın.",
-      "skin": "Bol sabun ve suyla yıkayın, tahriş olursa doktora başvurun. MEKP/peroksitlerle karışmış ürüne çıplak elle temas etmeyin; bu maddeler ayrı depolanmalıdır.",
-      "inhalation": "Yutulursa aspirasyon tehlikesi vardır, kusturmayın, derhal tıbbi yardım alın. MEKP/peroksitlerle doğrudan temas veya karışım varsa yangın/ayrışma riski nedeniyle uzaklaşın ve acil yardım çağırın."
+      "eye": { "tr": "En az 15 dakika bol suyla yıkamaya devam edin. Gözü ovalamayın ve tıbbi yardım alın. MEKP/peroksitlerle temas veya karışma şüphesinde alanı boşaltın; ayrı depolama kuralını uygulayın.", "en": "Continue flushing with plenty of water for at least 15 minutes. Do not rub eyes and seek medical help. If mixed with peroxides, evacuate the area.", "de": "Mindestens 15 Minuten lang mit viel Wasser spülen. Auge nicht reiben und ärztliche Hilfe aufsuchen. Bei Verdacht auf Kontakt mit MEKP/Peroxiden den Bereich räumen." },
+      "skin": { "tr": "Bol sabun ve suyla yıkayın, tahriş olursa doktora başvurun. MEKP/peroksitlerle karışmış ürüne çıplak elle temas etmeyin; bu maddeler ayrı depolanmalıdır.", "en": "Wash with plenty of soap and water, seek medical advice if irritated. Do not touch peroxide-mixed product bare-handed.", "de": "Mit viel Seife und Wasser waschen, bei Reizung Arzt aufsuchen. Nicht mit bloßen Händen berühren, wenn es mit Peroxiden gemischt ist." },
+      "inhalation": { "tr": "Yutulursa aspirasyon tehlikesi vardır, kusturmayın, derhal tıbbi yardım alın. MEKP/peroksitlerle doğrudan temas veya karışım varsa yangın/ayrışma riski nedeniyle uzaklaşın ve acil yardım çağırın.", "en": "If swallowed, aspiration hazard; do not induce vomiting, seek medical help immediately. If mixed with peroxides, run away due to fire risk.", "de": "Beim Verschlucken Aspirationsgefahr, kein Erbrechen herbeiführen, sofort ärztliche Hilfe aufsuchen. Bei Mischung mit Peroxiden wegen Brandgefahr fliehen." }
     }
   },
   {
     "id": "epoxy-resin-dgeba",
-    "name": "EPOKSİ REÇİNE",
-    "chemical_name": "Bisfenol-A diglisidil eter (DGEBA), CAS 1675-54-3; ana bileşen, ürün formülasyonu farklı olabilir",
+    "name": { "tr": "EPOKSİ REÇİNE", "en": "EPOXY RESIN", "de": "EPOXIDHARZ" },
+    "chemical_name": { "tr": "Bisfenol-A diglisidil eter (DGEBA), CAS 1675-54-3; ana bileşen", "en": "Bisphenol-A diglycidyl ether (DGEBA), CAS 1675-54-3; main component", "de": "Bisphenol-A-Diglycidylether (DGEBA), CAS 1675-54-3; Hauptbestandteil" },
     "category": "recine",
     "risk_level": "YÜKSEK",
-    "source": "Ana bileşen profili; ürün SDS'i gerekli (DGEBA CAS 1675-54-3)",
+    "source": { "tr": "Ana bileşen profili; ürün SDS'i gerekli (DGEBA CAS 1675-54-3)", "en": "Main component profile; product SDS required (DGEBA CAS 1675-54-3)", "de": "Profil des Hauptbestandteils; Produkt-SDB erforderlich (DGEBA CAS 1675-54-3)" },
     "source_url": "",
     "verified_at": "2026-09-27",
-    "verification_status": "Ana bileşen doğrulandı; ürün bekleniyor",
-    "verification_note": "DGEBA bilgisi ürünün tam formülasyonunu, katkılarını veya gerçek parlama noktasını temsil etmez.",
-    "ghs_codes": ["GHS07"],
-    "flash_point": "Ürün SDS'i doğrulanmalı; ana bileşen verisi ürünün parlama noktasını temsil etmeyebilir",
+    "verification_status": { "tr": "Ana bileşen doğrulandı; ürün bekleniyor", "en": "Main component verified; product pending", "de": "Hauptbestandteil verifiziert; Produkt ausstehend" },
+    "verification_note": { "tr": "DGEBA bilgisi ürünün tam formülasyonunu, katkılarını veya gerçek parlama noktasını temsil etmez.", "en": "DGEBA info does not represent the product's full formulation, additives, or actual flash point.", "de": "DGEBA-Informationen repräsentieren nicht die vollständige Formulierung, Additive oder den tatsächlichen Flammpunkt des Produkts." },
+    "ghs_codes": [ "GHS07" ],
+    "flash_point": { "tr": "Ürün SDS'i doğrulanmalı; ana bileşen verisi ürünün parlama noktasını temsil etmeyebilir", "en": "Check product SDS; main component data may not represent product flash point", "de": "Produkt-SDB prüfen; Daten des Hauptbestandteils entsprechen möglicherweise nicht dem Flammpunkt des Produkts" },
     "ppe": {
-      "mask": "Ürün SDS'ine göre uygun organik buhar filtresi",
-      "eye": "Kimyasal sıçrama gözlüğü",
+      "mask": { "tr": "Ürün SDS'ine göre uygun organik buhar filtresi", "en": "Suitable organic vapor filter according to product SDS", "de": "Geeigneter organischer Dampffilter gemäß Produkt-SDB" },
+      "eye": { "tr": "Kimyasal sıçrama gözlüğü", "en": "Chemical splash goggles", "de": "Chemikalienspritzschutzbrille" },
       "gloves": {
-        "latex": false,
-        "nitrile": true,
-        "butyl": true,
-        "warning": "Cilt hassaslaştırıcı - tekrarlayan temas alerjik reaksiyona yol açabilir, nitril eldiven şart. Ürün SDS'i doğrulanmalı."
+        "latex": false, "nitrile": true, "butyl": true,
+        "warning": { "tr": "Cilt hassaslaştırıcı - tekrarlayan temas alerjik reaksiyona yol açabilir, nitril eldiven şart. Ürün SDS'i doğrulanmalı.", "en": "Skin sensitizer - repeated contact can cause allergic reaction, nitrile gloves required. Verify with SDS.", "de": "Hautsensibilisierend - wiederholter Kontakt kann allergische Reaktionen hervorrufen, Nitrilhandschuhe erforderlich. Mit SDB überprüfen." }
       }
     },
     "emergency_timer_min": 15,
     "first_aid": {
-      "eye": "Gözleri en az 15 dakika bol suyla yıkayın; tahriş veya görme değişikliği sürerse tıbbi yardım alın. Gözleri ovalamayın.",
-      "skin": "Cildi derhal sabun ve bol suyla yıkayın. Cilt hassaslaştırıcı olduğundan tekrarlayan temas alerjik reaksiyona yol açabilir; tahriş veya döküntüde doktora başvurun.",
-      "inhalation": "Kişiyi temiz havaya çıkarın. Rahatsızlık veya solunum belirtileri sürerse tıbbi yardım alın. Bu kayıt ana bileşen verisidir; tam ürün SDS'i doğrulanmalıdır."
+      "eye": { "tr": "Gözleri en az 15 dakika bol suyla yıkayın; tahriş veya görme değişikliği sürerse tıbbi yardım alın. Gözleri ovalamayın.", "en": "Wash eyes with plenty of water for at least 15 minutes; seek medical help if irritation persists. Do not rub eyes.", "de": "Augen mindestens 15 Minuten lang mit viel Wasser spülen; bei anhaltender Reizung ärztliche Hilfe hinzuziehen. Augen nicht reiben." },
+      "skin": { "tr": "Cildi derhal sabun ve bol suyla yıkayın. Cilt hassaslaştırıcı olduğundan tekrarlayan temas alerjik reaksiyona yol açabilir; tahriş veya döküntüde doktora başvurun.", "en": "Wash skin immediately with soap and plenty of water. Sensitizer; seek medical advice if rash or irritation develops.", "de": "Haut sofort mit Seife und viel Wasser waschen. Sensibilisierend; bei Ausschlag oder Reizung Arzt aufsuchen." },
+      "inhalation": { "tr": "Kişiyi temiz havaya çıkarın. Rahatsızlık veya solunum belirtileri sürerse tıbbi yardım alın. Bu kayıt ana bileşen verisidir; tam ürün SDS'i doğrulanmalıdır.", "en": "Move person to fresh air. Seek medical help if respiratory symptoms persist. This is main component data.", "de": "Person an die frische Luft bringen. Bei anhaltenden Atemwegsbeschwerden ärztliche Hilfe hinzuziehen. Dies sind Daten des Hauptbestandteils." }
     }
   },
   {
     "id": "epoxy-hardener-isophoronediamine",
-    "name": "EPOKSİ SERTLEŞTİRİCİ",
-    "chemical_name": "İzoforondiamin (IPDA), CAS 2855-13-2; ana bileşen, ürün formülasyonu farklı olabilir",
+    "name": { "tr": "EPOKSİ SERTLEŞTİRİCİ", "en": "EPOXY HARDENER", "de": "EPOXID-HÄRTER" },
+    "chemical_name": { "tr": "İzoforondiamin (IPDA), CAS 2855-13-2; ana bileşen", "en": "Isophoronediamine (IPDA), CAS 2855-13-2; main component", "de": "Isophorondiamin (IPDA), CAS 2855-13-2; Hauptbestandteil" },
     "category": "sertlestirici",
     "risk_level": "KRİTİK",
-    "source": "Ana bileşen profili; ürün SDS'i gerekli (IPDA CAS 2855-13-2)",
+    "source": { "tr": "Ana bileşen profili; ürün SDS'i gerekli (IPDA CAS 2855-13-2)", "en": "Main component profile; product SDS required (IPDA CAS 2855-13-2)", "de": "Profil des Hauptbestandteils; Produkt-SDB erforderlich (IPDA CAS 2855-13-2)" },
     "source_url": "",
     "verified_at": "2026-09-27",
-    "verification_status": "Ana bileşen doğrulandı; ürün bekleniyor",
-    "verification_note": "IPDA bilgisi ürünün tam sertleştirici formülasyonunu veya gerçek parlama noktasını temsil etmez.",
-    "ghs_codes": ["GHS05", "GHS07"],
-    "flash_point": "Ürün SDS'i doğrulanmalı; ana bileşen verisi ürünün parlama noktasını temsil etmeyebilir",
+    "verification_status": { "tr": "Ana bileşen doğrulandı; ürün bekleniyor", "en": "Main component verified; product pending", "de": "Hauptbestandteil verifiziert; Produkt ausstehend" },
+    "verification_note": { "tr": "IPDA bilgisi ürünün tam sertleştirici formülasyonunu veya gerçek parlama noktasını temsil etmez.", "en": "IPDA info does not represent the product's full hardener formulation or actual flash point.", "de": "IPDA-Informationen repräsentieren nicht die vollständige Härterformulierung oder den tatsächlichen Flammpunkt des Produkts." },
+    "ghs_codes": [ "GHS05", "GHS07" ],
+    "flash_point": { "tr": "Ürün SDS'i doğrulanmalı", "en": "Check product SDS", "de": "Produkt-SDB prüfen" },
     "ppe": {
-      "mask": "Ürün SDS'ine göre uygun organik buhar filtresi",
-      "eye": "Sızdırmaz kimyasal gözlük ve yüz siperi",
+      "mask": { "tr": "Ürün SDS'ine göre uygun organik buhar filtresi", "en": "Suitable organic vapor filter according to product SDS", "de": "Geeigneter organischer Dampffilter gemäß Produkt-SDB" },
+      "eye": { "tr": "Sızdırmaz kimyasal gözlük ve yüz siperi", "en": "Sealed chemical goggles and face shield", "de": "Dicht schließende Chemikalienschutzbrille und Gesichtsschutz" },
       "gloves": {
-        "latex": false,
-        "nitrile": true,
-        "butyl": true,
-        "warning": "Aşındırıcı ve alerjik hassaslaştırıcı - doğrudan cilt temasından kaçının, kalın nitril eldiven kullanın. Ürün SDS'i doğrulanmalı."
+        "latex": false, "nitrile": true, "butyl": true,
+        "warning": { "tr": "Aşındırıcı ve alerjik hassaslaştırıcı - doğrudan cilt temasından kaçının, kalın nitril eldiven kullanın.", "en": "Corrosive and allergic sensitizer - avoid direct skin contact, use thick nitrile gloves.", "de": "Ätzend und allergiesensibilisierend - direkten Hautkontakt vermeiden, dicke Nitrilhandschuhe verwenden." }
       }
     },
     "emergency_timer_min": 15,
     "first_aid": {
-      "eye": "Ciddi göz hasarı riski, derhal en az 15 dakika yıkayın ve acil tıbbi yardım alın. Gözleri ovalamayın.",
-      "skin": "Ciddi yanık riski, derhal bol suyla yıkayın ve tıbbi yardım alın. Kirlenmiş kıyafetleri çıkarın; cilt hassaslaşması belirtilerinde doktora başvurun.",
-      "inhalation": "Kişiyi temiz havaya çıkarın. Solunum güçlüğü veya rahatsızlık varsa derhal tıbbi yardım alın. Bu kayıt ana bileşen verisidir; tam ürün SDS'i doğrulanmalıdır."
+      "eye": { "tr": "Ciddi göz hasarı riski, derhal en az 15 dakika yıkayın ve acil tıbbi yardım alın. Gözleri ovalamayın.", "en": "Risk of serious eye damage, wash immediately for at least 15 minutes and get emergency medical help. Do not rub.", "de": "Gefahr schwerer Augenschäden, sofort mindestens 15 Minuten spülen und notärztliche Hilfe rufen. Nicht reiben." },
+      "skin": { "tr": "Ciddi yanık riski, derhal bol suyla yıkayın ve tıbbi yardım alın. Kirlenmiş kıyafetleri çıkarın; cilt hassaslaşması belirtilerinde doktora başvurun.", "en": "Risk of severe burns, wash immediately with plenty of water and seek medical help. Remove contaminated clothes.", "de": "Gefahr schwerer Verbrennungen, sofort mit viel Wasser waschen und ärztliche Hilfe aufsuchen. Kontaminierte Kleidung entfernen." },
+      "inhalation": { "tr": "Kişiyi temiz havaya çıkarın. Solunum güçlüğü veya rahatsızlık varsa derhal tıbbi yardım alın.", "en": "Move person to fresh air. If breathing is difficult, seek emergency medical help immediately.", "de": "Person an die frische Luft bringen. Bei Atemnot sofort medizinische Hilfe rufen." }
     }
   },
   {
     "id": "vinylester-resin",
-    "name": "Vinilester Reçine",
-    "chemical_name": "Stiren içeren doymamış vinilester reçine; stiren CAS 100-42-5",
+    "name": { "tr": "Vinilester Reçine", "en": "Vinylester Resin", "de": "Vinylesterharz" },
+    "chemical_name": { "tr": "Stiren içeren doymamış vinilester reçine; stiren CAS 100-42-5", "en": "Unsaturated vinylester resin containing styrene; styrene CAS 100-42-5", "de": "Styrolhaltiges ungesättigtes Vinylesterharz; Styrol CAS 100-42-5" },
     "category": "recine",
     "risk_level": "YÜKSEK",
-    "source": "Ürün SDS'i gerekli; stiren bazlı vinilester genel profili",
+    "source": { "tr": "Ürün SDS'i gerekli; stiren bazlı vinilester genel profili", "en": "Product SDS required; styrene-based vinylester general profile", "de": "Produkt-SDB erforderlich; styrolbasiertes Vinylester allgemeines Profil" },
     "source_url": "",
     "verified_at": "2026-09-27",
-    "verification_status": "Ürün SDS'i bekleniyor",
-    "verification_note": "Stiren oranı ve reaktif seyreltici üreticiye göre değişir; yaklaşık değer olarak gösterilir.",
-    "ghs_codes": ["GHS02", "GHS07"],
-    "flash_point": "Yaklaşık 31 °C (stiren içeriğinden kaynaklı)",
+    "verification_status": { "tr": "Ürün SDS'i bekleniyor", "en": "Pending Product SDS", "de": "Produkt-SDB ausstehend" },
+    "verification_note": { "tr": "Stiren oranı ve reaktif seyreltici üreticiye göre değişir; yaklaşık değer olarak gösterilir.", "en": "Styrene ratio and reactive diluent vary by manufacturer; shown as approximate value.", "de": "Styrolverhältnis und reaktives Verdünnungsmittel variieren je nach Hersteller; wird als ungefährer Wert angezeigt." },
+    "ghs_codes": [ "GHS02", "GHS07" ],
+    "flash_point": { "tr": "Yaklaşık 31 °C (stiren içeriğinden kaynaklı)", "en": "Approx. 31 °C (due to styrene content)", "de": "Ca. 31 °C (aufgrund des Styrolgehalts)" },
     "ppe": {
-      "mask": "A2 organik buhar filtresi",
-      "eye": "Koruyucu kimyasal gözlük",
+      "mask": { "tr": "A2 organik buhar filtresi", "en": "A2 organic vapor filter", "de": "A2 organischer Dampffilter" },
+      "eye": { "tr": "Koruyucu kimyasal gözlük", "en": "Protective chemical goggles", "de": "Chemikalienschutzbrille" },
       "gloves": {
-        "latex": false,
-        "nitrile": true,
-        "butyl": true,
-        "warning": "Nitril veya bütil eldiven kullanın; kirlenen eldiveni hemen değiştirin."
+        "latex": false, "nitrile": true, "butyl": true,
+        "warning": { "tr": "Nitril veya bütil eldiven kullanın; kirlenen eldiveni hemen değiştirin.", "en": "Use nitrile or butyl gloves; replace contaminated gloves immediately.", "de": "Nitril- oder Butylhandschuhe verwenden; kontaminierte Handschuhe sofort ersetzen." }
       }
     },
     "emergency_timer_min": 15,
     "first_aid": {
-      "eye": "Gözleri en az 15 dakika bol suyla yıkayın ve tıbbi yardım alın. Gözleri ovalamayın.",
-      "skin": "Cildi sabun ve bol suyla yıkayın. Reçineyi çıkarmak için aseton sürmeyin.",
-      "inhalation": "Kişiyi temiz havaya çıkarın, dinlendirin ve belirtiler sürerse tıbbi yardım alın."
+      "eye": { "tr": "Gözleri en az 15 dakika bol suyla yıkayın ve tıbbi yardım alın. Gözleri ovalamayın.", "en": "Wash eyes with plenty of water for at least 15 minutes and seek medical help. Do not rub eyes.", "de": "Augen mindestens 15 Minuten lang mit viel Wasser spülen und ärztliche Hilfe hinzuziehen. Augen nicht reiben." },
+      "skin": { "tr": "Cildi sabun ve bol suyla yıkayın. Reçineyi çıkarmak için aseton sürmeyin.", "en": "Wash skin with soap and plenty of water. Do not apply acetone to remove resin.", "de": "Haut mit Seife und viel Wasser waschen. Kein Aceton auftragen, um Harz zu entfernen." },
+      "inhalation": { "tr": "Kişiyi temiz havaya çıkarın, dinlendirin ve belirtiler sürerse tıbbi yardım alın.", "en": "Move person to fresh air, let them rest, and seek medical help if symptoms persist.", "de": "Person an die frische Luft bringen, ruhen lassen und bei anhaltenden Beschwerden ärztliche Hilfe hinzuziehen." }
     }
   },
   {
     "id": "pva-release-agent",
-    "name": "PVA Ayırıcı Ajan",
-    "chemical_name": "Polivinil alkol (PVA), CAS 9002-89-5; ticari ürün izopropil alkol taşıyıcı içerebilir",
+    "name": { "tr": "PVA Ayırıcı Ajan", "en": "PVA Release Agent", "de": "PVA Trennmittel" },
+    "chemical_name": { "tr": "Polivinil alkol (PVA), CAS 9002-89-5; ticari ürün izopropil alkol taşıyıcı içerebilir", "en": "Polyvinyl alcohol (PVA), CAS 9002-89-5; commercial product may contain isopropyl alcohol carrier", "de": "Polyvinylalkohol (PVA), CAS 9002-89-5; Handelsprodukt kann Isopropylalkohol als Träger enthalten" },
     "category": "ayirici",
     "risk_level": "ORTA",
-    "source": "Ürün SDS'i gerekli; PVA ve izopropil alkol taşıyıcı profili",
+    "source": { "tr": "Ürün SDS'i gerekli; PVA ve izopropil alkol taşıyıcı profili", "en": "Product SDS required; PVA and isopropyl alcohol carrier profile", "de": "Produkt-SDB erforderlich; Profil von PVA und Isopropylalkohol-Träger" },
     "source_url": "",
     "verified_at": "2026-09-27",
-    "verification_status": "Ürün SDS'i bekleniyor",
-    "verification_note": "Saf PVA ile ticari alkol bazlı ayırıcı aynı tehlike profiline sahip değildir.",
-    "ghs_codes": ["GHS02", "GHS07"],
-    "flash_point": "Ürün SDS'i doğrulanmalı; ticari üründeki izopropil alkol oranına göre değişir",
+    "verification_status": { "tr": "Ürün SDS'i bekleniyor", "en": "Pending Product SDS", "de": "Produkt-SDB ausstehend" },
+    "verification_note": { "tr": "Saf PVA ile ticari alkol bazlı ayırıcı aynı tehlike profiline sahip değildir.", "en": "Pure PVA and commercial alcohol-based release agent do not have the same hazard profile.", "de": "Reines PVA und handelsübliches alkoholbasiertes Trennmittel haben nicht das gleiche Gefahrenprofil." },
+    "ghs_codes": [ "GHS02", "GHS07" ],
+    "flash_point": { "tr": "Ürün SDS'i doğrulanmalı; ticari üründeki izopropil alkol oranına göre değişir", "en": "Check product SDS; varies by isopropyl alcohol content in commercial product", "de": "Produkt-SDB prüfen; variiert je nach Isopropylalkoholgehalt im Handelsprodukt" },
     "ppe": {
-      "mask": "İyi havalandırmada genellikle gerekmez; ürün SDS'ine göre organik buhar filtresi",
-      "eye": "Kimyasal sıçrama gözlüğü",
+      "mask": { "tr": "İyi havalandırmada genellikle gerekmez; ürün SDS'ine göre organik buhar filtresi", "en": "Usually not required in good ventilation; organic vapor filter per product SDS", "de": "Bei guter Belüftung meist nicht erforderlich; organischer Dampffilter nach Produkt-SDB" },
+      "eye": { "tr": "Kimyasal sıçrama gözlüğü", "en": "Chemical splash goggles", "de": "Chemikalienspritzschutzbrille" },
       "gloves": {
-        "latex": true,
-        "nitrile": true,
-        "butyl": true,
-        "warning": "Ürün izopropil alkol içerebilir, ateş kaynaklarından uzak tutun ve iyi havalandırılmış alanda kullanın"
+        "latex": true, "nitrile": true, "butyl": true,
+        "warning": { "tr": "Ürün izopropil alkol içerebilir, ateş kaynaklarından uzak tutun ve iyi havalandırılmış alanda kullanın", "en": "Product may contain isopropyl alcohol, keep away from fire sources and use in well-ventilated area", "de": "Produkt kann Isopropylalkohol enthalten, von Zündquellen fernhalten und in gut belüfteten Bereichen verwenden" }
       }
     },
     "emergency_timer_min": 15,
     "first_aid": {
-      "eye": "En az 15 dakika bol suyla yıkayın. Tahriş devam ederse tıbbi yardım alın.",
-      "skin": "Cildi sabun ve bol suyla yıkayın. Tahriş veya kuruluk sürerse tıbbi yardım alın.",
-      "inhalation": "Kişiyi temiz havaya çıkarın. Baş dönmesi veya rahatsızlık sürerse tıbbi yardım alın."
+      "eye": { "tr": "En az 15 dakika bol suyla yıkayın. Tahriş devam ederse tıbbi yardım alın.", "en": "Wash with plenty of water for at least 15 minutes. If irritation persists, seek medical help.", "de": "Mindestens 15 Minuten lang mit viel Wasser spülen. Bei anhaltender Reizung ärztliche Hilfe hinzuziehen." },
+      "skin": { "tr": "Cildi sabun ve bol suyla yıkayın. Tahriş veya kuruluk sürerse tıbbi yardım alın.", "en": "Wash skin with soap and plenty of water. If irritation or dryness persists, seek medical help.", "de": "Haut mit Seife und viel Wasser waschen. Bei anhaltender Reizung oder Trockenheit ärztliche Hilfe hinzuziehen." },
+      "inhalation": { "tr": "Kişiyi temiz havaya çıkarın. Baş dönmesi veya rahatsızlık sürerse tıbbi yardım alın.", "en": "Move person to fresh air. If dizziness or discomfort persists, seek medical help.", "de": "Person an die frische Luft bringen. Bei anhaltendem Schwindel oder Unwohlsein ärztliche Hilfe hinzuziehen." }
     }
   },
   {
     "id": "mold-release-wax",
-    "name": "Kalıp Cilası/Wax",
-    "chemical_name": "Karnauba/parafin wax içeren, hafif petrol distilatı taşıyıcılı kalıp ayırıcı",
+    "name": { "tr": "Kalıp Cilası/Wax", "en": "Mold Release Wax", "de": "Trennwachs" },
+    "chemical_name": { "tr": "Karnauba/parafin wax içeren, hafif petrol distilatı taşıyıcılı kalıp ayırıcı", "en": "Mold release containing carnauba/paraffin wax with light petroleum distillate carrier", "de": "Trennmittel mit Carnauba-/Paraffinwachs mit leichtem Erdöldestillat als Träger" },
     "category": "ayirici",
     "risk_level": "ORTA",
-    "source": "Ürün SDS'i gerekli; petrol distilatı taşıyıcılı kalıp ayırıcı profili",
+    "source": { "tr": "Ürün SDS'i gerekli; petrol distilatı taşıyıcılı kalıp ayırıcı profili", "en": "Product SDS required; mold release with petroleum distillate carrier profile", "de": "Produkt-SDB erforderlich; Trennmittel mit Erdöldestillat als Träger Profil" },
     "source_url": "",
     "verified_at": "2026-09-27",
-    "verification_status": "Ürün SDS'i bekleniyor",
-    "verification_note": "Petrol distilatı türü ve oranı ürünün parlama noktasını ve GHS sınıflandırmasını belirler.",
-    "ghs_codes": ["GHS02"],
-    "flash_point": "Ürün SDS'i doğrulanmalı; hafif petrol distilatı içeriğine göre değişir",
+    "verification_status": { "tr": "Ürün SDS'i bekleniyor", "en": "Pending Product SDS", "de": "Produkt-SDB ausstehend" },
+    "verification_note": { "tr": "Petrol distilatı türü ve oranı ürünün parlama noktasını ve GHS sınıflandırmasını belirler.", "en": "The type and ratio of petroleum distillate determines the product's flash point and GHS classification.", "de": "Art und Anteil des Erdöldestillats bestimmen den Flammpunkt und die GHS-Einstufung des Produkts." },
+    "ghs_codes": [ "GHS02" ],
+    "flash_point": { "tr": "Ürün SDS'i doğrulanmalı; hafif petrol distilatı içeriğine göre değişir", "en": "Check product SDS; varies by light petroleum distillate content", "de": "Produkt-SDB prüfen; variiert je nach Gehalt an leichtem Erdöldestillat" },
     "ppe": {
-      "mask": "İyi havalandırmada genellikle gerekmez; ürün SDS'ine göre organik buhar filtresi",
-      "eye": "Koruyucu gözlük",
+      "mask": { "tr": "İyi havalandırmada genellikle gerekmez; ürün SDS'ine göre organik buhar filtresi", "en": "Usually not required in good ventilation; organic vapor filter per product SDS", "de": "Bei guter Belüftung meist nicht erforderlich; organischer Dampffilter nach Produkt-SDB" },
+      "eye": { "tr": "Koruyucu gözlük", "en": "Protective goggles", "de": "Schutzbrille" },
       "gloves": {
-        "latex": true,
-        "nitrile": true,
-        "butyl": true,
-        "warning": "İçerdiği petrol distilatı yanıcıdır, ateş kaynaklarından uzak tutun, iyi havalandırın"
+        "latex": true, "nitrile": true, "butyl": true,
+        "warning": { "tr": "İçerdiği petrol distilatı yanıcıdır, ateş kaynaklarından uzak tutun, iyi havalandırın", "en": "Contained petroleum distillate is flammable, keep away from fire sources, ventilate well", "de": "Das enthaltene Erdöldestillat ist entzündlich, von Zündquellen fernhalten, gut belüften" }
       }
     },
     "emergency_timer_min": 15,
     "first_aid": {
-      "eye": "Gözleri en az 15 dakika bol suyla yıkayın. Tahriş devam ederse tıbbi yardım alın.",
-      "skin": "Bol suyla yıkayın, kirlenen giysileri çıkarın. Tahriş devam ederse tıbbi yardım alın.",
-      "inhalation": "Kişiyi temiz havaya çıkarın. Baş dönmesi veya solunum rahatsızlığı sürerse tıbbi yardım alın."
+      "eye": { "tr": "Gözleri en az 15 dakika bol suyla yıkayın. Tahriş devam ederse tıbbi yardım alın.", "en": "Wash eyes with plenty of water for at least 15 minutes. If irritation persists, seek medical help.", "de": "Augen mindestens 15 Minuten lang mit viel Wasser spülen. Bei anhaltender Reizung ärztliche Hilfe hinzuziehen." },
+      "skin": { "tr": "Bol suyla yıkayın, kirlenen giysileri çıkarın. Tahriş devam ederse tıbbi yardım alın.", "en": "Wash with plenty of water, remove contaminated clothing. If irritation persists, seek medical help.", "de": "Mit viel Wasser waschen, kontaminierte Kleidung ausziehen. Bei anhaltender Reizung ärztliche Hilfe hinzuziehen." },
+      "inhalation": { "tr": "Kişiyi temiz havaya çıkarın. Baş dönmesi veya solunum rahatsızlığı sürerse tıbbi yardım alın.", "en": "Move person to fresh air. If dizziness or respiratory discomfort persists, seek medical help.", "de": "Person an die frische Luft bringen. Bei anhaltendem Schwindel oder Atembeschwerden ärztliche Hilfe hinzuziehen." }
     }
   },
   {
     "id": "gelcoat",
-    "name": "Gelcoat",
-    "chemical_name": "Pigmentli/dolgulu doymamış polyester reçine (gelcoat)",
+    "name": { "tr": "Gelcoat", "en": "Gelcoat", "de": "Gelcoat" },
+    "chemical_name": { "tr": "Pigmentli/dolgulu doymamış polyester reçine (gelcoat)", "en": "Pigmented/filled unsaturated polyester resin (gelcoat)", "de": "Pigmentiertes/gefülltes ungesättigtes Polyesterharz (Gelcoat)" },
     "category": "recine",
     "risk_level": "YÜKSEK",
-    "source": "Ürün SDS'i gerekli; pigmentli polyester/gelcoat genel profili",
+    "source": { "tr": "Ürün SDS'i gerekli; pigmentli polyester/gelcoat genel profili", "en": "Product SDS required; pigmented polyester/gelcoat general profile", "de": "Produkt-SDB erforderlich; pigmentiertes Polyester/Gelcoat allgemeines Profil" },
     "source_url": "",
     "verified_at": "2026-09-27",
-    "verification_status": "Ürün SDS'i bekleniyor",
-    "verification_note": "Pigment, dolgu ve stiren oranı üreticiye göre değişir; polyester reçine kartı referans profildir.",
-    "ghs_codes": ["GHS02", "GHS07"],
-    "flash_point": "Yaklaşık 31 °C (stiren içeriğinden kaynaklı; ürün SDS'i doğrulanmalı)",
+    "verification_status": { "tr": "Ürün SDS'i bekleniyor", "en": "Pending Product SDS", "de": "Produkt-SDB ausstehend" },
+    "verification_note": { "tr": "Pigment, dolgu ve stiren oranı üreticiye göre değişir; polyester reçine kartı referans profildir.", "en": "Pigment, filler, and styrene ratio vary by manufacturer; polyester resin card is the reference profile.", "de": "Pigment, Füllstoff und Styrolanteil variieren je nach Hersteller; die Polyesterharz-Karte ist das Referenzprofil." },
+    "ghs_codes": [ "GHS02", "GHS07" ],
+    "flash_point": { "tr": "Yaklaşık 31 °C (stiren içeriğinden kaynaklı; ürün SDS'i doğrulanmalı)", "en": "Approx. 31 °C (due to styrene content; check product SDS)", "de": "Ca. 31 °C (aufgrund des Styrolgehalts; Produkt-SDB prüfen)" },
     "ppe": {
-      "mask": "A2 organik buhar filtresi",
-      "eye": "Koruyucu kimyasal gözlük",
+      "mask": { "tr": "A2 organik buhar filtresi", "en": "A2 organic vapor filter", "de": "A2 organischer Dampffilter" },
+      "eye": { "tr": "Koruyucu kimyasal gözlük", "en": "Protective chemical goggles", "de": "Chemikalienschutzbrille" },
       "gloves": {
-        "latex": false,
-        "nitrile": true,
-        "butyl": true,
-        "warning": "Nitril veya bütil eldiven kullanın; kirlenen eldiveni hemen değiştirin."
+        "latex": false, "nitrile": true, "butyl": true,
+        "warning": { "tr": "Nitril veya bütil eldiven kullanın; kirlenen eldiveni hemen değiştirin.", "en": "Use nitrile or butyl gloves; replace contaminated gloves immediately.", "de": "Nitril- oder Butylhandschuhe verwenden; kontaminierte Handschuhe sofort ersetzen." }
       }
     },
     "emergency_timer_min": 15,
     "first_aid": {
-      "eye": "Gözleri en az 15 dakika bol suyla yıkayın ve tıbbi yardım alın. Gözleri ovalamayın.",
-      "skin": "Cildi sabun ve bol suyla yıkayın. Reçineyi çıkarmak için aseton sürmeyin.",
-      "inhalation": "Kişiyi temiz havaya çıkarın, dinlendirin ve belirtiler sürerse tıbbi yardım alın."
+      "eye": { "tr": "Gözleri en az 15 dakika bol suyla yıkayın ve tıbbi yardım alın. Gözleri ovalamayın.", "en": "Wash eyes with plenty of water for at least 15 minutes and seek medical help. Do not rub eyes.", "de": "Augen mindestens 15 Minuten lang mit viel Wasser spülen und ärztliche Hilfe hinzuziehen. Augen nicht reiben." },
+      "skin": { "tr": "Cildi sabun ve bol suyla yıkayın. Reçineyi çıkarmak için aseton sürmeyin.", "en": "Wash skin with soap and plenty of water. Do not apply acetone to remove resin.", "de": "Haut mit Seife und viel Wasser waschen. Kein Aceton auftragen, um Harz zu entfernen." },
+      "inhalation": { "tr": "Kişiyi temiz havaya çıkarın, dinlendirin ve belirtiler sürerse tıbbi yardım alın.", "en": "Move person to fresh air, let them rest, and seek medical help if symptoms persist.", "de": "Person an die frische Luft bringen, ruhen lassen und bei anhaltenden Beschwerden ärztliche Hilfe hinzuziehen." }
     }
   }
 ]
