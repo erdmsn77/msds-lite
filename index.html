@@ -146,107 +146,69 @@
       gap: 12px;
     }
 
-    /* Search Box */
-    .search-wrap {
-      position: relative;
+    /* Category Filter Grid */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 8px;
+    }
+    .category-card {
       display: flex;
+      flex-direction: column;
       align-items: center;
-    }
-    .search-icon {
-      position: absolute;
-      left: 14px;
-      width: 18px;
-      height: 18px;
-      color: var(--text-muted);
-      pointer-events: none;
-    }
-    .search-input {
-      width: 100%;
-      height: 50px;
-      padding: 0 42px 0 42px;
+      justify-content: center;
+      gap: 5px;
+      padding: 14px 6px 10px;
       background: var(--bg-surface);
       border: 1px solid var(--border-subtle);
       border-radius: 12px;
-      color: var(--text-main);
-      font-size: 14px;
-      font-family: inherit;
-      outline: none;
-      transition: border-color 0.15s ease, box-shadow 0.15s ease;
-    }
-    .search-input:focus {
-      border-color: var(--marine-orange);
-      box-shadow: 0 0 0 3px var(--marine-orange-glow);
-    }
-    .search-clear {
-      position: absolute;
-      right: 12px;
-      width: 26px;
-      height: 26px;
-      background: rgba(255,255,255,0.08);
-      border: none;
-      border-radius: 50%;
-      color: var(--text-muted);
-      font-size: 13px;
-      display: grid;
-      place-items: center;
       cursor: pointer;
-    }
-    .search-clear.hidden {
-      display: none;
-    }
-    .search-clear:hover {
-      background: rgba(255,255,255,0.18);
-      color: #fff;
-    }
-
-    /* Category Filter Chips */
-    .chips-container {
-      display: flex;
-      gap: 8px;
-      overflow-x: auto;
-      padding-bottom: 4px;
-      scrollbar-width: thin;
-      scrollbar-color: rgba(255,255,255,0.1) transparent;
-      -webkit-overflow-scrolling: touch;
-    }
-    .chips-container::-webkit-scrollbar {
-      height: 4px;
-    }
-    .chips-container::-webkit-scrollbar-thumb {
-      background: rgba(255,255,255,0.1);
-      border-radius: 4px;
-    }
-    .category-chip {
-      white-space: nowrap;
-      border: 1px solid var(--border-subtle);
-      background: var(--bg-surface);
-      color: var(--text-muted);
-      padding: 8px 14px;
-      border-radius: 30px;
-      font-size: 12px;
-      font-weight: 650;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
       user-select: none;
       touch-action: manipulation;
-      transition: border-color 0.12s ease, color 0.12s ease, background-color 0.12s ease;
+      transition: border-color 0.15s ease, background-color 0.15s ease, transform 0.1s ease;
     }
-    .category-chip:hover {
-      border-color: rgba(255, 120, 40, 0.4);
-      color: #fff;
+    .category-card:hover {
+      border-color: rgba(255, 120, 40, 0.35);
+      background: var(--bg-card-hover);
     }
-    .category-chip.active {
+    .category-card:active {
+      transform: scale(0.97);
+    }
+    .category-card.active {
       border-color: var(--marine-orange);
-      background: rgba(255, 120, 40, 0.12);
-      color: var(--marine-orange);
-      font-weight: 750;
+      background: rgba(255, 120, 40, 0.1);
+      box-shadow: 0 0 0 1px rgba(255, 120, 40, 0.15), 0 4px 12px rgba(255, 120, 40, 0.08);
     }
-    .chip-count {
+    .category-card-icon {
+      font-size: 22px;
+      line-height: 1;
+    }
+    .category-card-label {
       font-size: 10px;
-      opacity: 0.7;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--text-muted);
+      text-align: center;
+      line-height: 1.2;
     }
+    .category-card.active .category-card-label {
+      color: var(--marine-orange);
+    }
+    .category-card-count {
+      font-size: 9px;
+      font-weight: 700;
+      color: var(--text-dim);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 1px 6px;
+      border-radius: 4px;
+    }
+    .category-card.active .category-card-count {
+      color: var(--marine-orange);
+      background: rgba(255, 120, 40, 0.12);
+    }
+
+
 
     /* List Meta */
     .list-meta {
@@ -884,7 +846,9 @@
       .marine-shell { padding: 12px 12px 48px; }
       .brand-title { font-size: 19px; }
       .brand-subtitle { font-size: 11px; }
-      .search-input { height: 46px; font-size: 13px; }
+      .category-grid { gap: 6px; }
+      .category-card { padding: 10px 4px 8px; }
+      .category-card-icon { font-size: 18px; }
       .timer-clock { font-size: 32px; }
     }
   </style>
@@ -1426,14 +1390,14 @@
       };
 
       const CATEGORIES = {
-        all: { tr: 'Tümü', en: 'All' },
-        peroksit: { tr: 'Peroksit', en: 'Peroxide' },
-        recine: { tr: 'Reçine', en: 'Resin' },
-        solvent: { tr: 'Solvent', en: 'Solvent' },
-        hizlandirici: { tr: 'Hızlandırıcı', en: 'Promoter' },
-        sertlestirici: { tr: 'Sertleştirici', en: 'Hardener' },
-        toz: { tr: 'Toz & Elyaf', en: 'Dust & Fiber' },
-        ayirici: { tr: 'Kalıp Ayırıcı', en: 'Release Agent' }
+        all: { tr: 'Tümü', en: 'All', icon: '📋' },
+        peroksit: { tr: 'Peroksit', en: 'Peroxide', icon: '💥' },
+        recine: { tr: 'Reçine', en: 'Resin', icon: '🧪' },
+        solvent: { tr: 'Solvent', en: 'Solvent', icon: '💧' },
+        hizlandirici: { tr: 'Hızlandırıcı', en: 'Promoter', icon: '⚡' },
+        sertlestirici: { tr: 'Sertleştirici', en: 'Hardener', icon: '🔗' },
+        toz: { tr: 'Toz & Elyaf', en: 'Dust & Fiber', icon: '🌫️' },
+        ayirici: { tr: 'Kalıp Ayırıcı', en: 'Release Agent', icon: '🛡️' }
       };
 
       const GHS_METADATA = {
@@ -1627,10 +1591,7 @@
           document.getElementById('emptyResetBtn')?.addEventListener('click', () => {
             state.searchQuery = '';
             state.category = 'all';
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput) searchInput.value = '';
-            document.getElementById('searchClear')?.classList.add('hidden');
-            document.querySelectorAll('.category-chip').forEach(c => {
+            document.querySelectorAll('.category-card').forEach(c => {
               c.classList.toggle('active', c.dataset.cat === 'all');
             });
             renderChemicalList();
@@ -1672,13 +1633,17 @@
         const app = document.getElementById('marineApp');
         const totalCount = state.chemicals.length;
 
-        // Categories chip buttons
-        const chipsHtml = Object.entries(CATEGORIES).map(([catKey, labelObj]) => {
+        // Category grid cards with icons
+        const categoryGridHtml = Object.entries(CATEGORIES).map(([catKey, labelObj]) => {
           const isSelected = state.category === catKey;
           const count = catKey === 'all' 
             ? totalCount 
             : state.chemicals.filter(c => c.category === catKey).length;
-          return `<button type="button" class="category-chip ${isSelected ? 'active' : ''}" data-cat="${catKey}">${labelObj[state.language]} <span class="chip-count">${count}</span></button>`;
+          return `<button type="button" class="category-card ${isSelected ? 'active' : ''}" data-cat="${catKey}">
+            <span class="category-card-icon">${labelObj.icon}</span>
+            <span class="category-card-label">${labelObj[state.language]}</span>
+            <span class="category-card-count">${count}</span>
+          </button>`;
         }).join('');
 
         app.innerHTML = `
@@ -1707,14 +1672,8 @@
             </header>
 
             <section class="controls-panel" aria-label="Controls">
-              <div class="search-wrap">
-                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-                <input type="search" id="searchInput" class="search-input" placeholder="${t('searchPlaceholder')}" value="${escape(state.searchQuery)}" autocomplete="off" spellcheck="false">
-                <button type="button" id="searchClear" class="search-clear ${state.searchQuery ? '' : 'hidden'}" aria-label="Clear">✕</button>
-              </div>
-
-              <div class="chips-container" id="categoryChips">
-                ${chipsHtml}
+              <div class="category-grid" id="categoryGrid">
+                ${categoryGridHtml}
               </div>
 
               <div class="list-meta">
@@ -2045,31 +2004,11 @@
           });
         });
 
-        // Instant, 0ms latency Search Input (does NOT re-render the shell!)
-        const searchInput = document.getElementById('searchInput');
-        const searchClear = document.getElementById('searchClear');
-        if (searchInput) {
-          searchInput.addEventListener('input', (e) => {
-            state.searchQuery = e.target.value;
-            if (searchClear) searchClear.classList.toggle('hidden', !state.searchQuery);
-            renderChemicalList();
-          });
-        }
-        if (searchClear) {
-          searchClear.addEventListener('click', () => {
-            state.searchQuery = '';
-            if (searchInput) searchInput.value = '';
-            searchClear.classList.add('hidden');
-            renderChemicalList();
-            searchInput?.focus();
-          });
-        }
-
-        // Category Chips (only toggles class and renders list)
-        app.querySelectorAll('.category-chip').forEach(chip => {
-          chip.addEventListener('click', () => {
-            state.category = chip.dataset.cat;
-            app.querySelectorAll('.category-chip').forEach(c => {
+        // Category Grid Cards (only toggles class and renders list)
+        app.querySelectorAll('.category-card').forEach(card => {
+          card.addEventListener('click', () => {
+            state.category = card.dataset.cat;
+            app.querySelectorAll('.category-card').forEach(c => {
               c.classList.toggle('active', c.dataset.cat === state.category);
             });
             renderChemicalList();
