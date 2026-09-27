@@ -1,4 +1,4 @@
-const CACHE_NAME = 'msds-lite-v1.2.0-marine-pro';
+const CACHE_NAME = 'msds-lite-v1.2.0';
 const APP_SHELL = [
   './index.html',
   './data/chemicals.json',

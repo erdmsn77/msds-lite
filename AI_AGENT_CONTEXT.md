@@ -105,7 +105,7 @@ Kobalt naftenat kaydında MEKP/peroksitlerle doğrudan temas veya aynı kapta ka
 
 ## Arayüz Özellikleri
 
-- "Marine Composite Pro" modern kompozit ve tekne atölyesi görsel dili (derin mat titanyum/antrasit, denizci turuncusu ve emniyet renkleri, sıfır harici CSS/CDN bağımlılığı).
+- Koyu, yüksek kontrastlı endüstriyel atölye arayüzü (derin mat antrasit, emniyet turuncusu ve uyarı renkleri, sıfır harici CSS/CDN bağımlılığı).
 - Atölye ergonomisi için büyük 1-dokunuş kategori filtre çipleri (Tümü, Peroksit, Reçine, Solvent, Hızlandırıcı, Sertleştirici, Toz, Ayırıcı).
 - Hızlı anlık arama çubuğu (ticari ad, teknik ad, CAS no, kategori) ve tek dokunuşla temizleme butonu.
 - Standart GHS kırmızı baklava vektör piktogramları (GHS02, GHS05, GHS06, GHS07).
@@ -180,7 +180,7 @@ Güvenlik açısından kritik kimyasal bilgisinde emin olunmayan değerleri uydu
 
 - Canlı adres: `https://erdmsn77.github.io/msds-lite/`
 - PWA kurulumu yalnızca HTTPS veya localhost üzerinde yapılabilir; `file://` Service Worker çalıştırmaz.
-- Güncel Service Worker cache adı: `msds-lite-v1.2.0-marine-pro`.
+- Güncel Service Worker cache adı: `msds-lite-v1.2.0`.
 - `sw.js` güncellenirse cache adı da yükseltilmeli; aksi halde kullanıcı eski arayüzü görebilir.
 - Deployment workflow'u: `.github/workflows/deploy-pages.yml`.
 
