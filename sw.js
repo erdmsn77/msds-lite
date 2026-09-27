@@ -1,4 +1,4 @@
-const CACHE_NAME = 'msds-lite-v1.1.2-timer-fix';
+const CACHE_NAME = 'msds-lite-v1.2.0-marine-pro';
 const APP_SHELL = [
   './index.html',
   './data/chemicals.json',
@@ -6,18 +6,11 @@ const APP_SHELL = [
   './icons/icon.svg',
   './icons/icon-maskable.svg'
 ];
-const TAILWIND_CDN = 'https://cdn.tailwindcss.com';
 
 self.addEventListener('install', (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
     await Promise.all(APP_SHELL.map((url) => cache.add(url)));
-    try {
-      const response = await fetch(TAILWIND_CDN, { mode: 'no-cors' });
-      await cache.put(TAILWIND_CDN, response);
-    } catch (error) {
-      console.warn('Tailwind CDN önbelleğe alınamadı:', error);
-    }
     await self.skipWaiting();
   })());
 });

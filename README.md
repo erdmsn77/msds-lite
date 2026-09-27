@@ -1,40 +1,47 @@
 # MSDS-Lite Atölye İSG
 
-Kompozit ve tekne imalat atölyeleri için hızlı, mobil öncelikli ve çevrimdışı çalışabilen kimyasal güvenlik asistanı. Uygulama; GHS kodlarını, KKD gereksinimlerini, ilk yardım protokollerini, kaynak doğrulamasını ve acil yıkama sayacını tek bir saha ekranında sunar.
+[![Deploy to GitHub Pages](https://github.com/erdmsn77/msds-lite/actions/workflows/deploy-pages.yml/badge.svg)](https://github.com/erdmsn77/msds-lite/actions/workflows/deploy-pages.yml)
+![PWA Ready](https://img.shields.io/badge/PWA-Ready%20%26%20Offline-10b981?logo=pwa&logoColor=white)
+![Zero Dependencies](https://img.shields.io/badge/Dependencies-0%20(Pure%20Vanilla)-ff7828)
+![Version](https://img.shields.io/badge/Version-v1.2.0%20Marine%20Pro-38bdf8)
 
-> **Canlı demo:** https://erdmsn77.github.io/msds-lite/
+Kompozit ve tekne imalat atölyeleri (infüzyon, el yatırması, vakum torbalama, kalıphane) için hızlı, mobil öncelikli ve çevrimdışı çalışabilen kimyasal güvenlik asistanı. 
 
-> **Güvenlik sınırı:** Bu proje üretici SDS'inin, kurum prosedürlerinin veya yetkili İSG değerlendirmesinin yerine geçmez. Gerçek kullanım öncesinde her ürünün güncel SDS'i ve işyeri risk değerlendirmesi kontrol edilmelidir.
+Uygulama; GHS piktogramlarını, KKD gereksinimlerini, ilk yardım protokollerini, kritik atölye uyuşmazlık ikazlarını, kaynak doğrulamasını ve sesli/titreşimli acil yıkama sayacını tek bir sahada kullanım ekranında sunar.
+
+> 🌐 **Canlı Uygulama:** https://erdmsn77.github.io/msds-lite/  
+> ⚠️ **Güvenlik Sınırı:** Bu proje üretici SDS'inin, resmi kurum prosedürlerinin veya yetkili İSG değerlendirmesinin yerine geçmez. Gerçek atölye kullanımı öncesinde her ürünün güncel üretici SDS'i ve işyeri risk değerlendirmesi kontrol edilmelidir.
 
 ## Projenin Amacı
 
-Atölyede çalışan veya eğitim alan bir kişinin:
+Atölyede çalışan laminasyon ustaları, teknisyenler veya kompozit tekne imalatı öğrencilerinin:
 
-1. Kimyasalı hızlıca seçmesi,
-2. Risk ve GHS kodlarını görmesi,
-3. Maske, gözlük ve eldiven gereksinimini kontrol etmesi,
-4. Göz/cilt/solunum maruziyetinde ilk yardım adımlarına ulaşması,
-5. Doğru süreyle acil yıkama sayacını başlatması
+1. Kimyasala **tek dokunuşla veya hızlı aramayla** ulaşması,
+2. Risk seviyesini ve uluslararası standart **GHS tehlike piktogramlarını** görmesi,
+3. **MEK-P & Kobalt** gibi ölümcül yangın/patlama uyuşmazlıklarını anında fark etmesi,
+4. Maske, gözlük ve **lateks / nitril / bütil eldiven uyumluluğunu** kontrol etmesi,
+5. Göz / cilt maruziyetinde ilk yardım protokollerine (özellikle reçinede aseton kullanmama kuralına) hızla ulaşması,
+6. Doğru süreyle acil göz/cilt yıkama sayacını başlatması ve süre bittiğinde **sesli & titreşimli alarm** alması
 
-hedeflenir. Uygulama kurumsal bir SDS yönetim platformu değil; küçük kompozit atölyeleri, eğitim atölyeleri ve öğrenciler için hızlı bir saha referansıdır.
+hedeflenir.
 
-## Mevcut Özellikler
+## Arayüz & Teknik Özellikler ("Marine Composite Pro")
 
-- 11 kimyasal için kompakt envanter listesi
-- Karbon/industrial mobil arayüz
-- Kimyasal satırına tıklayınca sağdan açılan detay drawer'ı
-- Drawer sekmeleri: Özet, KKD, İlk yardım, Kaynak
-- TR/EN arayüz dil geçişi; seçim `localStorage` ile hatırlanır
-- Acil erişim kısayolları: göz teması, cilt teması, solunum ve yıkama sayacı
-- Kimyasal seçilmeden acil kısayolların rastgele bir kimyasal açmaması
-- GHS tehlike kodları ve KRİTİK/YÜKSEK/ORTA risk seviyeleri
-- Parlama noktası ve acil yıkama süresi
-- Maske, gözlük ve lateks/nitril/bütil eldiven uyumluluk matrisi
-- Göz, cilt ve solunum ilk yardım protokolleri
-- Sayaç başlatma, durdurma/devam ettirme ve sıfırlama
-- Kaynak, doğrulama tarihi, doğrulama durumu ve kapsam notu
-- Service Worker ile offline uygulama kabuğu
-- `file://` açılışında CORS sorununu önleyen fallback veri dizisi
+- **Modern Yat & Kompozit Arayüzü:** Derin mat antrasit/titanyum zeminler, denizci emniyet turuncusu (`#ff7828`) ve yüksek kontrastlı marine gösterge dili.
+- **Sıfır Bağımlılık (Zero Dependencies):** Harici CDN, Tailwind veya JS framework yükü yoktur; saf, optimize edilmiş Vanilla CSS ve modern HTML5/JS ile anında açılır.
+- **Atölye Ergonomisi:** Eldivenli ellerle dahi kolayca basılabilen büyük 1-dokunuş kategori filtre çipleri (`Tümü`, `Peroksit`, `Reçine`, `Solvent`, `Hızlandırıcı`, `Sertleştirici`, `Toz & Elyaf`, `Kalıp Ayırıcı`).
+- **Anlık Akıllı Arama:** Ticari ad (MEK-P, Jelkot), teknik ad (Stiren, DGEBA), kategori ve CAS numaralarına duyarlı anlık arama ve tek dokunuşla temizleme (✕).
+- **GHS Kırmızı Baklava Vektör Piktogramları:** Alev (GHS02), Aşındırıcı (GHS05), Toksik (GHS06) ve Zararlı (GHS07) için net SVG sembolleri.
+- **Kritik Uyuşmazlık İkaz Paneli:**
+  - *MEK-P & Kobalt:* Doğrudan karıştırma yasağı, şiddetli ekzotermik patlama uyarısı.
+  - *Reçine & Aseton:* Cilt temizliğinde aseton kullanmama, ılık sabunlu su kullanma kuralı.
+  - *Epoksi Reaksiyonu:* Kütlesel termal kaçak (exotherm) yangın riski.
+- **Akıllı Yıkama Sayacı:** Sayacı başlatma, durdurma ve sıfırlama; süre bittiğinde **Web Audio API** ile elektronik alarm, mobil cihazlarda **titreşim (`navigator.vibrate`)** ve acil durum görsel flaşı.
+- **Detay Çekmecesi (Drawer):** 4 sekme (Özet, KKD, İlk yardım, Kaynak).
+- **İki Dilli (TR / EN):** Tam Türkçe ve İngilizce arayüz desteği; dil seçimi `localStorage` ile cihazda hatırlanır.
+- **Deep-Linking (Doğrudan Link):** URL hash desteği (`/#mek-p`, `/#technical-acetone`) ile doğrudan kimyasal kartı açılabilir.
+- **PWA & Tam Çevrimdışı Çalışma:** Service Worker ile internet olmadan sahada kesintisiz çalışır.
+- **Çift Senkron Veri Güvencesi:** `file://` açılışında CORS sorununu önleyen `fallbackChemicals` ile `data/chemicals.json` 1:1 senkronizedir.
 
 ### Sayaç davranışı
 
@@ -173,7 +180,7 @@ Değişiklik sonrası kontrol listesi:
 - `source_url` yalnızca HTTPS kaynakları için kabul edilir.
 - Ürün SDS'i olmayan ürünlerde kesin teknik değer uydurulmaz.
 - Kobalt Naftenat için MEKP/peroksitlerle karıştırmama ve ayrı depolama uyarısı korunmalıdır.
-- Tailwind CDN prototip için kullanılmıştır; üretimde yerel Tailwind derlemesi ve CSP tercih edilmelidir.
+- Harici CDN/CSS bağımlılığı kaldırılmış, saf optimize CSS mimarisi ve CSP uyumlu yapı benimsenmiştir.
 
 ## Gelecek Geliştirmeler
 

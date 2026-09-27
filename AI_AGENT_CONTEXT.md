@@ -105,25 +105,16 @@ Kobalt naftenat kaydında MEKP/peroksitlerle doğrudan temas veya aynı kapta ka
 
 ## Arayüz Özellikleri
 
-`index.html` şu özellikleri içerir:
-
-- Tailwind CSS CDN
-- Koyu, karbon temalı, mobil öncelikli responsive tasarım
-- Kompakt kimyasal envanteri
-- Sağdan açılan detay drawer'ı
-- TR/EN dil geçişi ve karbon/industrial görsel tema
-- Dil değişimi kapalı drawer'ı yeniden açmaz; acil erişim seçili kimyasal olmadan MEK-P varsaymaz.
-- Risk seviyesine göre renkli badge
-- GHS kodlarının piktogram benzeri gösterimi
-- Parlama noktası ve acil yıkama süresi
-- KKD kartı ve lateks/nitril/bütil uyumluluk matrisi
-- Göz, cilt ve solunum ilk yardım protokolü
-- Kaynak, doğrulama durumu, doğrulama tarihi ve kapsam notu
-- Daha yoğun atölye kontrol paneli görsel dili
-- Acil yıkama sayacı
-- Sayaç başlatma, durdurma/devam ettirme ve sıfırlama
-
-Kategori değerleri veri filtreleme için tutulur; mevcut arayüzde kategori filtre sekmeleri kaldırılmıştır. Yeni bir kategori eklenirse veri şeması, kimyasal satırındaki gösterim ve drawer içindeki kategori metni birlikte güncellenmelidir.
+- "Marine Composite Pro" modern kompozit ve tekne atölyesi görsel dili (derin mat titanyum/antrasit, denizci turuncusu ve emniyet renkleri, sıfır harici CSS/CDN bağımlılığı).
+- Atölye ergonomisi için büyük 1-dokunuş kategori filtre çipleri (Tümü, Peroksit, Reçine, Solvent, Hızlandırıcı, Sertleştirici, Toz, Ayırıcı).
+- Hızlı anlık arama çubuğu (ticari ad, teknik ad, CAS no, kategori) ve tek dokunuşla temizleme butonu.
+- Standart GHS kırmızı baklava vektör piktogramları (GHS02, GHS05, GHS06, GHS07).
+- Doğrulanmış kritik kimyasal uyuşmazlık ikaz paneli (MEK-P + Kobalt patlama/yangın riski, ciltte reçine temizliğinde aseton kullanmama kuralı, epoksi egzotermik reaksiyonu).
+- Sağdan açılan detay drawer'ı ve 4 sekme (Özet, KKD, İlk yardım, Kaynak).
+- TR/EN dil geçişi; seçim `localStorage` ile hatırlanır.
+- Acil yıkama sayacı (başlat/durdur/devam/sıfırla).
+- Süre bittiğinde Web Audio API ile harici dosyasız sesli alarm, mobil cihazlarda titreşim (`navigator.vibrate`) ve acil durum görsel flaşı.
+- URL Hash doğrudan link desteği (`#mek-p`, `#technical-acetone`).
 
 ## Veri Yükleme Davranışı
 
@@ -189,7 +180,7 @@ Güvenlik açısından kritik kimyasal bilgisinde emin olunmayan değerleri uydu
 
 - Canlı adres: `https://erdmsn77.github.io/msds-lite/`
 - PWA kurulumu yalnızca HTTPS veya localhost üzerinde yapılabilir; `file://` Service Worker çalıştırmaz.
-- Güncel Service Worker cache adı: `msds-lite-v1.1.2-timer-fix`.
+- Güncel Service Worker cache adı: `msds-lite-v1.2.0-marine-pro`.
 - `sw.js` güncellenirse cache adı da yükseltilmeli; aksi halde kullanıcı eski arayüzü görebilir.
 - Deployment workflow'u: `.github/workflows/deploy-pages.yml`.
 
