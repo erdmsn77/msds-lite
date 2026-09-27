@@ -5,14 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
   <meta name="description" content="Tersane ve kompozit atölyesi kimyasal güvenlik rehberi (MSDS-Lite). KKD, ilk yardım ve yangın müdahale talimatları.">
   <title>MSDS-Lite | Kompozit & Tekne İSG</title>
-  
+  <meta name="color-scheme" content="light dark">
   <meta name="theme-color" content="#f8fafc" id="themeColorMeta">
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
   <link rel="apple-touch-icon" href="icons/icon.svg">
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('msds-theme') || 'light';
+        if (t === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          var m = document.getElementById('themeColorMeta');
+          if (m) m.content = '#0b0f17';
+        }
+      } catch (e) {}
+    })();
+  </script>
 
   <style>
     :root {
+      color-scheme: light;
       /* Clean, Daylight Workshop Theme (Light / Saha Teması - Default) */
       --bg-base: #f8fafc;
       --bg-surface: #ffffff;
@@ -64,6 +77,7 @@
     }
 
     [data-theme="dark"] {
+      color-scheme: dark;
       --bg-base: #0b0f17;
       --bg-surface: #111827;
       --bg-card: #151e2e;
@@ -105,15 +119,25 @@
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
     
+    html {
+      background-color: var(--bg-base);
+      color: var(--text-body);
+      min-height: 100%;
+      min-height: 100dvh;
+      overscroll-behavior-y: none;
+    }
+
     body {
       background-color: var(--bg-base);
       color: var(--text-body);
       font-family: var(--font-sans);
-      min-height: 100vh;
+      min-height: 100%;
+      min-height: 100dvh;
       line-height: 1.5;
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: transparent;
       overflow-x: hidden;
+      overscroll-behavior-y: none;
       transition: background-color 0.2s ease, color 0.2s ease;
     }
 
@@ -2870,6 +2894,8 @@
       function renderShell() {
         document.documentElement.lang = state.language;
         document.documentElement.setAttribute('data-theme', state.theme);
+        const meta = document.getElementById('themeColorMeta');
+        if (meta) meta.content = state.theme === 'dark' ? '#0b0f17' : '#f8fafc';
         document.title = `${t('appTitle')} | ${t('tagline')}`;
         
         const app = document.getElementById('marineApp');
