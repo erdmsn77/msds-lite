@@ -67,7 +67,7 @@ The application covers the 11 most hazardous and commonly utilized substances in
 
 | Chemical Name | Category | CAS No | Risk Level | Critical Workshop Precaution |
 |---|---|---|---|---|
-| **MEK-P** (Methyl Ethyl Ketone Peroxide) | Peroxide | 1338-23-4 | **CRITICAL** | Never mix directly with cobalt promoter (severe explosion risk). Blindness risk on eye contact; flush continuously for at least 15 min. |
+| **MEK-P** (Methyl Ethyl Ketone Peroxide) | Peroxide | 1338-23-4 | **CRITICAL** | Never mix directly with cobalt promoter (severe explosion risk). Permanent vision loss risk on eye contact; flush continuously with low-pressure water for at least 15 min. |
 | **Cobalt Naphthenate** (6%) | Accelerator | 61789-51-3 | **CRITICAL** | Store in a dedicated cabinet away from peroxides. Potent skin sensitizer; requires at least 20 min wash upon contact. |
 | **Orthophthalic Polyester Resin** | Resin | 25032-83-3 | **HIGH** | Contains styrene monomer. Never use acetone for skin cleaning (acetone pushes the chemical deeper into skin pores). |
 | **Vinyl Ester Resin** | Resin | 36425-15-7 | **HIGH** | Highly reactive resin. A2 organic vapor filter and chemical-resistant nitrile gloves are mandatory. |

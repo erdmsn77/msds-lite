@@ -67,7 +67,7 @@ Die 11 gefährlichsten und häufigsten Arbeitsstoffe in modernen Komposit-Werkst
 
 | Stoffname | Kategorie | CAS-Nr. | Risikostufe | Kritische Werkstatt-Vorsichtsmaßnahme |
 |---|---|---|---|---|
-| **MEK-P** (Methylethylketonperoxid) | Peroxid | 1338-23-4 | **KRITISCH** | Niemals direkt mit Kobaltbeschleuniger mischen (Explosionsgefahr). Erblindungsgefahr bei Augenkontakt; mindestens 15 Min. ununterbrochen spülen. |
+| **MEK-P** (Methylethylketonperoxid) | Peroxid | 1338-23-4 | **KRITISCH** | Niemals direkt mit Kobaltbeschleuniger mischen (Explosionsgefahr). Gefahr dauerhaften Sehverlusts bei Augenkontakt; mindestens 15 Min. ununterbrochen drucklos spülen. |
 | **Kobaltnaphthenat** (6%) | Beschleuniger | 61789-51-3 | **KRITISCH** | In separatem Schrank getrennt von Peroxiden lagern. Starker Hautsensibilisator; erfordert mindestens 20 Min. Spüldauer. |
 | **Orthophthalsäure-Polyesterharz** | Harz | 25032-83-3 | **HOCH** | Enthält Styrolmonomer. Niemals Aceton zur Hautreinigung verwenden (Aceton transportiert Gefahrstoffe tief in die Poren). |
 | **Vinylesterharz** | Harz | 36425-15-7 | **HOCH** | Sehr reaktionsfreudig. A2-Atemschutzfilter und chemikalienbeständige Nitrilhandschuhe sind zwingend erforderlich. |

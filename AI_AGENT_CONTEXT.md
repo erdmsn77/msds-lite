@@ -110,11 +110,13 @@ Kobalt naftenat kaydında MEKP/peroksitlerle doğrudan temas veya aynı kapta ka
 - Hızlı anlık arama çubuğu (ticari ad, teknik ad, CAS no, kategori) ve tek dokunuşla temizleme butonu.
 - Standart GHS kırmızı baklava vektör piktogramları (GHS02, GHS05, GHS06, GHS07).
 - Doğrulanmış kritik kimyasal uyuşmazlık ikaz paneli (MEK-P + Kobalt patlama/yangın riski, ciltte reçine temizliğinde aseton kullanmama kuralı, epoksi egzotermik reaksiyonu).
+- Hayati Göz Yıkama Rehberi (`.eyewash-guide-box`): Tazyiksiz su uyarısı, iç pınardan şakağa doğru akış, göz kapaklarını açık tutma ve ovuşturmama protokolü.
 - Sağdan açılan detay drawer'ı ve 4 sekme (Özet, KKD, İlk yardım, Kaynak).
-- TR/EN dil geçişi; seçim `localStorage` ile hatırlanır.
+- TR / EN / DE 3 dilli tam arayüz ve veri desteği; seçim `localStorage` ile hatırlanır.
 - Acil yıkama sayacı (başlat/durdur/devam/sıfırla).
 - Süre bittiğinde Web Audio API ile harici dosyasız sesli alarm, mobil cihazlarda titreşim (`navigator.vibrate`) ve acil durum görsel flaşı.
 - URL Hash doğrudan link desteği (`#mek-p`, `#technical-acetone`).
+- PWA Sürüm Bildirimi ve Önbellek Yenileme: Yeni Service Worker yüklendiğinde otomatik toast uyarısı (`#pwaUpdateToast`) ve altbilgide tek dokunuşla önbellek temizleme butonu (`#btnForceRefresh`).
 
 ## Veri Yükleme Davranışı
 
@@ -129,7 +131,7 @@ Kobalt naftenat kaydında MEKP/peroksitlerle doğrudan temas veya aynı kapta ka
 - GHS kodları doğrulanmış formatta olmalıdır: `GHS` + iki rakam.
 - Dış JSON doğrudan kullanılmadan önce şema doğrulamasından geçmelidir.
 - Yeni `innerHTML` kullanımı eklenirse dinamik değerlerin tamamı kaçışlanmalıdır.
-- Tailwind CDN prototip için kabul edilmiştir; üretimde yerel derlenmiş Tailwind ve Content-Security-Policy tercih edilmelidir.
+- Sıfır harici bağımlılık kuralına uyulmalı; harici font/CSS CDN bağımlılığı eklenmemelidir.
 - Kimyasal ve ilk yardım bilgileri gerçek atölye kullanımı öncesinde üretici SDS'i ve İSG uzmanı tarafından doğrulanmalıdır.
 
 ## Değişiklik Yapmadan Önce
@@ -156,7 +158,7 @@ Kontrol edilmesi gerekenler:
 - ID'ler benzersiz mi?
 - `index.html` fallback ve JSON aynı kayıtları içeriyor mu?
 - Kimyasal satırına tıklayınca drawer açılıyor, diğer alanlarda açılmıyor mu?
-- TR/EN değişimi kapalı drawer'ı açmadan çalışıyor mu?
+- TR/EN/DE değişimi kapalı drawer'ı açmadan çalışıyor mu?
 - Acil erişim kimyasal seçilmeden varsayılan bir kimyasal açıyor mu?
 - Yeni kimyasal drawer içinde açılıyor mu?
 - Sayaç başlat/durdur/devam/sıfırla akışı bozuldu mu?
@@ -172,7 +174,7 @@ Güvenlik açısından kritik kimyasal bilgisinde emin olunmayan değerleri uydu
 2. Kimyasal satırı seçilirse sağdan drawer açılır; sayfa aşağı itilmez.
 3. Drawer sekmeleri Özet, KKD, İlk yardım ve Kaynak bölümleridir.
 4. Drawer yalnızca `[data-chemical]` satırına tıklanınca açılır. Başlık, boş alan, dil düğmesi veya kapalı drawer tıklaması drawer açmamalıdır.
-5. TR/EN değişimi drawer kapalıysa kapalı kalır; açıksa seçili kimyasalı ve sekmeyi korur.
+5. TR/EN/DE değişimi drawer kapalıysa kapalı kalır; açıksa seçili kimyasalı ve sekmeyi korur.
 6. Kimyasal seçilmeden acil erişim kullanılırsa rastgele veya varsayılan MEK-P kartı açılmaz; kullanıcıdan önce kimyasal seçmesi istenir.
 7. Sayaç yalnızca seçili kimyasalın drawer'ındaki Özet sekmesinde çalışır; başlatma, durdurma/devam ve sıfırlama görünür süreyle eşzamanlı güncellenir.
 
@@ -180,8 +182,8 @@ Güvenlik açısından kritik kimyasal bilgisinde emin olunmayan değerleri uydu
 
 - Canlı adres: `https://erdmsn77.github.io/msds-lite/`
 - PWA kurulumu yalnızca HTTPS veya localhost üzerinde yapılabilir; `file://` Service Worker çalıştırmaz.
-- Güncel Service Worker cache adı: `msds-lite-v1.4.2`.
-- `sw.js` güncellenirse cache adı da yükseltilmeli; aksi halde kullanıcı eski arayüzü görebilir.
+- Güncel Service Worker cache adı: `msds-lite-v1.5.2`.
+- `sw.js` güncellenirse cache adı da yükseltilmeli; aksi halde mobil kullanıcılar eski arayüzü görebilir.
 - Deployment workflow'u: `.github/workflows/deploy-pages.yml`.
 
 ## Devir Notu

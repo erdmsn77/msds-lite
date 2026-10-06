@@ -1,0 +1,31 @@
+{
+  "name": "msds-lite",
+  "version": "1.5.2",
+  "description": "Kompozit & Tekne İmalatı Kimyasal Güvenlik ve Acil Müdahale Asistanı (PWA)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "test": "node -e \"const c = require('./data/chemicals.json'); console.log('Chemicals verified:', c.length);\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erdmsn77/msds-lite.git"
+  },
+  "keywords": [
+    "msds",
+    "safety",
+    "composite",
+    "boatbuilding",
+    "marine",
+    "pwa",
+    "offline-first",
+    "ehs"
+  ],
+  "author": "erdmsn77",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erdmsn77/msds-lite/issues"
+  },
+  "homepage": "https://erdmsn77.github.io/msds-lite/"
+}

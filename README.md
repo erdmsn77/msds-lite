@@ -67,7 +67,7 @@ Atölyelerde en sık karşılaşılan ve kaza riski taşıyan 11 temel kimyasal 
 
 | Kimyasal Adı | Kategori | CAS No | Risk Seviyesi | Kritik Önlem / Atölye İkazı |
 |---|---|---|---|---|
-| **MEK-P** (Metil Etil Keton Peroksit) | Peroksit | 1338-23-4 | **KRİTİK** | Kobalt hızlandırıcı ile doğrudan karıştırılamaz (şiddetli patlama riski). Göze temasta körlük riski; en az 15 dk kesintisiz yıkama. |
+| **MEK-P** (Metil Etil Keton Peroksit) | Peroksit | 1338-23-4 | **KRİTİK** | Kobalt hızlandırıcı ile doğrudan karıştırılamaz (şiddetli patlama riski). Göze temasta kalıcı görme kaybı riski; tazyiksiz suyla en az 15 dk kesintisiz yıkama. |
 | **Kobalt Naftenat** (%6) | Hızlandırıcı | 61789-51-3 | **KRİTİK** | Peroksitlerden ayrı dolapta tutulmalıdır. Cilt hassaslaştırıcıdır; en az 20 dk yıkama gerektirir. |
 | **Ortoftalik Polyester Reçine** | Reçine | 25032-83-3 | **YÜKSEK** | Stiren monomeri içerir. Cilde bulaştığında aseton ile temizlenmemelidir (aseton kimyasalı gözeneklere iter). |
 | **Vinilester Reçine** | Reçine | 36425-15-7 | **YÜKSEK** | Yüksek reaktiviteye sahiptir. A2 organik buhar filtresi ve nitril eldiven zorunludur. |

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'msds-lite-v1.5.1';
+const CACHE_NAME = 'msds-lite-v1.5.2';
 const APP_SHELL = [
   './',
   './index.html',
@@ -32,6 +32,12 @@ self.addEventListener('activate', (event) => {
       .map((cacheName) => caches.delete(cacheName)));
     await self.clients.claim();
   })());
+});
+
+self.addEventListener('message', (event) => {
+  if (event.data && (event.data === 'SKIP_WAITING' || event.data.type === 'SKIP_WAITING')) {
+    self.skipWaiting();
+  }
 });
 
 self.addEventListener('fetch', (event) => {

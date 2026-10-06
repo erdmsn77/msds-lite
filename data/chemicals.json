@@ -31,9 +31,9 @@
         "de": "Typ D Peroxid (Flammpunkt ~50°C)"
       },
       "health": {
-        "tr": "Korozif Yanık / Körlük Riski",
-        "en": "Corrosive Burn / Blindness Risk",
-        "de": "Starke Verätzung / Erblindungsrisiko"
+        "tr": "Korozif Yanık / Kalıcı Görme Kaybı Riski",
+        "en": "Corrosive Burn / Permanent Vision Loss Risk",
+        "de": "Starke Verätzung / Gefahr dauerhaften Sehverlusts"
       },
       "environment": {
         "tr": "Sucul Yaşam İçin Zararlı",
@@ -71,14 +71,14 @@
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
-        "tr": "Göz kapaklarını açık tutarak EN AZ 15 DAKİKA kesintisiz bol suyla yıkayın. Gözü ovuşturmayın ve derhal acil servise başvurun!",
-        "en": "Rinse with running water for AT LEAST 15 MINUTES holding eyelids open. Do not rub eyes; seek emergency medical care immediately!",
-        "de": "Mindestens 15 Minuten lang mit viel fließendem Wasser spülen und Augenlider offen halten. Nicht reiben; sofort Notarzt rufen!"
+        "tr": "Göz kapaklarını açık tutarak EN AZ 15 DAKİKA kesintisiz, TAZYİKSİZ (düşük basınçlı) ılık/temiz akan suyla yıkayın. Suyu burun kökünden şakağa doğru akıtın. Gözü ovuşturmayın ve derhal acil servisi (112) arayın!",
+        "en": "Rinse with LOW-PRESSURE, gentle running clean water for AT LEAST 15 MINUTES holding eyelids open. Flush from inner corner outward to temple. Do not rub eyes; call emergency services (112) immediately!",
+        "de": "Augenlider offen halten und MINDESTENS 15 MINUTEN ununterbrochen mit DRUCKLOSEM, sanft fließendem sauberem Wasser spülen (von innen nach außen). Nicht reiben; sofort Notarzt (112) rufen!"
       },
       "skin": {
-        "tr": "Kirlenmiş tüm giysileri derhal çıkarın. Cildi en az 15 dakika bol su ve sabunla yıkayın. Asla aseton sürmeyin!",
-        "en": "Immediately strip contaminated clothing. Wash skin thoroughly with soap and water for 15+ mins. Never apply acetone!",
-        "de": "Kontaminierte Kleidung sofort ausziehen. Haut mindestens 15 Min. mit Wasser und Seife waschen. Niemals Aceton verwenden!"
+        "tr": "Kirlenmiş tüm giysileri derhal çıkarın. Cildi en az 15 dakika tazyiksiz bol akan su ve sabunla yıkayın. Asla aseton sürmeyin!",
+        "en": "Immediately strip contaminated clothing. Wash skin thoroughly with running water and soap for 15+ mins without high pressure. Never apply acetone!",
+        "de": "Kontaminierte Kleidung sofort ausziehen. Haut mindestens 15 Min. mit drucklosem Wasser und Seife waschen. Niemals Aceton verwenden!"
       },
       "inhalation": {
         "tr": "Maruz kalan kişiyi derhal temiz havaya çıkarın. Solunum güçlüğü varsa dik oturtun, oksijen verin ve 112’yi arayın.",
@@ -86,9 +86,9 @@
         "de": "Person sofort an die frische Luft bringen. Bei Atembeschwerden aufrecht hinsetzen und sofort Notdienst rufen."
       },
       "ingestion": {
-        "tr": "KESİNLİKLE KUSTURMAYIN. Ağzı bol suyla çalkalayın. Kişi bilinçliyse 1-2 bardak su içirin. Acil tıbbi müdahale şarttır.",
-        "en": "DO NOT INDUCE VOMITING. Rinse mouth with water. If fully conscious, provide 1-2 glasses of water. Seek urgent medical care.",
-        "de": "KEIN ERBRECHEN HERBEIFÜHREN. Mund mit Wasser spülen. Bei vollem Bewusstsein 1-2 Gläser Wasser trinken lassen. Sofort Notarzt rufen."
+        "tr": "KESİNLİKLE KUSTURMAYIN (yemek borusunu tekrar yakar). Ağzı suyla çalkalayıp tükürün. Kusmayı ve akciğere kaçmasını tetiklememek için ASLA bol su içirmeyin (bilinç tam açıksa en fazla 1-2 küçük yudum su verilebilir). Acil tıbbi müdahale şarttır (112).",
+        "en": "DO NOT INDUCE VOMITING (causes secondary burns). Rinse mouth and spit out. NEVER force large amounts of water to avoid vomiting and lung aspiration (max 1-2 small sips only if conscious). Seek urgent medical care (112).",
+        "de": "KEIN ERBRECHEN HERBEIFÜHREN (Verätzungsgefahr). Mund ausspülen und ausspucken. NIEMALS viel Wasser trinken lassen, um Erbrechen und Aspiration zu verhindern (bei Bewusstsein max. 1-2 kleine Schlucke). Sofort Notarzt (112) rufen."
       }
     },
     "fire_fighting": {
@@ -214,13 +214,13 @@
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
-        "tr": "Göz kapaklarını açık tutarak en az 15 dakika bol suyla yıkayın. Tahriş sürerse doktora başvurun.",
-        "en": "Rinse with copious water for at least 15 minutes holding eyelids open. Seek ophthalmologist if irritation persists.",
-        "de": "Mindestens 15 Minuten lang mit viel Wasser spülen. Bei anhaltender Reizung Augenarzt konsultieren."
+        "tr": "Göz kapaklarını açık tutarak en az 15 dakika kesintisiz, tazyiksiz nazikçe akan temiz suyla yıkayın (suyu burun kökünden şakağa akıtın). Tahriş sürerse doktora başvurun.",
+        "en": "Rinse with gentle, low-pressure running clean water for at least 15 minutes holding eyelids open (flush from inner corner to temple). Seek ophthalmologist if irritation persists.",
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit sanftem, drucklosem Wasser spülen (von innen nach außen). Bei anhaltender Reizung Augenarzt konsultieren."
       },
       "skin": {
-        "tr": "Bulaşan kıyafeti çıkarın. Cildi bol su ve sabunla yıkayın. Cildi asetonla YIKAMAYIN (aseton reçinenin gözeneklere geçmesini hızlandırır).",
-        "en": "Strip soaked clothes. Wash skin with soap and water. DO NOT use acetone on skin (it accelerates resin absorption into pores).",
+        "tr": "Bulaşan kıyafeti çıkarın. Cildi tazyiksiz akan su ve sabunla yıkayın. Cildi asetonla YIKAMAYIN (aseton reçinenin gözeneklere geçmesini hızlandırır).",
+        "en": "Strip soaked clothes. Wash skin with soap and running water. DO NOT use acetone on skin (it accelerates resin absorption into pores).",
         "de": "Kontaminierte Kleidung ausziehen. Haut mit Wasser und Seife waschen. NICHT mit Aceton reinigen!"
       },
       "inhalation": {
@@ -229,9 +229,9 @@
         "de": "Sofort an die frische Luft bringen. Bei Schwindel oder Übelkeit ruhigstellen und Arzt rufen."
       },
       "ingestion": {
-        "tr": "Kusturmayın! Ağzı çalkalayın ve acil tıbbi yardım çağırın.",
-        "en": "Do NOT induce vomiting! Rinse mouth and call emergency medical care.",
-        "de": "KEIN Erbrechen herbeiführen! Mund ausspülen und sofort Arzt rufen."
+        "tr": "KUSTURMAYIN (akciğer aspirasyonu riski)! Ağzı suyla çalkalayıp tükürün ve acil tıbbi yardım çağırın (112).",
+        "en": "Do NOT induce vomiting (lung aspiration hazard)! Rinse mouth with water, spit out, and call emergency medical care (112).",
+        "de": "KEIN Erbrechen herbeiführen (Aspirationsgefahr)! Mund mit Wasser ausspülen, ausspucken und sofort Notdienst (112) rufen."
       }
     },
     "fire_fighting": {
@@ -357,9 +357,9 @@
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
-        "tr": "Göz kapaklarını açık tutarak en az 15 dakika bol suyla yıkayın. Kontakt lensleri çıkarın.",
-        "en": "Rinse thoroughly with water for at least 15 minutes holding eyelids open. Remove contact lenses.",
-        "de": "Mindestens 15 Minuten lang gründlich mit Wasser spülen. Kontaktlinsen entfernen."
+        "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan temiz suyla yıkayın. Kontakt lensleri derhal çıkarın. Tahriş devam ederse doktora başvurun.",
+        "en": "Rinse thoroughly with gentle, low-pressure clean water for at least 15 minutes holding eyelids open. Remove contact lenses immediately. Consult physician if irritation persists.",
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit sanftem, drucklosem Wasser gründlich spülen. Kontaktlinsen sofort entfernen. Bei Reizung Arzt aufsuchen."
       },
       "skin": {
         "tr": "Sabun ve ılık suyla yıkayın. Sürekli temas cildi aşırı kurutur ve çatlatır; nemlendirici krem uygulayın.",
@@ -372,9 +372,9 @@
         "de": "Person an die frische Luft bringen. Bei Schwindel oder Benommenheit ruhig lagern und Arzt hinzuziehen."
       },
       "ingestion": {
-        "tr": "Kusturmayın! Ağzı bol suyla çalkalayın ve acil yardım çağırın.",
-        "en": "Do NOT induce vomiting! Rinse mouth with water and seek medical advice.",
-        "de": "KEIN Erbrechen herbeiführen! Mund ausspülen und Arzt hinzuziehen."
+        "tr": "KUSTURMAYIN (solventin akciğere kaçması kimyasal pnömoni yaratır)! Ağzı suyla çalkalayıp tükürün, asla bol sıvı içirmeyin ve acil yardım (112) çağırın.",
+        "en": "Do NOT induce vomiting (solvent aspiration into lungs causes chemical pneumonia)! Rinse mouth and spit out, never force fluids, call emergency services (112).",
+        "de": "KEIN Erbrechen herbeiführen (Lösemittel-Aspiration führt zu chemischer Lungenentzündung)! Mund ausspülen, ausspucken und Notdienst (112) rufen."
       }
     },
     "fire_fighting": {
@@ -499,9 +499,9 @@
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
-        "tr": "Gözleri KESİNLİKLE ovuşturmayın (lifler korneayı çizer)! En az 15 dakika bol suyla nazikçe yıkayın.",
-        "en": "DO NOT RUB EYES (fibers can scratch the cornea)! Rinse gently with running water for at least 15 minutes.",
-        "de": "AUGEN NICHT REIBEN (Fasern zerkratzen die Hornhaut)! Mindestens 15 Minuten lang sanft mit Wasser spülen."
+        "tr": "Gözleri KESİNLİKLE ovuşturmayın (lifler korneayı çizer)! En az 15 dakika tazyiksiz, düşük debili nazik temiz suyla yıkayın.",
+        "en": "DO NOT RUB EYES (fibers can scratch the cornea)! Rinse gently with low-pressure clean water for at least 15 minutes.",
+        "de": "AUGEN NICHT REIBEN (Fasern zerkratzen die Hornhaut)! Mindestens 15 Minuten lang drucklos und sanft mit klarem Wasser spülen."
       },
       "skin": {
         "tr": "Cildi ovalamadan ılık su ve sabunla yıkayın. Mikro batmaları çıkarmak için yapışkan bant veya cımbız kullanılabilir.",
@@ -514,9 +514,9 @@
         "de": "Staubigen Bereich sofort verlassen. Bei anhaltendem Husten oder Engegefühl im Brustkorb Arzt aufsuchen."
       },
       "ingestion": {
-        "tr": "Ağzı bol suyla çalkalayın. Bol su için. Kusturmayın.",
-        "en": "Rinse mouth with water. Drink plenty of water. Do not induce vomiting.",
-        "de": "Mund mit Wasser ausspülen. Viel Wasser trinken. Kein Erbrechen herbeiführen."
+        "tr": "Kusturmayın! Ağzı temiz suyla çalkalayıp tükürün. Boğazı rahatlatmak için küçük yudumlarla az miktarda su içilebilir.",
+        "en": "Do not induce vomiting! Rinse mouth thoroughly with water and spit out. Take small sips of water to soothe the throat.",
+        "de": "Kein Erbrechen herbeiführen! Mund gründlich mit Wasser ausspülen und ausspucken. Bei Bedarf kleine Schlucke Wasser trinken."
       }
     },
     "fire_fighting": {
@@ -643,13 +643,13 @@
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
-        "tr": "Göz kapaklarını açık tutarak en az 15 dakika bol suyla yıkayın. Derhal göz hekimine başvurun.",
-        "en": "Rinse with plenty of running water for at least 15 minutes holding eyelids open. Seek ophthalmologist immediately.",
-        "de": "Mindestens 15 Minuten lang mit viel Wasser spülen. Sofort Augenarzt hinzuziehen."
+        "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan temiz suyla yıkayın (içten dışa doğru). Derhal göz hekimine başvurun.",
+        "en": "Rinse with gentle, low-pressure running water for at least 15 minutes holding eyelids open (inner corner outward). Seek ophthalmologist immediately.",
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit sanftem, drucklosem Wasser spülen (von innen nach außen). Sofort Augenarzt hinzuziehen."
       },
       "skin": {
-        "tr": "Bulaşan giysileri çıkarın. Cildi bol su ve sabunla yıkayın. Ciltte döküntü ve alerji belirtilerini takip edin.",
-        "en": "Remove contaminated clothes. Wash skin with plenty of soap and water. Watch for rash or sensitization.",
+        "tr": "Bulaşan giysileri çıkarın. Cildi tazyiksiz su ve sabunla yıkayın. Ciltte döküntü ve alerji belirtilerini takip edin.",
+        "en": "Remove contaminated clothes. Wash skin with soap and running water without high pressure. Watch for rash or sensitization.",
         "de": "Kleidung ausziehen. Haut gründlich mit Wasser und Seife waschen. Auf allergische Hautreaktionen achten."
       },
       "inhalation": {
@@ -658,9 +658,9 @@
         "de": "Person an die frische Luft bringen. Bei Atembeschwerden oder asthmatischen Symptomen sofort Notarzt rufen."
       },
       "ingestion": {
-        "tr": "Kusturmayın! Ağzı çalkalayın ve acil yardım çağırın.",
-        "en": "Do NOT induce vomiting! Rinse mouth and call emergency medical services.",
-        "de": "KEIN Erbrechen herbeiführen! Mund ausspülen und Notdienst rufen."
+        "tr": "Kusturmayın! Ağzı suyla çalkalayıp tükürün ve acil yardım (112) çağırın.",
+        "en": "Do NOT induce vomiting! Rinse mouth, spit out, and call emergency medical services (112).",
+        "de": "KEIN Erbrechen herbeiführen! Mund ausspülen, ausspucken und Notdienst (112) rufen."
       }
     },
     "fire_fighting": {
@@ -785,9 +785,9 @@
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
-        "tr": "Göz kapaklarını açık tutarak en az 15 dakika bol suyla yıkayın. Doktora başvurun.",
-        "en": "Rinse with plenty of water for at least 15 minutes holding eyelids open. Consult physician.",
-        "de": "Mindestens 15 Minuten lang mit viel Wasser spülen. Arzt hinzuziehen."
+        "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan temiz suyla yıkayın. Gözü ovuşturmayın, doktora başvurun.",
+        "en": "Rinse with gentle, low-pressure clean water for at least 15 minutes holding eyelids open. Do not rub eyes; consult a physician.",
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit drucklosem, sauberem Wasser spülen. Augen nicht reiben; Arzt hinzuziehen."
       },
       "skin": {
         "tr": "Cildi ılık su ve sabunla bolca yıkayın. CİLDE ASLA ASETON VEYA TİNER SÜRMEYİN (reçineyi kan dolaşımına geçirir)!",
@@ -800,9 +800,9 @@
         "de": "Bei Dämpfen von erhitztem Harz an die frische Luft bringen."
       },
       "ingestion": {
-        "tr": "Kusturmayın! Ağzı çalkalayın, su içirin ve doktora başvurun.",
-        "en": "Do not induce vomiting! Rinse mouth, drink water, seek medical advice.",
-        "de": "Kein Erbrechen herbeiführen! Mund ausspülen, Wasser trinken und Arzt rufen."
+        "tr": "Kusturmayın! Ağzı temiz suyla çalkalayıp tükürün. Kusmayı tetiklememek için bol sıvı vermeyin (bilinç açıksa 1-2 yudum su verilebilir). Doktora başvurun.",
+        "en": "Do not induce vomiting! Rinse mouth and spit out. Avoid large amounts of fluid (1-2 small sips only if conscious). Seek medical advice.",
+        "de": "Kein Erbrechen herbeiführen! Mund ausspülen und ausspucken. Keine großen Flüssigkeitsmengen geben (max. 1-2 Schlucke bei Bewusstsein). Arzt rufen."
       }
     },
     "fire_fighting": {
@@ -889,9 +889,9 @@
         "de": "Brennbarer Amindampf (>110°C)"
       },
       "health": {
-        "tr": "Aşındırıcı Korozif / Körlük",
-        "en": "Corrosive Caustic / Blindness",
-        "de": "Ätzend / Erblindungsgefahr"
+        "tr": "Aşındırıcı Korozif / Kalıcı Görme Kaybı Riski",
+        "en": "Corrosive Caustic / Permanent Vision Loss Risk",
+        "de": "Ätzend / Gefahr dauerhaften Sehverlusts"
       },
       "environment": {
         "tr": "Zararlı Atık (H412)",
@@ -912,9 +912,9 @@
       "de": "Verifiziert (ECHA / Industrie-SDB)"
     },
     "verification_note": {
-      "tr": "Alkali amin içerir. Ciltte kimyasal yanık, gözde kalıcı kornea hasarı yapar. Karışım kabında yüksek ısı (ekzoterm) üretir.",
-      "en": "Highly alkaline amine. Causes severe chemical burns and corneal opacity. Generates extreme exotherm in mixing pots.",
-      "de": "Stark alkalisches Amin. Verursacht schwere chemische Verätzungen und Hornhauttrübung. Starke Hitzeentwicklung im Mischtopf."
+      "tr": "Alkali amin içerir. Ciltte kimyasal yanık, gözde kalıcı kornea hasarı ve görme kaybı yapar. Karışım kabında yüksek ısı (ekzoterm) üretir.",
+      "en": "Highly alkaline amine. Causes severe chemical burns, permanent corneal opacity and vision loss. Generates extreme exotherm in mixing pots.",
+      "de": "Stark alkalisches Amin. Verursacht schwere chemische Verätzungen, Hornhauttrübung und Sehverlust. Starke Hitzeentwicklung im Mischtopf."
     },
     "ghs_codes": [
       "GHS05",
@@ -928,14 +928,14 @@
     "emergency_timer_min": 20,
     "first_aid": {
       "eye": {
-        "tr": "Göz kapaklarını açık tutarak EN AZ 20 DAKİKA kesintisiz bol suyla yıkayın. Derhal acil tıbbi yardım çağırın (Körlük riski)!",
-        "en": "Rinse with copious water for AT LEAST 20 MINUTES holding eyelids open. Call emergency ambulance immediately (Blindness risk)!",
-        "de": "Mindestens 20 MINUTEN lang mit viel fließendem Wasser spülen und Augenlider offen halten. Sofort Notarzt rufen!"
+        "tr": "Göz kapaklarını açık tutarak EN AZ 20 DAKİKA kesintisiz, TAZYİKSİZ nazikçe akan temiz suyla yıkayın (suyu burun kökünden şakağa akıtın). Derhal acil tıbbi yardım çağırın (Kalıcı görme kaybı riski)!",
+        "en": "Rinse with LOW-PRESSURE, gentle running clean water for AT LEAST 20 MINUTES holding eyelids open (flush from inner corner to temple). Call emergency ambulance immediately (Risk of permanent vision loss)!",
+        "de": "Augenlider offen halten und MINDESTENS 20 MINUTEN ununterbrochen mit drucklosem, sanftem Wasser spülen (von innen nach außen). Sofort Notarzt rufen (Gefahr dauerhaften Sehverlusts)!"
       },
       "skin": {
-        "tr": "Bulaşan elbiseleri derhal çıkarın. Cildi en az 20 dakika bol su ve sabunla yıkayın. Tıbbi yardım alın.",
-        "en": "Strip contaminated clothing immediately. Wash skin for 20+ minutes with running water and soap. Seek medical care.",
-        "de": "Kontaminierte Kleidung sofort ausziehen. Haut mindestens 20 Minuten mit Wasser und Seife waschen. Arzt aufsuchen."
+        "tr": "Bulaşan elbiseleri derhal çıkarın. Cildi en az 20 dakika tazyiksiz bol akan su ve sabunla yıkayın. Tıbbi yardım alın.",
+        "en": "Strip contaminated clothing immediately. Wash skin for 20+ minutes with running water and soap without pressure. Seek medical care.",
+        "de": "Kontaminierte Kleidung sofort ausziehen. Haut mindestens 20 Minuten mit drucklosem Wasser und Seife waschen. Arzt aufsuchen."
       },
       "inhalation": {
         "tr": "Temiz havaya çıkarın, dik oturtun. Nefes darlığı varsa oksijen verin ve 112’yi arayın.",
@@ -943,9 +943,9 @@
         "de": "An die frische Luft bringen, aufrecht hinsetzen. Bei Atemnot Sauerstoff geben und Notdienst rufen."
       },
       "ingestion": {
-        "tr": "KUSTURMAYIN (yemek borusunu tekrar yakar). Ağzı bol suyla çalkalayın ve acil yardım çağırın.",
-        "en": "DO NOT INDUCE VOMITING (causes secondary esophageal burns). Rinse mouth thoroughly and call emergency immediately.",
-        "de": "KEIN ERBRECHEN HERBEIFÜHREN. Mund gründlich ausspülen und sofort Notarzt rufen."
+        "tr": "KESİNLİKLE KUSTURMAYIN (yemek borusunu tekrar yakar). Ağzı suyla çalkalayıp tükürün. Kusmayı ve akciğer aspirasyonunu önlemek için asla bol sıvı içirmeyin. Derhal acil yardım (112) çağırın!",
+        "en": "DO NOT INDUCE VOMITING (causes secondary burns). Rinse mouth thoroughly and spit out. Never give large amounts of water to avoid vomiting and aspiration. Call 112 immediately!",
+        "de": "KEIN ERBRECHEN HERBEIFÜHREN (sekundäre Verätzungsgefahr). Mund gründlich ausspülen und ausspucken. Niemals viel Flüssigkeit einflößen. Sofort Notarzt (112) rufen!"
       }
     },
     "fire_fighting": {
@@ -1071,13 +1071,13 @@
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
-        "tr": "Göz kapaklarını açık tutarak en az 15 dakika bol suyla yıkayın. Göz hekimine başvurun.",
-        "en": "Rinse with running water for at least 15 minutes holding eyelids open. Consult eye doctor.",
-        "de": "Mindestens 15 Minuten lang mit Wasser spülen. Augenarzt aufsuchen."
+        "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan temiz suyla yıkayın. Göz hekimine başvurun.",
+        "en": "Rinse with gentle, low-pressure clean water for at least 15 minutes holding eyelids open. Consult an eye doctor.",
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit drucklosem, sauberem Wasser spülen. Augenarzt aufsuchen."
       },
       "skin": {
-        "tr": "Bulaşan giysileri çıkarın. Cildi bol su ve sabunla yıkayın. Aseton kullanmayın.",
-        "en": "Strip contaminated clothing. Wash skin with soap and water. Never apply acetone.",
+        "tr": "Bulaşan giysileri çıkarın. Cildi tazyiksiz su ve sabunla yıkayın. Aseton kullanmayın.",
+        "en": "Strip contaminated clothing. Wash skin with soap and running water. Never apply acetone.",
         "de": "Kleidung ausziehen. Haut mit Wasser und Seife waschen. Kein Aceton verwenden."
       },
       "inhalation": {
@@ -1086,9 +1086,9 @@
         "de": "Person an die frische Luft bringen. Ruhig lagern und Arzt hinzuziehen."
       },
       "ingestion": {
-        "tr": "Kusturmayın! Ağzı suyla çalkalayın ve acil tıbbi yardım çağırın.",
-        "en": "Do not induce vomiting! Rinse mouth with water and call emergency services.",
-        "de": "Kein Erbrechen herbeiführen! Mund ausspülen und Notarzt rufen."
+        "tr": "Kusturmayın! Ağzı suyla çalkalayıp tükürün ve acil tıbbi yardım (112) çağırın.",
+        "en": "Do not induce vomiting! Rinse mouth with water, spit out, and call emergency services (112).",
+        "de": "Kein Erbrechen herbeiführen! Mund mit Wasser ausspülen, ausspucken und Notarzt (112) rufen."
       }
     },
     "fire_fighting": {
@@ -1214,9 +1214,9 @@
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
-        "tr": "Göz kapaklarını açık tutarak en az 15 dakika bol suyla yıkayın.",
-        "en": "Rinse with plenty of water for at least 15 minutes holding eyelids open.",
-        "de": "Mindestens 15 Minuten lang mit reichlich Wasser spülen."
+        "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz temiz suyla nazikçe yıkayın.",
+        "en": "Rinse gently with low-pressure clean water for at least 15 minutes holding eyelids open.",
+        "de": "Mindestens 15 Minuten lang sanft mit drucklosem, sauberem Wasser spülen und Augenlider offen halten."
       },
       "skin": {
         "tr": "Su ve sabunla yıkayın. PVA film tabakası ılık suyla kolayca çözünür.",
@@ -1229,9 +1229,9 @@
         "de": "An die frische Luft bringen. Bei Schwindel ruhig lagern."
       },
       "ingestion": {
-        "tr": "Ağzı çalkalayın, su için. Kendinizi iyi hissetmiyorsanız doktora danışın.",
-        "en": "Rinse mouth, drink water. Consult doctor if unwell.",
-        "de": "Mund ausspülen, Wasser trinken. Bei Unwohlsein Arzt konsultieren."
+        "tr": "Ağzı temiz suyla çalkalayıp tükürün. Kendinizi iyi hissetmiyorsanız doktora danışın.",
+        "en": "Rinse mouth with clean water and spit out. Consult doctor if unwell.",
+        "de": "Mund mit klarem Wasser ausspülen und ausspucken. Bei Unwohlsein Arzt konsultieren."
       }
     },
     "fire_fighting": {
@@ -1356,9 +1356,9 @@
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
-        "tr": "En az 15 dakika bol suyla yıkayın.",
-        "en": "Rinse with running water for at least 15 minutes.",
-        "de": "Mindestens 15 Minuten lang mit Wasser spülen."
+        "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan suyla yıkayın.",
+        "en": "Rinse gently with low-pressure running clean water for at least 15 minutes holding eyelids open.",
+        "de": "Augenlider offen halten und mindestens 15 Minuten sanft mit drucklosem Wasser spülen."
       },
       "skin": {
         "tr": "Sabun ve ılık suyla yıkayın. Nemlendirici krem sürün.",
@@ -1371,9 +1371,9 @@
         "de": "Bereich lüften, an die frische Luft gehen."
       },
       "ingestion": {
-        "tr": "Kusturmayın! Ağzı çalkalayın ve doktora başvurun.",
-        "en": "Do not induce vomiting! Rinse mouth and call doctor.",
-        "de": "Kein Erbrechen herbeiführen! Mund ausspülen und Arzt aufsuchen."
+        "tr": "Kusturmayın! Ağzı suyla çalkalayıp tükürün ve doktora başvurun.",
+        "en": "Do not induce vomiting! Rinse mouth with water, spit out, and call doctor.",
+        "de": "Kein Erbrechen herbeiführen! Mund ausspülen, ausspucken und Arzt aufsuchen."
       }
     },
     "fire_fighting": {
@@ -1499,13 +1499,13 @@
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
-        "tr": "Göz kapaklarını açık tutarak en az 15 dakika bol suyla yıkayın. Doktora başvurun.",
-        "en": "Rinse with running water for at least 15 minutes holding eyelids open. Consult physician.",
-        "de": "Mindestens 15 Minuten lang mit Wasser spülen. Arzt hinzuziehen."
+        "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan temiz suyla yıkayın. Doktora başvurun.",
+        "en": "Rinse with gentle, low-pressure running water for at least 15 minutes holding eyelids open. Consult a physician.",
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit drucklosem Wasser spülen. Arzt hinzuziehen."
       },
       "skin": {
-        "tr": "Bulaşan giysileri çıkarın. Cildi bol su ve sabunla yıkayın. Cilde aseton sürmeyin.",
-        "en": "Strip contaminated clothes. Wash with plenty of soap and water. Never apply acetone on skin.",
+        "tr": "Bulaşan giysileri çıkarın. Cildi tazyiksiz su ve sabunla yıkayın. Cilde aseton sürmeyin.",
+        "en": "Strip contaminated clothes. Wash with soap and running water without high pressure. Never apply acetone on skin.",
         "de": "Kleidung ausziehen. Mit Wasser und Seife waschen. Niemals Aceton auf die Haut auftragen."
       },
       "inhalation": {
@@ -1514,9 +1514,9 @@
         "de": "Besonders nach Spritzarbeiten sofort an die frische Luft gehen. Bei Atemnot Notarzt rufen."
       },
       "ingestion": {
-        "tr": "Kusturmayın! Ağzı suyla çalkalayın ve acil yardım çağırın.",
-        "en": "Do not induce vomiting! Rinse mouth and call emergency.",
-        "de": "Kein Erbrechen herbeiführen! Mund ausspülen und Notarzt rufen."
+        "tr": "Kusturmayın! Ağzı suyla çalkalayıp tükürün ve acil yardım (112) çağırın.",
+        "en": "Do not induce vomiting! Rinse mouth with water, spit out, and call emergency (112).",
+        "de": "Kein Erbrechen herbeiführen! Mund ausspülen, ausspucken und Notarzt (112) rufen."
       }
     },
     "fire_fighting": {
