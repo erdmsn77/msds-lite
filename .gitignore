@@ -15,3 +15,6 @@ npm-debug.log*
 .idea/
 *.swp
 *.swo
+
+# Antigravity workspace rules (local only)
+.agents/
