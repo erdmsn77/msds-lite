@@ -303,9 +303,11 @@
     .search-icon {
       position: absolute;
       left: 14px;
-      font-size: 14px;
+      width: 15px;
+      height: 15px;
+      stroke: var(--text-muted);
       pointer-events: none;
-      opacity: 0.65;
+      opacity: 0.8;
       user-select: none;
     }
     .search-input {
@@ -2978,7 +2980,7 @@
           themeDark: '🌙 Gece (Koyu)',
           checkUpdate: 'Önbelleği Yenile',
           offlineCacheProtected: 'Çevrimdışı (Önbellek Korundu)',
-          searchPlaceholder: '🔍 Kimyasal adı, CAS No veya kategori ara... (örn: MEK-P, 1338-23-4, aseton)'
+          searchPlaceholder: 'Kimyasal adı, CAS No veya kategori ara...'
         },
         en: {
           appTitle: 'MSDS-Lite',
@@ -3046,7 +3048,7 @@
           themeDark: '🌙 Night (Dark)',
           checkUpdate: 'Check Update',
           offlineCacheProtected: 'Offline (Cache Protected)',
-          searchPlaceholder: '🔍 Search chemical name, CAS No or category... (e.g. MEK-P, acetone)'
+          searchPlaceholder: 'Search chemical name, CAS No or category...'
         },
         de: {
           appTitle: 'MSDS-Lite',
@@ -3114,7 +3116,7 @@
           themeDark: '🌙 Nacht (Dunkel)',
           checkUpdate: 'Update Prüfen',
           offlineCacheProtected: 'Offline (Cache Geschützt)',
-          searchPlaceholder: '🔍 Chemikalienname, CAS-Nr. oder Kategorie suchen... (z. B. Aceton)'
+          searchPlaceholder: 'Chemikalienname, CAS-Nr. oder Kategorie suchen...'
         }
       };
 
@@ -3290,7 +3292,6 @@
                 <div>
                   <div class="brand-eyebrow">
                     <span>${t('tagline')}</span>
-                    <span class="version-pill">v1.5.5</span>
                   </div>
                   <h1 class="brand-title">${t('appTitle')}</h1>
                   <p class="brand-subtitle">${t('subtitle')}</p>
@@ -3311,7 +3312,7 @@
 
             <section class="controls-panel" aria-label="Controls">
               <div class="search-wrapper">
-                <span class="search-icon">🔍</span>
+                <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                 <input type="text" id="searchInput" class="search-input" placeholder="${t('searchPlaceholder')}" value="${escape(state.searchQuery)}" autocomplete="off" spellcheck="false" />
                 <button type="button" id="searchClearBtn" class="search-clear-btn ${state.searchQuery ? 'visible' : ''}" aria-label="${t('clearSearch')}">✕</button>
               </div>
@@ -3331,7 +3332,7 @@
             <footer class="marine-footer">
               <p>${t('disclaimer')}</p>
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.5.5</span>
+                <span class="version-tag">MSDS-Lite v1.5.6</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   🔄 ${t('checkUpdate')}
                 </button>
