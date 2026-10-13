@@ -2914,7 +2914,8 @@
           viewDetails: 'Acil Eylem & Detay',
           themeLight: '☀️ Saha (Açık)',
           themeDark: '🌙 Gece (Koyu)',
-          checkUpdate: 'Önbelleği Yenile'
+          checkUpdate: 'Önbelleği Yenile',
+          offlineCacheProtected: 'Çevrimdışı (Önbellek Korundu)'
         },
         en: {
           appTitle: 'MSDS-Lite',
@@ -2980,7 +2981,8 @@
           viewDetails: 'Emergency Action & Details',
           themeLight: '☀️ Workshop (Light)',
           themeDark: '🌙 Night (Dark)',
-          checkUpdate: 'Check Update'
+          checkUpdate: 'Check Update',
+          offlineCacheProtected: 'Offline (Cache Protected)'
         },
         de: {
           appTitle: 'MSDS-Lite',
@@ -3046,7 +3048,8 @@
           viewDetails: 'Notfallmaßnahme & Details',
           themeLight: '☀️ Werkstatt (Hell)',
           themeDark: '🌙 Nacht (Dunkel)',
-          checkUpdate: 'Update Prüfen'
+          checkUpdate: 'Update Prüfen',
+          offlineCacheProtected: 'Offline (Cache Geschützt)'
         }
       };
 
@@ -3224,7 +3227,7 @@
             <footer class="marine-footer">
               <p>${t('disclaimer')}</p>
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.5.2</span>
+                <span class="version-tag">MSDS-Lite v1.5.3</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   🔄 ${t('checkUpdate')}
                 </button>
@@ -3716,27 +3719,55 @@
           });
         }
 
-        // Force Refresh & Cache Wipe
+        // Safe Cache Refresh (Offline-Protected: asla kullanıcıyı internetsiz bırakmaz)
         const refreshBtn = document.getElementById('btnForceRefresh');
         if (refreshBtn) {
           refreshBtn.addEventListener('click', async () => {
+            // Çevrimdışı kontrolü: İnternet yokken asla önbelleği silip bozma!
+            if (!navigator.onLine) {
+              const origHtml = refreshBtn.innerHTML;
+              refreshBtn.style.borderColor = 'var(--marine-amber, #f59e0b)';
+              refreshBtn.style.color = 'var(--marine-amber, #f59e0b)';
+              refreshBtn.innerHTML = `⚠️ ${t('offlineCacheProtected')}`;
+              setTimeout(() => {
+                refreshBtn.innerHTML = origHtml;
+                refreshBtn.style.borderColor = '';
+                refreshBtn.style.color = '';
+              }, 3200);
+              return;
+            }
+
             refreshBtn.classList.add('loading');
-            refreshBtn.textContent = '⏳ ...';
-            if ('caches' in window) {
-              try {
-                const keys = await caches.keys();
-                await Promise.all(keys.map(k => caches.delete(k)));
-              } catch (e) {}
-            }
-            if ('serviceWorker' in navigator) {
-              try {
-                const registrations = await navigator.serviceWorker.getRegistrations();
-                for (const reg of registrations) {
-                  await reg.unregister();
+            refreshBtn.innerHTML = '⏳ ...';
+
+            try {
+              // 1. Service Worker'a arka planda en güncel halini denetlet
+              if ('serviceWorker' in navigator) {
+                const reg = await navigator.serviceWorker.getRegistration();
+                if (reg) {
+                  await reg.update().catch(() => {});
                 }
-              } catch (e) {}
+              }
+
+              // 2. Güvenli önbellek yenileme (yeni dosyayı çek, sonra cache'e yaz - eski cache'i ASLA önceden silme)
+              if ('caches' in window) {
+                const cacheNames = await caches.keys();
+                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.5.3';
+                const cache = await caches.open(activeCacheName);
+                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json'];
+                await Promise.allSettled(urlsToUpdate.map(async (url) => {
+                  const res = await fetch(url, { cache: 'reload' });
+                  if (res && res.ok) {
+                    await cache.put(url, res);
+                  }
+                }));
+              }
+            } catch (err) {
+              console.warn('Cache refresh warning:', err);
             }
-            window.location.reload(true);
+
+            // Sayfayı yeni veriyle güvenle yeniden yükle
+            window.location.reload();
           });
         }
 
