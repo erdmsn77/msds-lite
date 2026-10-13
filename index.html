@@ -293,6 +293,68 @@
       gap: 12px;
     }
 
+    /* Search Bar */
+    .search-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+    }
+    .search-icon {
+      position: absolute;
+      left: 14px;
+      font-size: 14px;
+      pointer-events: none;
+      opacity: 0.65;
+      user-select: none;
+    }
+    .search-input {
+      width: 100%;
+      height: 42px;
+      padding: 0 40px 0 38px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      font-size: 13px;
+      font-weight: 550;
+      box-shadow: var(--card-shadow);
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+    }
+    .search-input::placeholder {
+      color: var(--text-muted);
+      font-weight: 450;
+    }
+    .search-input:focus {
+      border-color: var(--marine-orange);
+      box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.2);
+    }
+    .search-clear-btn {
+      position: absolute;
+      right: 10px;
+      width: 24px;
+      height: 24px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg-active);
+      border: none;
+      border-radius: 50%;
+      color: var(--text-muted);
+      font-size: 11px;
+      cursor: pointer;
+      transition: background-color 0.12s, color 0.12s;
+    }
+    .search-clear-btn.visible {
+      display: flex;
+    }
+    .search-clear-btn:hover {
+      background: var(--border-subtle);
+      color: var(--text-main);
+    }
+
     /* Category Filter Ribbon */
     .category-grid {
       display: flex;
@@ -2915,7 +2977,8 @@
           themeLight: '☀️ Saha (Açık)',
           themeDark: '🌙 Gece (Koyu)',
           checkUpdate: 'Önbelleği Yenile',
-          offlineCacheProtected: 'Çevrimdışı (Önbellek Korundu)'
+          offlineCacheProtected: 'Çevrimdışı (Önbellek Korundu)',
+          searchPlaceholder: '🔍 Kimyasal adı, CAS No veya kategori ara... (örn: MEK-P, 1338-23-4, aseton)'
         },
         en: {
           appTitle: 'MSDS-Lite',
@@ -2982,7 +3045,8 @@
           themeLight: '☀️ Workshop (Light)',
           themeDark: '🌙 Night (Dark)',
           checkUpdate: 'Check Update',
-          offlineCacheProtected: 'Offline (Cache Protected)'
+          offlineCacheProtected: 'Offline (Cache Protected)',
+          searchPlaceholder: '🔍 Search chemical name, CAS No or category... (e.g. MEK-P, acetone)'
         },
         de: {
           appTitle: 'MSDS-Lite',
@@ -3049,7 +3113,8 @@
           themeLight: '☀️ Werkstatt (Hell)',
           themeDark: '🌙 Nacht (Dunkel)',
           checkUpdate: 'Update Prüfen',
-          offlineCacheProtected: 'Offline (Cache Geschützt)'
+          offlineCacheProtected: 'Offline (Cache Geschützt)',
+          searchPlaceholder: '🔍 Chemikalienname, CAS-Nr. oder Kategorie suchen... (z. B. Aceton)'
         }
       };
 
@@ -3058,6 +3123,7 @@
         language: localStorage.getItem('msds-language') || 'tr',
         theme: localStorage.getItem('msds-theme') || 'light',
         category: 'all',
+        searchQuery: '',
         selectedChemical: null
       };
 
@@ -3071,8 +3137,31 @@
       }
 
       function getFilteredChemicals() {
+        const q = (state.searchQuery || '').trim().toLowerCase();
         return state.chemicals.filter((chem) => {
-          return state.category === 'all' || chem.category === state.category;
+          const matchCat = state.category === 'all' || chem.category === state.category;
+          if (!matchCat) return false;
+          if (!q) return true;
+
+          const nameTr = (chem.name?.tr || chem.name || '').toLowerCase();
+          const nameEn = (chem.name?.en || '').toLowerCase();
+          const nameDe = (chem.name?.de || '').toLowerCase();
+          const chemNameTr = (chem.chemical_name?.tr || chem.chemical_name || '').toLowerCase();
+          const chemNameEn = (chem.chemical_name?.en || '').toLowerCase();
+          const chemNameDe = (chem.chemical_name?.de || '').toLowerCase();
+          const cas = (chem.cas || '').toLowerCase();
+          const category = (chem.category || '').toLowerCase();
+          const ghs = (chem.ghs_codes || []).join(' ').toLowerCase();
+
+          return nameTr.includes(q) ||
+                 nameEn.includes(q) ||
+                 nameDe.includes(q) ||
+                 chemNameTr.includes(q) ||
+                 chemNameEn.includes(q) ||
+                 chemNameDe.includes(q) ||
+                 cas.includes(q) ||
+                 category.includes(q) ||
+                 ghs.includes(q);
         });
       }
 
@@ -3094,6 +3183,11 @@
           `;
           document.getElementById('emptyResetBtn')?.addEventListener('click', () => {
             state.category = 'all';
+            state.searchQuery = '';
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) searchInput.value = '';
+            const searchClearBtn = document.getElementById('searchClearBtn');
+            if (searchClearBtn) searchClearBtn.classList.remove('visible');
             document.querySelectorAll('.category-card').forEach(c => {
               c.classList.toggle('active', c.dataset.cat === 'all');
             });
@@ -3196,7 +3290,7 @@
                 <div>
                   <div class="brand-eyebrow">
                     <span>${t('tagline')}</span>
-                    <span class="version-pill">v1.5.4</span>
+                    <span class="version-pill">v1.5.5</span>
                   </div>
                   <h1 class="brand-title">${t('appTitle')}</h1>
                   <p class="brand-subtitle">${t('subtitle')}</p>
@@ -3216,6 +3310,12 @@
             </header>
 
             <section class="controls-panel" aria-label="Controls">
+              <div class="search-wrapper">
+                <span class="search-icon">🔍</span>
+                <input type="text" id="searchInput" class="search-input" placeholder="${t('searchPlaceholder')}" value="${escape(state.searchQuery)}" autocomplete="off" spellcheck="false" />
+                <button type="button" id="searchClearBtn" class="search-clear-btn ${state.searchQuery ? 'visible' : ''}" aria-label="${t('clearSearch')}">✕</button>
+              </div>
+
               <div class="category-grid" id="categoryGrid">
                 ${categoryGridHtml}
               </div>
@@ -3231,7 +3331,7 @@
             <footer class="marine-footer">
               <p>${t('disclaimer')}</p>
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.5.4</span>
+                <span class="version-tag">MSDS-Lite v1.5.5</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   🔄 ${t('checkUpdate')}
                 </button>
@@ -3641,6 +3741,42 @@
             }
           });
         });
+
+        // Search Input Handling
+        const searchInput = document.getElementById('searchInput');
+        const searchClearBtn = document.getElementById('searchClearBtn');
+
+        if (searchInput) {
+          searchInput.addEventListener('input', (e) => {
+            state.searchQuery = e.target.value;
+            if (searchClearBtn) {
+              searchClearBtn.classList.toggle('visible', !!state.searchQuery);
+            }
+            renderChemicalList();
+          });
+
+          // Keyboard Esc to clear search
+          searchInput.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && state.searchQuery) {
+              state.searchQuery = '';
+              searchInput.value = '';
+              if (searchClearBtn) searchClearBtn.classList.remove('visible');
+              renderChemicalList();
+            }
+          });
+        }
+
+        if (searchClearBtn) {
+          searchClearBtn.addEventListener('click', () => {
+            state.searchQuery = '';
+            if (searchInput) {
+              searchInput.value = '';
+              searchInput.focus();
+            }
+            searchClearBtn.classList.remove('visible');
+            renderChemicalList();
+          });
+        }
 
         // Category Filter Buttons (Toggle davranışı: aktif karta tekrar basılınca filtre kalkar ve 'all' / Tümü'ne döner)
         app.querySelectorAll('.category-card').forEach(card => {

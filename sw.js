@@ -1,4 +1,4 @@
-const CACHE_NAME = 'msds-lite-v1.5.4';
+const CACHE_NAME = 'msds-lite-v1.5.5';
 const APP_SHELL = [
   './',
   './index.html',
