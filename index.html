@@ -23,8 +23,20 @@
   <script>
     (function () {
       try {
-        var t = localStorage.getItem('msds-theme') || 'light';
-        if (t === 'dark') {
+        var manual = localStorage.getItem('msds-theme-manual');
+        var saved = localStorage.getItem('msds-theme');
+        var theme = 'light';
+        if (manual === 'true' && (saved === 'dark' || saved === 'light')) {
+          theme = saved;
+        } else {
+          var hour = new Date().getHours();
+          if (hour >= 19 || hour < 7) {
+            theme = 'dark';
+          } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            theme = 'dark';
+          }
+        }
+        if (theme === 'dark') {
           document.documentElement.setAttribute('data-theme', 'dark');
           var m = document.getElementById('themeColorMeta');
           if (m) m.content = '#0b0f17';
@@ -3120,10 +3132,30 @@
         }
       };
 
+      function detectInitialTheme() {
+        try {
+          const manual = localStorage.getItem('msds-theme-manual');
+          const saved = localStorage.getItem('msds-theme');
+          if (manual === 'true' && (saved === 'dark' || saved === 'light')) {
+            return saved;
+          }
+          const hour = new Date().getHours();
+          if (hour >= 19 || hour < 7) {
+            return 'dark';
+          }
+          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+          }
+          return 'light';
+        } catch (e) {
+          return 'light';
+        }
+      }
+
       const state = {
         chemicals: [],
         language: localStorage.getItem('msds-language') || 'tr',
-        theme: localStorage.getItem('msds-theme') || 'light',
+        theme: detectInitialTheme(),
         category: 'all',
         searchQuery: '',
         selectedChemical: null
@@ -3332,7 +3364,7 @@
             <footer class="marine-footer">
               <p>${t('disclaimer')}</p>
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.5.6</span>
+                <span class="version-tag">MSDS-Lite v1.5.7</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   🔄 ${t('checkUpdate')}
                 </button>
@@ -3719,6 +3751,7 @@
         app.querySelector('#themeToggleBtn')?.addEventListener('click', () => {
           state.theme = state.theme === 'dark' ? 'light' : 'dark';
           localStorage.setItem('msds-theme', state.theme);
+          localStorage.setItem('msds-theme-manual', 'true');
           document.documentElement.setAttribute('data-theme', state.theme);
           const meta = document.getElementById('themeColorMeta');
           if (meta) meta.content = state.theme === 'dark' ? '#0b0f17' : '#f8fafc';
