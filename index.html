@@ -3097,6 +3097,10 @@
             document.querySelectorAll('.category-card').forEach(c => {
               c.classList.toggle('active', c.dataset.cat === 'all');
             });
+            const categoryGrid = document.getElementById('categoryGrid');
+            if (categoryGrid) {
+              categoryGrid.scrollTo({ left: 0, behavior: 'smooth' });
+            }
             renderChemicalList();
           });
           return;
@@ -3192,7 +3196,7 @@
                 <div>
                   <div class="brand-eyebrow">
                     <span>${t('tagline')}</span>
-                    <span class="version-pill">v1.5.3</span>
+                    <span class="version-pill">v1.5.4</span>
                   </div>
                   <h1 class="brand-title">${t('appTitle')}</h1>
                   <p class="brand-subtitle">${t('subtitle')}</p>
@@ -3227,7 +3231,7 @@
             <footer class="marine-footer">
               <p>${t('disclaimer')}</p>
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.5.3</span>
+                <span class="version-tag">MSDS-Lite v1.5.4</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   🔄 ${t('checkUpdate')}
                 </button>
@@ -3638,10 +3642,22 @@
           });
         });
 
-        // Category Filter Buttons
+        // Category Filter Buttons (Toggle davranışı: aktif karta tekrar basılınca filtre kalkar ve 'all' / Tümü'ne döner)
         app.querySelectorAll('.category-card').forEach(card => {
           card.addEventListener('click', () => {
-            state.category = card.dataset.cat;
+            const clickedCat = card.dataset.cat;
+            const categoryGrid = document.getElementById('categoryGrid');
+
+            if (state.category === clickedCat && clickedCat !== 'all') {
+              // Zaten seçili olan kategoriye tekrar tıklandı: Filtreyi kaldır ve Tümü'ne dön
+              state.category = 'all';
+              if (categoryGrid) {
+                categoryGrid.scrollTo({ left: 0, behavior: 'smooth' });
+              }
+            } else {
+              state.category = clickedCat;
+            }
+
             app.querySelectorAll('.category-card').forEach(c => {
               c.classList.toggle('active', c.dataset.cat === state.category);
             });
