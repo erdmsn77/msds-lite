@@ -10,7 +10,7 @@
 [![License](https://img.shields.io/badge/License-MIT%20%2F%20Open-orange?style=flat-square)](LICENSE)
 
 * **Canlı Uygulama:** [erdmsn77.github.io/msds-lite](https://erdmsn77.github.io/msds-lite/)
-* **Akademik Kurum:** Yalova Üniversitesi Çınarcık Meslek Yüksekokulu • Motorlu Araçlar ve Ulaştırma Teknolojileri Bölümü • Tekne İmalatı ve Kompozit Teknolojileri Programı
+* **Akademik Kurum:** Yalova Üniversitesi Çınarcık Meslek Yüksekokulu • Fiber Tekne İmalatı ve Kompozit Teknolojileri
 * **Önemli Hatırlatma:** Bu uygulama resmî üretici Güvenlik Bilgi Formlarının (SDS/MSDS) yerine geçmez; acil durumlarda ve saha operasyonlarında saniyeler içinde doğru kararı vermeyi sağlayan pratik bir atölye içi hızlı referanstır.
 
 ---
@@ -129,7 +129,6 @@ Bu proje açık kaynak olarak paylaşılmıştır.
 
 Fiber tekne imalatı, yat inşaatı, kompozit malzemeler ve iş sağlığı güvenliği (İSG) alanında staj, proje veya iş birliği konularında iletişime geçebilirsiniz.
 
-* **Geliştirici:** Erdem Doğan ([@erdmsn77](https://github.com/erdmsn77)) — Yalova Üniversitesi Çınarcık MYO, Tekne İmalatı ve Kompozit Teknolojileri Programı Öğrencisi
-* **Akademik Danışmanlık:** Bölüm Danışmanlığı / Öğretim Elemanı
-* **Kurum:** Yalova Üniversitesi Çınarcık Meslek Yüksekokulu (Motorlu Araçlar ve Ulaştırma Teknolojileri Bölümü)
+* **Geliştirici:** Erdem Doğan ([@erdmsn77](https://github.com/erdmsn77)) — Yalova Üniversitesi Çınarcık MYO, Fiber Tekne İmalatı ve Kompozit Teknolojileri
+* **Kurum:** Yalova Üniversitesi Çınarcık Meslek Yüksekokulu (Fiber Tekne İmalatı ve Kompozit Teknolojileri)
 * **Canlı Proje:** [https://erdmsn77.github.io/msds-lite/](https://erdmsn77.github.io/msds-lite/)

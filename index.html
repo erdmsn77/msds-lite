@@ -1276,6 +1276,15 @@
       font-size: 11px;
       line-height: 1.5;
       text-align: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      touch-action: manipulation;
+      user-select: none;
+    }
+    .footer-institution-block:hover {
+      border-color: var(--marine-orange);
+      background: rgba(234, 88, 12, 0.04);
+      transform: translateY(-1px);
     }
     .footer-inst-title {
       font-weight: 800;
@@ -3397,20 +3406,14 @@
           checkUpdate: 'Önbelleği Yenile',
           offlineCacheProtected: 'Çevrimdışı (Önbellek Korundu)',
           searchPlaceholder: 'Kimyasal adı, CAS No veya kategori ara...',
-          institutionName: 'Yalova Üni. Çınarcık MYO • Kompozit & Tekne İmalatı',
+          institutionName: 'Yalova Üni. Çınarcık MYO • Fiber Tekne',
           institutionFull: 'Yalova Üniversitesi Çınarcık Meslek Yüksekokulu',
-          departmentFull: 'Motorlu Araçlar ve Ulaştırma Teknolojileri Bölümü • Gemi İnşaatı / Tekne İmalatı ve Kompozit Teknolojileri Programı',
-          expoBtnText: 'Fuar & Künye',
-          expoModalTitle: 'Fuar Standı & Proje Künyesi',
-          expoModalLink: 'Fuar & Proje Künyesi',
-          developerLabel: 'Proje Geliştiricisi',
-          studentBadge: 'Öğrenci',
-          advisorLabel: 'Akademik Danışmanlık',
-          advisorValue: 'Bölüm Danışmanlığı / Öğretim Elemanı',
+          departmentFull: 'Fiber Tekne',
+          departmentFooter: 'Fiber Tekne İmalatı ve Kompozit Teknolojileri',
+          expoModalTitle: 'Yalova Üniversitesi Çınarcık MYO',
           targetField: 'Uygulama Sahası',
           targetFieldValue: 'Kompozit İmalat, Tersane Kalıphaneleri, Yat & Tekne Atölyeleri',
-          qrBoothTitle: 'Fuar Ziyaretçileri İçin Hızlı Kurulum',
-          qrBoothDesc: 'Kameranızla QR kodu tarayın. Açılan ekranda "Uygulamayı Yükle" veya "Ana Ekrana Ekle"ye dokunarak atölyede ve açık denizde internetsiz (%100 Çevrimdışı) kullanın.',
+          qrBoothTitle: 'Hızlı Kurulum & Çevrimdışı Kullanım',
           copyLink: 'Bağlantıyı Kopyala',
           copied: 'Kopyalandı!',
           featuresTitle: 'Öne Çıkan Saha Özellikleri',
@@ -3489,20 +3492,14 @@
           checkUpdate: 'Check Update',
           offlineCacheProtected: 'Offline (Cache Protected)',
           searchPlaceholder: 'Search chemical name, CAS No or category...',
-          institutionName: 'Yalova Univ. Çınarcık VSHS • Marine Composite & Boatbuilding',
+          institutionName: 'Yalova Univ. Çınarcık VSHS • Fiber Boat',
           institutionFull: 'Yalova University Çınarcık Vocational School of Higher Education',
-          departmentFull: 'Dept. of Motor Vehicles & Transport Technologies • Boatbuilding & Marine Composite Technologies Program',
-          expoBtnText: 'Expo & Credits',
-          expoModalTitle: 'Expo Booth & Project Credits',
-          expoModalLink: 'Project Credits & Expo QR',
-          developerLabel: 'Project Developer',
-          studentBadge: 'Student',
-          advisorLabel: 'Academic Advising',
-          advisorValue: 'Department Faculty / Academic Advisorship',
+          departmentFull: 'Fiber Boat',
+          departmentFooter: 'Boatbuilding & Marine Composite Technologies',
+          expoModalTitle: 'Yalova University Çınarcık VSHS',
           targetField: 'Field of Application',
           targetFieldValue: 'Marine Composite Fabrication, Shipyard Workshops, Yacht & Boat Yards',
-          qrBoothTitle: 'Quick Install for Expo Visitors',
-          qrBoothDesc: 'Scan QR with your phone camera. Tap "Install App" or "Add to Home Screen" to use 100% offline inside boatyards and marine workshops.',
+          qrBoothTitle: 'Quick Setup & Offline Access',
           copyLink: 'Copy App Link',
           copied: 'Copied!',
           featuresTitle: 'Key Field Capabilities',
@@ -3581,20 +3578,14 @@
           checkUpdate: 'Update Prüfen',
           offlineCacheProtected: 'Offline (Cache Geschützt)',
           searchPlaceholder: 'Chemikalienname, CAS-Nr. oder Kategorie suchen...',
-          institutionName: 'Yalova Univ. Çınarcık BFS • Bootsbau & Verbundwerkstoffe',
+          institutionName: 'Yalova Univ. Çınarcık BFS • Bootsbau',
           institutionFull: 'Yalova Universität Berufsfachschule Çınarcık',
-          departmentFull: 'Fachbereich Kraftfahrzeuge & Transporttechnologien • Programm für Bootsbau & Verbundwerkstofftechnologien',
-          expoBtnText: 'Messe & Profil',
-          expoModalTitle: 'Messestand & Projektprofil',
-          expoModalLink: 'Projektprofil & Messe-QR',
-          developerLabel: 'Projektentwickler',
-          studentBadge: 'Student',
-          advisorLabel: 'Akademische Betreuung',
-          advisorValue: 'Fachbereichsleitung / Fachdozent',
+          departmentFull: 'Bootsbau',
+          departmentFooter: 'Programm für Bootsbau & Verbundwerkstofftechnologien',
+          expoModalTitle: 'Yalova Universität Berufsfachschule Çınarcık',
           targetField: 'Anwendungsbereich',
           targetFieldValue: 'Faserverbundfertigung, Werften, Yacht- & Bootsbau',
-          qrBoothTitle: 'Schnellinstallation für Messebesucher',
-          qrBoothDesc: 'Scannen Sie den QR-Code mit der Handykamera. Wählen Sie "App installieren", um die Anwendung offline in der Werft oder auf See zu nutzen.',
+          qrBoothTitle: 'Schnellinstallation & Offline-Zugriff',
           copyLink: 'Link kopieren',
           copied: 'Kopiert!',
           featuresTitle: 'Zentrale Praxisfunktionen',
@@ -3813,10 +3804,6 @@
               </div>
 
               <div class="topbar-actions">
-                <button type="button" class="expo-btn" id="expoBtn" title="${t('expoModalTitle')}">
-                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:3px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
-                  <span>${t('expoBtnText')}</span>
-                </button>
                 <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
                   ${themeBtnText}
                 </button>
@@ -3850,20 +3837,16 @@
             <footer class="marine-footer">
               <p>${t('disclaimer')}</p>
 
-              <div class="footer-institution-block">
-                <div class="footer-inst-title"><span>${t('institutionFull')}</span></div>
-                <div class="footer-inst-dept">${t('departmentFull')}</div>
-                <div class="footer-inst-credits">
-                  <span>${t('developerLabel')}: <strong>Erdem Doğan</strong> (${t('studentBadge')})</span>
-                  <span>•</span>
-                  <span>${t('advisorLabel')}: <strong>${t('advisorValue')}</strong></span>
-                  <span>•</span>
-                  <button type="button" class="footer-expo-trigger" id="footerExpoBtn">${t('expoModalLink')}</button>
+              <div class="footer-institution-block" id="footerInstitutionBadge" role="button" tabindex="0" title="${t('expoModalTitle')}">
+                <div class="footer-inst-title">
+                  <span>${t('institutionFull')}</span>
+                  <span class="institution-arrow" style="font-size:10px;color:var(--marine-orange);opacity:0.8;">↗</span>
                 </div>
+                <div class="footer-inst-dept">${t('departmentFooter')}</div>
               </div>
 
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.6.0</span>
+                <span class="version-tag">MSDS-Lite v1.6.1</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>${t('checkUpdate')}</span>
@@ -4255,7 +4238,7 @@
               <span class="expo-modal-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
               <div>
                 <div class="expo-modal-title" id="expoModalTitle">${t('expoModalTitle')}</div>
-                <div class="expo-modal-subtitle">${t('institutionName')}</div>
+                <div class="expo-modal-subtitle">${t('departmentFull')}</div>
               </div>
             </div>
             <button type="button" class="expo-modal-close-btn" id="expoModalCloseBtn" aria-label="${t('close')}">✕</button>
@@ -4264,19 +4247,18 @@
           <div class="expo-modal-body">
             <!-- Kurumsal Tanıtım Kartı -->
             <div class="expo-inst-card">
-              <span class="expo-inst-badge-pill">${t('institutionName')}</span>
+              <span class="expo-inst-badge-pill">${t('departmentFull')}</span>
               <div class="expo-inst-h1">${t('institutionFull')}</div>
               <div class="expo-inst-h2">${t('departmentFull')}</div>
             </div>
 
-            <!-- Fuar Standı QR Kartı -->
+            <!-- Kurulum QR Kartı -->
             <div class="expo-qr-card">
               <div class="expo-qr-box">
-                <img src="icons/qr-code.svg" alt="MSDS-Lite Fuar Kurulum QR Kodu" class="expo-qr-img" width="120" height="120" />
+                <img src="icons/qr-code.svg" alt="MSDS-Lite Kurulum QR Kodu" class="expo-qr-img" width="120" height="120" />
               </div>
               <div class="expo-qr-info">
                 <div class="expo-qr-title">${t('qrBoothTitle')}</div>
-                <p class="expo-qr-desc">${t('qrBoothDesc')}</p>
                 <div class="expo-url-box">
                   <a href="https://erdmsn77.github.io/msds-lite/" target="_blank" rel="noopener" class="expo-url-link">
                     erdmsn77.github.io/msds-lite/
@@ -4289,21 +4271,11 @@
               </div>
             </div>
 
-            <!-- Proje & Akademik Künye Tablosu -->
-            <div class="expo-credits-grid">
+            <!-- Uygulama Sahası -->
+            <div class="expo-credits-grid" style="grid-template-columns: 1fr;">
               <div class="expo-credit-cell">
-                <div class="expo-credit-label">${t('developerLabel')}</div>
-                <div class="expo-credit-val">Erdem Doğan</div>
-                <div class="expo-credit-sub">Fiber Tekne & Kompozit (${t('studentBadge')})</div>
-              </div>
-              <div class="expo-credit-cell">
-                <div class="expo-credit-label">${t('advisorLabel')}</div>
-                <div class="expo-credit-val">${t('advisorValue')}</div>
-                <div class="expo-credit-sub">Çınarcık Meslek Yüksekokulu</div>
-              </div>
-              <div class="expo-credit-cell" style="grid-column: span 2;">
                 <div class="expo-credit-label">${t('targetField')}</div>
-                <div class="expo-credit-val" style="font-size:11px;">${t('targetFieldValue')}</div>
+                <div class="expo-credit-val" style="font-size:11.5px;">${t('targetFieldValue')}</div>
               </div>
             </div>
 
@@ -4598,9 +4570,7 @@
         // Backdrop click closes drawer
         document.getElementById('drawerBackdrop')?.addEventListener('click', handleUserClose);
 
-        // Fuar & Proje Künyesi (Expo Modal) Event Listeners
-        document.getElementById('expoBtn')?.addEventListener('click', openExpoModal);
-
+        // Kurumsal Bilgi & QR Modal Event Listeners
         const headerBadge = document.getElementById('headerInstitutionBadge');
         if (headerBadge) {
           headerBadge.addEventListener('click', openExpoModal);
@@ -4612,7 +4582,17 @@
           });
         }
 
-        document.getElementById('footerExpoBtn')?.addEventListener('click', openExpoModal);
+        const footerBadge = document.getElementById('footerInstitutionBadge');
+        if (footerBadge) {
+          footerBadge.addEventListener('click', openExpoModal);
+          footerBadge.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openExpoModal();
+            }
+          });
+        }
+
         document.getElementById('expoModalBackdrop')?.addEventListener('click', closeExpoModal);
       }
 

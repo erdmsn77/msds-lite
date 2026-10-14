@@ -10,7 +10,7 @@
 [![License](https://img.shields.io/badge/License-MIT%20%2F%20Open-orange?style=flat-square)](LICENSE)
 
 * **Live Application:** [erdmsn77.github.io/msds-lite](https://erdmsn77.github.io/msds-lite/)
-* **Academic Institution:** Yalova University Çınarcık Vocational School of Higher Education • Department of Motor Vehicles & Transport Technologies • Boatbuilding & Marine Composite Technologies Program
+* **Academic Institution:** Yalova University Çınarcık Vocational School of Higher Education • Boatbuilding & Marine Composite Technologies
 * **Important Notice:** This application is not a substitute for manufacturer-issued official Safety Data Sheets (SDS/MSDS). It is designed as a rapid, on-site quick reference to enable decisive, life-saving actions within seconds during workshop emergencies.
 
 ---
@@ -129,7 +129,6 @@ This project is open-source under the MIT License.
 
 For internships, industry projects, or collaboration in boatbuilding, yacht construction, composite materials, and occupational health and safety (OHS):
 
-* **Developer:** Erdem Doğan ([@erdmsn77](https://github.com/erdmsn77)) — Student, Boatbuilding & Marine Composite Technologies Program, Yalova University Çınarcık VSHS
-* **Academic Advising:** Department Faculty / Academic Advisorship
-* **Institution:** Yalova University Çınarcık Vocational School of Higher Education (Department of Motor Vehicles & Transport Technologies)
+* **Developer:** Erdem Doğan ([@erdmsn77](https://github.com/erdmsn77)) — Boatbuilding & Marine Composite Technologies, Yalova University Çınarcık VSHS
+* **Institution:** Yalova University Çınarcık Vocational School of Higher Education (Boatbuilding & Marine Composite Technologies)
 * **Live Application:** [https://erdmsn77.github.io/msds-lite/](https://erdmsn77.github.io/msds-lite/)

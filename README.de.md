@@ -10,7 +10,7 @@
 [![License](https://img.shields.io/badge/License-MIT%20%2F%20Open-orange?style=flat-square)](LICENSE)
 
 * **Live-Anwendung:** [erdmsn77.github.io/msds-lite](https://erdmsn77.github.io/msds-lite/)
-* **Akademische Institution:** Yalova Universität Berufsfachschule Çınarcık • Fachbereich Kraftfahrzeuge & Transporttechnologien • Programm für Bootsbau & Verbundwerkstofftechnologien
+* **Akademische Institution:** Yalova Universität Berufsfachschule Çınarcık • Bootsbau & Verbundwerkstofftechnologien
 * **Wichtiger Hinweis:** Diese Anwendung ersetzt kein offizielles herstellerseitiges Sicherheitsdatenblatt (SDB / SDS). Sie dient als praxisnahes Schnellreferenz-Werkzeug für Werkstätten und Werften, um bei Notfällen sekundenschnell lebensrettende Entscheidungen zu treffen.
 
 ---
@@ -127,7 +127,6 @@ Dieses Projekt ist Open Source unter der MIT-Lizenz.
 
 Kontakt für Praktika, Kooperationen oder Projekte in den Bereichen Bootsbau, Yachtbau, Faserverbundwerkstoffe und Arbeitssicherheit (HSE):
 
-* **Entwickler:** Erdem Doğan ([@erdmsn77](https://github.com/erdmsn77)) — Student, Bootsbau & Verbundwerkstofftechnologien, Yalova Universität Berufsfachschule Çınarcık
-* **Akademische Betreuung:** Fachbereichsleitung / Fachdozent
-* **Institution:** Yalova Universität Berufsfachschule Çınarcık (Fachbereich Kraftfahrzeuge & Transporttechnologien)
+* **Entwickler:** Erdem Doğan ([@erdmsn77](https://github.com/erdmsn77)) — Bootsbau & Verbundwerkstofftechnologien, Yalova Universität Berufsfachschule Çınarcık
+* **Institution:** Yalova Universität Berufsfachschule Çınarcık (Bootsbau & Verbundwerkstofftechnologien)
 * **Live-Projekt:** [https://erdmsn77.github.io/msds-lite/](https://erdmsn77.github.io/msds-lite/)
