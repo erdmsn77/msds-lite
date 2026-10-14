@@ -197,20 +197,22 @@
       cursor: pointer;
       user-select: none;
       touch-action: manipulation;
-      transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
     }
     .brand-icon:hover {
-      transform: scale(1.08) rotate(4deg);
+      transform: scale(1.06);
+      border-color: var(--marine-orange);
+      box-shadow: 0 6px 18px rgba(234, 88, 12, 0.35);
     }
     .brand-icon:active {
-      transform: scale(0.92) rotate(-6deg);
+      transform: scale(0.95);
     }
     .brand-icon.spin {
-      animation: logoSpin 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+      animation: logoSpin 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
     }
     @keyframes logoSpin {
       0% { transform: scale(1) rotate(0deg); }
-      50% { transform: scale(1.22) rotate(180deg); filter: drop-shadow(0 0 14px #ea580c); }
+      50% { transform: scale(1.18) rotate(180deg); filter: drop-shadow(0 0 12px #ea580c); }
       100% { transform: scale(1) rotate(360deg); }
     }
     .brand-eyebrow {
@@ -3846,7 +3848,7 @@
               </div>
 
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.6.1</span>
+                <span class="version-tag">MSDS-Lite v1.6.2</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>${t('checkUpdate')}</span>
@@ -4507,6 +4509,9 @@
             brandLogo.classList.add('spin');
           };
           brandLogo.addEventListener('click', triggerLogoAnim);
+          brandLogo.addEventListener('animationend', () => {
+            brandLogo.classList.remove('spin');
+          });
           brandLogo.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
