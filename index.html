@@ -244,10 +244,75 @@
       margin-top: 1px;
     }
 
+    /* Institutional Badge */
+    .brand-institution-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--marine-orange);
+      background: rgba(234, 88, 12, 0.08);
+      border: 1px solid rgba(234, 88, 12, 0.28);
+      border-radius: 6px;
+      padding: 3px 8px;
+      margin-top: 5px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      width: fit-content;
+      user-select: none;
+      line-height: 1.3;
+      touch-action: manipulation;
+    }
+    .brand-institution-badge:hover {
+      background: rgba(234, 88, 12, 0.16);
+      border-color: var(--marine-orange);
+      transform: translateY(-1px);
+    }
+    .brand-institution-badge:active {
+      transform: translateY(0);
+    }
+    .brand-institution-badge .institution-icon {
+      font-size: 12px;
+    }
+    .brand-institution-badge .institution-arrow {
+      font-size: 9.5px;
+      opacity: 0.65;
+      margin-left: 2px;
+    }
+
     .topbar-actions {
       display: flex;
       align-items: center;
       gap: 10px;
+    }
+
+    /* Expo / Credits Topbar Button */
+    .expo-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: linear-gradient(135deg, rgba(234, 88, 12, 0.12), rgba(217, 119, 6, 0.12));
+      border: 1px solid rgba(234, 88, 12, 0.38);
+      border-radius: 8px;
+      padding: 6px 11px;
+      font-size: 11.5px;
+      font-weight: 750;
+      color: var(--marine-orange);
+      cursor: pointer;
+      box-shadow: var(--card-shadow);
+      transition: all 0.15s ease;
+      touch-action: manipulation;
+      user-select: none;
+    }
+    .expo-btn:hover {
+      border-color: var(--marine-orange);
+      background: linear-gradient(135deg, rgba(234, 88, 12, 0.22), rgba(217, 119, 6, 0.22));
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px var(--marine-orange-glow);
+    }
+    .expo-btn:active {
+      transform: translateY(0);
     }
 
     /* Theme Toggle Button */
@@ -932,8 +997,17 @@
       font-size: 11px;
       line-height: 1.35;
     }
-    .eyewash-guide-icon {
-      font-size: 15px;
+    .eyewash-guide-num {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      background: var(--marine-cyan);
+      color: #0b0f17;
+      font-size: 11px;
+      font-weight: 850;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
       margin-top: 1px;
     }
@@ -1192,6 +1266,331 @@
       background: #ea580c;
     }
 
+    /* Footer Institutional Block */
+    .footer-institution-block {
+      margin-top: 16px;
+      padding: 12px 14px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      font-size: 11px;
+      line-height: 1.5;
+      text-align: center;
+    }
+    .footer-inst-title {
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .footer-inst-dept {
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-size: 10.5px;
+    }
+    .footer-inst-credits {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 8px;
+      flex-wrap: wrap;
+      color: var(--text-dim);
+      font-size: 10.5px;
+    }
+    .footer-expo-trigger {
+      background: transparent;
+      border: none;
+      color: var(--marine-orange);
+      font-weight: 750;
+      font-size: 11px;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 0;
+      touch-action: manipulation;
+    }
+    .footer-expo-trigger:hover {
+      color: #c2410c;
+    }
+
+    /* Fuar & Proje Künyesi Modal (Expo Modal) */
+    .expo-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+      z-index: 1000;
+    }
+    .expo-modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .expo-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -46%) scale(0.96);
+      width: calc(100% - 32px);
+      max-width: 550px;
+      max-height: calc(100vh - 44px);
+      background: var(--bg-surface);
+      color: var(--text-body);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+      z-index: 1001;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .expo-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .expo-modal-header {
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .expo-modal-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .expo-modal-icon {
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+    .expo-modal-title {
+      font-size: 14.5px;
+      font-weight: 850;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+    .expo-modal-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+    .expo-modal-close-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 17px;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+    .expo-modal-close-btn:hover {
+      border-color: var(--marine-red);
+      color: var(--marine-red);
+      background: rgba(220, 38, 38, 0.08);
+    }
+    .expo-modal-body {
+      padding: 16px 18px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .expo-inst-card {
+      background: linear-gradient(135deg, rgba(234, 88, 12, 0.08), rgba(2, 132, 199, 0.06));
+      border: 1px solid rgba(234, 88, 12, 0.28);
+      border-radius: 12px;
+      padding: 12px 14px;
+      text-align: center;
+    }
+    .expo-inst-badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 9.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--marine-orange);
+      background: rgba(234, 88, 12, 0.12);
+      padding: 2px 7px;
+      border-radius: 999px;
+      margin-bottom: 5px;
+    }
+    .expo-inst-h1 {
+      font-size: 13.5px;
+      font-weight: 850;
+      color: var(--text-main);
+      line-height: 1.35;
+    }
+    .expo-inst-h2 {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--text-muted);
+      margin-top: 3px;
+      line-height: 1.4;
+    }
+    .expo-qr-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      box-shadow: var(--card-shadow);
+    }
+    .expo-qr-box {
+      background: #ffffff;
+      padding: 6px;
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      flex-shrink: 0;
+      display: grid;
+      place-items: center;
+    }
+    .expo-qr-img {
+      display: block;
+      width: 120px;
+      height: 120px;
+      border-radius: 3px;
+    }
+    .expo-qr-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .expo-qr-title {
+      font-size: 12px;
+      font-weight: 850;
+      color: var(--text-main);
+      margin-bottom: 3px;
+    }
+    .expo-qr-desc {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      line-height: 1.35;
+      margin: 0 0 8px;
+    }
+    .expo-url-box {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .expo-url-link {
+      font-size: 10.5px;
+      font-family: var(--font-mono);
+      color: var(--marine-cyan);
+      text-decoration: none;
+      word-break: break-all;
+      font-weight: 600;
+    }
+    .expo-url-link:hover {
+      text-decoration: underline;
+    }
+    .expo-copy-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 4px 9px;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      width: fit-content;
+    }
+    .expo-copy-btn:hover {
+      border-color: var(--marine-orange);
+      color: var(--marine-orange);
+    }
+    .expo-credits-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .expo-credit-cell {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 9px 11px;
+    }
+    .expo-credit-label {
+      font-size: 9.5px;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 2px;
+    }
+    .expo-credit-val {
+      font-size: 11.5px;
+      font-weight: 750;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+    .expo-credit-sub {
+      font-size: 10px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+    .expo-features-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 11px 13px;
+    }
+    .expo-features-title {
+      font-size: 10.5px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--marine-orange);
+      margin-bottom: 7px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .expo-feature-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+    }
+    .expo-feat-tag {
+      font-size: 10px;
+      font-weight: 650;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 6px;
+      padding: 3px 7px;
+      color: var(--text-body);
+    }
+
     /* Mobile Adaptations */
     @media (max-width: 640px) {
       .marine-shell { padding: 12px 12px 50px; }
@@ -1199,8 +1598,13 @@
       .brand-subtitle { font-size: 11px; }
       .chemical-list { grid-template-columns: 1fr; }
       .drawer { max-width: 100%; }
-      .topbar { flex-wrap: wrap; }
-      .topbar-actions { margin-left: auto; }
+      .topbar { flex-wrap: wrap; gap: 10px; }
+      .topbar-actions { margin-left: auto; flex-wrap: wrap; }
+      .brand-institution-badge { font-size: 9.5px; }
+      .expo-qr-card { flex-direction: column; text-align: center; }
+      .expo-url-box { align-items: center; }
+      .expo-copy-btn { margin: 0 auto; }
+      .expo-credits-grid { grid-template-columns: 1fr; }
     }
     /* Zarif Turuncu Üst Yükleme Çubuğu (Sleek Top Progress Bar) */
     .top-progress-bar {
@@ -1699,15 +2103,15 @@
       "de": "ACHTUNG"
     },
     "hazard_statement": {
-      "tr": "H335: Solunum yolu tahrişine yol açabilir. H315: Ciltte mekanik kaşıntı ve mikro batma. ⚡ Elektrik iletken toz tehlikesi.",
-      "en": "H335: May cause respiratory irritation. H315: Mechanical skin itching and micro-abrasion. ⚡ Conductive dust hazard.",
-      "de": "H335: Kann die Atemwege reizen. H315: Mechanischer Juckreiz und Mikroeinstiche. ⚡ Elektrisch leitfähiger Staub."
+      "tr": "H335: Solunum yolu tahrişine yol açabilir. H315: Ciltte mekanik kaşıntı ve mikro batma. Elektrik iletken toz tehlikesi.",
+      "en": "H335: May cause respiratory irritation. H315: Mechanical skin itching and micro-abrasion. Conductive dust hazard.",
+      "de": "H335: Kann die Atemwege reizen. H315: Mechanischer Juckreiz und Mikroeinstiche. Elektrisch leitfähiger Staub."
     },
     "badges": {
       "fire": {
-        "tr": "⚡ İletken Toz (Kısa Devre Yangını)",
-        "en": "⚡ Conductive Dust (Short Circuit)",
-        "de": "⚡ Leitfähiger Staub (Kurzschluss)"
+        "tr": "İletken Toz (Kısa Devre Yangını)",
+        "en": "Conductive Dust (Short Circuit)",
+        "de": "Leitfähiger Staub (Kurzschluss)"
       },
       "health": {
         "tr": "Akciğer & Mikro Kıymık Tahrişi",
@@ -1958,9 +2362,9 @@
         "de": "Kühl, trocken, gut belüftet und vor Sonne geschützt in dicht geschlossenen Gebinden lagern."
       },
       "incompatible": {
-        "tr": "🚨 HAYATİ UYARI: KESİNLİKLE MEK-P VEYA HERHANGİ BİR PEROKSİT İLE AYNI RAFTA BULUNDURMAYIN. Doğrudan temas ani alevlenme ve patlamaya yol açar!",
-        "en": "🚨 CRITICAL WARNING: NEVER store on the same shelf or bring near MEK-P or any organic peroxide. Contact causes violent explosion!",
-        "de": "🚨 LEBENSGEFAHR: NIEMALS im selben Regal wie MEK-P oder organische Peroxide lagern. Direkter Kontakt führt zur Explosion!"
+        "tr": "HAYATİ UYARI: KESİNLİKLE MEK-P VEYA HERHANGİ BİR PEROKSİT İLE AYNI RAFTA BULUNDURMAYIN. Doğrudan temas ani alevlenme ve patlamaya yol açar!",
+        "en": "CRITICAL WARNING: NEVER store on the same shelf or bring near MEK-P or any organic peroxide. Contact causes violent explosion!",
+        "de": "LEBENSGEFAHR: NIEMALS im selben Regal wie MEK-P oder organische Peroxide lagern. Direkter Kontakt führt zur Explosion!"
       }
     }
   },
@@ -2876,7 +3280,7 @@
       };
 
       const CATEGORIES = {
-        all: { tr: 'Tümü', en: 'All', de: 'Alle', icon: '📋' },
+        all: { tr: 'Tümü', en: 'All', de: 'Alle' },
         recine: { tr: 'Reçine', en: 'Resin', de: 'Harz' },
         sertlestirici: { tr: 'Sertleştirici', en: 'Hardener', de: 'Härter' },
         peroksit: { tr: 'Peroksit', en: 'Peroxide', de: 'Peroxid' },
@@ -2988,11 +3392,35 @@
           warning: 'İkaz',
           minutes: 'dk',
           viewDetails: 'Acil Eylem & Detay',
-          themeLight: '☀️ Saha (Açık)',
-          themeDark: '🌙 Gece (Koyu)',
+          themeLight: 'Saha (Açık)',
+          themeDark: 'Gece (Koyu)',
           checkUpdate: 'Önbelleği Yenile',
           offlineCacheProtected: 'Çevrimdışı (Önbellek Korundu)',
-          searchPlaceholder: 'Kimyasal adı, CAS No veya kategori ara...'
+          searchPlaceholder: 'Kimyasal adı, CAS No veya kategori ara...',
+          institutionName: 'Yalova Üni. Çınarcık MYO • Kompozit & Tekne İmalatı',
+          institutionFull: 'Yalova Üniversitesi Çınarcık Meslek Yüksekokulu',
+          departmentFull: 'Motorlu Araçlar ve Ulaştırma Teknolojileri Bölümü • Gemi İnşaatı / Tekne İmalatı ve Kompozit Teknolojileri Programı',
+          expoBtnText: 'Fuar & Künye',
+          expoModalTitle: 'Fuar Standı & Proje Künyesi',
+          expoModalLink: 'Fuar & Proje Künyesi',
+          developerLabel: 'Proje Geliştiricisi',
+          studentBadge: 'Öğrenci',
+          advisorLabel: 'Akademik Danışmanlık',
+          advisorValue: 'Bölüm Danışmanlığı / Öğretim Elemanı',
+          targetField: 'Uygulama Sahası',
+          targetFieldValue: 'Kompozit İmalat, Tersane Kalıphaneleri, Yat & Tekne Atölyeleri',
+          qrBoothTitle: 'Fuar Ziyaretçileri İçin Hızlı Kurulum',
+          qrBoothDesc: 'Kameranızla QR kodu tarayın. Açılan ekranda "Uygulamayı Yükle" veya "Ana Ekrana Ekle"ye dokunarak atölyede ve açık denizde internetsiz (%100 Çevrimdışı) kullanın.',
+          copyLink: 'Bağlantıyı Kopyala',
+          copied: 'Kopyalandı!',
+          featuresTitle: 'Öne Çıkan Saha Özellikleri',
+          featOffline: '%100 Çevrimdışı (PWA)',
+          featFirstAid: 'İlk 60 Sn. Acil Göz Yıkama',
+          featPpe: 'Atölye KKD & Eldiven Matrisi',
+          featFire: 'Yangında Su Jeti Yasakları',
+          featIncomp: 'Reaksiyon & Uyuşmazlık Haritası',
+          featGhs: 'Uluslararası GHS Standartları',
+          featLang: 'Üç Dilli (TR / EN / DE)'
         },
         en: {
           appTitle: 'MSDS-Lite',
@@ -3056,11 +3484,35 @@
           warning: 'Warning',
           minutes: 'min',
           viewDetails: 'Emergency Action & Details',
-          themeLight: '☀️ Workshop (Light)',
-          themeDark: '🌙 Night (Dark)',
+          themeLight: 'Workshop (Light)',
+          themeDark: 'Night (Dark)',
           checkUpdate: 'Check Update',
           offlineCacheProtected: 'Offline (Cache Protected)',
-          searchPlaceholder: 'Search chemical name, CAS No or category...'
+          searchPlaceholder: 'Search chemical name, CAS No or category...',
+          institutionName: 'Yalova Univ. Çınarcık VSHS • Marine Composite & Boatbuilding',
+          institutionFull: 'Yalova University Çınarcık Vocational School of Higher Education',
+          departmentFull: 'Dept. of Motor Vehicles & Transport Technologies • Boatbuilding & Marine Composite Technologies Program',
+          expoBtnText: 'Expo & Credits',
+          expoModalTitle: 'Expo Booth & Project Credits',
+          expoModalLink: 'Project Credits & Expo QR',
+          developerLabel: 'Project Developer',
+          studentBadge: 'Student',
+          advisorLabel: 'Academic Advising',
+          advisorValue: 'Department Faculty / Academic Advisorship',
+          targetField: 'Field of Application',
+          targetFieldValue: 'Marine Composite Fabrication, Shipyard Workshops, Yacht & Boat Yards',
+          qrBoothTitle: 'Quick Install for Expo Visitors',
+          qrBoothDesc: 'Scan QR with your phone camera. Tap "Install App" or "Add to Home Screen" to use 100% offline inside boatyards and marine workshops.',
+          copyLink: 'Copy App Link',
+          copied: 'Copied!',
+          featuresTitle: 'Key Field Capabilities',
+          featOffline: '100% Offline PWA',
+          featFirstAid: 'First 60s Eye Wash Protocols',
+          featPpe: 'Marine PPE & Glove Matrix',
+          featFire: 'Fire Prohibitions & Response',
+          featIncomp: 'Chemical Incompatibility Map',
+          featGhs: 'Official GHS Standards',
+          featLang: 'Trilingual (TR / EN / DE)'
         },
         de: {
           appTitle: 'MSDS-Lite',
@@ -3124,11 +3576,35 @@
           warning: 'Warnung',
           minutes: 'min',
           viewDetails: 'Notfallmaßnahme & Details',
-          themeLight: '☀️ Werkstatt (Hell)',
-          themeDark: '🌙 Nacht (Dunkel)',
+          themeLight: 'Werkstatt (Hell)',
+          themeDark: 'Nacht (Dunkel)',
           checkUpdate: 'Update Prüfen',
           offlineCacheProtected: 'Offline (Cache Geschützt)',
-          searchPlaceholder: 'Chemikalienname, CAS-Nr. oder Kategorie suchen...'
+          searchPlaceholder: 'Chemikalienname, CAS-Nr. oder Kategorie suchen...',
+          institutionName: 'Yalova Univ. Çınarcık BFS • Bootsbau & Verbundwerkstoffe',
+          institutionFull: 'Yalova Universität Berufsfachschule Çınarcık',
+          departmentFull: 'Fachbereich Kraftfahrzeuge & Transporttechnologien • Programm für Bootsbau & Verbundwerkstofftechnologien',
+          expoBtnText: 'Messe & Profil',
+          expoModalTitle: 'Messestand & Projektprofil',
+          expoModalLink: 'Projektprofil & Messe-QR',
+          developerLabel: 'Projektentwickler',
+          studentBadge: 'Student',
+          advisorLabel: 'Akademische Betreuung',
+          advisorValue: 'Fachbereichsleitung / Fachdozent',
+          targetField: 'Anwendungsbereich',
+          targetFieldValue: 'Faserverbundfertigung, Werften, Yacht- & Bootsbau',
+          qrBoothTitle: 'Schnellinstallation für Messebesucher',
+          qrBoothDesc: 'Scannen Sie den QR-Code mit der Handykamera. Wählen Sie "App installieren", um die Anwendung offline in der Werft oder auf See zu nutzen.',
+          copyLink: 'Link kopieren',
+          copied: 'Kopiert!',
+          featuresTitle: 'Zentrale Praxisfunktionen',
+          featOffline: '100% Offline-PWA',
+          featFirstAid: 'Erste 60s Augenspül-Protokolle',
+          featPpe: 'PSA- & Handschuhmatrix',
+          featFire: 'Löschverbote & Reaktionen',
+          featIncomp: 'Reaktivitäts- & Unverträglichkeitskarte',
+          featGhs: 'Offizielle GHS-Standards',
+          featLang: 'Dreisprachig (TR / EN / DE)'
         }
       };
 
@@ -3242,7 +3718,9 @@
 
           const isDanger = (chem.signal_word && (chem.signal_word.tr === 'TEHLİKE' || chem.signal_word === 'TEHLİKE'));
           const signalClass = isDanger ? 'signal-danger' : 'signal-warning';
-          const signalIcon = isDanger ? '⚠️' : '⚡';
+          const signalIconSvg = isDanger 
+            ? '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:3px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>'
+            : '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:3px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
 
           return `
             <article class="chemical-card" data-chemical-id="${escape(chem.id)}" role="button" tabindex="0" aria-label="${escape(getL(chem.name))}">
@@ -3251,7 +3729,7 @@
                 <div class="card-top-row">
                   <span class="card-category-badge">${escape(catLabel)}</span>
                   <div class="card-signals">
-                    <span class="signal-tag ${signalClass}">${signalIcon} ${escape(getL(chem.signal_word))}</span>
+                    <span class="signal-tag ${signalClass}">${signalIconSvg}${escape(getL(chem.signal_word))}</span>
                     <span class="card-risk-pill ${riskClass}">${escape(riskText)}</span>
                   </div>
                 </div>
@@ -3276,7 +3754,7 @@
                 </div>
 
                 <div class="card-footer-row">
-                  <span class="card-timer-badge">⏱ ${t('atLeast')} ${chem.emergency_timer_min || 15} ${t('minutes')} ${t('emergencyWashShort')}</span>
+                  <span class="card-timer-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${t('atLeast')} ${chem.emergency_timer_min || 15} ${t('minutes')} ${t('emergencyWashShort')}</span>
                   <span class="card-action-cta">${t('viewDetails')} →</span>
                 </div>
               </div>
@@ -3327,10 +3805,18 @@
                   </div>
                   <h1 class="brand-title">${t('appTitle')}</h1>
                   <p class="brand-subtitle">${t('subtitle')}</p>
+                  <div class="brand-institution-badge" id="headerInstitutionBadge" role="button" tabindex="0" title="${t('expoModalTitle')}">
+                    <span class="institution-text">${t('institutionName')}</span>
+                    <span class="institution-arrow">↗</span>
+                  </div>
                 </div>
               </div>
 
               <div class="topbar-actions">
+                <button type="button" class="expo-btn" id="expoBtn" title="${t('expoModalTitle')}">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:3px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                  <span>${t('expoBtnText')}</span>
+                </button>
                 <button type="button" class="theme-toggle-btn" id="themeToggleBtn" aria-label="Toggle Theme">
                   ${themeBtnText}
                 </button>
@@ -3363,10 +3849,24 @@
 
             <footer class="marine-footer">
               <p>${t('disclaimer')}</p>
+
+              <div class="footer-institution-block">
+                <div class="footer-inst-title"><span>${t('institutionFull')}</span></div>
+                <div class="footer-inst-dept">${t('departmentFull')}</div>
+                <div class="footer-inst-credits">
+                  <span>${t('developerLabel')}: <strong>Erdem Doğan</strong> (${t('studentBadge')})</span>
+                  <span>•</span>
+                  <span>${t('advisorLabel')}: <strong>${t('advisorValue')}</strong></span>
+                  <span>•</span>
+                  <button type="button" class="footer-expo-trigger" id="footerExpoBtn">${t('expoModalLink')}</button>
+                </div>
+              </div>
+
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.5.7</span>
+                <span class="version-tag">MSDS-Lite v1.6.0</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
-                  🔄 ${t('checkUpdate')}
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
+                  <span>${t('checkUpdate')}</span>
                 </button>
               </div>
             </footer>
@@ -3374,6 +3874,9 @@
 
           <div id="drawerBackdrop" class="drawer-backdrop"></div>
           <aside id="detailDrawer" class="drawer" aria-hidden="true" role="dialog"></aside>
+
+          <div id="expoModalBackdrop" class="expo-modal-backdrop"></div>
+          <div id="expoModal" class="expo-modal" aria-hidden="true" role="dialog" aria-labelledby="expoModalTitle"></div>
         `;
 
         bindShellEvents();
@@ -3396,7 +3899,7 @@
           const text = state.language === 'tr' ? incomp.text_tr : (state.language === 'de' ? incomp.text_de : incomp.text_en);
           incompHtml = `
             <div class="incompatibility-box ${isCrit ? '' : 'warning-box'}">
-              <div class="incompatibility-header">⚠️ ${escape(header)}</div>
+              <div class="incompatibility-header"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:4px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>${escape(header)}</div>
               <div class="incompatibility-title">${escape(title)}</div>
               <div class="incompatibility-text">${escape(text)}</div>
               <div class="incompatibility-source">${escape(incomp.source)}</div>
@@ -3428,6 +3931,9 @@
 
         const isDanger = (chem.signal_word && (chem.signal_word.tr === 'TEHLİKE' || chem.signal_word === 'TEHLİKE'));
         const signalClass = isDanger ? 'signal-danger' : 'signal-warning';
+        const signalIconSvg = isDanger 
+          ? '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:3px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>'
+          : '<svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:3px;"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>';
 
         return `
           <div class="drawer-header">
@@ -3437,7 +3943,7 @@
                 <h2 class="drawer-title" id="drawerTitle">${escape(getL(chem.name))}</h2>
                 <div class="drawer-chemical-name">CAS: ${escape(chem.cas || '—')} | ${escape(getL(chem.chemical_name))}</div>
                 <div style="margin-top:6px; display:flex; gap:6px; align-items:center;">
-                  <span class="signal-tag ${signalClass}">${isDanger ? '⚠️' : '⚡'} ${escape(getL(chem.signal_word))}</span>
+                  <span class="signal-tag ${signalClass}">${signalIconSvg}${escape(getL(chem.signal_word))}</span>
                   <span class="card-risk-pill ${riskClass}">${escape(riskText)}</span>
                 </div>
               </div>
@@ -3446,10 +3952,10 @@
           </div>
 
           <nav class="drawer-nav-pills" aria-label="Acil Durum Bölümleri">
-            <a href="#sectionFirstAid" class="drawer-nav-pill">🚑 ${t('firstAid')}</a>
-            <a href="#sectionFire" class="drawer-nav-pill">🧯 ${t('fireFighting')}</a>
-            <a href="#sectionPpe" class="drawer-nav-pill">🤿 ${t('ppe')}</a>
-            <a href="#sectionStorage" class="drawer-nav-pill">📦 ${t('storage')}</a>
+            <a href="#sectionFirstAid" class="drawer-nav-pill">${t('firstAid')}</a>
+            <a href="#sectionFire" class="drawer-nav-pill">${t('fireFighting')}</a>
+            <a href="#sectionPpe" class="drawer-nav-pill">${t('ppe')}</a>
+            <a href="#sectionStorage" class="drawer-nav-pill">${t('storage')}</a>
           </nav>
 
           <div class="drawer-body">
@@ -3458,39 +3964,40 @@
             <!-- 1. İLK YARDIM (İLK 60 SANİYE) -->
             <div class="drawer-section" id="sectionFirstAid">
               <div class="section-title-row">
-                <span class="section-icon">🚑</span>
                 <span>${t('firstAid').toUpperCase()}</span>
               </div>
 
               <!-- High-Visibility Eyewash Time Banner -->
               <div class="emergency-time-banner">
-                <div class="emergency-time-icon">⏱</div>
+                <div class="emergency-time-icon">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
                 <div>
-                  <div class="emergency-time-title">🚨 ${t('mandatoryWashTitle')}: ${t('atLeast').toUpperCase()} ${chem.emergency_timer_min || 15} ${t('minutes').toUpperCase()}</div>
+                  <div class="emergency-time-title">${t('mandatoryWashTitle')}: ${t('atLeast').toUpperCase()} ${chem.emergency_timer_min || 15} ${t('minutes').toUpperCase()}</div>
                   <div class="emergency-time-desc">${t('mandatoryWashSub')}</div>
                 </div>
               </div>
 
               <!-- Eyewash Technique & Safety Protocol Box -->
               <div class="eyewash-guide-box">
-                <div class="eyewash-guide-title">💧 ${t('eyeWashGuideTitle')}</div>
+                <div class="eyewash-guide-title">${t('eyeWashGuideTitle')}</div>
                 <div class="eyewash-guide-grid">
                   <div class="eyewash-guide-item">
-                    <span class="eyewash-guide-icon">🚫💨</span>
+                    <span class="eyewash-guide-num">1</span>
                     <div>
                       <strong>${t('eyeWashRulePressureTitle')}</strong>
                       <p>${t('eyeWashRulePressureDesc')}</p>
                     </div>
                   </div>
                   <div class="eyewash-guide-item">
-                    <span class="eyewash-guide-icon">↔️</span>
+                    <span class="eyewash-guide-num">2</span>
                     <div>
                       <strong>${t('eyeWashRuleDirectionTitle')}</strong>
                       <p>${t('eyeWashRuleDirectionDesc')}</p>
                     </div>
                   </div>
                   <div class="eyewash-guide-item">
-                    <span class="eyewash-guide-icon">👁️</span>
+                    <span class="eyewash-guide-num">3</span>
                     <div>
                       <strong>${t('eyeWashRuleEyelidsTitle')}</strong>
                       <p>${t('eyeWashRuleEyelidsDesc')}</p>
@@ -3500,19 +4007,19 @@
               </div>
 
               <div class="detail-item-block">
-                <div class="detail-item-label">👁️ ${t('firstAidEye')}</div>
+                <div class="detail-item-label">${t('firstAidEye')}</div>
                 <div class="detail-item-val" style="font-weight:700; color:var(--text-main);">${escape(getL(chem.first_aid?.eye))}</div>
               </div>
               <div class="detail-item-block">
-                <div class="detail-item-label">✋ ${t('firstAidSkin')}</div>
+                <div class="detail-item-label">${t('firstAidSkin')}</div>
                 <div class="detail-item-val">${escape(getL(chem.first_aid?.skin))}</div>
               </div>
               <div class="detail-item-block">
-                <div class="detail-item-label">🫁 ${t('firstAidInhalation')}</div>
+                <div class="detail-item-label">${t('firstAidInhalation')}</div>
                 <div class="detail-item-val">${escape(getL(chem.first_aid?.inhalation))}</div>
               </div>
               <div class="detail-item-block">
-                <div class="detail-item-label">💧 ${t('firstAidIngestion')}</div>
+                <div class="detail-item-label">${t('firstAidIngestion')}</div>
                 <div class="detail-item-val">${escape(getL(chem.first_aid?.ingestion))}</div>
               </div>
             </div>
@@ -3520,19 +4027,18 @@
             <!-- 2. YANGIN & MÜDAHALE -->
             <div class="drawer-section" id="sectionFire">
               <div class="section-title-row">
-                <span class="section-icon">🧯</span>
                 <span>${t('fireFighting').toUpperCase()}</span>
               </div>
               <div class="detail-item-block">
-                <div class="detail-item-label" style="color:var(--marine-emerald);">✅ ${t('suitableExtinguishers')}</div>
+                <div class="detail-item-label" style="color:var(--marine-emerald);">${t('suitableExtinguishers')}</div>
                 <div class="detail-item-val">${escape(getL(chem.fire_fighting?.suitable))}</div>
               </div>
               <div class="detail-item-block">
-                <div class="detail-item-label" style="color:var(--marine-red);">🚫 ${t('prohibitedExtinguishers')}</div>
+                <div class="detail-item-label" style="color:var(--marine-red);">${t('prohibitedExtinguishers')}</div>
                 <div class="detail-item-val" style="font-weight:700; color:var(--marine-red);">${escape(getL(chem.fire_fighting?.prohibited))}</div>
               </div>
               <div class="detail-item-block">
-                <div class="detail-item-label">⚠️ ${t('fireHazards')}</div>
+                <div class="detail-item-label">${t('fireHazards')}</div>
                 <div class="detail-item-val">${escape(getL(chem.fire_fighting?.hazards))}</div>
               </div>
               <div class="detail-item-block" style="padding-top:6px; border-top:1px solid var(--border-subtle); display:flex; justify-content:space-between;">
@@ -3544,19 +4050,18 @@
             <!-- 3. KKD (KİŞİSEL KORUYUCU DONANIM) -->
             <div class="drawer-section" id="sectionPpe">
               <div class="section-title-row">
-                <span class="section-icon">🤿</span>
                 <span>${t('ppe').toUpperCase()}</span>
               </div>
               <div class="detail-item-block">
-                <div class="detail-item-label">🤿 ${t('mask')}</div>
+                <div class="detail-item-label">${t('mask')}</div>
                 <div class="detail-item-val" style="font-weight:650;">${escape(getL(chem.ppe?.mask))}</div>
               </div>
               <div class="detail-item-block">
-                <div class="detail-item-label">🥽 ${t('eyeProtection')}</div>
+                <div class="detail-item-label">${t('eyeProtection')}</div>
                 <div class="detail-item-val" style="font-weight:650;">${escape(getL(chem.ppe?.eye))}</div>
               </div>
               <div class="detail-item-block">
-                <div class="detail-item-label">🧤 ${t('gloves')}</div>
+                <div class="detail-item-label">${t('gloves')}</div>
                 <div class="glove-list">
                   <div class="glove-item">
                     <span class="glove-name">${t('latex')}</span>
@@ -3580,15 +4085,14 @@
             <!-- 4. DEPOLAMA & UYUŞMAZLIK -->
             <div class="drawer-section" id="sectionStorage">
               <div class="section-title-row">
-                <span class="section-icon">📦</span>
                 <span>${t('storage').toUpperCase()}</span>
               </div>
               <div class="detail-item-block">
-                <div class="detail-item-label">🌡️ ${t('storageConditions')}</div>
+                <div class="detail-item-label">${t('storageConditions')}</div>
                 <div class="detail-item-val">${escape(getL(chem.storage_incompatibility?.storage))}</div>
               </div>
               <div class="detail-item-block">
-                <div class="detail-item-label" style="color:var(--marine-red);">⚡ ${t('incompatibleMaterials')}</div>
+                <div class="detail-item-label" style="color:var(--marine-red);">${t('incompatibleMaterials')}</div>
                 <div class="detail-item-val" style="font-weight:700;">${escape(getL(chem.storage_incompatibility?.incompatible))}</div>
               </div>
             </div>
@@ -3596,7 +4100,6 @@
             <!-- GHS PİKTOGRAMLARI -->
             <div class="drawer-section">
               <div class="section-title-row">
-                <span class="section-icon">⚠️</span>
                 <span>${t('ghsHazards').toUpperCase()}</span>
               </div>
               <div class="ghs-cards-grid">${ghsCardsHtml}</div>
@@ -3741,6 +4244,141 @@
           }
           canSwipeDismiss = false;
         };
+      }
+
+      function renderExpoModalContent() {
+        const modal = document.getElementById('expoModal');
+        if (!modal) return;
+        modal.innerHTML = `
+          <div class="expo-modal-header">
+            <div class="expo-modal-title-wrap">
+              <span class="expo-modal-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
+              <div>
+                <div class="expo-modal-title" id="expoModalTitle">${t('expoModalTitle')}</div>
+                <div class="expo-modal-subtitle">${t('institutionName')}</div>
+              </div>
+            </div>
+            <button type="button" class="expo-modal-close-btn" id="expoModalCloseBtn" aria-label="${t('close')}">✕</button>
+          </div>
+
+          <div class="expo-modal-body">
+            <!-- Kurumsal Tanıtım Kartı -->
+            <div class="expo-inst-card">
+              <span class="expo-inst-badge-pill">${t('institutionName')}</span>
+              <div class="expo-inst-h1">${t('institutionFull')}</div>
+              <div class="expo-inst-h2">${t('departmentFull')}</div>
+            </div>
+
+            <!-- Fuar Standı QR Kartı -->
+            <div class="expo-qr-card">
+              <div class="expo-qr-box">
+                <img src="icons/qr-code.svg" alt="MSDS-Lite Fuar Kurulum QR Kodu" class="expo-qr-img" width="120" height="120" />
+              </div>
+              <div class="expo-qr-info">
+                <div class="expo-qr-title">${t('qrBoothTitle')}</div>
+                <p class="expo-qr-desc">${t('qrBoothDesc')}</p>
+                <div class="expo-url-box">
+                  <a href="https://erdmsn77.github.io/msds-lite/" target="_blank" rel="noopener" class="expo-url-link">
+                    erdmsn77.github.io/msds-lite/
+                  </a>
+                  <button type="button" class="expo-copy-btn" id="expoCopyBtn" title="${t('copyLink')}">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                    <span>${t('copyLink')}</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Proje & Akademik Künye Tablosu -->
+            <div class="expo-credits-grid">
+              <div class="expo-credit-cell">
+                <div class="expo-credit-label">${t('developerLabel')}</div>
+                <div class="expo-credit-val">Erdem Doğan</div>
+                <div class="expo-credit-sub">Fiber Tekne & Kompozit (${t('studentBadge')})</div>
+              </div>
+              <div class="expo-credit-cell">
+                <div class="expo-credit-label">${t('advisorLabel')}</div>
+                <div class="expo-credit-val">${t('advisorValue')}</div>
+                <div class="expo-credit-sub">Çınarcık Meslek Yüksekokulu</div>
+              </div>
+              <div class="expo-credit-cell" style="grid-column: span 2;">
+                <div class="expo-credit-label">${t('targetField')}</div>
+                <div class="expo-credit-val" style="font-size:11px;">${t('targetFieldValue')}</div>
+              </div>
+            </div>
+
+            <!-- Öne Çıkan Saha Özellikleri -->
+            <div class="expo-features-box">
+              <div class="expo-features-title">${t('featuresTitle')}</div>
+              <div class="expo-feature-tags">
+                <span class="expo-feat-tag">${t('featOffline')}</span>
+                <span class="expo-feat-tag">${t('featFirstAid')}</span>
+                <span class="expo-feat-tag">${t('featPpe')}</span>
+                <span class="expo-feat-tag">${t('featFire')}</span>
+                <span class="expo-feat-tag">${t('featIncomp')}</span>
+                <span class="expo-feat-tag">${t('featGhs')}</span>
+                <span class="expo-feat-tag">${t('featLang')}</span>
+              </div>
+            </div>
+          </div>
+        `;
+
+        document.getElementById('expoModalCloseBtn')?.addEventListener('click', closeExpoModal);
+
+        const copyBtn = document.getElementById('expoCopyBtn');
+        if (copyBtn) {
+          copyBtn.addEventListener('click', async () => {
+            try {
+              if (navigator.clipboard && navigator.clipboard.writeText) {
+                await navigator.clipboard.writeText('https://erdmsn77.github.io/msds-lite/');
+              } else {
+                const ta = document.createElement('textarea');
+                ta.value = 'https://erdmsn77.github.io/msds-lite/';
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+              }
+              const span = copyBtn.querySelector('span');
+              if (span) {
+                const orig = span.textContent;
+                span.textContent = t('copied');
+                copyBtn.style.borderColor = 'var(--marine-emerald)';
+                copyBtn.style.color = 'var(--marine-emerald)';
+                setTimeout(() => {
+                  span.textContent = orig;
+                  copyBtn.style.borderColor = '';
+                  copyBtn.style.color = '';
+                }, 2200);
+              }
+            } catch (err) {
+              console.warn('Clipboard copy error:', err);
+            }
+          });
+        }
+      }
+
+      function openExpoModal() {
+        renderExpoModalContent();
+        const modal = document.getElementById('expoModal');
+        const backdrop = document.getElementById('expoModalBackdrop');
+        if (modal && backdrop) {
+          modal.classList.add('open');
+          backdrop.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeExpoModal() {
+        const modal = document.getElementById('expoModal');
+        const backdrop = document.getElementById('expoModalBackdrop');
+        if (modal && backdrop) {
+          modal.classList.remove('open');
+          backdrop.classList.remove('open');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
       }
 
       function bindShellEvents() {
@@ -3914,7 +4552,7 @@
               const origHtml = refreshBtn.innerHTML;
               refreshBtn.style.borderColor = 'var(--marine-amber, #f59e0b)';
               refreshBtn.style.color = 'var(--marine-amber, #f59e0b)';
-              refreshBtn.innerHTML = `⚠️ ${t('offlineCacheProtected')}`;
+              refreshBtn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-2px;margin-right:4px;"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>${t('offlineCacheProtected')}`;
               setTimeout(() => {
                 refreshBtn.innerHTML = origHtml;
                 refreshBtn.style.borderColor = '';
@@ -3924,7 +4562,7 @@
             }
 
             refreshBtn.classList.add('loading');
-            refreshBtn.innerHTML = '⏳ ...';
+            refreshBtn.innerHTML = '...';
 
             try {
               // 1. Service Worker'a arka planda en güncel halini denetlet
@@ -3938,9 +4576,9 @@
               // 2. Güvenli önbellek yenileme (yeni dosyayı çek, sonra cache'e yaz - eski cache'i ASLA önceden silme)
               if ('caches' in window) {
                 const cacheNames = await caches.keys();
-                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.5.3';
+                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.6.0';
                 const cache = await caches.open(activeCacheName);
-                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json'];
+                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg'];
                 await Promise.allSettled(urlsToUpdate.map(async (url) => {
                   const res = await fetch(url, { cache: 'reload' });
                   if (res && res.ok) {
@@ -3959,11 +4597,35 @@
 
         // Backdrop click closes drawer
         document.getElementById('drawerBackdrop')?.addEventListener('click', handleUserClose);
+
+        // Fuar & Proje Künyesi (Expo Modal) Event Listeners
+        document.getElementById('expoBtn')?.addEventListener('click', openExpoModal);
+
+        const headerBadge = document.getElementById('headerInstitutionBadge');
+        if (headerBadge) {
+          headerBadge.addEventListener('click', openExpoModal);
+          headerBadge.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              openExpoModal();
+            }
+          });
+        }
+
+        document.getElementById('footerExpoBtn')?.addEventListener('click', openExpoModal);
+        document.getElementById('expoModalBackdrop')?.addEventListener('click', closeExpoModal);
       }
 
-      // Keyboard Esc to close drawer
+      // Keyboard Esc to close drawer or modal
       document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') handleUserClose();
+        if (e.key === 'Escape') {
+          const expoModal = document.getElementById('expoModal');
+          if (expoModal && expoModal.classList.contains('open')) {
+            closeExpoModal();
+          } else {
+            handleUserClose();
+          }
+        }
       });
 
       // Phone Back Button & Gesture (popstate handles phone back navigation cleanly)
@@ -4073,9 +4735,9 @@
       toast.className = 'pwa-update-toast';
       const lang = (window.__msdsState && window.__msdsState.language) || localStorage.getItem('msds-language') || 'tr';
       const titles = {
-        tr: 'Yeni Sürüm Hazır (v1.5.2)',
-        en: 'New Version Ready (v1.5.2)',
-        de: 'Neue Version Bereit (v1.5.2)'
+        tr: 'Yeni Sürüm Hazır (v1.6.0)',
+        en: 'New Version Ready (v1.6.0)',
+        de: 'Neue Version Bereit (v1.6.0)'
       };
       const descs = {
         tr: 'Güncel güvenlik protokollerini yüklemek için dokunun.',
@@ -4089,7 +4751,7 @@
       };
       toast.innerHTML = `
         <div class="pwa-update-content">
-          <span class="pwa-update-icon">⚡</span>
+          <span class="pwa-update-icon"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span>
           <div class="pwa-update-text">
             <strong>${titles[lang] || titles.tr}</strong>
             <p>${descs[lang] || descs.tr}</p>
@@ -4102,7 +4764,7 @@
         if ('caches' in window) {
           try {
             const keys = await caches.keys();
-            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.5.2').map(k => caches.delete(k)));
+            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.6.0').map(k => caches.delete(k)));
           } catch (e) {}
         }
         window.location.reload(true);

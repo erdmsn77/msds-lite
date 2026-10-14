@@ -2,62 +2,64 @@
 
 > **Saha Odaklı, Çevrimdışı Çalışabilen (Offline-First) Mobil Kimyasal Güvenlik ve Acil Müdahale Asistanı**
 
-[ 🇹🇷 Türkçe ](README.md) • [ 🇬🇧 English ](README.en.md) • [ 🇩🇪 Deutsch ](README.de.md)
+[ Türkçe ](README.md) • [ English ](README.en.md) • [ Deutsch ](README.de.md)
 
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-22d3ee?style=flat-square&logo=pwa)](https://erdmsn77.github.io/msds-lite/)
 [![Offline First](https://img.shields.io/badge/Offline-100%25-emerald?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
 [![Languages](https://img.shields.io/badge/Languages-TR%20%7C%20EN%20%7C%20DE-blue?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
 [![License](https://img.shields.io/badge/License-MIT%20%2F%20Open-orange?style=flat-square)](LICENSE)
 
-* **Canlı Uygulama:** [erdmsn77.github.io/msds-lite](https://erdmsn77.github.io/msds-lite/)  
+* **Canlı Uygulama:** [erdmsn77.github.io/msds-lite](https://erdmsn77.github.io/msds-lite/)
+* **Akademik Kurum:** Yalova Üniversitesi Çınarcık Meslek Yüksekokulu • Motorlu Araçlar ve Ulaştırma Teknolojileri Bölümü • Tekne İmalatı ve Kompozit Teknolojileri Programı
 * **Önemli Hatırlatma:** Bu uygulama resmî üretici Güvenlik Bilgi Formlarının (SDS/MSDS) yerine geçmez; acil durumlarda ve saha operasyonlarında saniyeler içinde doğru kararı vermeyi sağlayan pratik bir atölye içi hızlı referanstır.
 
 ---
 
 ## Projenin Amacı ve Çıkış Noktası
 
-Fiber tekne ve kompozit teknolojileri öğrencisi olarak, atölyedeki pratik derslerimde ve gelecekteki tersane stajlarıma hazırlık sürecimde sahadaki en büyük risklerden birinin **kimyasallarla doğrudan temas anında yaşanan panik ve bilgiye erişim zorluğu** olduğunu fark ettim.
+Yalova Üniversitesi Çınarcık Meslek Yüksekokulu **Fiber Tekne İmalatı ve Kompozit Teknolojileri** öğrencisi olarak, atölyedeki pratik derslerimde ve gelecekteki tersane stajlarıma hazırlık sürecimde sahadaki en büyük risklerden birinin **kimyasallarla doğrudan temas anında yaşanan panik ve bilgiye erişim zorluğu** olduğunu gözlemledim.
 
-Kompozit tekne imalatında (vakum infüzyon, el yatırması, vakum torbalama, kalıp ayırma ve finisaj) kullanılan organik peroksitler, hızlandırıcılar ve reaktif reçineler son derece tehlikelidir. Bir kaza meydana geldiğinde (örneğin göze MEK-P sıçraması):
+Kompozit tekne imalatında (vakum infüzyon, el yatırması, vakum torbalama, kalıp ayırma ve finisaj) kullanılan organik peroksitler, hızlandırıcılar ve reaktif reçineler yüksek risk taşır. Bir kaza meydana geldiğinde (örneğin göze MEK-P sıçraması durumunda):
 * Çalışanların elleri eldivenli, reçineli veya tozlu olabilir.
-* Sayfalarca süren teknik SDS PDF belgelerini telefon ekranından aramak ve okumak dakikalar kaybettirir.
-* Tersane veya kalıphane hangarının bazı bölümlerinde hücresel internet çekmeyebilir.
+* Sayfalarca süren teknik SDS PDF belgelerini telefon ekranından aramak ve incelemek kritik dakikaların kaybına yol açar.
+* Tersane veya kalıphane hangarının kapalı bölümlerinde hücresel internet çekmeyebilir.
 
-**MSDS-Lite**, bu ihtiyaca yanıt olarak; harici hiçbir sunucuya veya internet bağlantısına bağımlı olmadan, mobil cihaz üzerinden **ilk 60 saniyede hayat kurtaracak acil eylem adımlarını** sahaya sunmak üzere geliştirilmiştir.
+**MSDS-Lite**, bu ihtiyaca doğrudan çözüm sunmak amacıyla geliştirilmiştir. Harici hiçbir sunucuya veya internet bağlantısına bağımlı olmadan, mobil cihaz üzerinden **ilk 60 saniyede hayat kurtaracak acil eylem adımlarını** sahaya sunar.
 
 ---
 
 ## Mimari ve Kullanıcı Deneyimi (2 Katmanlı Bilgi Modeli)
 
-Atölye ortamında bilgi kirliliğini önlemek ve kritik anlarda gözü yormamak için **2 Katmanlı Kart Mimarisi** tasarlanmıştır:
+Atölye ortamında bilgi kirliliğini önlemek ve kritik anlarda odaklanmayı kolaylaştırmak için **2 Katmanlı Kart Mimarisi** uygulanmıştır:
 
 ### 1. Katman: Saha Özet Kartı (Card View)
-Ana ekranda kimyasallar yatay/dikey kaydırmayla hızlıca taranır:
+Ana ekranda kimyasallar yatay ve dikey kaydırmayla hızlıca taranır:
 * **Kimyasal Tanımı:** Ticari/atölye adı, CAS numarası ve teknik kimyasal sınıfı.
 * **Sinyal Kelimesi (Signal Tag):** Uluslararası GHS standardında kırmızı `TEHLİKE` veya amber `UYARI` etiketi.
 * **GHS Piktogramları:** Tehlike türünü anında gösteren kırmızı baklava vektör sembolleri (Alev, Aşındırıcı, Sağlık Zararı, Çevre vb.).
 * **Temel Risk İbaresi (H-Statement):** Kimyasalın en birincil tehlike cümlesi.
 * **Renk Kodlu Acil Durum Rozetleri:** Yangın (kırmızı), Sağlık (mavi) ve Çevre (yeşil) bazında özet riskler.
-* **Zorunlu Yıkama Süresi Rozeti:** Olası maruziyette uygulanması gereken asgari kesintisiz yıkama süresi (`⏱ En az 15 dk Yıkama`).
+* **Zorunlu Yıkama Süresi Rozeti:** Olası maruziyette uygulanması gereken asgari kesintisiz yıkama süresi (örneğin: En az 15 dakika kesintisiz yıkama).
 
 ### 2. Katman: Hızlı Acil Durum Paneli (Slide-in Drawer)
 Karta dokunulduğunda sağdan kayarak açılan, sekmelerle hızlı geçiş yapılabilen 4 kritik acil eylem bölümü:
 1. **İlk Yardım (İlk 60 Saniye):** Göz, cilt, solunum ve yutma maruziyetlerinde saniyeler içinde yapılması gerekenler. En üstte kırmızı zeminli **Zorunlu Kesintisiz Yıkama Süresi** uyarısı ile eşzamanlı **112 Acil Servis** ve **114 Zehir Danışma (UZMEM)** yönlendirmesi.
-2. **Yangın & Müdahale:** Sahada derhal kullanılabilecek uygun söndürücüler, **KESİNLİKLE kullanılmayacak yöntemler** (örneğin alevi dağıtan basınçlı su jeti yasağı), yangın reaksiyon riskleri ve parlama noktası (°C).
+2. **Yangın ve Müdahale:** Sahada derhal kullanılabilecek uygun söndürücüler, **kesinlikle kullanılmayacak yöntemler** (örneğin alevi ve peroksiti dağıtan basınçlı su jeti yasağı), yangın reaksiyon riskleri ve parlama noktası (°C).
 3. **KKD Donanımı (Kişisel Koruyucu Donanım):** Doğru solunum maskesi tipi (A2 organik buhar filtresi, P3 partikül filtresi vb.), göz/yüz siperi gereksinimi ve **Eldiven Uyumluluk Tablosu** (Lateks, Nitril, Bütil/Neopren için uygun / uygun değil işaretleri).
-4. **Depolama & Uyuşmazlık:** İdeal depolama sıcaklıkları ve atölyede asla yan yana getirilmemesi gereken reaktif maddeler (örneğin MEK-P ile Kobalt hızlandırıcının teması halinde ani alev alma ve patlama uyarısı).
-5. **Resmî Doğrulama & Kaynak:** Bilgilerin teyit edildiği resmî SDS dokümanına doğrudan bağlantı ve İSG kontrol notu.
+4. **Depolama ve Uyuşmazlık:** İdeal depolama sıcaklıkları ve atölyede asla yan yana getirilmemesi gereken reaktif maddeler (örneğin MEK-P ile Kobalt hızlandırıcının teması halinde ani alev alma ve patlama uyarısı).
+5. **Resmî Doğrulama ve Kaynak:** Bilgilerin teyit edildiği resmî SDS dokümanına doğrudan bağlantı ve İSG kontrol notu.
 
 ---
 
 ## Öne Çıkan Teknik ve Saha Özellikleri
 
-* **☀️ Saha (Açık) ve 🌙 Gece Teması:** Parlak güneş ışığı alan açık hangar ve tersane ortamlarında metinlerin net okunabilmesi için açık gri/beyaz zemin (`#F8FAFC`) ile koyu arduvaz metin (`#0F172A`) kontrastı uygulandı. Gece vardiyaları için tek dokunuşla koyu temaya geçilebilir (seçim cihaz hafızasında saklanır).
-* **📱 Mobil Geri Gitme / Kaydırma Desteği (Native Gesture UX):** Mobil tarayıcılarda veya tam ekran PWA modunda detay çekmecesi açıkken ekranın kenarından geri kaydırıldığında (swipe-back) veya cihazın geri tuşuna basıldığında uygulamanın kapanması engellenmiştir. Tarayıcı geçmişi (`history.pushState` ve `popstate`) ve dokunmatik sağa kaydırma hareketiyle çekmece yumuşakça kapanır ve ana menüye dönülür.
-* **🌍 Üç Dilli Altyapı (TR / EN / DE):** Türkçe, İngilizce ve Almanca dil desteği. Türkiye'deki tersanelerin yanı sıra Almanya ve Avrupa'daki kompozit/yat imalatı staj ve kariyer hedefleri gözetilerek terminolojiye uygun olarak eksiksiz çevrildi.
-* **⚡ Sıfır Dış Bağımlılık (Pure Vanilla JS & CSS):** Hiçbir harici CSS kütüphanesi (Bootstrap, Tailwind vb.) veya JavaScript çatısı (React, Vue vb.) kullanılmamıştır. 150 KB'ın altındaki toplam boyutuyla en eski veya zayıf donanımlı atölye telefonlarında bile anında açılır.
-* **📶 %100 Çevrimdışı Çalışma (PWA):** Service Worker altyapısı sayesinde uygulama bir kez yüklendikten sonra bodrum katında, hangar içinde veya açık denizde hücresel veri olmadan tam fonksiyonla çalışır.
-* **🔗 Doğrudan Linkleme (Deep-Linking):** URL sonuna kimyasal kimliği eklenerek (örneğin `/#mek-p`) karekod (QR Kod) veya doğrudan bağlantı üzerinden ilgili kimyasal kartı açtırılabilir.
+* **Saha ve Gece Teması:** Parlak güneş ışığı alan açık hangar ve tersane ortamlarında metinlerin net okunabilmesi için açık gri/beyaz zemin (`#F8FAFC`) ile koyu arduvaz metin (`#0F172A`) kontrastı uygulandı. Gece vardiyaları için tek dokunuşla koyu temaya geçilebilir (seçim cihaz hafızasında saklanır).
+* **Mobil Geri Gitme ve Kaydırma Desteği (Native Gesture UX):** Mobil tarayıcılarda veya tam ekran PWA modunda detay çekmecesi açıkken ekranın kenarından geri kaydırıldığında veya cihazın geri tuşuna basıldığında uygulamanın kapanması engellenmiştir. Tarayıcı geçmişi (`history.pushState` ve `popstate`) ve dokunmatik sağa kaydırma hareketiyle çekmece yumuşakça kapanır ve ana menüye dönülür.
+* **Üç Dilli Altyapı (TR / EN / DE):** Türkçe, İngilizce ve Almanca dil desteği. Türkiye'deki tersanelerin yanı sıra Avrupa'daki kompozit ve yat imalatı staj ve kariyer hedefleri gözetilerek terminolojiye uygun olarak eksiksiz çevrildi.
+* **Sıfır Dış Bağımlılık (Pure Vanilla JS ve CSS):** Hiçbir harici CSS kütüphanesi (Bootstrap, Tailwind vb.) veya JavaScript çatısı (React, Vue vb.) kullanılmamıştır. 150 KB'ın altındaki toplam boyutuyla en eski veya zayıf donanımlı atölye telefonlarında bile anında açılır.
+* **Yüzde Yüz Çevrimdışı Çalışma (PWA):** Service Worker altyapısı sayesinde uygulama bir kez yüklendikten sonra bodrum katında, hangar içinde veya açık denizde hücresel veri olmadan tam fonksiyonla çalışır.
+* **Fuar ve Stand Hızlı Erişim Modu (QR Kod ve Künye):** Sektörel fuarlar, atölye ziyaretleri ve üniversite tanıtım stantları için geliştirilen tek dokunuşlu künye modalı ve yerel SVG QR kodu sayesinde ziyaretçiler kamerayla okutup uygulamayı anında telefonlarına yükleyebilir.
+* **Doğrudan Bağlantı (Deep-Linking):** URL sonuna kimyasal kimliği eklenerek (örneğin `/#mek-p`) karekod veya doğrudan bağlantı üzerinden ilgili kimyasal kartı açtırılabilir.
 
 ---
 
@@ -107,7 +109,7 @@ Proje statik dosyalardan oluştuğu için herhangi bir derleme aracı veya paket
 
 ## Mobil Cihaza Yükleme (PWA)
 
-Uygulama internete ihtiyaç duymadan doğrudan telefonun ana ekranından bir yerel uygulama gibi çalıştırılabilir:
+Uygulama internete ihtiyaç duymadan doğrudan telefonun ana ekranından yerel bir mobil uygulama gibi çalıştırılabilir:
 
 * **Android (Chrome):** [Canlı bağlantıyı](https://erdmsn77.github.io/msds-lite/) açın, sağ üstteki üç noktaya tıklayın ve **"Uygulamayı Yükle"** veya **"Ana Ekrana Ekle"** seçeneğini seçin.
 * **iOS / iPhone (Safari):** Safari'de canlı adresi açın, alt kısımdaki **Paylaş** simgesine dokunun ve **"Ana Ekrana Ekle"** butonuna basın.
@@ -117,7 +119,7 @@ Uygulama internete ihtiyaç duymadan doğrudan telefonun ana ekranından bir yer
 ## Veri Güvenliği ve Senkronizasyon İlkesi
 
 * **İkili Veri Güvencesi (Dual-Source Sync):** Kimyasal verileri hem `data/chemicals.json` dosyasında hem de `index.html` içerisindeki `fallbackChemicals` dizisinde birebir aynı tutulur. Bu mimari, kullanıcı uygulamayı bir sunucu olmadan doğrudan `file://` protokolüyle açsa dahi tüm kartların ve detayların eksiksiz çalışmasını garanti eder.
-* **Teknik Doğruluk:** Veriler uydurma veya genel geçer bilgiler içermez; üretici SDS'leri, OSHA, ECHA ve üretici güvenlik bültenleri baz alınarak hazırlanmıştır.
+* **Teknik Doğruluk:** Veriler uydurma veya genel geçer bilgiler içermez; üretici SDS belgeleri, OSHA, ECHA ve üretici güvenlik bültenleri baz alınarak hazırlanmıştır.
 
 ---
 
@@ -127,5 +129,7 @@ Bu proje açık kaynak olarak paylaşılmıştır.
 
 Fiber tekne imalatı, yat inşaatı, kompozit malzemeler ve iş sağlığı güvenliği (İSG) alanında staj, proje veya iş birliği konularında iletişime geçebilirsiniz.
 
-* **Geliştirici:** Erdem Doğan ([@erdmsn77](https://github.com/erdmsn77))
+* **Geliştirici:** Erdem Doğan ([@erdmsn77](https://github.com/erdmsn77)) — Yalova Üniversitesi Çınarcık MYO, Tekne İmalatı ve Kompozit Teknolojileri Programı Öğrencisi
+* **Akademik Danışmanlık:** Bölüm Danışmanlığı / Öğretim Elemanı
+* **Kurum:** Yalova Üniversitesi Çınarcık Meslek Yüksekokulu (Motorlu Araçlar ve Ulaştırma Teknolojileri Bölümü)
 * **Canlı Proje:** [https://erdmsn77.github.io/msds-lite/](https://erdmsn77.github.io/msds-lite/)

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'msds-lite-v1.5.7';
+const CACHE_NAME = 'msds-lite-v1.6.0';
 const APP_SHELL = [
   './',
   './index.html',
@@ -7,7 +7,8 @@ const APP_SHELL = [
   './icons/icon-192.png',
   './icons/icon-512.png',
   './icons/icon.svg',
-  './icons/icon-maskable.svg'
+  './icons/icon-maskable.svg',
+  './icons/qr-code.svg'
 ];
 
 self.addEventListener('install', (event) => {

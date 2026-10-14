@@ -450,15 +450,15 @@
       "de": "ACHTUNG"
     },
     "hazard_statement": {
-      "tr": "H335: Solunum yolu tahrişine yol açabilir. H315: Ciltte mekanik kaşıntı ve mikro batma. ⚡ Elektrik iletken toz tehlikesi.",
-      "en": "H335: May cause respiratory irritation. H315: Mechanical skin itching and micro-abrasion. ⚡ Conductive dust hazard.",
-      "de": "H335: Kann die Atemwege reizen. H315: Mechanischer Juckreiz und Mikroeinstiche. ⚡ Elektrisch leitfähiger Staub."
+      "tr": "H335: Solunum yolu tahrişine yol açabilir. H315: Ciltte mekanik kaşıntı ve mikro batma. Elektrik iletken toz tehlikesi.",
+      "en": "H335: May cause respiratory irritation. H315: Mechanical skin itching and micro-abrasion. Conductive dust hazard.",
+      "de": "H335: Kann die Atemwege reizen. H315: Mechanischer Juckreiz und Mikroeinstiche. Elektrisch leitfähiger Staub."
     },
     "badges": {
       "fire": {
-        "tr": "⚡ İletken Toz (Kısa Devre Yangını)",
-        "en": "⚡ Conductive Dust (Short Circuit)",
-        "de": "⚡ Leitfähiger Staub (Kurzschluss)"
+        "tr": "İletken Toz (Kısa Devre Yangını)",
+        "en": "Conductive Dust (Short Circuit)",
+        "de": "Leitfähiger Staub (Kurzschluss)"
       },
       "health": {
         "tr": "Akciğer & Mikro Kıymık Tahrişi",
@@ -709,9 +709,9 @@
         "de": "Kühl, trocken, gut belüftet und vor Sonne geschützt in dicht geschlossenen Gebinden lagern."
       },
       "incompatible": {
-        "tr": "🚨 HAYATİ UYARI: KESİNLİKLE MEK-P VEYA HERHANGİ BİR PEROKSİT İLE AYNI RAFTA BULUNDURMAYIN. Doğrudan temas ani alevlenme ve patlamaya yol açar!",
-        "en": "🚨 CRITICAL WARNING: NEVER store on the same shelf or bring near MEK-P or any organic peroxide. Contact causes violent explosion!",
-        "de": "🚨 LEBENSGEFAHR: NIEMALS im selben Regal wie MEK-P oder organische Peroxide lagern. Direkter Kontakt führt zur Explosion!"
+        "tr": "HAYATİ UYARI: KESİNLİKLE MEK-P VEYA HERHANGİ BİR PEROKSİT İLE AYNI RAFTA BULUNDURMAYIN. Doğrudan temas ani alevlenme ve patlamaya yol açar!",
+        "en": "CRITICAL WARNING: NEVER store on the same shelf or bring near MEK-P or any organic peroxide. Contact causes violent explosion!",
+        "de": "LEBENSGEFAHR: NIEMALS im selben Regal wie MEK-P oder organische Peroxide lagern. Direkter Kontakt führt zur Explosion!"
       }
     }
   },
