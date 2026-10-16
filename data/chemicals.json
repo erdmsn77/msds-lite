@@ -122,6 +122,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven peroksit geçirir, ASLA kullanılmaz. Kalın nitril (>0.4mm) veya bütil/neopren eldiven kullanın.",
@@ -265,6 +266,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven stirene karşı dayanıksızdır. Kalın nitril veya PVA/neopren eldiven kullanın.",
@@ -408,6 +410,7 @@
       "gloves": {
         "latex": false,
         "nitrile": false,
+        "butyl": true,
         "neoprene": false,
         "warning": {
           "tr": "DİKKAT: Standart ince nitril ve lateks eldivenler asetonu SANİYELER içinde geçirir! Bütil kauçuk eldiven kullanılmalıdır.",
@@ -550,6 +553,7 @@
       "gloves": {
         "latex": true,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Mekanik batmaları önlemek için poliüretan veya nitril kaplı elastik iş eldiveni ve tek kullanımlık Tyvek tulum kullanın.",
@@ -694,6 +698,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven dayanıksızdır. Ağır hizmet nitril veya neopren eldiven kullanın.",
@@ -836,6 +841,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven epoksiyi geçirir. Çift kat kalın nitril veya bütil eldiven kullanın.",
@@ -979,6 +985,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven kullanılmaz! Kalın bütil veya çift kat nitril eldiven zorunludur.",
@@ -1122,6 +1129,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks dayanıksızdır. Kalın nitril veya PVA/neopren eldiven kullanın.",
@@ -1265,6 +1273,7 @@
       "gloves": {
         "latex": true,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Standart nitril eldiven yeterlidir.",
@@ -1407,6 +1416,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Solvent macununu cilde temas ettirmemek için nitril eldiven kullanın.",
@@ -1550,6 +1560,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven dayanıksızdır. Kalın nitril veya PVA/neopren eldiven kullanın.",

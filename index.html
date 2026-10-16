@@ -2315,6 +2315,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven peroksit geçirir, ASLA kullanılmaz. Kalın nitril (>0.4mm) veya bütil/neopren eldiven kullanın.",
@@ -2458,6 +2459,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven stirene karşı dayanıksızdır. Kalın nitril veya PVA/neopren eldiven kullanın.",
@@ -2601,6 +2603,7 @@
       "gloves": {
         "latex": false,
         "nitrile": false,
+        "butyl": true,
         "neoprene": false,
         "warning": {
           "tr": "DİKKAT: Standart ince nitril ve lateks eldivenler asetonu SANİYELER içinde geçirir! Bütil kauçuk eldiven kullanılmalıdır.",
@@ -2743,6 +2746,7 @@
       "gloves": {
         "latex": true,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Mekanik batmaları önlemek için poliüretan veya nitril kaplı elastik iş eldiveni ve tek kullanımlık Tyvek tulum kullanın.",
@@ -2887,6 +2891,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven dayanıksızdır. Ağır hizmet nitril veya neopren eldiven kullanın.",
@@ -3029,6 +3034,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven epoksiyi geçirir. Çift kat kalın nitril veya bütil eldiven kullanın.",
@@ -3172,6 +3178,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven kullanılmaz! Kalın bütil veya çift kat nitril eldiven zorunludur.",
@@ -3315,6 +3322,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks dayanıksızdır. Kalın nitril veya PVA/neopren eldiven kullanın.",
@@ -3458,6 +3466,7 @@
       "gloves": {
         "latex": true,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Standart nitril eldiven yeterlidir.",
@@ -3600,6 +3609,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Solvent macununu cilde temas ettirmemek için nitril eldiven kullanın.",
@@ -3743,6 +3753,7 @@
       "gloves": {
         "latex": false,
         "nitrile": true,
+        "butyl": true,
         "neoprene": true,
         "warning": {
           "tr": "Lateks eldiven dayanıksızdır. Kalın nitril veya PVA/neopren eldiven kullanın.",
@@ -4494,7 +4505,7 @@
               </div>
 
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.7.1</span>
+                <span class="version-tag">MSDS-Lite v1.7.2</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>${t('checkUpdate')}</span>
@@ -4558,7 +4569,7 @@
           `;
         }).join('');
 
-        const gloves = chem.ppe ? chem.ppe.gloves : { latex: false, nitrile: true, butyl: true, warning: '' };
+        const gloves = chem.ppe ? chem.ppe.gloves : { latex: false, nitrile: true, butyl: true, neoprene: true, warning: '' };
         const sourceLinkHtml = chem.source_url 
           ? `<a href="${escape(chem.source_url)}" class="source-link-btn" target="_blank" rel="noopener noreferrer" style="color:var(--marine-orange); font-weight:700; text-decoration:none;">${t('openSource')} ↗</a>`
           : `<span style="color:var(--text-dim);">${t('canonicalSource')}</span>`;
@@ -4707,7 +4718,7 @@
                   </div>
                   <div class="glove-item">
                     <span class="glove-name">${t('butyl')}</span>
-                    <span class="glove-badge ${gloves.butyl ? 'safe' : 'unsafe'}">${gloves.butyl ? t('suitable') : t('unsuitable')}</span>
+                    <span class="glove-badge ${(gloves.butyl !== undefined ? gloves.butyl : gloves.neoprene) ? 'safe' : 'unsafe'}">${(gloves.butyl !== undefined ? gloves.butyl : gloves.neoprene) ? t('suitable') : t('unsuitable')}</span>
                   </div>
                 </div>
                 <div class="glove-warning-box">
@@ -5137,6 +5148,11 @@
 
         let maskText = 'Organik buhar veya partikül filtreli uygun koruyucu maske kullanın.';
         let gloveText = 'Nitril veya bütil kauçuk eldiven. Lateks eldiven geçirgenlik nedeniyle önerilmez.';
+        let isNitrile = true;
+        if (/aseton|acetone/i.test(tradeName + ' ' + cleanText.slice(0, 1500))) {
+          isNitrile = false;
+          gloveText = 'Standart ince nitril ve lateks eldivenler asetonu saniyeler içinde geçirir. Bütil kauçuk eldiven kullanılmalıdır.';
+        }
         const maskMatch = cleanText.match(/(?:Solunum Korunmas[ıi]|Respirator Mask|Atemschutz)[:\s]*([^\n\r]+)/i);
         if (maskMatch && maskMatch[1].trim().length > 8) maskText = maskMatch[1].trim().slice(0, 200);
 
@@ -5221,7 +5237,7 @@
             mask: { tr: maskText, en: maskText, de: maskText },
             gloves: {
               latex: false,
-              nitrile: true,
+              nitrile: isNitrile,
               butyl: true,
               warning: { tr: gloveText, en: gloveText, de: gloveText }
             },
@@ -5891,7 +5907,7 @@
               // 2. Güvenli önbellek yenileme (yeni dosyayı çek, sonra cache'e yaz - eski cache'i ASLA önceden silme)
               if ('caches' in window) {
                 const cacheNames = await caches.keys();
-                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.1';
+                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.2';
                 const cache = await caches.open(activeCacheName);
                 const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg'];
                 await Promise.allSettled(urlsToUpdate.map(async (url) => {
@@ -6073,9 +6089,9 @@
       toast.className = 'pwa-update-toast';
       const lang = (window.__msdsState && window.__msdsState.language) || localStorage.getItem('msds-language') || 'tr';
       const titles = {
-        tr: 'Yeni Sürüm Hazır (v1.7.1)',
-        en: 'New Version Ready (v1.7.1)',
-        de: 'Neue Version Bereit (v1.7.1)'
+        tr: 'Yeni Sürüm Hazır (v1.7.2)',
+        en: 'New Version Ready (v1.7.2)',
+        de: 'Neue Version Bereit (v1.7.2)'
       };
       const descs = {
         tr: 'Güncel güvenlik protokollerini yüklemek için dokunun.',
@@ -6102,7 +6118,7 @@
         if ('caches' in window) {
           try {
             const keys = await caches.keys();
-            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.1').map(k => caches.delete(k)));
+            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.2').map(k => caches.delete(k)));
           } catch (e) {}
         }
         window.location.reload(true);
