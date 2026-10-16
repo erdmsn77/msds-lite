@@ -2060,6 +2060,122 @@
       border-color: var(--marine-cyan);
       color: var(--marine-cyan);
     }
+    .sds-sample-section {
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sds-sample-header {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .sds-sample-title {
+      font-size: 11.5px;
+      font-weight: 800;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .sds-sample-sub {
+      font-size: 10.5px;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+    .sds-sample-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .sds-sample-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .sds-sample-btn {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      padding: 8px 12px;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.15s ease;
+      color: var(--text-main);
+    }
+    .sds-sample-btn:hover, .sds-sample-btn:active {
+      border-color: var(--marine-orange);
+      background: rgba(234, 88, 12, 0.06);
+    }
+    .sds-sample-badge {
+      font-size: 9.5px;
+      font-weight: 850;
+      padding: 2px 5px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+    .sds-sample-badge.badge-tr {
+      background: rgba(220, 38, 38, 0.14);
+      color: var(--marine-red);
+      border: 1px solid rgba(220, 38, 38, 0.3);
+    }
+    .sds-sample-badge.badge-en {
+      background: rgba(2, 132, 199, 0.14);
+      color: var(--marine-cyan);
+      border: 1px solid rgba(2, 132, 199, 0.3);
+    }
+    .sds-sample-badge.badge-de {
+      background: rgba(234, 88, 12, 0.14);
+      color: var(--marine-orange);
+      border: 1px solid rgba(234, 88, 12, 0.3);
+    }
+    .sds-sample-name {
+      font-size: 11px;
+      font-weight: 750;
+      flex: 1;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .sds-sample-arrow {
+      font-size: 12px;
+      font-weight: 800;
+      color: var(--marine-orange);
+      transition: transform 0.15s ease;
+      flex-shrink: 0;
+    }
+    .sds-sample-btn:hover .sds-sample-arrow {
+      transform: translateX(3px);
+    }
+    .sds-sample-dl {
+      display: grid;
+      place-items: center;
+      width: 34px;
+      height: 34px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 8px;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+      text-decoration: none;
+    }
+    .sds-sample-dl:hover, .sds-sample-dl:active {
+      border-color: var(--marine-cyan);
+      color: var(--marine-cyan);
+      background: rgba(2, 132, 199, 0.08);
+    }
   </style>
 </head>
 <body>
@@ -3870,7 +3986,11 @@
           sdsIncompatible: 'Uyuşmayan Maddeler',
           customTag: 'Fuar / Özel SDS',
           customChemInfo: 'Kullanıcı tarafından canlı ayrıştırılmış özel SDS kaydı.',
-          btnDeleteRecord: 'Kaydı Sil'
+          btnDeleteRecord: 'Kaydı Sil',
+          readingPdfPages: 'PDF Sayfaları Okunuyor...',
+          sampleSdsTitle: 'Hızlı Test & Fuar Demo Belgeleri',
+          sampleSdsSubtitle: 'Mobilde dosya aramadan tek dokunuşla test edin veya PDF olarak indirin:',
+          btnDownloadSamplePdf: 'Test PDF Dosyasını İndir'
         },
         en: {
           appTitle: 'MSDS-Lite',
@@ -3988,7 +4108,11 @@
           sdsIncompatible: 'Incompatible Materials',
           customTag: 'Expo / Custom SDS',
           customChemInfo: 'Custom SDS record parsed locally by user.',
-          btnDeleteRecord: 'Delete Record'
+          btnDeleteRecord: 'Delete Record',
+          readingPdfPages: 'Reading PDF Pages...',
+          sampleSdsTitle: 'Quick Test & Expo Demo Documents',
+          sampleSdsSubtitle: 'Test with 1-tap on mobile without uploading, or download sample PDFs:',
+          btnDownloadSamplePdf: 'Download Sample PDF'
         },
         de: {
           appTitle: 'MSDS-Lite',
@@ -4106,7 +4230,11 @@
           sdsIncompatible: 'Unverträgliche Stoffe',
           customTag: 'Messe / Eigene SDB',
           customChemInfo: 'Vom Benutzer lokal analysierter benutzerdefinierter SDB-Datensatz.',
-          btnDeleteRecord: 'Datensatz löschen'
+          btnDeleteRecord: 'Datensatz löschen',
+          readingPdfPages: 'PDF-Seiten werden gelesen...',
+          sampleSdsTitle: 'Schnelltest- & Messe-Demodokumente',
+          sampleSdsSubtitle: 'Auf Mobilgeräten mit einem Fingertipp testen oder Muster-PDF herunterladen:',
+          btnDownloadSamplePdf: 'Muster-PDF Herunterladen'
         }
       };
 
@@ -4366,7 +4494,7 @@
               </div>
 
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.7.0</span>
+                <span class="version-tag">MSDS-Lite v1.7.1</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>${t('checkUpdate')}</span>
@@ -5392,6 +5520,51 @@
             }
           }
         });
+
+        // Quick-Test Sample Documents for Mobile & Expo Mode
+        const sampleMap = {
+          '1': { url: './samples/sample_1_polipol_3401_tr.pdf', name: 'sample_1_polipol_3401_tr.pdf' },
+          '2': { url: './samples/sample_2_west_system_205_en.pdf', name: 'sample_2_west_system_205_en.pdf' },
+          '3': { url: './samples/sample_3_butanox_m50_de.pdf', name: 'sample_3_butanox_m50_de.pdf' }
+        };
+
+        modal.querySelectorAll('.sds-sample-btn').forEach(btn => {
+          btn.addEventListener('click', async () => {
+            const sId = btn.dataset.sample;
+            const target = sampleMap[sId];
+            if (!target) return;
+
+            if (statusBar) {
+              statusBar.style.display = 'flex';
+              statusBar.className = 'sds-status-bar loading';
+              statusBar.textContent = `${t('readingPdfPages')} (${target.name})`;
+            }
+
+            try {
+              const res = await fetch(target.url);
+              if (!res.ok) throw new Error('Örnek PDF yüklenemedi');
+              const arrayBuffer = await res.arrayBuffer();
+              const text = await extractTextFromPdfArrayBuffer(arrayBuffer);
+              const parsed = parseSdsText(text, target.name);
+
+              if (parsed) {
+                if (statusBar) {
+                  statusBar.className = 'sds-status-bar success';
+                  statusBar.textContent = t('parseSuccess');
+                }
+                renderSdsPreview(parsed);
+              } else {
+                throw new Error('Ayrıştırma başarısız');
+              }
+            } catch (err) {
+              console.warn('Sample SDS parse error:', err);
+              if (statusBar) {
+                statusBar.className = 'sds-status-bar error';
+                statusBar.textContent = t('parseError');
+              }
+            }
+          });
+        });
       }
 
       function renderSdsModalContent() {
@@ -5444,6 +5617,48 @@
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                   <span>${t('btnParse')}</span>
                 </button>
+              </div>
+            </div>
+
+            <!-- Quick Test Samples Section -->
+            <div class="sds-sample-section">
+              <div class="sds-sample-header">
+                <div class="sds-sample-title">${t('sampleSdsTitle')}</div>
+                <div class="sds-sample-sub">${t('sampleSdsSubtitle')}</div>
+              </div>
+              <div class="sds-sample-buttons">
+                <div class="sds-sample-item">
+                  <button type="button" class="sds-sample-btn" data-sample="1" title="POLIPOL 3401-W">
+                    <span class="sds-sample-badge badge-tr">TR</span>
+                    <span class="sds-sample-name">Poliya 3401-W (Reçine)</span>
+                    <span class="sds-sample-arrow">→</span>
+                  </button>
+                  <a href="./samples/sample_1_polipol_3401_tr.pdf" download="sample_1_polipol_3401_tr.pdf" class="sds-sample-dl" title="${t('btnDownloadSamplePdf')}" aria-label="${t('btnDownloadSamplePdf')}">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  </a>
+                </div>
+
+                <div class="sds-sample-item">
+                  <button type="button" class="sds-sample-btn" data-sample="2" title="WEST SYSTEM 205">
+                    <span class="sds-sample-badge badge-en">EN</span>
+                    <span class="sds-sample-name">West System 205 (Hardener)</span>
+                    <span class="sds-sample-arrow">→</span>
+                  </button>
+                  <a href="./samples/sample_2_west_system_205_en.pdf" download="sample_2_west_system_205_en.pdf" class="sds-sample-dl" title="${t('btnDownloadSamplePdf')}" aria-label="${t('btnDownloadSamplePdf')}">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  </a>
+                </div>
+
+                <div class="sds-sample-item">
+                  <button type="button" class="sds-sample-btn" data-sample="3" title="BUTANOX M-50">
+                    <span class="sds-sample-badge badge-de">DE</span>
+                    <span class="sds-sample-name">Butanox M-50 (MEKP)</span>
+                    <span class="sds-sample-arrow">→</span>
+                  </button>
+                  <a href="./samples/sample_3_butanox_m50_de.pdf" download="sample_3_butanox_m50_de.pdf" class="sds-sample-dl" title="${t('btnDownloadSamplePdf')}" aria-label="${t('btnDownloadSamplePdf')}">
+                    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -5676,7 +5891,7 @@
               // 2. Güvenli önbellek yenileme (yeni dosyayı çek, sonra cache'e yaz - eski cache'i ASLA önceden silme)
               if ('caches' in window) {
                 const cacheNames = await caches.keys();
-                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.0';
+                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.1';
                 const cache = await caches.open(activeCacheName);
                 const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg'];
                 await Promise.allSettled(urlsToUpdate.map(async (url) => {
@@ -5858,9 +6073,9 @@
       toast.className = 'pwa-update-toast';
       const lang = (window.__msdsState && window.__msdsState.language) || localStorage.getItem('msds-language') || 'tr';
       const titles = {
-        tr: 'Yeni Sürüm Hazır (v1.7.0)',
-        en: 'New Version Ready (v1.7.0)',
-        de: 'Neue Version Bereit (v1.7.0)'
+        tr: 'Yeni Sürüm Hazır (v1.7.1)',
+        en: 'New Version Ready (v1.7.1)',
+        de: 'Neue Version Bereit (v1.7.1)'
       };
       const descs = {
         tr: 'Güncel güvenlik protokollerini yüklemek için dokunun.',
@@ -5887,7 +6102,7 @@
         if ('caches' in window) {
           try {
             const keys = await caches.keys();
-            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.0').map(k => caches.delete(k)));
+            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.1').map(k => caches.delete(k)));
           } catch (e) {}
         }
         window.location.reload(true);

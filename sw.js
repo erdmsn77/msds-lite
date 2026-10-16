@@ -1,4 +1,4 @@
-const CACHE_NAME = 'msds-lite-v1.7.0';
+const CACHE_NAME = 'msds-lite-v1.7.1';
 const APP_SHELL = [
   './',
   './index.html',
@@ -10,7 +10,10 @@ const APP_SHELL = [
   './icons/icon-maskable.svg',
   './icons/qr-code.svg',
   './vendor/pdf.min.js',
-  './vendor/pdf.worker.min.js'
+  './vendor/pdf.worker.min.js',
+  './samples/sample_1_polipol_3401_tr.pdf',
+  './samples/sample_2_west_system_205_en.pdf',
+  './samples/sample_3_butanox_m50_de.pdf'
 ];
 
 self.addEventListener('install', (event) => {
