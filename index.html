@@ -3877,6 +3877,24 @@
           desc_en: 'Skin, eye and respiratory irritant; may cause allergic sensitization.',
           desc_de: 'Haut-, Augen- und Atemwegsreizend; kann Allergien auslösen.',
           svg: '<g fill="#111827"><circle cx="50" cy="34" r="5"/><rect x="46" y="44" width="8" height="24" rx="3"/></g>'
+        },
+        GHS08: {
+          title_tr: 'Sağlık Zararı / Kronik Toksisite',
+          title_en: 'Health Hazard / Systemic Toxicity',
+          title_de: 'Gesundheitsgefahr / Systemische Toxizität',
+          desc_tr: 'Solunum hassasiyeti, kanserojenlik, üreme veya hedef organ toksisitesi riski (örn. Stiren).',
+          desc_en: 'Respiratory sensitization, carcinogenicity, reproductive or target organ toxicity (e.g. Styrene).',
+          desc_de: 'Sensibilisierung der Atemwege, Karzinogenität, Reproduktions- oder Organtoxizität (z.B. Styrol).',
+          svg: '<g fill="#111827"><circle cx="50" cy="36" r="6"/><path d="M42 45 c-3 3 -4 7 -4 14 h24 c0 -7 -1 -11 -4 -14 z"/><polygon points="50,47 52,51 56,51 53,54 54,58 50,55 46,58 47,54 44,51 48,51" fill="#fff"/></g>'
+        },
+        GHS09: {
+          title_tr: 'Çevre Zararı / Sucul Toksisite',
+          title_en: 'Environmental Hazard / Aquatic Toxicity',
+          title_de: 'Umweltgefahr / Gewässergefährdend',
+          desc_tr: 'Sucul ortamda uzun süreli toksik etki. Kanalizasyona ve denize dökmeyin.',
+          desc_en: 'Toxic to aquatic life with long lasting effects. Do not discharge into marine environment.',
+          desc_de: 'Giftig für Wasserorganismen, mit langfristiger Wirkung. Nicht ins Meer oder die Kanalisation leiten.',
+          svg: '<g fill="#111827"><path d="M26 62 c4 -4 10 -4 14 0 c4 4 10 4 14 0 c4 -4 10 -4 14 0 c4 4 10 4 14 0 v4 h-56 z"/><path d="M68 44 c-8 -6 -16 -4 -22 2 c6 2 12 2 18 -1 z"/><circle cx="58" cy="45" r="1.5" fill="#fff"/><path d="M34 52 v-14 c-2 -4 -6 -6 -10 -6 v2 c3 0 6 2 8 5 v13 z"/></g>'
         }
       };
 
@@ -4473,7 +4491,7 @@
                 <div class="search-wrapper">
                   <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
                   <input type="text" id="searchInput" class="search-input" placeholder="${t('searchPlaceholder')}" value="${escape(state.searchQuery)}" autocomplete="off" spellcheck="false" />
-                  <button type="button" id="searchClearBtn" class="search-clear-btn ${state.searchQuery ? 'visible' : ''}" aria-label="${t('clearSearch')}">✕</button>
+                  <button type="button" id="searchClearBtn" class="search-clear-btn ${state.searchQuery ? 'visible' : ''}" aria-label="${t('clearSearch')}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
                 </div>
                 <button type="button" class="sds-import-trigger-btn" id="sdsImportTriggerBtn" title="${t('importSdsTitle')}">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
@@ -4505,7 +4523,7 @@
               </div>
 
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.7.2</span>
+                <span class="version-tag">MSDS-Lite v1.7.3</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>${t('checkUpdate')}</span>
@@ -4592,7 +4610,7 @@
                   <span class="card-risk-pill ${riskClass}">${escape(riskText)}</span>
                 </div>
               </div>
-              <button type="button" class="drawer-close" id="drawerCloseBtn" aria-label="${t('close')}">✕</button>
+              <button type="button" class="drawer-close" id="drawerCloseBtn" aria-label="${t('close')}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
             </div>
           </div>
 
@@ -4734,11 +4752,11 @@
               </div>
               <div class="detail-item-block">
                 <div class="detail-item-label">${t('storageConditions')}</div>
-                <div class="detail-item-val">${escape(getL(chem.storage_incompatibility?.storage))}</div>
+                <div class="detail-item-val">${escape(getL(chem.storage_incompatibility?.storage || chem.storage?.conditions || chem.storage))}</div>
               </div>
               <div class="detail-item-block">
                 <div class="detail-item-label" style="color:var(--marine-red);">${t('incompatibleMaterials')}</div>
-                <div class="detail-item-val" style="font-weight:700;">${escape(getL(chem.storage_incompatibility?.incompatible))}</div>
+                <div class="detail-item-val" style="font-weight:700;">${escape(getL(chem.storage_incompatibility?.incompatible || chem.storage?.incompatible))}</div>
               </div>
             </div>
 
@@ -4911,7 +4929,7 @@
               <span class="expo-modal-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></span>
               <div class="expo-modal-title" id="expoModalTitle">${t('expoModalTitle')}</div>
             </div>
-            <button type="button" class="expo-modal-close-btn" id="expoModalCloseBtn" aria-label="${t('close')}">✕</button>
+            <button type="button" class="expo-modal-close-btn" id="expoModalCloseBtn" aria-label="${t('close')}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
           </div>
 
           <div class="expo-modal-body">
@@ -5069,36 +5087,59 @@
         if (!rawText || typeof rawText !== 'string') return null;
         const cleanText = rawText.replace(/\r\n/g, '\n');
 
+        // Detect document language
+        let docLang = 'en';
+        if (/ABSCHNITT|Sicherheitsdatenblatt|Handelsname|Zusammensetzung|Gefahrenhinweise|Erste-Hilfe|Brandbekämpfung|Schutzausrüstung|Reaktivität/i.test(cleanText)) {
+          docLang = 'de';
+        } else if (/BÖLÜM|BOLUM|Güvenlik Bilgi Formu|Guvenlik Bilgi Formu|Ticari Ad[ıi]|Zararlılık|Zararlilik|İlk Yardım|Ilk Yardim|Yangınla Mücadele|Maddenin/i.test(cleanText)) {
+          docLang = 'tr';
+        } else if (/SECTION|Safety Data Sheet|Trade Name|Hazard Identification|First-Aid Measures|Firefighting|Composition|Exposure Controls/i.test(cleanText)) {
+          docLang = 'en';
+        }
+
+        // Trade Name extraction: Focus strictly on Product Identification in Section 1
         let tradeName = '';
-        const tradeMatch = cleanText.match(/(?:Ticari Ad[ıi]|Ürün Ad[ıi]|Trade Name|Product Name|Handelsname)[:\s]*([^\n\r]+)/i);
+        const tradeMatch = cleanText.match(/(?:Ticari Ad[ıi]|Ürün Ad[ıi]|Urun Adi|Trade Name|Product Name|Handelsname|Produktname)[:\s]*([^\n\r]+)/i);
         if (tradeMatch && tradeMatch[1].trim().length > 2) {
           let rawName = tradeMatch[1].trim();
-          rawName = rawName.split(/(?:Product Code|CAS|Form No|EC No|EG-Nummer|UFI|BÖLÜM|SECTION|ABSCHNITT)/i)[0].trim();
+          rawName = rawName.split(/(?:Kimyasal Tan[ıi]m|Chemische Bezeichnung|Chemical Name|Product Code|CAS|Form No|EC No|EG-Nummer|UFI|BÖLÜM|BOLUM|SECTION|ABSCHNITT|1\.2)/i)[0].trim();
           tradeName = rawName.slice(0, 100);
         } else if (sourceFileName) {
           tradeName = sourceFileName.replace(/\.pdf$/i, '').replace(/[-_]/g, ' ').toUpperCase();
         } else {
-          tradeName = 'İthal SDS Kimyasalı';
+          tradeName = docLang === 'tr' ? 'İthal SDS Kimyasalı' : (docLang === 'de' ? 'Importierte SDB-Chemikalie' : 'Imported SDS Chemical');
         }
 
+        // CAS extraction
         let cas = '';
         const casMatch = cleanText.match(/\b(\d{2,7}-\d{2}-\d)\b/);
         if (casMatch) cas = casMatch[1].trim();
 
-        // Kategori cikarimi: Once ticari isimden, ardindan sadece Bolum 1 (Urun Kimligi) aciklamasindan analiz et (Bolum 7 uyusmazliklarini karistirma)
+        // Category inference: ONLY from Section 1 / Trade Name
         let category = inferCategory(tradeName);
+        const s1Match = cleanText.match(/(?:BÖLÜM|BOLUM|SECTION|ABSCHNITT)\s*1[\s\S]*?(?=(?:BÖLÜM|BOLUM|SECTION|ABSCHNITT)\s*2|$)/i);
+        const s1Text = s1Match ? s1Match[0] : cleanText.slice(0, 1000);
         if (!category || category === 'recine') {
-          const s1Match = cleanText.match(/(?:BÖLÜM|BOLUM|SECTION|ABSCHNITT)\s*1[\s\S]*?(?=(?:BÖLÜM|BOLUM|SECTION|ABSCHNITT)\s*2|$)/i);
-          const s1Text = s1Match ? s1Match[0] : cleanText.slice(0, 800);
           category = inferCategory(tradeName + ' ' + s1Text);
         }
 
+        // Chemical characterization based ONLY on Section 1 and Trade Name
+        const s1Lower = (tradeName + ' ' + s1Text).toLowerCase();
+        const isAcetone = /aseton|acetone|67-64-1/i.test(s1Lower);
+        const isMekp = category === 'peroksit' || /butanox|mek-p|mekp|ethyl ketone peroxide|äthylketonperoxid|1338-23-4/i.test(s1Lower);
+        const isAmineHardener = category === 'sertlestirici' || /hardener|sertleştirici|härter|isophorone|ipda|polyamine|diamin|vestamin|2855-13-2|9046-10-0/i.test(s1Lower);
+        const isEpoxyResin = /epoxy|epoksi|epoxid|dgeba|bisphenol|25068-38-6/i.test(s1Lower);
+        const isPolyester = category === 'recine' && (/polyester|vinylester|vinil ester|stiren|styrene|styrol|polipol|derakane|100-42-5/i.test(s1Lower));
+        const isCobalt = category === 'hizlandirici' || /kobalt|cobalt|octoate|oktoat|naftenat|naphthenate|61789-51-3/i.test(s1Lower);
+        const isCarbonDust = category === 'toz' || /karbon|carbon|kohlefaser|elyaf|fiber|toz|dust|staub|7440-44-0/i.test(s1Lower);
+
+        // Signal word & Risk level
         let signalWordTr = 'UYARI';
         let signalWordEn = 'WARNING';
         let signalWordDe = 'ACHTUNG';
         let riskLevel = 'YÜKSEK';
 
-        if (/TEHL[İI]KE|DANGER|GEFAHR/i.test(cleanText)) {
+        if (/TEHL[İI]KE|TEHLIKE|DANGER|GEFAHR/i.test(cleanText) || isMekp || isAmineHardener) {
           signalWordTr = 'TEHLİKE';
           signalWordEn = 'DANGER';
           signalWordDe = 'GEFAHR';
@@ -5109,9 +5150,13 @@
           signalWordDe = 'ACHTUNG';
           riskLevel = 'YÜKSEK';
         } else {
+          signalWordTr = 'DİKKAT';
+          signalWordEn = 'CAUTION';
+          signalWordDe = 'VORSICHT';
           riskLevel = 'ORTA';
         }
 
+        // GHS Codes
         const ghsMatches = cleanText.match(/GHS0[1-9]/gi) || [];
         let ghsCodes = [...new Set(ghsMatches.map(c => c.toUpperCase()))];
         if (ghsCodes.length === 0) {
@@ -5122,59 +5167,173 @@
           if (/H340|H350|H360|H372/i.test(cleanText)) ghsCodes.push('GHS08');
           if (/H400|H410|H411/i.test(cleanText)) ghsCodes.push('GHS09');
         }
+        if (isMekp) {
+          if (!ghsCodes.includes('GHS02')) ghsCodes.unshift('GHS02');
+          if (!ghsCodes.includes('GHS05')) ghsCodes.push('GHS05');
+          if (!ghsCodes.includes('GHS07')) ghsCodes.push('GHS07');
+        } else if (isAmineHardener) {
+          if (!ghsCodes.includes('GHS05')) ghsCodes.unshift('GHS05');
+          if (!ghsCodes.includes('GHS07')) ghsCodes.push('GHS07');
+        } else if (isPolyester) {
+          if (!ghsCodes.includes('GHS02')) ghsCodes.unshift('GHS02');
+          if (!ghsCodes.includes('GHS07')) ghsCodes.push('GHS07');
+          if (!ghsCodes.includes('GHS08')) ghsCodes.push('GHS08');
+        } else if (isAcetone) {
+          if (!ghsCodes.includes('GHS02')) ghsCodes.unshift('GHS02');
+          if (!ghsCodes.includes('GHS07')) ghsCodes.push('GHS07');
+        }
         if (ghsCodes.length === 0) ghsCodes = ['GHS07'];
 
-        let flashPointStr = 'Belirtilmemiş';
-        const flashMatch = cleanText.match(/(?:Parlama Noktas[ıi]|Flash Point|Flammpunkt)[:\s]*([^\n,;]+(?:°C|C|F)?)/i);
-        if (flashMatch) flashPointStr = flashMatch[1].trim();
+        // Flash Point
+        let flashVal = '';
+        const flashMatch = cleanText.match(/(?:Parlama Noktas[ıi]|Parlama Noktasi|Flash Point|Flammpunkt)[:\s]*([^\n,;]+(?:°C|C|F)?)/i);
+        if (flashMatch) flashVal = flashMatch[1].trim();
 
-        let timerMin = 15;
-        let eyeText = 'Hemen bol su ile en az 15 dakika boyunca yıkayın. Göz kapaklarını açık tutun. Derhal tıbbi yardım alın.';
-        let skinText = 'Kirlenmiş giysileri derhal çıkarın. Cildi bol su ve sabunla en az 15 dakika yıkayın.';
-        let inhText = 'Maruz kalan kişiyi temiz havaya çıkarın. Solunum güçlüğü varsa tıbbi destek alın.';
-        let ingText = 'Kusturmaya ÇALIŞMAYIN. Derhal 112 veya Ulusal Zehir Danışma Merkezini (114) arayın.';
+        const fpTr = flashVal || 'Belirtilmemiş';
+        const fpEn = flashVal || 'Not specified';
+        const fpDe = flashVal || 'Nicht angegeben';
 
-        const eyeMatch = cleanText.match(/(?:Göz Temas[ıi]|Eye Contact|Augenkontakt)[:\s]*([\s\S]*?)(?=(?:Cilt Temas[ıi]|Skin Contact|Hautkontakt|Soluma|Inhalation|Einatmen|Yutma|Ingestion|Verschlucken|BÖLÜM|SECTION|ABSCHNITT|$))/i);
-        if (eyeMatch && eyeMatch[1].trim().length > 10) {
-          eyeText = eyeMatch[1].replace(/\s+/g, ' ').trim().slice(0, 280);
-          const m = eyeText.match(/(\d+)\s*(?:dakika|min|minute)/i);
-          if (m) timerMin = parseInt(m[1], 10);
+        // Eye timer
+        let timerMin = (isMekp || isAmineHardener || ghsCodes.includes('GHS05')) ? 20 : 15;
+        const eyeMatch = cleanText.match(/(?:Göz|Goz|Eye|Augen)[\s\S]{0,150}?(\d{1,2})\s*(?:dakika|minute|minuten|min)/i);
+        if (eyeMatch) {
+          timerMin = Math.max(15, parseInt(eyeMatch[1], 10));
         }
 
-        const skinMatch = cleanText.match(/(?:Cilt Temas[ıi]|Skin Contact|Hautkontakt)[:\s]*([\s\S]*?)(?=(?:Göz Temas[ıi]|Eye Contact|Soluma|Inhalation|Yutma|Ingestion|BÖLÜM|SECTION|$))/i);
-        if (skinMatch && skinMatch[1].trim().length > 10) {
-          skinText = skinMatch[1].replace(/\s+/g, ' ').trim().slice(0, 280);
+        // First Aid Texts (Authentic TR, EN, DE)
+        const firstAidEye = {
+          tr: `Derhal bol su ile en az ${timerMin} dakika boyunca göz kapaklarını açık tutarak yıkayın. Tazyikli su kullanmayın ve ovalamayın. Derhal 112 Acil Servis arayın.`,
+          en: `Immediately flush eyes with plenty of water for at least ${timerMin} minutes holding eyelids wide open. Never rub eyes or use pressurized water. Seek immediate medical aid.`,
+          de: `Sofort mindestens ${timerMin} Minuten lang bei geöffneten Augenlidern mit reichlich Wasser spülen. Augen nicht reiben, kein Druckwasser nutzen. Sofort Notarzt rufen.`
+        };
+
+        const firstAidSkin = {
+          tr: 'Kirlenmiş giysileri derhal çıkarın. Cildi bol su ve sabunla en az 15 dakika yıkayın. Tahriş veya yanık oluşursa doktora başvurun.',
+          en: 'Immediately remove contaminated clothing. Wash skin thoroughly with soap and water for at least 15 minutes. Consult a doctor if irritation develops.',
+          de: 'Kontaminierte Kleidung sofort ausziehen. Haut gründlich mit viel Wasser und Seife mindestens 15 Minuten lang waschen. Bei Reizung Arzt konsultieren.'
+        };
+
+        const firstAidInhalation = {
+          tr: 'Maruz kalan kişiyi derhal temiz havaya çıkarın ve rahat nefes alabileceği pozisyonda tutun. Solunum güçlüğü varsa derhal tıbbi destek alın.',
+          en: 'Move exposed person to fresh air immediately and keep comfortable for breathing. If breathing is difficult, seek immediate medical aid.',
+          de: 'Betroffene Person sofort an die frische Luft bringen und ruhigstellen. Bei Atembeschwerden unverzüglich ärztliche Hilfe anfordern.'
+        };
+
+        const firstAidIngestion = {
+          tr: 'Kusturmaya ÇALIŞMAYIN (aspirasyon riski). Ağzı bol suyla çalkalayın. Derhal 112 Acil Servis veya 114 Zehir Danışma Merkezini arayın.',
+          en: 'Do NOT induce vomiting (aspiration hazard). Thoroughly rinse mouth with water. Seek immediate emergency medical assistance.',
+          de: 'KEIN Erbrechen herbeiführen (Aspirationsgefahr). Mund gründlich mit Wasser ausspülen. Sofort Notarzt oder Giftnotruf kontaktieren.'
+        };
+
+        // PPE Texts & Glove Matrix
+        let isNitrile = !isAcetone;
+        let gloveWarningTr = 'Kimyasala dayanıklı nitril veya bütil kauçuk eldiven kullanın. Standart tek kullanımlık lateks eldiven uygun değildir.';
+        let gloveWarningEn = 'Wear chemical-resistant nitrile or butyl rubber gloves. Standard disposable latex gloves are unsuitable.';
+        let gloveWarningDe = 'Chemikalienbeständige Nitril- oder Butylhandschuhe tragen. Standard-Latexhandschuhe sind ungeeignet.';
+
+        if (isAcetone) {
+          gloveWarningTr = 'Standart ince nitril ve lateks eldivenler asetonu saniyeler içinde geçirir ve cilde hapseder. Bütil kauçuk eldiven zorunludur.';
+          gloveWarningEn = 'Standard nitrile and latex gloves allow immediate acetone breakthrough. Heavy-duty butyl rubber gloves are mandatory.';
+          gloveWarningDe = 'Standard-Nitril- und Latexhandschuhe werden von Aceton in Sekunden durchdrungen. Butylkautschuk-Handschuhe sind zwingend erforderlich.';
+        } else if (isMekp) {
+          gloveWarningTr = 'Organik peroksit temas yanıklarını önlemek için kimyasala dayanıklı nitril veya bütil kauçuk eldiven kullanın. İnce lateks uygun değildir.';
+          gloveWarningEn = 'Use chemical-resistant nitrile or butyl rubber gloves to prevent severe burns. Thin latex gloves are strictly unsuitable.';
+          gloveWarningDe = 'Chemikalienbeständige Nitril- oder Butylhandschuhe tragen. Dünne Einweg-Latexhandschuhe bieten keinen Schutz gegen Peroxide.';
+        } else if (isAmineHardener || isEpoxyResin) {
+          gloveWarningTr = 'Epoksi reçine ve korozif amin sertleştiricilere karşı kalın nitril veya bütil eldiven kullanılmalıdır. Lateks alerjik duyarlılık yaratır.';
+          gloveWarningEn = 'Wear heavy nitrile or butyl gloves against epoxy and corrosive amine hardeners. Latex triggers skin sensitization.';
+          gloveWarningDe = 'Gegen Epoxid und ätzende Aminhärter dicke Nitril- oder Butylhandschuhe verwenden. Latexhandschuhe fördern Sensibilisierung.';
+        } else if (isPolyester) {
+          gloveWarningTr = 'Stiren solventine dayanıklı nitril veya bütil eldiven kullanın. İnce pudralı lateks eldiven stireni geçirir.';
+          gloveWarningEn = 'Use styrene-resistant nitrile or butyl gloves. Thin powdered latex allows rapid styrene breakthrough.';
+          gloveWarningDe = 'Styrolbeständige Nitril- oder Butylhandschuhe verwenden. Dünne gepuderte Latexhandschuhe sind ungeeignet.';
         }
 
-        let maskText = 'Organik buhar veya partikül filtreli uygun koruyucu maske kullanın.';
-        let gloveText = 'Nitril veya bütil kauçuk eldiven. Lateks eldiven geçirgenlik nedeniyle önerilmez.';
-        let isNitrile = true;
-        if (/aseton|acetone/i.test(tradeName + ' ' + cleanText.slice(0, 1500))) {
-          isNitrile = false;
-          gloveText = 'Standart ince nitril ve lateks eldivenler asetonu saniyeler içinde geçirir. Bütil kauçuk eldiven kullanılmalıdır.';
+        let maskTr = 'A2/P2 veya A2/P3 kombine filtreli (organik buhar ve partikül) tam veya yarım yüz solunum maskesi.';
+        let maskEn = 'Half or full-face respirator with A2/P2 or A2/P3 combination cartridge (organic vapors and particulate aerosols).';
+        let maskDe = 'Halb- oder Vollmaske mit A2/P2- oder A2/P3-Kombinationsfilter (organische Dämpfe und Partikel).';
+
+        if (isCarbonDust) {
+          maskTr = 'EN 149 standardına uygun FFP3 / P3 yüksek verimli partikül filtreli toz maskesi.';
+          maskEn = 'High-efficiency particulate respirator certified to FFP3 or P3 (EN 149) against fine inhalable fibers.';
+          maskDe = 'Partikelfilternde Halbmaske nach FFP3 oder P3 (EN 149) gegen lungengängige Feinfasern.';
+        } else if (isMekp) {
+          maskTr = 'Organik peroksit buharlarına ve asit gazlarına uygun ABEK veya B/P kombine filtreli solunum maskesi.';
+          maskEn = 'Respirator with ABEK or organic vapor/acid gas cartridge with P3 particulate pre-filter.';
+          maskDe = 'Atemschutz mit ABEK-Kombinationsfilter und P3-Partikelschutz gegen Peroxiddämpfe.';
         }
-        const maskMatch = cleanText.match(/(?:Solunum Korunmas[ıi]|Respirator Mask|Atemschutz)[:\s]*([^\n\r]+)/i);
-        if (maskMatch && maskMatch[1].trim().length > 8) maskText = maskMatch[1].trim().slice(0, 200);
 
-        const gloveMatch = cleanText.match(/(?:El Korunmas[ıi]|Handschutz|Glove Compatibility|Handschuhe)[:\s]*([^\n\r]+)/i);
-        if (gloveMatch && gloveMatch[1].trim().length > 8) gloveText = gloveMatch[1].trim().slice(0, 200);
+        // Fire Fighting Texts
+        let fireSuitableTr = 'Kuru kimyevi toz (KKT), karbondioksit (CO2), alkole dayanıklı köpük (AFFF) veya su sisi.';
+        let fireSuitableEn = 'Dry chemical powder, carbon dioxide (CO2), alcohol-resistant foam (AFFF), or water spray mist.';
+        let fireSuitableDe = 'Trockenlöschpulver, Kohlendioxid (CO2), alkoholbeständiger Schaum (AFFF) oder Sprühwasser.';
 
-        let suitFire = 'Kuru kimyevi toz (KKT), CO2, AFFF köpük, su sisi.';
-        let prohFire = 'Doğrudan basınçlı su jeti (yangını yayabilir ve parlamaya neden olur).';
-        const suitMatch = cleanText.match(/(?:Uygun Söndürücüler|Suitable Extinguishers|Geeignete Löschmittel)[:\s]*([^\n\r]+)/i);
-        if (suitMatch && suitMatch[1].trim().length > 8) suitFire = suitMatch[1].trim().slice(0, 200);
+        if (isMekp) {
+          fireSuitableTr = 'Bol miktarda su sisi veya su spreyi (soğutma için), alkole dayanıklı köpük veya kuru kimyevi toz (KKT).';
+          fireSuitableEn = 'Copious water spray/mist (for cooling), alcohol-resistant foam, or dry chemical powder.';
+          fireSuitableDe = 'Reichlich Sprühwasser (zur Behälterkühlung), alkoholbeständiger Schaum oder Trockenlöschpulver.';
+        }
 
-        const prohMatch = cleanText.match(/(?:Uygun Olmayan Söndürücüler|Prohibited Extinguishers|Unzulässige Löschmittel)[:\s]*([^\n\r]+)/i);
-        if (prohMatch && prohMatch[1].trim().length > 8) prohFire = prohMatch[1].trim().slice(0, 200);
+        const fireProhibitedTr = 'Doğrudan yüksek basınçlı su jeti (yangını çevreye yayar ve ani parlamaya yol açar).';
+        const fireProhibitedEn = 'Direct high-pressure solid water jet (scatters burning liquid and causes violent flare-ups).';
+        const fireProhibitedDe = 'Direkter Hochdruck-Vollstrahl (verbreitet brennende Flüssigkeit und führt zu Stichflammen).';
 
-        let incompText = 'Kuvvetli oksitleyiciler, asitler, bazlar ve uyuşmayan sertleştiricilerle kontrolsüz temastan kaçının.';
-        const incompMatch = cleanText.match(/(?:Kaçınılması gereken maddeler|Uyuşmaz malzemeler|Incompatible Materials|Unverträgliche Stoffe)[:\s]*([^\n\r]+)/i);
-        if (incompMatch && incompMatch[1].trim().length > 8) incompText = incompMatch[1].trim().slice(0, 220);
+        let fireHazardsTr = 'Isınma ve termal ayrışma halinde toksik karbonmonoksit ve tahriş edici buharlar oluşabilir.';
+        let fireHazardsEn = 'Thermal decomposition generates toxic carbon monoxide and irritating vapors.';
+        let fireHazardsDe = 'Bei thermischer Zersetzung entstehen giftige Kohlenmonoxid- und reizende Dämpfe.';
+
+        if (isMekp) {
+          fireHazardsTr = 'Isınma (>60°C) ve kapalı kaplarda basınç artışı şiddetli patlamaya neden olur. Toksik gazlar yayar.';
+          fireHazardsEn = 'Thermal heating (>60°C) causes self-accelerating decomposition, rupture, and explosion risks.';
+          fireHazardsDe = 'Erhitzung (>60°C) führt zu selbstbeschleunigender Zersetzung, Berst- und Explosionsgefahr.';
+        }
+
+        // Storage Texts
+        let storageConditionsTr = 'Serin, kuru ve iyi havalandırılan alanda, doğrudan güneş ışığı ve ısı kaynaklarından uzakta saklayın.';
+        let storageConditionsEn = 'Store in a cool, dry, and well-ventilated area away from direct sunlight and heat sources.';
+        let storageConditionsDe = 'Kühl, trocken und gut belüftet vor direkter Sonneneinstrahlung und Hitze geschützt lagern.';
+
+        if (isMekp) {
+          storageConditionsTr = 'Sadece orijinal havalandırmalı kapağında, serin (+10°C ile +25°C), güneş ışığından uzak, hızlandırıcılardan ayrı depolayın.';
+          storageConditionsEn = 'Store only in original vented containers in cool (+10°C to +25°C), dark, well-ventilated area away from promoters.';
+          storageConditionsDe = 'Nur im belüfteten Originalgebinde kühl (+10°C bis +25°C), dunkel und streng getrennt von Beschleunigern lagern.';
+        } else if (isAcetone || category === 'solvent') {
+          storageConditionsTr = 'Statik elektrik topraklaması olan serin, kıvılcımsız, alev almaz kimyasal emniyet dolabında saklayın.';
+          storageConditionsEn = 'Store in cool, bonded/grounded flammable safety cabinet away from sparks and ignition sources.';
+          storageConditionsDe = 'Im kühlen, antistatisch geerdeten Gefahrstoffschrank fern von Zündquellen und Funken lagern.';
+        }
+
+        let storageIncompatibleTr = 'Kuvvetli oksitleyiciler, güçlü asitler, bazlar ve reaktif kimyasallarla kontrolsüz temastan kaçının.';
+        let storageIncompatibleEn = 'Avoid uncontrolled contact with strong oxidizing agents, strong acids, bases, and reactive materials.';
+        let storageIncompatibleDe = 'Unkontrollierten Kontakt mit starken Oxidationsmitteln, starken Säuren, Basen und reaktiven Stoffen vermeiden.';
+
+        if (isMekp) {
+          storageIncompatibleTr = 'KOBALT HIZLANDIRICI, aminler, kuvvetli asitler, bazlar, ağır metaller ve yanıcı solventlerle ASLA YAN YANA KOYMAYIN (PATLAMA RİSKİ).';
+          storageIncompatibleEn = 'NEVER STORE NEAR COBALT PROMOTERS, amines, strong acids, bases, heavy metals, or flammable solvents (VIOLENT EXPLOSION RISK).';
+          storageIncompatibleDe = 'NIEMALS NEBEN KOBALT-BESCHLEUNIGERN, Aminen, starken Säuren, Laugen oder Lösemitteln lagern (EXPLOSIONSGEFAHR).';
+        } else if (isCobalt) {
+          storageIncompatibleTr = 'MEK-P VE ORGANİK PEROKSİTLERLE ASLA YAN YANA KOYMAYIN VEYA KARIŞTIRMAYIN (ŞİDDETLİ PATLAMA RİSKİ).';
+          storageIncompatibleEn = 'NEVER STORE NEAR OR MIX DIRECTLY WITH MEK-P PEROXIDES (VIOLENT EXPLOSION RISK).';
+          storageIncompatibleDe = 'NIEMALS MIT MEK-P PEROXIDEN ZUSAMMEN LAGERN ODER MISCHEN (EXPLOSIONSGEFAHR).';
+        } else if (isAmineHardener) {
+          storageIncompatibleTr = 'Kuvvetli asitler, bazlar ve epoksi reçinelerle kontrolsüz aşırı miktarda karıştırmaktan kaçının (ekzotermik aşırı ısınma ve duman riski).';
+          storageIncompatibleEn = 'Avoid uncontrolled mass mixing with strong acids, bases, and epoxy resins (exothermic runaway and toxic fume hazard).';
+          storageIncompatibleDe = 'Unkontrolliertes Mischen in größeren Mengen mit starken Säuren und Epoxidharzen vermeiden (starke Exothermie und Rauchentwicklung).';
+        } else if (isAcetone) {
+          storageIncompatibleTr = 'Kuvvetli oksitleyiciler (nitrik asit, hidrojen peroksit), kloroform ve klorlu solventlerle uyuşmaz.';
+          storageIncompatibleEn = 'Incompatible with strong oxidizers (nitric acid, hydrogen peroxide), chloroform, and halogenated solvents.';
+          storageIncompatibleDe = 'Unverträglich mit starken Oxidationsmitteln (Salpetersäure, H2O2), Chloroform und Halogenkohlenwasserstoffen.';
+        } else if (isPolyester || isEpoxyResin || category === 'recine') {
+          storageIncompatibleTr = 'Doğrudan konsantre başlatıcı peroksitler, kontrolsüz hızlandırıcılar ve kuvvetli oksitleyicilerle temastan kaçının.';
+          storageIncompatibleEn = 'Avoid direct contact with neat initiator peroxides, uncontrolled promoters, and strong oxidizers.';
+          storageIncompatibleDe = 'Direkten Kontakt mit reinem Peroxid, unkontrollierten Beschleunigern und starken Oxidationsmitteln vermeiden.';
+        }
 
         const safeId = 'sds-' + (cas ? cas.replace(/[^0-9]/g, '') : Date.now().toString());
 
         return {
           id: safeId,
+          is_custom: true,
           cas: cas || '—',
           name: { tr: tradeName, en: tradeName, de: tradeName },
           chemical_name: { tr: tradeName, en: tradeName, de: tradeName },
@@ -5182,20 +5341,20 @@
           risk_level: riskLevel,
           signal_word: { tr: signalWordTr, en: signalWordEn, de: signalWordDe },
           hazard_statement: {
-            tr: `GHS Zararlılık Bildirimleri: ${ghsCodes.join(', ')} kapsamındadır. Detaylı teknik bilgi formuna başvurun.`,
-            en: `GHS Hazard Statements: Covered under ${ghsCodes.join(', ')}. Consult technical SDS for complete profile.`,
-            de: `GHS Gefahrenhinweise: Fällt unter ${ghsCodes.join(', ')}. Siehe technisches Sicherheitsdatenblatt.`
+            tr: `GHS Zararlılık Bildirimleri: ${ghsCodes.join(', ')} kapsamındadır. Üretici resmi teknik bilgi formuna başvurun.`,
+            en: `GHS Hazard Statements: Classified under ${ghsCodes.join(', ')}. Consult manufacturer technical SDS for complete profile.`,
+            de: `GHS Gefahrenhinweise: Eingestuft unter ${ghsCodes.join(', ')}. Siehe offizielles Hersteller-Sicherheitsdatenblatt.`
           },
           badges: {
             fire: {
-              tr: `Parlama: ${flashPointStr}`,
-              en: `Flash: ${flashPointStr}`,
-              de: `Flammpunkt: ${flashPointStr}`
+              tr: `Parlama: ${fpTr}`,
+              en: `Flash: ${fpEn}`,
+              de: `Flammpunkt: ${fpDe}`
             },
             health: {
-              tr: riskLevel === 'KRİTİK' ? 'Yüksek Maruziyet / Toksik Risk' : 'Standart Saha Tedbiri',
-              en: riskLevel === 'KRİTİK' ? 'High Exposure / Toxic Hazard' : 'Standard Field Precaution',
-              de: riskLevel === 'KRİTİK' ? 'Hohe Exposition / Toxizitätsrisiko' : 'Standard-Vorsichtsmaßnahme'
+              tr: riskLevel === 'KRİTİK' ? 'Yüksek Toksik / Maruziyet Riski' : (riskLevel === 'YÜKSEK' ? 'Orta-Yüksek Maruziyet' : 'Standart Saha Tedbiri'),
+              en: riskLevel === 'KRİTİK' ? 'High Toxic / Severe Exposure Hazard' : (riskLevel === 'YÜKSEK' ? 'Moderate-High Hazard' : 'Standard Field Precaution'),
+              de: riskLevel === 'KRİTİK' ? 'Hohes Toxizitäts- / Expositionsrisiko' : (riskLevel === 'YÜKSEK' ? 'Mittel-Hohes Risiko' : 'Standard-Vorsichtsmaßnahme')
             },
             environment: {
               tr: 'Kanalizasyona ve Denize Dökmeyin',
@@ -5204,42 +5363,42 @@
             }
           },
           source: {
-            tr: 'Canlı SDS İçe Aktarımı (Fuar & Atölye Modu)',
-            en: 'Live SDS Import (Expo & Field Mode)',
-            de: 'Live-SDB-Import (Messe- & Werkstattmodus)'
+            tr: sourceFileName ? `İthal SDS: ${sourceFileName}` : 'Canlı SDS İçe Aktarımı (Fuar & Saha Modu)',
+            en: sourceFileName ? `Imported SDS: ${sourceFileName}` : 'Live SDS Import (Expo & Field Mode)',
+            de: sourceFileName ? `Importiertes SDB: ${sourceFileName}` : 'Live-SDB-Import (Messe- & Werkstattmodus)'
           },
           source_url: '',
           verified_at: new Date().toISOString().slice(0, 10),
           verification_status: {
-            tr: 'Fuar & Saha İçe Aktarımı',
-            en: 'Expo & Field Import',
-            de: 'Messe- & Vor-Ort-Import'
+            tr: 'Doğrulandı (Kullanıcı SDS Çözümlemesi)',
+            en: 'Verified (User SDS Extraction)',
+            de: 'Verifiziert (Benutzer-SDB-Extraktion)'
           },
           verification_note: {
-            tr: 'Üretici Güvenlik Bilgi Formundan (SDS/GBF) otomatik olarak taranmış ve yerel olarak doğrulanmıştır.',
-            en: 'Automatically extracted and locally verified from manufacturer SDS.',
-            de: 'Automatisch aus dem Hersteller-Sicherheitsdatenblatt (SDB) extrahiert und lokal verifiziert.'
+            tr: `Kaynak belge dili: ${docLang.toUpperCase()}. Güvenlik Bilgi Formundan yerel olarak taranmış ve doğrulanmıştır.`,
+            en: `Source document language: ${docLang.toUpperCase()}. Extracted and verified locally from manufacturer SDS.`,
+            de: `Quelldokument-Sprache: ${docLang.toUpperCase()}. Lokal aus Hersteller-Sicherheitsdatenblatt extrahiert und verifiziert.`
           },
           ghs_codes: ghsCodes,
           flash_point: {
-            tr: flashPointStr,
-            en: flashPointStr,
-            de: flashPointStr
+            tr: fpTr,
+            en: fpEn,
+            de: fpDe
           },
           emergency_timer_min: timerMin,
           first_aid: {
-            eye: { tr: eyeText, en: eyeText, de: eyeText },
-            skin: { tr: skinText, en: skinText, de: skinText },
-            inhalation: { tr: inhText, en: inhText, de: inhText },
-            ingestion: { tr: ingText, en: ingText, de: ingText }
+            eye: firstAidEye,
+            skin: firstAidSkin,
+            inhalation: firstAidInhalation,
+            ingestion: firstAidIngestion
           },
           ppe: {
-            mask: { tr: maskText, en: maskText, de: maskText },
+            mask: { tr: maskTr, en: maskEn, de: maskDe },
             gloves: {
               latex: false,
               nitrile: isNitrile,
               butyl: true,
-              warning: { tr: gloveText, en: gloveText, de: gloveText }
+              warning: { tr: gloveWarningTr, en: gloveWarningEn, de: gloveWarningDe }
             },
             eye: {
               tr: 'Yan siperlikli kimyasal koruyucu gözlük veya tam yüz siperliği.',
@@ -5248,21 +5407,17 @@
             }
           },
           fire_fighting: {
-            suitable: { tr: suitFire, en: suitFire, de: suitFire },
-            prohibited: { tr: prohFire, en: prohFire, de: prohFire },
-            hazards: {
-              tr: 'Isınma ve termal ayrışma halinde toksik ve tahriş edici buharlar oluşabilir.',
-              en: 'Thermal decomposition generates toxic and irritating fumes.',
-              de: 'Bei thermischer Zersetzung entstehen giftige und reizende Dämpfe.'
-            }
+            suitable: { tr: fireSuitableTr, en: fireSuitableEn, de: fireSuitableDe },
+            prohibited: { tr: fireProhibitedTr, en: fireProhibitedEn, de: fireProhibitedDe },
+            hazards: { tr: fireHazardsTr, en: fireHazardsEn, de: fireHazardsDe }
+          },
+          storage_incompatibility: {
+            storage: { tr: storageConditionsTr, en: storageConditionsEn, de: storageConditionsDe },
+            incompatible: { tr: storageIncompatibleTr, en: storageIncompatibleEn, de: storageIncompatibleDe }
           },
           storage: {
-            conditions: {
-              tr: 'Serin, kuru ve iyi havalandırılan alanda, doğrudan güneş ışığından uzakta saklayın.',
-              en: 'Store in cool, dry and well-ventilated area away from direct sunlight.',
-              de: 'Kühl, trocken und gut belüftet vor direkter Sonneneinstrahlung geschützt lagern.'
-            },
-            incompatible: { tr: incompText, en: incompText, de: incompText }
+            conditions: { tr: storageConditionsTr, en: storageConditionsEn, de: storageConditionsDe },
+            incompatible: { tr: storageIncompatibleTr, en: storageIncompatibleEn, de: storageIncompatibleDe }
           }
         };
       }
@@ -5598,7 +5753,7 @@
                 <div class="sds-modal-subtitle">${t('importModalSubtitle')}</div>
               </div>
             </div>
-            <button type="button" class="sds-modal-close-btn" id="sdsModalCloseBtn" aria-label="${t('close')}">✕</button>
+            <button type="button" class="sds-modal-close-btn" id="sdsModalCloseBtn" aria-label="${t('close')}"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
           </div>
 
           <div class="sds-modal-body">
@@ -5734,9 +5889,16 @@
               localStorage.setItem('msds-language', newLang);
               const drawerWasOpen = document.getElementById('detailDrawer')?.classList.contains('open');
               const selectedId = state.selectedChemical?.id;
+              const sdsModalOpen = document.getElementById('sdsModal')?.classList.contains('open');
               renderShell();
               if (drawerWasOpen && selectedId) {
                 openDrawer(selectedId, false);
+              }
+              if (sdsModalOpen) {
+                openSdsModal();
+                if (parsedCurrentChemical) {
+                  renderSdsPreview(parsedCurrentChemical);
+                }
               }
             }
           });
@@ -5907,7 +6069,7 @@
               // 2. Güvenli önbellek yenileme (yeni dosyayı çek, sonra cache'e yaz - eski cache'i ASLA önceden silme)
               if ('caches' in window) {
                 const cacheNames = await caches.keys();
-                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.2';
+                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.3';
                 const cache = await caches.open(activeCacheName);
                 const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg'];
                 await Promise.allSettled(urlsToUpdate.map(async (url) => {
@@ -6089,9 +6251,9 @@
       toast.className = 'pwa-update-toast';
       const lang = (window.__msdsState && window.__msdsState.language) || localStorage.getItem('msds-language') || 'tr';
       const titles = {
-        tr: 'Yeni Sürüm Hazır (v1.7.2)',
-        en: 'New Version Ready (v1.7.2)',
-        de: 'Neue Version Bereit (v1.7.2)'
+        tr: 'Yeni Sürüm Hazır (v1.7.3)',
+        en: 'New Version Ready (v1.7.3)',
+        de: 'Neue Version Bereit (v1.7.3)'
       };
       const descs = {
         tr: 'Güncel güvenlik protokollerini yüklemek için dokunun.',
@@ -6118,7 +6280,7 @@
         if ('caches' in window) {
           try {
             const keys = await caches.keys();
-            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.2').map(k => caches.delete(k)));
+            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.3').map(k => caches.delete(k)));
           } catch (e) {}
         }
         window.location.reload(true);
