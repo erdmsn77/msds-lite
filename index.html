@@ -4917,8 +4917,8 @@
       function inferCategory(text) {
         const t = (text || '').toLowerCase();
         if (t.includes('peroksit') || t.includes('peroxide') || t.includes('mek-p') || t.includes('butanox')) return 'peroksit';
-        if (t.includes('reçine') || t.includes('resin') || t.includes('polyester') || t.includes('vinilester') || t.includes('epoksi')) return 'recine';
-        if (t.includes('sertleştirici') || t.includes('hardener') || t.includes('amin') || t.includes('ipda')) return 'sertlestirici';
+        if (t.includes('sertleştirici') || t.includes('hardener') || t.includes('haerter') || t.includes('härter') || t.includes('amin') || t.includes('ipda')) return 'sertlestirici';
+        if (t.includes('reçine') || t.includes('recine') || t.includes('resin') || t.includes('polyester') || t.includes('vinilester') || t.includes('epoksi')) return 'recine';
         if (t.includes('solvent') || t.includes('aseton') || t.includes('stiren') || t.includes('tiner') || t.includes('toluen')) return 'solvent';
         if (t.includes('hızlandırıcı') || t.includes('promoter') || t.includes('kobalt') || t.includes('octoate')) return 'hizlandirici';
         if (t.includes('toz') || t.includes('elyaf') || t.includes('fiber') || t.includes('karbon') || t.includes('dust')) return 'toz';
@@ -4933,7 +4933,9 @@
         let tradeName = '';
         const tradeMatch = cleanText.match(/(?:Ticari Ad[ıi]|Ürün Ad[ıi]|Trade Name|Product Name|Handelsname)[:\s]*([^\n\r]+)/i);
         if (tradeMatch && tradeMatch[1].trim().length > 2) {
-          tradeName = tradeMatch[1].trim();
+          let rawName = tradeMatch[1].trim();
+          rawName = rawName.split(/(?:Product Code|CAS|Form No|EC No|EG-Nummer|UFI|BÖLÜM|SECTION|ABSCHNITT)/i)[0].trim();
+          tradeName = rawName.slice(0, 100);
         } else if (sourceFileName) {
           tradeName = sourceFileName.replace(/\.pdf$/i, '').replace(/[-_]/g, ' ').toUpperCase();
         } else {
@@ -4944,7 +4946,13 @@
         const casMatch = cleanText.match(/\b(\d{2,7}-\d{2}-\d)\b/);
         if (casMatch) cas = casMatch[1].trim();
 
-        const category = inferCategory(tradeName + ' ' + cleanText.slice(0, 3000));
+        // Kategori cikarimi: Once ticari isimden, ardindan sadece Bolum 1 (Urun Kimligi) aciklamasindan analiz et (Bolum 7 uyusmazliklarini karistirma)
+        let category = inferCategory(tradeName);
+        if (!category || category === 'recine') {
+          const s1Match = cleanText.match(/(?:BÖLÜM|BOLUM|SECTION|ABSCHNITT)\s*1[\s\S]*?(?=(?:BÖLÜM|BOLUM|SECTION|ABSCHNITT)\s*2|$)/i);
+          const s1Text = s1Match ? s1Match[0] : cleanText.slice(0, 800);
+          category = inferCategory(tradeName + ' ' + s1Text);
+        }
 
         let signalWordTr = 'UYARI';
         let signalWordEn = 'WARNING';
@@ -5119,15 +5127,35 @@
         if (!window.pdfjsLib) {
           throw new Error('PDF.js motoru henüz yüklenemedi.');
         }
-        window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'vendor/pdf.worker.min.js';
+        if (!window.pdfjsLib.GlobalWorkerOptions.workerSrc) {
+          window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'vendor/pdf.worker.min.js';
+        }
         const loadingTask = window.pdfjsLib.getDocument({ data: arrayBuffer });
         const doc = await loadingTask.promise;
         const pageTexts = [];
         for (let i = 1; i <= doc.numPages; i++) {
           const page = await doc.getPage(i);
           const content = await page.getTextContent();
-          const strings = content.items.map(item => item.str);
-          pageTexts.push(strings.join(' '));
+          const pageLines = [];
+          let currentLine = [];
+          let lastY = null;
+          for (const item of content.items) {
+            const y = item.transform ? item.transform[5] : null;
+            if (lastY !== null && y !== null && Math.abs(y - lastY) > 4) {
+              if (currentLine.length > 0) pageLines.push(currentLine.join(' '));
+              currentLine = [];
+            }
+            if (item.str) currentLine.push(item.str);
+            if (item.hasEOL) {
+              if (currentLine.length > 0) pageLines.push(currentLine.join(' '));
+              currentLine = [];
+              lastY = null;
+            } else {
+              lastY = y;
+            }
+          }
+          if (currentLine.length > 0) pageLines.push(currentLine.join(' '));
+          pageTexts.push(pageLines.join('\n'));
         }
         return pageTexts.join('\n\n');
       }
