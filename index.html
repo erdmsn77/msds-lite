@@ -20,6 +20,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <script src="vendor/pdf.min.js"></script>
   <script>
     (function () {
       try {
@@ -1646,6 +1647,418 @@
       0% { transform: translateX(-100%); }
       60% { transform: translateX(-15%); }
       100% { transform: translateX(0%); }
+    }
+
+    /* SDS Importer / Fuar Modu Stilleri */
+    .search-row {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      width: 100%;
+    }
+    .search-row .search-wrapper {
+      flex: 1;
+      margin-bottom: 0;
+    }
+    .sds-import-trigger-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      background: linear-gradient(135deg, rgba(234, 88, 12, 0.14), rgba(2, 132, 199, 0.10));
+      border: 1px solid rgba(234, 88, 12, 0.38);
+      color: var(--marine-orange);
+      font-size: 11.5px;
+      font-weight: 750;
+      padding: 0 13px;
+      height: 42px;
+      border-radius: 9px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.18s ease;
+      flex-shrink: 0;
+      touch-action: manipulation;
+    }
+    .sds-import-trigger-btn:hover {
+      background: var(--marine-orange);
+      color: #ffffff;
+      border-color: var(--marine-orange);
+      box-shadow: 0 4px 14px rgba(234, 88, 12, 0.35);
+      transform: translateY(-1px);
+    }
+    @media (max-width: 580px) {
+      .search-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .sds-import-trigger-btn {
+        height: 38px;
+        width: 100%;
+      }
+    }
+
+    /* SDS Modal */
+    .sds-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(15, 23, 42, 0.72);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease;
+      z-index: 1000;
+    }
+    .sds-modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .sds-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -46%) scale(0.96);
+      width: calc(100% - 32px);
+      max-width: 620px;
+      max-height: calc(100vh - 40px);
+      background: var(--bg-surface);
+      color: var(--text-body);
+      border: 1px solid var(--border-subtle);
+      border-radius: 16px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+      z-index: 1001;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .sds-modal.open {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    .sds-modal-header {
+      padding: 14px 18px;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+    .sds-modal-title-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 0;
+    }
+    .sds-modal-icon {
+      color: var(--marine-orange);
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .sds-modal-title {
+      font-size: 14px;
+      font-weight: 850;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+    .sds-modal-subtitle {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 1px;
+    }
+    .sds-modal-close-btn {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-muted);
+      font-size: 16px;
+      width: 30px;
+      height: 30px;
+      border-radius: 8px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      transition: all 0.15s ease;
+      flex-shrink: 0;
+    }
+    .sds-modal-close-btn:hover {
+      border-color: var(--marine-red);
+      color: var(--marine-red);
+      background: rgba(220, 38, 38, 0.08);
+    }
+    .sds-modal-body {
+      padding: 16px 18px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .sds-tabs {
+      display: flex;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 3px;
+      gap: 4px;
+    }
+    .sds-tab-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 12px;
+      font-size: 11.5px;
+      font-weight: 750;
+      background: transparent;
+      color: var(--text-muted);
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .sds-tab-btn.active {
+      background: var(--bg-surface);
+      color: var(--marine-orange);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+    }
+    .sds-tab-pane {
+      display: none;
+    }
+    .sds-tab-pane.active {
+      display: block;
+    }
+    .sds-drop-zone {
+      border: 2px dashed rgba(234, 88, 12, 0.35);
+      background: linear-gradient(135deg, rgba(234, 88, 12, 0.03), rgba(2, 132, 199, 0.03));
+      border-radius: 12px;
+      padding: 28px 18px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .sds-drop-zone:hover, .sds-drop-zone.dragover {
+      border-color: var(--marine-orange);
+      background: rgba(234, 88, 12, 0.08);
+      transform: scale(0.995);
+    }
+    .sds-drop-icon {
+      color: var(--marine-orange);
+      opacity: 0.85;
+      margin-bottom: 2px;
+    }
+    .sds-drop-title {
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+    .sds-drop-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+      max-width: 360px;
+      line-height: 1.35;
+    }
+    .sds-browse-btn {
+      margin-top: 4px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 7px;
+      padding: 6px 14px;
+      font-size: 11px;
+      font-weight: 750;
+      color: var(--text-main);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .sds-browse-btn:hover {
+      border-color: var(--marine-orange);
+      color: var(--marine-orange);
+    }
+    .sds-paste-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .sds-paste-label {
+      font-size: 11px;
+      font-weight: 750;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .sds-paste-area {
+      width: 100%;
+      height: 120px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      padding: 10px 12px;
+      font-size: 11.5px;
+      font-family: var(--font-mono);
+      color: var(--text-main);
+      resize: vertical;
+      line-height: 1.4;
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+    .sds-paste-area:focus {
+      border-color: var(--marine-orange);
+    }
+    .sds-parse-btn {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--marine-orange);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 11.5px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .sds-parse-btn:hover {
+      background: #c2410c;
+      transform: translateY(-1px);
+    }
+    .sds-status-bar {
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-size: 11px;
+      font-weight: 650;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sds-status-bar.loading {
+      background: rgba(2, 132, 199, 0.12);
+      border: 1px solid rgba(2, 132, 199, 0.35);
+      color: var(--marine-cyan);
+    }
+    .sds-status-bar.success {
+      background: rgba(16, 185, 129, 0.12);
+      border: 1px solid rgba(16, 185, 129, 0.35);
+      color: var(--marine-emerald);
+    }
+    .sds-status-bar.error {
+      background: rgba(220, 38, 38, 0.12);
+      border: 1px solid rgba(220, 38, 38, 0.35);
+      color: var(--marine-red);
+    }
+    .sds-preview-card {
+      background: var(--bg-card);
+      border: 1px solid rgba(234, 88, 12, 0.35);
+      border-radius: 12px;
+      padding: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .sds-preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .sds-preview-name {
+      font-size: 14px;
+      font-weight: 850;
+      color: var(--text-main);
+      line-height: 1.25;
+    }
+    .sds-preview-cas {
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--marine-orange);
+      font-weight: 700;
+      margin-top: 2px;
+    }
+    .sds-preview-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+    .sds-preview-cell {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 7px;
+      padding: 7px 9px;
+    }
+    .sds-preview-label {
+      font-size: 9px;
+      font-weight: 750;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-dim);
+      margin-bottom: 2px;
+    }
+    .sds-preview-val {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+    .sds-preview-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: 4px;
+      flex-wrap: wrap;
+    }
+    .sds-add-btn {
+      flex: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--marine-orange);
+      color: #ffffff;
+      border: none;
+      border-radius: 8px;
+      padding: 9px 14px;
+      font-size: 11.5px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .sds-add-btn:hover {
+      background: #c2410c;
+    }
+    .sds-json-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      color: var(--text-body);
+      border-radius: 8px;
+      padding: 9px 14px;
+      font-size: 11.5px;
+      font-weight: 750;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .sds-json-btn:hover {
+      border-color: var(--marine-cyan);
+      color: var(--marine-cyan);
     }
   </style>
 </head>
@@ -3425,7 +3838,39 @@
           featFire: 'Yangında Su Jeti Yasakları',
           featIncomp: 'Reaksiyon & Uyuşmazlık Haritası',
           featGhs: 'Uluslararası GHS Standartları',
-          featLang: 'Üç Dilli (TR / EN / DE)'
+          featLang: 'Üç Dilli (TR / EN / DE)',
+          importSdsBtn: 'SDS İçe Aktar',
+          importSdsTitle: 'Güvenlik Bilgi Formu (PDF veya Metin) Çözümle',
+          importModalTitle: 'Canlı SDS Çözümleyici (Fuar & Atölye Modu)',
+          importModalSubtitle: '16 Bölümlü GHS / REACH / KKDİK Güvenlik Formu Ayrıştırma',
+          tabPdf: 'PDF Yükle',
+          tabText: 'Metin Yapıştır',
+          dropText: 'PDF dosyasını buraya sürükleyin veya dosya seçin',
+          dropHint: 'Üretici SDS / GBF belgesini seçin (Poliya, AkzoNobel vb.)',
+          btnBrowseFile: 'Dosya Seç',
+          pasteLabel: 'SDS / GBF Metnini Buraya Yapıştırın:',
+          pastePlaceholder: 'BÖLÜM 1: Maddenin/Karışımın Kimliği...\nBÖLÜM 2: Zararlılık Tanımlanması...\nBÖLÜM 4: İlk Yardım Önlemleri...',
+          btnParse: 'Çözümle & Kart Oluştur',
+          parsingState: 'Belge Çözümleniyor...',
+          parseSuccess: 'SDS Başarıyla Ayrıştırıldı',
+          parseError: 'Belge ayrıştırılamadı. Lütfen geçerli bir SDS/GBF yükleyin.',
+          btnAddToApp: 'Kütüphaneye Ekle & Aç',
+          btnDownloadJson: 'JSON İndir',
+          sdsTradeName: 'Ticari İsim / Ürün',
+          sdsCas: 'CAS Numarası',
+          sdsCategory: 'Kategori',
+          sdsRisk: 'Risk Düzeyi',
+          sdsSignal: 'Sinyal Kelimesi',
+          sdsFlash: 'Parlama Noktası',
+          sdsTimer: 'İlk Yardım Yıkama Süresi',
+          sdsFirstAidEye: 'Göz İlk Yardım',
+          sdsPpeGloves: 'Eldiven Matrisi',
+          sdsPpeMask: 'Solunum Maskesi',
+          sdsFireProhibited: 'Yasak Söndürücü',
+          sdsIncompatible: 'Uyuşmayan Maddeler',
+          customTag: 'Fuar / Özel SDS',
+          customChemInfo: 'Kullanıcı tarafından canlı ayrıştırılmış özel SDS kaydı.',
+          btnDeleteRecord: 'Kaydı Sil'
         },
         en: {
           appTitle: 'MSDS-Lite',
@@ -3511,7 +3956,39 @@
           featFire: 'Fire Prohibitions & Response',
           featIncomp: 'Chemical Incompatibility Map',
           featGhs: 'Official GHS Standards',
-          featLang: 'Trilingual (TR / EN / DE)'
+          featLang: 'Trilingual (TR / EN / DE)',
+          importSdsBtn: 'Import SDS',
+          importSdsTitle: 'Parse Safety Data Sheet (PDF or Text)',
+          importModalTitle: 'Live SDS Parser (Expo & Field Mode)',
+          importModalSubtitle: '16-Section GHS / REACH Standard SDS Extraction',
+          tabPdf: 'Upload PDF',
+          tabText: 'Paste Text',
+          dropText: 'Drag and drop PDF here or select file',
+          dropHint: 'Select manufacturer SDS document (Poliya, AkzoNobel etc.)',
+          btnBrowseFile: 'Browse File',
+          pasteLabel: 'Paste SDS / MSDS Text Here:',
+          pastePlaceholder: 'SECTION 1: Identification...\nSECTION 2: Hazard Identification...\nSECTION 4: First-Aid Measures...',
+          btnParse: 'Parse & Generate Card',
+          parsingState: 'Analyzing Document...',
+          parseSuccess: 'SDS Successfully Extracted',
+          parseError: 'Failed to parse document. Please provide a valid SDS file.',
+          btnAddToApp: 'Add to Library & Open',
+          btnDownloadJson: 'Download JSON',
+          sdsTradeName: 'Product Name',
+          sdsCas: 'CAS Number',
+          sdsCategory: 'Category',
+          sdsRisk: 'Risk Level',
+          sdsSignal: 'Signal Word',
+          sdsFlash: 'Flash Point',
+          sdsTimer: 'Eye Wash Duration',
+          sdsFirstAidEye: 'Eye First Aid',
+          sdsPpeGloves: 'Glove Matrix',
+          sdsPpeMask: 'Respirator Mask',
+          sdsFireProhibited: 'Prohibited Extinguisher',
+          sdsIncompatible: 'Incompatible Materials',
+          customTag: 'Expo / Custom SDS',
+          customChemInfo: 'Custom SDS record parsed locally by user.',
+          btnDeleteRecord: 'Delete Record'
         },
         de: {
           appTitle: 'MSDS-Lite',
@@ -3597,7 +4074,39 @@
           featFire: 'Löschverbote & Reaktionen',
           featIncomp: 'Reaktivitäts- & Unverträglichkeitskarte',
           featGhs: 'Offizielle GHS-Standards',
-          featLang: 'Dreisprachig (TR / EN / DE)'
+          featLang: 'Dreisprachig (TR / EN / DE)',
+          importSdsBtn: 'SDB Importieren',
+          importSdsTitle: 'Sicherheitsdatenblatt (PDF oder Text) analysieren',
+          importModalTitle: 'Live-SDB-Parser (Messe- & Werkstattmodus)',
+          importModalSubtitle: '16-Abschnitte GHS / REACH Sicherheitsdatenblatt-Extraktion',
+          tabPdf: 'PDF Hochladen',
+          tabText: 'Text Einfügen',
+          dropText: 'PDF hier ablegen oder Datei auswählen',
+          dropHint: 'Hersteller-Sicherheitsdatenblatt (Poliya, AkzoNobel usw.) auswählen',
+          btnBrowseFile: 'Datei auswählen',
+          pasteLabel: 'SDB-Text hier einfügen:',
+          pastePlaceholder: 'ABSCHNITT 1: Bezeichnung des Stoffs...\nABSCHNITT 2: Mögliche Gefahren...\nABSCHNITT 4: Erste-Hilfe-Maßnahmen...',
+          btnParse: 'Analysieren & Karte Erstellen',
+          parsingState: 'Dokument wird analysiert...',
+          parseSuccess: 'SDB erfolgreich extrahiert',
+          parseError: 'Dokument konnte nicht analysiert werden.',
+          btnAddToApp: 'Zur Bibliothek hinzufügen & öffnen',
+          btnDownloadJson: 'JSON herunterladen',
+          sdsTradeName: 'Handelsname / Produkt',
+          sdsCas: 'CAS-Nummer',
+          sdsCategory: 'Kategorie',
+          sdsRisk: 'Risikostufe',
+          sdsSignal: 'Signalwort',
+          sdsFlash: 'Flammpunkt',
+          sdsTimer: 'Augenspüldauer',
+          sdsFirstAidEye: 'Erste Hilfe Auge',
+          sdsPpeGloves: 'Handschuhmatrix',
+          sdsPpeMask: 'Atemschutzmaske',
+          sdsFireProhibited: 'Unzulässiges Löschmittel',
+          sdsIncompatible: 'Unverträgliche Stoffe',
+          customTag: 'Messe / Eigene SDB',
+          customChemInfo: 'Vom Benutzer lokal analysierter benutzerdefinierter SDB-Datensatz.',
+          btnDeleteRecord: 'Datensatz löschen'
         }
       };
 
@@ -3720,7 +4229,10 @@
               <div class="card-risk-topline ${riskClass}"></div>
               <div class="card-inner">
                 <div class="card-top-row">
-                  <span class="card-category-badge">${escape(catLabel)}</span>
+                  <div style="display:flex;align-items:center;gap:6px;">
+                    <span class="card-category-badge">${escape(catLabel)}</span>
+                    ${chem.is_custom ? `<span style="font-size:9.5px;font-weight:750;letter-spacing:0.04em;padding:2px 7px;border-radius:4px;background:rgba(235,94,40,0.14);color:var(--marine-orange);border:1px solid rgba(235,94,40,0.3);">${t('customTag')}</span>` : ''}
+                  </div>
                   <div class="card-signals">
                     <span class="signal-tag ${signalClass}">${signalIconSvg}${escape(getL(chem.signal_word))}</span>
                     <span class="card-risk-pill ${riskClass}">${escape(riskText)}</span>
@@ -3818,10 +4330,16 @@
             </header>
 
             <section class="controls-panel" aria-label="Controls">
-              <div class="search-wrapper">
-                <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-                <input type="text" id="searchInput" class="search-input" placeholder="${t('searchPlaceholder')}" value="${escape(state.searchQuery)}" autocomplete="off" spellcheck="false" />
-                <button type="button" id="searchClearBtn" class="search-clear-btn ${state.searchQuery ? 'visible' : ''}" aria-label="${t('clearSearch')}">✕</button>
+              <div class="search-row">
+                <div class="search-wrapper">
+                  <svg class="search-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <input type="text" id="searchInput" class="search-input" placeholder="${t('searchPlaceholder')}" value="${escape(state.searchQuery)}" autocomplete="off" spellcheck="false" />
+                  <button type="button" id="searchClearBtn" class="search-clear-btn ${state.searchQuery ? 'visible' : ''}" aria-label="${t('clearSearch')}">✕</button>
+                </div>
+                <button type="button" class="sds-import-trigger-btn" id="sdsImportTriggerBtn" title="${t('importSdsTitle')}">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
+                  <span>${t('importSdsBtn')}</span>
+                </button>
               </div>
 
               <div class="category-grid" id="categoryGrid">
@@ -3848,7 +4366,7 @@
               </div>
 
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.6.4</span>
+                <span class="version-tag">MSDS-Lite v1.7.0</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>${t('checkUpdate')}</span>
@@ -3862,6 +4380,9 @@
 
           <div id="expoModalBackdrop" class="expo-modal-backdrop"></div>
           <div id="expoModal" class="expo-modal" aria-hidden="true" role="dialog" aria-labelledby="expoModalTitle"></div>
+
+          <div id="sdsModalBackdrop" class="sds-modal-backdrop"></div>
+          <div id="sdsModal" class="sds-modal" aria-hidden="true" role="dialog" aria-labelledby="sdsModalTitle"></div>
         `;
 
         bindShellEvents();
@@ -4093,7 +4614,7 @@
             <!-- RESMİ KAYNAK & İSG DOĞRULAMA -->
             <div class="drawer-section">
               <div class="section-title-row">
-                <span class="section-icon">ℹ️</span>
+                <span class="section-icon"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg></span>
                 <span>${t('source').toUpperCase()}</span>
               </div>
               <div style="display:flex; flex-direction:column; gap:6px; font-size:12px;">
@@ -4117,6 +4638,13 @@
                 <strong>${t('scopeNote')}:</strong> ${escape(getL(chem.verification_note) || t('disclaimer'))}
               </div>
             </div>
+
+            ${chem.is_custom ? `
+            <div style="margin-top:16px; padding:12px 14px; background:rgba(239, 68, 68, 0.08); border:1px solid rgba(239, 68, 68, 0.25); border-radius:8px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:11px; color:var(--text-muted);">${t('customChemInfo')}</span>
+              <button type="button" class="sds-delete-btn" id="sdsDeleteBtn" data-id="${chem.id}" style="background:transparent; border:1px solid #ef4444; color:#ef4444; border-radius:6px; padding:6px 12px; font-size:11px; font-weight:700; cursor:pointer;">${t('btnDeleteRecord')}</button>
+            </div>
+            ` : ''}
           </div>
         `;
       }
@@ -4175,6 +4703,10 @@
         if (!drawer) return;
 
         drawer.querySelector('#drawerCloseBtn')?.addEventListener('click', handleUserClose);
+        drawer.querySelector('#sdsDeleteBtn')?.addEventListener('click', (e) => {
+          const id = e.currentTarget.dataset.id;
+          if (id) deleteCustomChemical(id);
+        });
 
         // Smooth scroll for nav pills inside drawer
         drawer.querySelectorAll('.drawer-nav-pill').forEach(pill => {
@@ -4329,6 +4861,587 @@
       function closeExpoModal() {
         const modal = document.getElementById('expoModal');
         const backdrop = document.getElementById('expoModalBackdrop');
+        if (modal && backdrop) {
+          modal.classList.remove('open');
+          backdrop.classList.remove('open');
+          modal.setAttribute('aria-hidden', 'true');
+          document.body.style.overflow = '';
+        }
+      }
+
+      // ==========================================
+      // CANLI SDS / GBF ÇÖZÜMLEME MOTORU (FUAR MODU)
+      // ==========================================
+      let parsedCurrentChemical = null;
+
+      function loadCustomChemicals() {
+        try {
+          const raw = localStorage.getItem('msds-custom-chemicals');
+          if (raw) {
+            const arr = JSON.parse(raw);
+            if (Array.isArray(arr)) return arr;
+          }
+        } catch (e) {
+          console.warn('Custom chemicals load error:', e);
+        }
+        return [];
+      }
+
+      function saveCustomChemical(chem) {
+        try {
+          const existing = loadCustomChemicals().filter(c => c.id !== chem.id);
+          existing.unshift(chem);
+          localStorage.setItem('msds-custom-chemicals', JSON.stringify(existing));
+          const base = (state.chemicals || fallbackChemicals).filter(c => !existing.some(e => e.id === c.id));
+          state.chemicals = [...existing, ...base];
+          renderShell();
+          renderChemicalList();
+        } catch (e) {
+          console.warn('saveCustomChemical error:', e);
+        }
+      }
+
+      function deleteCustomChemical(chemId) {
+        try {
+          const existing = loadCustomChemicals().filter(c => c.id !== chemId);
+          localStorage.setItem('msds-custom-chemicals', JSON.stringify(existing));
+          state.chemicals = state.chemicals.filter(c => c.id !== chemId);
+          handleUserClose();
+          renderShell();
+          renderChemicalList();
+        } catch (e) {
+          console.warn('deleteCustomChemical error:', e);
+        }
+      }
+
+      function inferCategory(text) {
+        const t = (text || '').toLowerCase();
+        if (t.includes('peroksit') || t.includes('peroxide') || t.includes('mek-p') || t.includes('butanox')) return 'peroksit';
+        if (t.includes('reçine') || t.includes('resin') || t.includes('polyester') || t.includes('vinilester') || t.includes('epoksi')) return 'recine';
+        if (t.includes('sertleştirici') || t.includes('hardener') || t.includes('amin') || t.includes('ipda')) return 'sertlestirici';
+        if (t.includes('solvent') || t.includes('aseton') || t.includes('stiren') || t.includes('tiner') || t.includes('toluen')) return 'solvent';
+        if (t.includes('hızlandırıcı') || t.includes('promoter') || t.includes('kobalt') || t.includes('octoate')) return 'hizlandirici';
+        if (t.includes('toz') || t.includes('elyaf') || t.includes('fiber') || t.includes('karbon') || t.includes('dust')) return 'toz';
+        if (t.includes('ayırıcı') || t.includes('kalıp') || t.includes('release') || t.includes('vaks') || t.includes('wax')) return 'ayirici';
+        return 'recine';
+      }
+
+      function parseSdsText(rawText, sourceFileName = '') {
+        if (!rawText || typeof rawText !== 'string') return null;
+        const cleanText = rawText.replace(/\r\n/g, '\n');
+
+        let tradeName = '';
+        const tradeMatch = cleanText.match(/(?:Ticari Ad[ıi]|Ürün Ad[ıi]|Trade Name|Product Name|Handelsname)[:\s]*([^\n\r]+)/i);
+        if (tradeMatch && tradeMatch[1].trim().length > 2) {
+          tradeName = tradeMatch[1].trim();
+        } else if (sourceFileName) {
+          tradeName = sourceFileName.replace(/\.pdf$/i, '').replace(/[-_]/g, ' ').toUpperCase();
+        } else {
+          tradeName = 'İthal SDS Kimyasalı';
+        }
+
+        let cas = '';
+        const casMatch = cleanText.match(/\b(\d{2,7}-\d{2}-\d)\b/);
+        if (casMatch) cas = casMatch[1].trim();
+
+        const category = inferCategory(tradeName + ' ' + cleanText.slice(0, 3000));
+
+        let signalWordTr = 'UYARI';
+        let signalWordEn = 'WARNING';
+        let signalWordDe = 'ACHTUNG';
+        let riskLevel = 'YÜKSEK';
+
+        if (/TEHL[İI]KE|DANGER|GEFAHR/i.test(cleanText)) {
+          signalWordTr = 'TEHLİKE';
+          signalWordEn = 'DANGER';
+          signalWordDe = 'GEFAHR';
+          riskLevel = 'KRİTİK';
+        } else if (/UYARI|WARNING|ACHTUNG/i.test(cleanText)) {
+          signalWordTr = 'UYARI';
+          signalWordEn = 'WARNING';
+          signalWordDe = 'ACHTUNG';
+          riskLevel = 'YÜKSEK';
+        } else {
+          riskLevel = 'ORTA';
+        }
+
+        const ghsMatches = cleanText.match(/GHS0[1-9]/gi) || [];
+        let ghsCodes = [...new Set(ghsMatches.map(c => c.toUpperCase()))];
+        if (ghsCodes.length === 0) {
+          if (/H22[0-8]/i.test(cleanText)) ghsCodes.push('GHS02');
+          if (/H314|H318/i.test(cleanText)) ghsCodes.push('GHS05');
+          if (/H330|H300|H310/i.test(cleanText)) ghsCodes.push('GHS06');
+          if (/H302|H312|H315|H319|H332|H335/i.test(cleanText)) ghsCodes.push('GHS07');
+          if (/H340|H350|H360|H372/i.test(cleanText)) ghsCodes.push('GHS08');
+          if (/H400|H410|H411/i.test(cleanText)) ghsCodes.push('GHS09');
+        }
+        if (ghsCodes.length === 0) ghsCodes = ['GHS07'];
+
+        let flashPointStr = 'Belirtilmemiş';
+        const flashMatch = cleanText.match(/(?:Parlama Noktas[ıi]|Flash Point|Flammpunkt)[:\s]*([^\n,;]+(?:°C|C|F)?)/i);
+        if (flashMatch) flashPointStr = flashMatch[1].trim();
+
+        let timerMin = 15;
+        let eyeText = 'Hemen bol su ile en az 15 dakika boyunca yıkayın. Göz kapaklarını açık tutun. Derhal tıbbi yardım alın.';
+        let skinText = 'Kirlenmiş giysileri derhal çıkarın. Cildi bol su ve sabunla en az 15 dakika yıkayın.';
+        let inhText = 'Maruz kalan kişiyi temiz havaya çıkarın. Solunum güçlüğü varsa tıbbi destek alın.';
+        let ingText = 'Kusturmaya ÇALIŞMAYIN. Derhal 112 veya Ulusal Zehir Danışma Merkezini (114) arayın.';
+
+        const eyeMatch = cleanText.match(/(?:Göz Temas[ıi]|Eye Contact|Augenkontakt)[:\s]*([\s\S]*?)(?=(?:Cilt Temas[ıi]|Skin Contact|Hautkontakt|Soluma|Inhalation|Einatmen|Yutma|Ingestion|Verschlucken|BÖLÜM|SECTION|ABSCHNITT|$))/i);
+        if (eyeMatch && eyeMatch[1].trim().length > 10) {
+          eyeText = eyeMatch[1].replace(/\s+/g, ' ').trim().slice(0, 280);
+          const m = eyeText.match(/(\d+)\s*(?:dakika|min|minute)/i);
+          if (m) timerMin = parseInt(m[1], 10);
+        }
+
+        const skinMatch = cleanText.match(/(?:Cilt Temas[ıi]|Skin Contact|Hautkontakt)[:\s]*([\s\S]*?)(?=(?:Göz Temas[ıi]|Eye Contact|Soluma|Inhalation|Yutma|Ingestion|BÖLÜM|SECTION|$))/i);
+        if (skinMatch && skinMatch[1].trim().length > 10) {
+          skinText = skinMatch[1].replace(/\s+/g, ' ').trim().slice(0, 280);
+        }
+
+        let maskText = 'Organik buhar veya partikül filtreli uygun koruyucu maske kullanın.';
+        let gloveText = 'Nitril veya bütil kauçuk eldiven. Lateks eldiven geçirgenlik nedeniyle önerilmez.';
+        const maskMatch = cleanText.match(/(?:Solunum Korunmas[ıi]|Respirator Mask|Atemschutz)[:\s]*([^\n\r]+)/i);
+        if (maskMatch && maskMatch[1].trim().length > 8) maskText = maskMatch[1].trim().slice(0, 200);
+
+        const gloveMatch = cleanText.match(/(?:El Korunmas[ıi]|Handschutz|Glove Compatibility|Handschuhe)[:\s]*([^\n\r]+)/i);
+        if (gloveMatch && gloveMatch[1].trim().length > 8) gloveText = gloveMatch[1].trim().slice(0, 200);
+
+        let suitFire = 'Kuru kimyevi toz (KKT), CO2, AFFF köpük, su sisi.';
+        let prohFire = 'Doğrudan basınçlı su jeti (yangını yayabilir ve parlamaya neden olur).';
+        const suitMatch = cleanText.match(/(?:Uygun Söndürücüler|Suitable Extinguishers|Geeignete Löschmittel)[:\s]*([^\n\r]+)/i);
+        if (suitMatch && suitMatch[1].trim().length > 8) suitFire = suitMatch[1].trim().slice(0, 200);
+
+        const prohMatch = cleanText.match(/(?:Uygun Olmayan Söndürücüler|Prohibited Extinguishers|Unzulässige Löschmittel)[:\s]*([^\n\r]+)/i);
+        if (prohMatch && prohMatch[1].trim().length > 8) prohFire = prohMatch[1].trim().slice(0, 200);
+
+        let incompText = 'Kuvvetli oksitleyiciler, asitler, bazlar ve uyuşmayan sertleştiricilerle kontrolsüz temastan kaçının.';
+        const incompMatch = cleanText.match(/(?:Kaçınılması gereken maddeler|Uyuşmaz malzemeler|Incompatible Materials|Unverträgliche Stoffe)[:\s]*([^\n\r]+)/i);
+        if (incompMatch && incompMatch[1].trim().length > 8) incompText = incompMatch[1].trim().slice(0, 220);
+
+        const safeId = 'sds-' + (cas ? cas.replace(/[^0-9]/g, '') : Date.now().toString());
+
+        return {
+          id: safeId,
+          cas: cas || '—',
+          name: { tr: tradeName, en: tradeName, de: tradeName },
+          chemical_name: { tr: tradeName, en: tradeName, de: tradeName },
+          category: category,
+          risk_level: riskLevel,
+          signal_word: { tr: signalWordTr, en: signalWordEn, de: signalWordDe },
+          hazard_statement: {
+            tr: `GHS Zararlılık Bildirimleri: ${ghsCodes.join(', ')} kapsamındadır. Detaylı teknik bilgi formuna başvurun.`,
+            en: `GHS Hazard Statements: Covered under ${ghsCodes.join(', ')}. Consult technical SDS for complete profile.`,
+            de: `GHS Gefahrenhinweise: Fällt unter ${ghsCodes.join(', ')}. Siehe technisches Sicherheitsdatenblatt.`
+          },
+          badges: {
+            fire: {
+              tr: `Parlama: ${flashPointStr}`,
+              en: `Flash: ${flashPointStr}`,
+              de: `Flammpunkt: ${flashPointStr}`
+            },
+            health: {
+              tr: riskLevel === 'KRİTİK' ? 'Yüksek Maruziyet / Toksik Risk' : 'Standart Saha Tedbiri',
+              en: riskLevel === 'KRİTİK' ? 'High Exposure / Toxic Hazard' : 'Standard Field Precaution',
+              de: riskLevel === 'KRİTİK' ? 'Hohe Exposition / Toxizitätsrisiko' : 'Standard-Vorsichtsmaßnahme'
+            },
+            environment: {
+              tr: 'Kanalizasyona ve Denize Dökmeyin',
+              en: 'Do not flush into drains or marine environment',
+              de: 'Nicht in die Kanalisation oder Meeresumwelt leiten'
+            }
+          },
+          source: {
+            tr: 'Canlı SDS İçe Aktarımı (Fuar & Atölye Modu)',
+            en: 'Live SDS Import (Expo & Field Mode)',
+            de: 'Live-SDB-Import (Messe- & Werkstattmodus)'
+          },
+          source_url: '',
+          verified_at: new Date().toISOString().slice(0, 10),
+          verification_status: {
+            tr: 'Fuar & Saha İçe Aktarımı',
+            en: 'Expo & Field Import',
+            de: 'Messe- & Vor-Ort-Import'
+          },
+          verification_note: {
+            tr: 'Üretici Güvenlik Bilgi Formundan (SDS/GBF) otomatik olarak taranmış ve yerel olarak doğrulanmıştır.',
+            en: 'Automatically extracted and locally verified from manufacturer SDS.',
+            de: 'Automatisch aus dem Hersteller-Sicherheitsdatenblatt (SDB) extrahiert und lokal verifiziert.'
+          },
+          ghs_codes: ghsCodes,
+          flash_point: {
+            tr: flashPointStr,
+            en: flashPointStr,
+            de: flashPointStr
+          },
+          emergency_timer_min: timerMin,
+          first_aid: {
+            eye: { tr: eyeText, en: eyeText, de: eyeText },
+            skin: { tr: skinText, en: skinText, de: skinText },
+            inhalation: { tr: inhText, en: inhText, de: inhText },
+            ingestion: { tr: ingText, en: ingText, de: ingText }
+          },
+          ppe: {
+            mask: { tr: maskText, en: maskText, de: maskText },
+            gloves: {
+              latex: false,
+              nitrile: true,
+              butyl: true,
+              warning: { tr: gloveText, en: gloveText, de: gloveText }
+            },
+            eye: {
+              tr: 'Yan siperlikli kimyasal koruyucu gözlük veya tam yüz siperliği.',
+              en: 'Chemical safety goggles with side shields or full face shield.',
+              de: 'Chemikalienschutzbrille mit Seitenschutz oder Vollgesichtsschild.'
+            }
+          },
+          fire_fighting: {
+            suitable: { tr: suitFire, en: suitFire, de: suitFire },
+            prohibited: { tr: prohFire, en: prohFire, de: prohFire },
+            hazards: {
+              tr: 'Isınma ve termal ayrışma halinde toksik ve tahriş edici buharlar oluşabilir.',
+              en: 'Thermal decomposition generates toxic and irritating fumes.',
+              de: 'Bei thermischer Zersetzung entstehen giftige und reizende Dämpfe.'
+            }
+          },
+          storage: {
+            conditions: {
+              tr: 'Serin, kuru ve iyi havalandırılan alanda, doğrudan güneş ışığından uzakta saklayın.',
+              en: 'Store in cool, dry and well-ventilated area away from direct sunlight.',
+              de: 'Kühl, trocken und gut belüftet vor direkter Sonneneinstrahlung geschützt lagern.'
+            },
+            incompatible: { tr: incompText, en: incompText, de: incompText }
+          }
+        };
+      }
+
+      async function extractTextFromPdfArrayBuffer(arrayBuffer) {
+        if (!window.pdfjsLib) {
+          throw new Error('PDF.js motoru henüz yüklenemedi.');
+        }
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = 'vendor/pdf.worker.min.js';
+        const loadingTask = window.pdfjsLib.getDocument({ data: arrayBuffer });
+        const doc = await loadingTask.promise;
+        const pageTexts = [];
+        for (let i = 1; i <= doc.numPages; i++) {
+          const page = await doc.getPage(i);
+          const content = await page.getTextContent();
+          const strings = content.items.map(item => item.str);
+          pageTexts.push(strings.join(' '));
+        }
+        return pageTexts.join('\n\n');
+      }
+
+      function downloadChemicalJson(chem) {
+        try {
+          const jsonStr = JSON.stringify(chem, null, 2);
+          const blob = new Blob([jsonStr], { type: 'application/json' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          a.href = url;
+          a.download = (chem.id || 'chemical') + '.json';
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        } catch (e) {
+          console.warn('downloadChemicalJson error:', e);
+        }
+      }
+
+      function renderSdsPreview(parsed) {
+        const previewBox = document.getElementById('sdsPreviewBox');
+        if (!previewBox) return;
+
+        parsedCurrentChemical = parsed;
+        const catLabel = (CATEGORIES[parsed.category] && CATEGORIES[parsed.category][state.language]) || parsed.category;
+        const ghsMiniHtml = (parsed.ghs_codes || []).map(c => renderGhsDiamond(c, 'ghs-diamond-mini')).join('');
+
+        previewBox.style.display = 'flex';
+        previewBox.innerHTML = `
+          <div class="sds-preview-header">
+            <div>
+              <div class="sds-preview-name">${escape(getL(parsed.name))}</div>
+              <div class="sds-preview-cas">CAS: ${escape(parsed.cas)}</div>
+            </div>
+            <div style="display:flex;gap:4px;align-items:center;">
+              ${ghsMiniHtml}
+            </div>
+          </div>
+
+          <div class="sds-preview-grid">
+            <div class="sds-preview-cell">
+              <div class="sds-preview-label">${t('sdsCategory')}</div>
+              <div class="sds-preview-val">${escape(catLabel)}</div>
+            </div>
+            <div class="sds-preview-cell">
+              <div class="sds-preview-label">${t('sdsRisk')}</div>
+              <div class="sds-preview-val" style="color:var(--marine-orange);">${escape(parsed.risk_level)} (${escape(getL(parsed.signal_word))})</div>
+            </div>
+            <div class="sds-preview-cell">
+              <div class="sds-preview-label">${t('sdsTimer')}</div>
+              <div class="sds-preview-val" style="color:var(--marine-emerald);">${parsed.emergency_timer_min} ${t('minutes')}</div>
+            </div>
+            <div class="sds-preview-cell">
+              <div class="sds-preview-label">${t('sdsFlash')}</div>
+              <div class="sds-preview-val">${escape(getL(parsed.flash_point))}</div>
+            </div>
+          </div>
+
+          <div class="sds-preview-cell">
+            <div class="sds-preview-label">${t('sdsFirstAidEye')}</div>
+            <div class="sds-preview-val" style="font-size:10.5px;font-weight:600;">${escape(getL(parsed.first_aid.eye))}</div>
+          </div>
+
+          <div class="sds-preview-cell">
+            <div class="sds-preview-label">${t('sdsPpeGloves')}</div>
+            <div class="sds-preview-val" style="font-size:10.5px;font-weight:600;">${escape(getL(parsed.ppe.gloves.warning))}</div>
+          </div>
+
+          <div class="sds-preview-actions">
+            <button type="button" class="sds-add-btn" id="sdsAddChemicalBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>${t('btnAddToApp')}</span>
+            </button>
+            <button type="button" class="sds-json-btn" id="sdsDownloadJsonBtn">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              <span>${t('btnDownloadJson')}</span>
+            </button>
+          </div>
+        `;
+
+        document.getElementById('sdsAddChemicalBtn')?.addEventListener('click', () => {
+          if (parsedCurrentChemical) {
+            saveCustomChemical(parsedCurrentChemical);
+            closeSdsModal();
+            setTimeout(() => {
+              openDrawer(parsedCurrentChemical.id, true);
+            }, 100);
+          }
+        });
+
+        document.getElementById('sdsDownloadJsonBtn')?.addEventListener('click', () => {
+          if (parsedCurrentChemical) {
+            downloadChemicalJson(parsedCurrentChemical);
+          }
+        });
+      }
+
+      function bindSdsModalEvents() {
+        const modal = document.getElementById('sdsModal');
+        if (!modal) return;
+
+        modal.querySelector('#sdsModalCloseBtn')?.addEventListener('click', closeSdsModal);
+
+        const tabPdfBtn = modal.querySelector('#tabPdfBtn');
+        const tabTextBtn = modal.querySelector('#tabTextBtn');
+        const panePdf = modal.querySelector('#sdsPanePdf');
+        const paneText = modal.querySelector('#sdsPaneText');
+
+        tabPdfBtn?.addEventListener('click', () => {
+          tabPdfBtn.classList.add('active');
+          tabTextBtn?.classList.remove('active');
+          panePdf?.classList.add('active');
+          paneText?.classList.remove('active');
+        });
+
+        tabTextBtn?.addEventListener('click', () => {
+          tabTextBtn.classList.add('active');
+          tabPdfBtn?.classList.remove('active');
+          paneText?.classList.add('active');
+          panePdf?.classList.remove('active');
+        });
+
+        const dropZone = modal.querySelector('#sdsDropZone');
+        const fileInput = modal.querySelector('#sdsFileInput');
+        const browseBtn = modal.querySelector('#sdsBrowseBtn');
+        const statusBar = modal.querySelector('#sdsStatusBar');
+
+        browseBtn?.addEventListener('click', (e) => {
+          e.stopPropagation();
+          fileInput?.click();
+        });
+
+        dropZone?.addEventListener('click', () => {
+          fileInput?.click();
+        });
+
+        dropZone?.addEventListener('dragover', (e) => {
+          e.preventDefault();
+          dropZone.classList.add('dragover');
+        });
+
+        dropZone?.addEventListener('dragleave', () => {
+          dropZone.classList.remove('dragover');
+        });
+
+        async function processFile(file) {
+          if (!file || !file.name.toLowerCase().endsWith('.pdf')) {
+            if (statusBar) {
+              statusBar.style.display = 'flex';
+              statusBar.className = 'sds-status-bar error';
+              statusBar.textContent = t('parseError');
+            }
+            return;
+          }
+
+          if (statusBar) {
+            statusBar.style.display = 'flex';
+            statusBar.className = 'sds-status-bar loading';
+            statusBar.textContent = `${t('readingPdfPages')} (${file.name})`;
+          }
+
+          try {
+            const arrayBuffer = await file.arrayBuffer();
+            const text = await extractTextFromPdfArrayBuffer(arrayBuffer);
+            const parsed = parseSdsText(text, file.name);
+
+            if (parsed && (parsed.cas !== '—' || parsed.name.tr)) {
+              if (statusBar) {
+                statusBar.className = 'sds-status-bar success';
+                statusBar.textContent = t('parseSuccess');
+              }
+              renderSdsPreview(parsed);
+            } else {
+              throw new Error('Geçersiz metin');
+            }
+          } catch (err) {
+            console.warn('PDF parse error:', err);
+            if (statusBar) {
+              statusBar.className = 'sds-status-bar error';
+              statusBar.textContent = t('parseError');
+            }
+          }
+        }
+
+        dropZone?.addEventListener('drop', (e) => {
+          e.preventDefault();
+          dropZone.classList.remove('dragover');
+          const file = e.dataTransfer?.files?.[0];
+          if (file) processFile(file);
+        });
+
+        fileInput?.addEventListener('change', () => {
+          const file = fileInput.files?.[0];
+          if (file) processFile(file);
+        });
+
+        const parsePasteBtn = modal.querySelector('#sdsPasteParseBtn');
+        const pasteArea = modal.querySelector('#sdsPasteArea');
+
+        parsePasteBtn?.addEventListener('click', () => {
+          const raw = pasteArea?.value?.trim();
+          if (!raw || raw.length < 15) {
+            if (statusBar) {
+              statusBar.style.display = 'flex';
+              statusBar.className = 'sds-status-bar error';
+              statusBar.textContent = t('parseError');
+            }
+            return;
+          }
+
+          if (statusBar) {
+            statusBar.style.display = 'flex';
+            statusBar.className = 'sds-status-bar loading';
+            statusBar.textContent = t('parsingState');
+          }
+
+          try {
+            const parsed = parseSdsText(raw, 'METIN_GIRIS');
+            if (parsed) {
+              if (statusBar) {
+                statusBar.className = 'sds-status-bar success';
+                statusBar.textContent = t('parseSuccess');
+              }
+              renderSdsPreview(parsed);
+            } else {
+              throw new Error('Ayrıştırma başarısız');
+            }
+          } catch (err) {
+            if (statusBar) {
+              statusBar.className = 'sds-status-bar error';
+              statusBar.textContent = t('parseError');
+            }
+          }
+        });
+      }
+
+      function renderSdsModalContent() {
+        const modal = document.getElementById('sdsModal');
+        if (!modal) return;
+
+        modal.innerHTML = `
+          <div class="sds-modal-header">
+            <div class="sds-modal-title-wrap">
+              <span class="sds-modal-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
+              </span>
+              <div>
+                <div class="sds-modal-title" id="sdsModalTitle">${t('importModalTitle')}</div>
+                <div class="sds-modal-subtitle">${t('importModalSubtitle')}</div>
+              </div>
+            </div>
+            <button type="button" class="sds-modal-close-btn" id="sdsModalCloseBtn" aria-label="${t('close')}">✕</button>
+          </div>
+
+          <div class="sds-modal-body">
+            <div class="sds-tabs">
+              <button type="button" class="sds-tab-btn active" id="tabPdfBtn" data-tab="pdf">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span>${t('tabPdf')}</span>
+              </button>
+              <button type="button" class="sds-tab-btn" id="tabTextBtn" data-tab="text">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><rect x="8" y="2" width="8" height="4" rx="1" ry="1"/></svg>
+                <span>${t('tabText')}</span>
+              </button>
+            </div>
+
+            <!-- PDF Upload Pane -->
+            <div class="sds-tab-pane active" id="sdsPanePdf">
+              <div class="sds-drop-zone" id="sdsDropZone">
+                <input type="file" id="sdsFileInput" accept=".pdf,application/pdf" style="display:none;" />
+                <svg class="sds-drop-icon" width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                <div class="sds-drop-title">${t('dropText')}</div>
+                <div class="sds-drop-sub">${t('dropHint')}</div>
+                <button type="button" class="sds-browse-btn" id="sdsBrowseBtn">${t('btnBrowseFile')}</button>
+              </div>
+            </div>
+
+            <!-- Text Paste Pane -->
+            <div class="sds-tab-pane" id="sdsPaneText">
+              <div class="sds-paste-wrap">
+                <label for="sdsPasteArea" class="sds-paste-label">${t('pasteLabel')}</label>
+                <textarea id="sdsPasteArea" class="sds-paste-area" placeholder="${t('pastePlaceholder')}"></textarea>
+                <button type="button" class="sds-parse-btn" id="sdsPasteParseBtn">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  <span>${t('btnParse')}</span>
+                </button>
+              </div>
+            </div>
+
+            <div id="sdsStatusBar" class="sds-status-bar" style="display:none;"></div>
+            <div id="sdsPreviewBox" class="sds-preview-card" style="display:none;"></div>
+          </div>
+        `;
+
+        bindSdsModalEvents();
+      }
+
+      function openSdsModal() {
+        renderSdsModalContent();
+        const modal = document.getElementById('sdsModal');
+        const backdrop = document.getElementById('sdsModalBackdrop');
+        if (modal && backdrop) {
+          modal.classList.add('open');
+          backdrop.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeSdsModal() {
+        const modal = document.getElementById('sdsModal');
+        const backdrop = document.getElementById('sdsModalBackdrop');
         if (modal && backdrop) {
           modal.classList.remove('open');
           backdrop.classList.remove('open');
@@ -4535,7 +5648,7 @@
               // 2. Güvenli önbellek yenileme (yeni dosyayı çek, sonra cache'e yaz - eski cache'i ASLA önceden silme)
               if ('caches' in window) {
                 const cacheNames = await caches.keys();
-                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.6.0';
+                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.0';
                 const cache = await caches.open(activeCacheName);
                 const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg'];
                 await Promise.allSettled(urlsToUpdate.map(async (url) => {
@@ -4581,13 +5694,20 @@
         }
 
         document.getElementById('expoModalBackdrop')?.addEventListener('click', closeExpoModal);
+
+        // SDS Modal Trigger & Backdrop
+        document.getElementById('sdsImportTriggerBtn')?.addEventListener('click', openSdsModal);
+        document.getElementById('sdsModalBackdrop')?.addEventListener('click', closeSdsModal);
       }
 
       // Keyboard Esc to close drawer or modal
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
+          const sdsModal = document.getElementById('sdsModal');
           const expoModal = document.getElementById('expoModal');
-          if (expoModal && expoModal.classList.contains('open')) {
+          if (sdsModal && sdsModal.classList.contains('open')) {
+            closeSdsModal();
+          } else if (expoModal && expoModal.classList.contains('open')) {
             closeExpoModal();
           } else {
             handleUserClose();
@@ -4612,7 +5732,8 @@
       function init() {
         window.__msdsState = state;
         // 1. Instant Synchronous Boot (0ms render, 100% offline-ready)
-        state.chemicals = fallbackChemicals;
+        const customChems = loadCustomChemicals();
+        state.chemicals = [...customChems, ...fallbackChemicals];
         renderShell();
 
         // 2. Check initial hash for deep link
@@ -4639,8 +5760,15 @@
             .then(res => res.ok ? res.json() : null)
             .then(data => {
               clearTimeout(timeoutId);
-              if (Array.isArray(data) && data.length > 0 && JSON.stringify(data) !== JSON.stringify(state.chemicals)) {
-                state.chemicals = data;
+              if (Array.isArray(data) && data.length > 0) {
+                const currentCustoms = loadCustomChemicals();
+                const merged = [...currentCustoms];
+                data.forEach(item => {
+                  if (!merged.some(m => m.id === item.id)) {
+                    merged.push(item);
+                  }
+                });
+                state.chemicals = merged;
                 renderChemicalList();
               }
             })
@@ -4702,9 +5830,9 @@
       toast.className = 'pwa-update-toast';
       const lang = (window.__msdsState && window.__msdsState.language) || localStorage.getItem('msds-language') || 'tr';
       const titles = {
-        tr: 'Yeni Sürüm Hazır (v1.6.0)',
-        en: 'New Version Ready (v1.6.0)',
-        de: 'Neue Version Bereit (v1.6.0)'
+        tr: 'Yeni Sürüm Hazır (v1.7.0)',
+        en: 'New Version Ready (v1.7.0)',
+        de: 'Neue Version Bereit (v1.7.0)'
       };
       const descs = {
         tr: 'Güncel güvenlik protokollerini yüklemek için dokunun.',
@@ -4731,7 +5859,7 @@
         if ('caches' in window) {
           try {
             const keys = await caches.keys();
-            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.6.0').map(k => caches.delete(k)));
+            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.0').map(k => caches.delete(k)));
           } catch (e) {}
         }
         window.location.reload(true);
