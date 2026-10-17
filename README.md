@@ -4,7 +4,7 @@
 
 [ Türkçe ](README.md) • [ English ](README.en.md) • [ Deutsch ](README.de.md)
 
-[![Version](https://img.shields.io/badge/Version-v1.7.6-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
+[![Version](https://img.shields.io/badge/Version-v1.7.7-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/erdmsn77/msds-lite/deploy-pages.yml?branch=main&style=flat-square&label=Deploy&color=success)](https://github.com/erdmsn77/msds-lite/actions/workflows/deploy-pages.yml)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-22d3ee?style=flat-square&logo=pwa)](https://erdmsn77.github.io/msds-lite/)
 [![Offline First](https://img.shields.io/badge/Offline-100%25-emerald?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
@@ -19,7 +19,7 @@
 
 <p align="center">
   <a href="https://erdmsn77.github.io/msds-lite/">
-    <img src="icons/qr-code.svg" width="130" height="130" alt="MSDS-Lite Mobil Kurulum QR Kodu" style="background:#ffffff; padding:8px; border-radius:12px; border:1px solid #cbd5e1; box-shadow:0 4px 12px rgba(0,0,0,0.08);" />
+    <img src="icons/qr-code.svg" width="130" height="130" alt="MSDS-Lite Mobil Kurulum QR Kodu" style="background:#0b0f17; padding:8px; border-radius:12px; border:1px solid rgba(234, 88, 12, 0.35); box-shadow:0 4px 14px rgba(0,0,0,0.25);" />
   </a>
   <br>
   <sub>📲 <b>Telefonunuzun Kamerasıyla Okutun:</b> Canlı PWA uygulamasını doğrudan açmak veya telefonunuza yüklemek için QR kodu tarayın ya da <a href="https://erdmsn77.github.io/msds-lite/">erdmsn77.github.io/msds-lite</a> adresine dokunun.</sub>
@@ -129,7 +129,7 @@ Uygulama internete ihtiyaç duymadan doğrudan telefonun ana ekranından yerel b
 
 <p align="center">
   <a href="https://erdmsn77.github.io/msds-lite/">
-    <img src="icons/qr-code.svg" width="115" height="115" alt="MSDS-Lite Kurulum QR Kodu" style="background:#ffffff; padding:6px; border-radius:10px; border:1px solid #cbd5e1;" />
+    <img src="icons/qr-code.svg" width="115" height="115" alt="MSDS-Lite Kurulum QR Kodu" style="background:#0b0f17; padding:6px; border-radius:10px; border:1px solid rgba(234, 88, 12, 0.35);" />
   </a>
 </p>
 
