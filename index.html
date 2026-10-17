@@ -147,7 +147,7 @@
       color: var(--text-body);
       min-height: 100%;
       min-height: 100dvh;
-      overscroll-behavior-y: none;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -160,8 +160,22 @@
       -webkit-font-smoothing: antialiased;
       -webkit-tap-highlight-color: transparent;
       overflow-x: hidden;
-      overscroll-behavior-y: none;
-      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    /* Modern Hardware-Accelerated PC Scrollbar */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: var(--border-subtle);
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: var(--border-strong);
     }
 
     .marine-shell {
@@ -525,10 +539,13 @@
       overflow: hidden;
       box-shadow: var(--card-shadow);
       touch-action: manipulation;
-      transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+      transform: translateZ(0);
+      will-change: transform, box-shadow;
+      contain: layout style paint;
+      transition: transform 0.15s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.15s ease, border-color 0.15s ease;
     }
     .chemical-card:hover {
-      transform: translateY(-2px);
+      transform: translateY(-3px) translateZ(0);
       box-shadow: var(--card-shadow-hover);
       border-color: var(--marine-orange);
     }
@@ -766,12 +783,14 @@
       backdrop-filter: blur(4px);
       -webkit-backdrop-filter: blur(4px);
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.2s ease;
+      transition: opacity 0.2s ease, visibility 0.2s ease;
       z-index: 99;
     }
     .drawer-backdrop.open {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
     }
 
@@ -787,7 +806,9 @@
       box-shadow: var(--drawer-shadow);
       z-index: 100;
       transform: translateX(100%);
-      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      visibility: hidden;
+      will-change: transform;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.25s;
       display: flex;
       flex-direction: column;
       overflow: hidden;
@@ -795,6 +816,7 @@
     }
     .drawer.open {
       transform: translateX(0);
+      visibility: visible;
     }
 
     .drawer-header {
@@ -1338,12 +1360,14 @@
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.22s ease;
+      transition: opacity 0.22s ease, visibility 0.22s ease;
       z-index: 1000;
     }
     .expo-modal-backdrop.open {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
     }
     .expo-modal {
@@ -1361,14 +1385,17 @@
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
       z-index: 1001;
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+      transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
       display: flex;
       flex-direction: column;
       overflow: hidden;
     }
     .expo-modal.open {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
       transform: translate(-50%, -50%) scale(1);
     }
@@ -1603,6 +1630,17 @@
       color: var(--text-body);
     }
 
+    /* Desktop PC Layout & Performance Enhancements */
+    @media (min-width: 1024px) {
+      .marine-shell {
+        padding: 24px 32px 80px;
+      }
+      .chemical-list {
+        grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+        gap: 18px;
+      }
+    }
+
     /* Mobile Adaptations */
     @media (max-width: 640px) {
       .marine-shell { padding: 12px 12px 50px; }
@@ -1709,12 +1747,14 @@
       backdrop-filter: blur(5px);
       -webkit-backdrop-filter: blur(5px);
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.22s ease;
+      transition: opacity 0.22s ease, visibility 0.22s ease;
       z-index: 1000;
     }
     .sds-modal-backdrop.open {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
     }
     .sds-modal {
@@ -1732,14 +1772,17 @@
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
       z-index: 1001;
       opacity: 0;
+      visibility: hidden;
       pointer-events: none;
-      transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: transform, opacity;
+      transition: opacity 0.22s ease, transform 0.22s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.22s;
       display: flex;
       flex-direction: column;
       overflow: hidden;
     }
     .sds-modal.open {
       opacity: 1;
+      visibility: visible;
       pointer-events: auto;
       transform: translate(-50%, -50%) scale(1);
     }
@@ -4523,7 +4566,7 @@
               </div>
 
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.7.7</span>
+                <span class="version-tag">MSDS-Lite v1.7.8</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>${t('checkUpdate')}</span>
@@ -4942,7 +4985,7 @@
             <!-- Kurulum QR Kartı -->
             <div class="expo-qr-card">
               <div class="expo-qr-box">
-                <img src="icons/qr-code.svg?v=1.7.7" alt="MSDS-Lite Kurulum QR Kodu" class="expo-qr-img" width="120" height="120" />
+                <img src="icons/qr-code.svg?v=1.7.8" alt="MSDS-Lite Kurulum QR Kodu" class="expo-qr-img" width="120" height="120" />
               </div>
               <div class="expo-qr-info">
                 <div class="expo-qr-title">${t('qrBoothTitle')}</div>
@@ -5909,12 +5952,16 @@
         const searchClearBtn = document.getElementById('searchClearBtn');
 
         if (searchInput) {
+          let searchRaf = null;
           searchInput.addEventListener('input', (e) => {
             state.searchQuery = e.target.value;
             if (searchClearBtn) {
               searchClearBtn.classList.toggle('visible', !!state.searchQuery);
             }
-            renderChemicalList();
+            if (searchRaf) cancelAnimationFrame(searchRaf);
+            searchRaf = requestAnimationFrame(() => {
+              renderChemicalList();
+            });
           });
 
           // Keyboard Esc to clear search
@@ -5963,34 +6010,50 @@
           });
         });
 
-        // Mouse drag-to-scroll for horizontal category ribbon
+        // Mouse drag-to-scroll & wheel scroll for horizontal category ribbon on PC
         const categoryGrid = document.getElementById('categoryGrid');
         if (categoryGrid) {
           let isDown = false;
-          let startX;
-          let scrollLeft;
+          let startX = 0;
+          let scrollLeft = 0;
+          let rafId = null;
+
+          const onMouseMove = (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            const x = e.pageX - categoryGrid.offsetLeft;
+            const walk = (x - startX) * 1.8;
+            if (rafId) cancelAnimationFrame(rafId);
+            rafId = requestAnimationFrame(() => {
+              categoryGrid.scrollLeft = scrollLeft - walk;
+            });
+          };
+
+          const onMouseUp = () => {
+            if (!isDown) return;
+            isDown = false;
+            categoryGrid.style.cursor = '';
+            window.removeEventListener('mousemove', onMouseMove);
+            window.removeEventListener('mouseup', onMouseUp);
+            if (rafId) cancelAnimationFrame(rafId);
+          };
 
           categoryGrid.addEventListener('mousedown', (e) => {
             isDown = true;
             categoryGrid.style.cursor = 'grabbing';
             startX = e.pageX - categoryGrid.offsetLeft;
             scrollLeft = categoryGrid.scrollLeft;
+            window.addEventListener('mousemove', onMouseMove, { passive: false });
+            window.addEventListener('mouseup', onMouseUp);
           });
-          categoryGrid.addEventListener('mouseleave', () => {
-            isDown = false;
-            categoryGrid.style.cursor = '';
-          });
-          categoryGrid.addEventListener('mouseup', () => {
-            isDown = false;
-            categoryGrid.style.cursor = '';
-          });
-          categoryGrid.addEventListener('mousemove', (e) => {
-            if (!isDown) return;
-            e.preventDefault();
-            const x = e.pageX - categoryGrid.offsetLeft;
-            const walk = (x - startX) * 2;
-            categoryGrid.scrollLeft = scrollLeft - walk;
-          });
+
+          // PC mouse wheel vertical-to-horizontal scrolling
+          categoryGrid.addEventListener('wheel', (e) => {
+            if (e.deltaY !== 0) {
+              e.preventDefault();
+              categoryGrid.scrollLeft += e.deltaY;
+            }
+          }, { passive: false });
         }
 
         // Chemical card clicks (Event delegation on container, 100% reliable)
@@ -6069,9 +6132,9 @@
               // 2. Güvenli önbellek yenileme (yeni dosyayı çek, sonra cache'e yaz - eski cache'i ASLA önceden silme)
               if ('caches' in window) {
                 const cacheNames = await caches.keys();
-                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.7';
+                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.8';
                 const cache = await caches.open(activeCacheName);
-                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg', './icons/qr-code.svg?v=1.7.7'];
+                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg', './icons/qr-code.svg?v=1.7.8'];
                 await Promise.allSettled(urlsToUpdate.map(async (url) => {
                   const res = await fetch(url, { cache: 'reload' });
                   if (res && res.ok) {
@@ -6251,9 +6314,9 @@
       toast.className = 'pwa-update-toast';
       const lang = (window.__msdsState && window.__msdsState.language) || localStorage.getItem('msds-language') || 'tr';
       const titles = {
-        tr: 'Yeni Sürüm Hazır (v1.7.7)',
-        en: 'New Version Ready (v1.7.7)',
-        de: 'Neue Version Bereit (v1.7.7)'
+        tr: 'Yeni Sürüm Hazır (v1.7.8)',
+        en: 'New Version Ready (v1.7.8)',
+        de: 'Neue Version Bereit (v1.7.8)'
       };
       const descs = {
         tr: 'Güncel güvenlik protokollerini yüklemek için dokunun.',
@@ -6280,7 +6343,7 @@
         if ('caches' in window) {
           try {
             const keys = await caches.keys();
-            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.7').map(k => caches.delete(k)));
+            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.8').map(k => caches.delete(k)));
           } catch (e) {}
         }
         window.location.reload(true);
