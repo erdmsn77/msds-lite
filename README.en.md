@@ -4,14 +4,26 @@
 
 [ Türkçe ](README.md) • [ English ](README.en.md) • [ Deutsch ](README.de.md)
 
+[![Version](https://img.shields.io/badge/Version-v1.7.6-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
+[![Deploy](https://img.shields.io/github/actions/workflow/status/erdmsn77/msds-lite/deploy-pages.yml?branch=main&style=flat-square&label=Deploy&color=success)](https://github.com/erdmsn77/msds-lite/actions/workflows/deploy-pages.yml)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-22d3ee?style=flat-square&logo=pwa)](https://erdmsn77.github.io/msds-lite/)
 [![Offline First](https://img.shields.io/badge/Offline-100%25-emerald?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
 [![Languages](https://img.shields.io/badge/Languages-TR%20%7C%20EN%20%7C%20DE-blue?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
-[![License](https://img.shields.io/badge/License-MIT%20%2F%20Open-orange?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT%20%2F%20Open-yellow?style=flat-square)](LICENSE)
 
-* **Live Application:** [erdmsn77.github.io/msds-lite](https://erdmsn77.github.io/msds-lite/)
-* **Academic Institution:** Yalova University Çınarcık Vocational School of Higher Education • Boatbuilding & Marine Composite Technologies
-* **Important Notice:** This application is not a substitute for manufacturer-issued official Safety Data Sheets (SDS/MSDS). It is designed as a rapid, on-site quick reference to enable decisive, life-saving actions within seconds during workshop emergencies.
+---
+
+<p align="center">
+  <img src="docs/preview-mockup.jpg" alt="MSDS-Lite Workshop Assistant Mockup" width="100%" style="border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.12);" />
+</p>
+
+<p align="center">
+  <a href="https://erdmsn77.github.io/msds-lite/">
+    <img src="icons/qr-code.svg" width="130" height="130" alt="MSDS-Lite Mobile PWA QR Code" style="background:#ffffff; padding:8px; border-radius:12px; border:1px solid #cbd5e1; box-shadow:0 4px 12px rgba(0,0,0,0.08);" />
+  </a>
+  <br>
+  <sub>📲 <b>Scan with Your Smartphone:</b> Point your camera at the QR code to open the live PWA or install it on your device: <a href="https://erdmsn77.github.io/msds-lite/">erdmsn77.github.io/msds-lite</a></sub>
+</p>
 
 ---
 
@@ -113,6 +125,13 @@ Run MSDS-Lite directly from your device home screen with native app performance 
 
 * **Android (Chrome):** Open the [live demo](https://erdmsn77.github.io/msds-lite/), tap the browser menu (three dots) in the upper-right corner, and select **"Install app"** or **"Add to Home Screen"**.
 * **iOS / iPhone (Safari):** Open the address in Safari, tap the **Share** button at the bottom, and select **"Add to Home Screen"**.
+* **Instant QR Install:** Point your smartphone camera directly at the QR code below:
+
+<p align="center">
+  <a href="https://erdmsn77.github.io/msds-lite/">
+    <img src="icons/qr-code.svg" width="115" height="115" alt="MSDS-Lite Install QR Code" style="background:#ffffff; padding:6px; border-radius:10px; border:1px solid #cbd5e1;" />
+  </a>
+</p>
 
 ---
 

@@ -4,14 +4,26 @@
 
 [ Türkçe ](README.md) • [ English ](README.en.md) • [ Deutsch ](README.de.md)
 
+[![Version](https://img.shields.io/badge/Version-v1.7.6-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
+[![Deploy](https://img.shields.io/github/actions/workflow/status/erdmsn77/msds-lite/deploy-pages.yml?branch=main&style=flat-square&label=Deploy&color=success)](https://github.com/erdmsn77/msds-lite/actions/workflows/deploy-pages.yml)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-22d3ee?style=flat-square&logo=pwa)](https://erdmsn77.github.io/msds-lite/)
 [![Offline First](https://img.shields.io/badge/Offline-100%25-emerald?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
 [![Languages](https://img.shields.io/badge/Languages-TR%20%7C%20EN%20%7C%20DE-blue?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
-[![License](https://img.shields.io/badge/License-MIT%20%2F%20Open-orange?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT%20%2F%20Open-yellow?style=flat-square)](LICENSE)
 
-* **Canlı Uygulama:** [erdmsn77.github.io/msds-lite](https://erdmsn77.github.io/msds-lite/)
-* **Akademik Kurum:** Yalova Üniversitesi Çınarcık Meslek Yüksekokulu • Fiber Tekne İmalatı ve Kompozit Teknolojileri
-* **Önemli Hatırlatma:** Bu uygulama resmî üretici Güvenlik Bilgi Formlarının (SDS/MSDS) yerine geçmez; acil durumlarda ve saha operasyonlarında saniyeler içinde doğru kararı vermeyi sağlayan pratik bir atölye içi hızlı referanstır.
+---
+
+<p align="center">
+  <img src="docs/preview-mockup.jpg" alt="MSDS-Lite Saha Asistanı Önizleme" width="100%" style="border-radius:12px; box-shadow:0 8px 24px rgba(0,0,0,0.12);" />
+</p>
+
+<p align="center">
+  <a href="https://erdmsn77.github.io/msds-lite/">
+    <img src="icons/qr-code.svg" width="130" height="130" alt="MSDS-Lite Mobil Kurulum QR Kodu" style="background:#ffffff; padding:8px; border-radius:12px; border:1px solid #cbd5e1; box-shadow:0 4px 12px rgba(0,0,0,0.08);" />
+  </a>
+  <br>
+  <sub>📲 <b>Telefonunuzun Kamerasıyla Okutun:</b> Canlı PWA uygulamasını doğrudan açmak veya telefonunuza yüklemek için QR kodu tarayın ya da <a href="https://erdmsn77.github.io/msds-lite/">erdmsn77.github.io/msds-lite</a> adresine dokunun.</sub>
+</p>
 
 ---
 
@@ -113,6 +125,13 @@ Uygulama internete ihtiyaç duymadan doğrudan telefonun ana ekranından yerel b
 
 * **Android (Chrome):** [Canlı bağlantıyı](https://erdmsn77.github.io/msds-lite/) açın, sağ üstteki üç noktaya tıklayın ve **"Uygulamayı Yükle"** veya **"Ana Ekrana Ekle"** seçeneğini seçin.
 * **iOS / iPhone (Safari):** Safari'de canlı adresi açın, alt kısımdaki **Paylaş** simgesine dokunun ve **"Ana Ekrana Ekle"** butonuna basın.
+* **Hızlı QR Kurulum:** Telefonunuzun kamerasını aşağıdaki koda doğrultarak doğrudan açın:
+
+<p align="center">
+  <a href="https://erdmsn77.github.io/msds-lite/">
+    <img src="icons/qr-code.svg" width="115" height="115" alt="MSDS-Lite Kurulum QR Kodu" style="background:#ffffff; padding:6px; border-radius:10px; border:1px solid #cbd5e1;" />
+  </a>
+</p>
 
 ---
 
