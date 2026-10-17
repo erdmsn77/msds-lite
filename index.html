@@ -1474,11 +1474,11 @@
       box-shadow: var(--card-shadow);
     }
     .expo-qr-box {
-      background: #0b0f17;
+      background: #ffffff;
       padding: 6px;
-      border-radius: 12px;
-      border: 1px solid rgba(234, 88, 12, 0.35);
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+      border-radius: 10px;
+      border: 1px solid #cbd5e1;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
       flex-shrink: 0;
       display: grid;
       place-items: center;
@@ -1487,7 +1487,7 @@
       display: block;
       width: 120px;
       height: 120px;
-      border-radius: 6px;
+      border-radius: 3px;
     }
     .expo-qr-info {
       flex: 1;
@@ -4523,7 +4523,7 @@
               </div>
 
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.7.5</span>
+                <span class="version-tag">MSDS-Lite v1.7.6</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>${t('checkUpdate')}</span>
@@ -4942,7 +4942,7 @@
             <!-- Kurulum QR Kartı -->
             <div class="expo-qr-card">
               <div class="expo-qr-box">
-                <img src="icons/qr-code.svg" alt="MSDS-Lite Kurulum QR Kodu" class="expo-qr-img" width="120" height="120" />
+                <img src="icons/qr-code.svg?v=1.7.6" alt="MSDS-Lite Kurulum QR Kodu" class="expo-qr-img" width="120" height="120" />
               </div>
               <div class="expo-qr-info">
                 <div class="expo-qr-title">${t('qrBoothTitle')}</div>
@@ -6069,9 +6069,9 @@
               // 2. Güvenli önbellek yenileme (yeni dosyayı çek, sonra cache'e yaz - eski cache'i ASLA önceden silme)
               if ('caches' in window) {
                 const cacheNames = await caches.keys();
-                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.5';
+                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.6';
                 const cache = await caches.open(activeCacheName);
-                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg'];
+                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg', './icons/qr-code.svg?v=1.7.6'];
                 await Promise.allSettled(urlsToUpdate.map(async (url) => {
                   const res = await fetch(url, { cache: 'reload' });
                   if (res && res.ok) {
@@ -6251,9 +6251,9 @@
       toast.className = 'pwa-update-toast';
       const lang = (window.__msdsState && window.__msdsState.language) || localStorage.getItem('msds-language') || 'tr';
       const titles = {
-        tr: 'Yeni Sürüm Hazır (v1.7.5)',
-        en: 'New Version Ready (v1.7.5)',
-        de: 'Neue Version Bereit (v1.7.5)'
+        tr: 'Yeni Sürüm Hazır (v1.7.6)',
+        en: 'New Version Ready (v1.7.6)',
+        de: 'Neue Version Bereit (v1.7.6)'
       };
       const descs = {
         tr: 'Güncel güvenlik protokollerini yüklemek için dokunun.',
@@ -6280,7 +6280,7 @@
         if ('caches' in window) {
           try {
             const keys = await caches.keys();
-            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.5').map(k => caches.delete(k)));
+            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.6').map(k => caches.delete(k)));
           } catch (e) {}
         }
         window.location.reload(true);
