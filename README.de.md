@@ -4,7 +4,7 @@
 
 [ Türkçe ](README.md) • [ English ](README.en.md) • [ Deutsch ](README.de.md)
 
-[![Version](https://img.shields.io/badge/Version-v1.7.8-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
+[![Version](https://img.shields.io/badge/Version-v1.7.9-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/erdmsn77/msds-lite/deploy-pages.yml?branch=main&style=flat-square&label=Deploy&color=success)](https://github.com/erdmsn77/msds-lite/actions/workflows/deploy-pages.yml)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-22d3ee?style=flat-square&logo=pwa)](https://erdmsn77.github.io/msds-lite/)
 [![Offline First](https://img.shields.io/badge/Offline-100%25-emerald?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
@@ -95,35 +95,13 @@ Die 11 gefährlichsten und häufigsten Arbeitsstoffe in modernen Komposit-Werkst
 
 ---
 
-## Installation & Lokale Ausführung
+## PWA auf dem Smartphone installieren (Praxiseinsatz)
 
-Da MSDS-Lite aus reinen statischen Dateien besteht, sind keine Build-Tools oder Paketmanager (`npm`, `yarn` etc.) erforderlich.
-
-1. Repository klonen:
-   ```bash
-   git clone https://github.com/erdmsn77/msds-lite.git
-   cd msds-lite
-   ```
-2. Lokalen HTTP-Server starten (erforderlich für Service Worker und Laden der JSON-Daten):
-   ```bash
-   # Mit Python:
-   python -m http.server 4173
-
-   # Oder mit Node.js:
-   npx http-server . -p 4173
-   ```
-3. Im Browser öffnen:
-   ```
-   http://localhost:4173/index.html
-   ```
-
----
-
-## PWA auf dem Smartphone installieren
+MSDS-Lite wurde speziell für den **mobilen Einsatz vor Ort** in Werfthallen und Kompositwerkstätten entwickelt. Es sind weder Terminalbefehle, Compiler noch Desktop-Software erforderlich; die Anwendung läuft direkt vom Smartphone-Startbildschirm mit voller nativer App-Leistung:
 
 * **Android (Chrome):** [Live-Version](https://erdmsn77.github.io/msds-lite/) aufrufen, Menü (drei Punkte) öffnen und **„App installieren“** oder **„Zum Startbildschirm hinzufügen“** wählen.
 * **iOS / iPhone (Safari):** Live-URL in Safari öffnen, auf das **Teilen-Symbol** tippen und **„Zum Home-Bildschirm“** auswählen.
-* **Schnellinstallation per QR-Code:** Richten Sie Ihre Smartphone-Kamera direkt auf den folgenden QR-Code:
+* **Schnellinstallation per QR-Code:** Richten Sie Ihre Smartphone-Kamera direkt auf den folgenden QR-Code, um die App in Sekundenschnelle einsatzbereit zu haben:
 
 <p align="center">
   <a href="https://erdmsn77.github.io/msds-lite/">

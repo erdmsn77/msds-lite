@@ -4,7 +4,7 @@
 
 [ Türkçe ](README.md) • [ English ](README.en.md) • [ Deutsch ](README.de.md)
 
-[![Version](https://img.shields.io/badge/Version-v1.7.8-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
+[![Version](https://img.shields.io/badge/Version-v1.7.9-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/erdmsn77/msds-lite/deploy-pages.yml?branch=main&style=flat-square&label=Deploy&color=success)](https://github.com/erdmsn77/msds-lite/actions/workflows/deploy-pages.yml)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-22d3ee?style=flat-square&logo=pwa)](https://erdmsn77.github.io/msds-lite/)
 [![Offline First](https://img.shields.io/badge/Offline-100%25-emerald?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
@@ -95,37 +95,13 @@ Atölyelerde en sık karşılaşılan ve kaza riski taşıyan 11 temel kimyasal 
 
 ---
 
-## Kurulum ve Yerel Çalıştırma
+## Mobil Cihaza Yükleme (PWA Saha Kurulumu)
 
-Proje statik dosyalardan oluştuğu için herhangi bir derleme aracı veya paket yöneticisi bağımlılığı (`npm`, `yarn`, `webpack` vb.) bulunmamaktadır.
+MSDS-Lite, tersane hangarları ve kompozit atölyelerindeki saha pratikleri göz önüne alınarak **doğrudan mobil cihazlar için optimize edilmiştir**. Bilgisayarınıza harici kurulum yapmaya, terminal komutlarına veya paket yöneticilerine gerek yoktur; telefonunuzun ana ekranından yerel bir mobil uygulama gibi anında çalışır:
 
-1. Projeyi bilgisayarınıza klonlayın:
-   ```bash
-   git clone https://github.com/erdmsn77/msds-lite.git
-   cd msds-lite
-   ```
-2. Service Worker ve yerel depolama özelliklerinin çalışabilmesi için yerel bir HTTP sunucusu başlatın:
-   ```bash
-   # Python ile:
-   python -m http.server 4173
-
-   # veya Node.js ile:
-   npx http-server . -p 4173
-   ```
-3. Tarayıcınızda açın:
-   ```
-   http://localhost:4173/index.html
-   ```
-
----
-
-## Mobil Cihaza Yükleme (PWA)
-
-Uygulama internete ihtiyaç duymadan doğrudan telefonun ana ekranından yerel bir mobil uygulama gibi çalıştırılabilir:
-
-* **Android (Chrome):** [Canlı bağlantıyı](https://erdmsn77.github.io/msds-lite/) açın, sağ üstteki üç noktaya tıklayın ve **"Uygulamayı Yükle"** veya **"Ana Ekrana Ekle"** seçeneğini seçin.
+* **Android (Chrome):** [Canlı bağlantıyı](https://erdmsn77.github.io/msds-lite/) açın, sağ üstteki üç noktaya dokunun ve **"Uygulamayı Yükle"** veya **"Ana Ekrana Ekle"** seçeneğini seçin.
 * **iOS / iPhone (Safari):** Safari'de canlı adresi açın, alt kısımdaki **Paylaş** simgesine dokunun ve **"Ana Ekrana Ekle"** butonuna basın.
-* **Hızlı QR Kurulum:** Telefonunuzun kamerasını aşağıdaki koda doğrultarak doğrudan açın:
+* **Hızlı QR Kurulum:** Akıllı telefonunuzun kamerasını aşağıdaki koda doğrultarak sahada saniyeler içinde çalıştırın:
 
 <p align="center">
   <a href="https://erdmsn77.github.io/msds-lite/">

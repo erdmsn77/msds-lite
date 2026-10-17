@@ -20,7 +20,7 @@
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/svg+xml" href="icons/icon.svg">
   <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <script src="vendor/pdf.min.js"></script>
+  <script src="vendor/pdf.min.js" defer></script>
   <script>
     (function () {
       try {
@@ -779,12 +779,11 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: rgba(15, 23, 42, 0.6);
-      backdrop-filter: blur(4px);
-      -webkit-backdrop-filter: blur(4px);
+      background: rgba(11, 15, 23, 0.72);
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
+      transform: translateZ(0);
       transition: opacity 0.2s ease, visibility 0.2s ease;
       z-index: 99;
     }
@@ -1356,12 +1355,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(15, 23, 42, 0.72);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
+      background: rgba(11, 15, 23, 0.72);
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
+      transform: translateZ(0);
       transition: opacity 0.22s ease, visibility 0.22s ease;
       z-index: 1000;
     }
@@ -1743,12 +1741,11 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(15, 23, 42, 0.72);
-      backdrop-filter: blur(5px);
-      -webkit-backdrop-filter: blur(5px);
+      background: rgba(11, 15, 23, 0.72);
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
+      transform: translateZ(0);
       transition: opacity 0.22s ease, visibility 0.22s ease;
       z-index: 1000;
     }
@@ -4566,7 +4563,7 @@
               </div>
 
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.7.8</span>
+                <span class="version-tag">MSDS-Lite v1.7.9</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>${t('checkUpdate')}</span>
@@ -6047,11 +6044,14 @@
             window.addEventListener('mouseup', onMouseUp);
           });
 
-          // PC mouse wheel vertical-to-horizontal scrolling
+          // PC mouse wheel vertical-to-horizontal scrolling (smart boundary checking)
           categoryGrid.addEventListener('wheel', (e) => {
-            if (e.deltaY !== 0) {
-              e.preventDefault();
-              categoryGrid.scrollLeft += e.deltaY;
+            if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+              const maxScroll = categoryGrid.scrollWidth - categoryGrid.clientWidth;
+              if ((e.deltaY > 0 && categoryGrid.scrollLeft < maxScroll) || (e.deltaY < 0 && categoryGrid.scrollLeft > 0)) {
+                e.preventDefault();
+                categoryGrid.scrollLeft += e.deltaY;
+              }
             }
           }, { passive: false });
         }
@@ -6132,9 +6132,9 @@
               // 2. Güvenli önbellek yenileme (yeni dosyayı çek, sonra cache'e yaz - eski cache'i ASLA önceden silme)
               if ('caches' in window) {
                 const cacheNames = await caches.keys();
-                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.8';
+                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.7.9';
                 const cache = await caches.open(activeCacheName);
-                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg', './icons/qr-code.svg?v=1.7.8'];
+                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg', './icons/qr-code.svg?v=1.7.9'];
                 await Promise.allSettled(urlsToUpdate.map(async (url) => {
                   const res = await fetch(url, { cache: 'reload' });
                   if (res && res.ok) {
@@ -6314,9 +6314,9 @@
       toast.className = 'pwa-update-toast';
       const lang = (window.__msdsState && window.__msdsState.language) || localStorage.getItem('msds-language') || 'tr';
       const titles = {
-        tr: 'Yeni Sürüm Hazır (v1.7.8)',
-        en: 'New Version Ready (v1.7.8)',
-        de: 'Neue Version Bereit (v1.7.8)'
+        tr: 'Yeni Sürüm Hazır (v1.7.9)',
+        en: 'New Version Ready (v1.7.9)',
+        de: 'Neue Version Bereit (v1.7.9)'
       };
       const descs = {
         tr: 'Güncel güvenlik protokollerini yüklemek için dokunun.',
@@ -6343,7 +6343,7 @@
         if ('caches' in window) {
           try {
             const keys = await caches.keys();
-            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.8').map(k => caches.delete(k)));
+            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.7.9').map(k => caches.delete(k)));
           } catch (e) {}
         }
         window.location.reload(true);

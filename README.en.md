@@ -4,7 +4,7 @@
 
 [ Türkçe ](README.md) • [ English ](README.en.md) • [ Deutsch ](README.de.md)
 
-[![Version](https://img.shields.io/badge/Version-v1.7.8-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
+[![Version](https://img.shields.io/badge/Version-v1.7.9-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/erdmsn77/msds-lite/deploy-pages.yml?branch=main&style=flat-square&label=Deploy&color=success)](https://github.com/erdmsn77/msds-lite/actions/workflows/deploy-pages.yml)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-22d3ee?style=flat-square&logo=pwa)](https://erdmsn77.github.io/msds-lite/)
 [![Offline First](https://img.shields.io/badge/Offline-100%25-emerald?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
@@ -95,37 +95,13 @@ The application covers the 11 most hazardous and commonly utilized substances in
 
 ---
 
-## Installation & Local Development
+## Installing on Mobile Devices (PWA Field Setup)
 
-Because MSDS-Lite is built with pure static files, no bundlers, transpilers, or package managers (`npm`, `yarn`, `webpack`, etc.) are needed.
+MSDS-Lite is purpose-built as a **mobile field assistant** for boatyards and workshops. No terminal setup, compilation tools, or desktop software is required; it runs directly from your mobile home screen with native app performance:
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/erdmsn77/msds-lite.git
-   cd msds-lite
-   ```
-2. Start a local HTTP server (required for Service Worker operation and local file loading):
-   ```bash
-   # Using Python:
-   python -m http.server 4173
-
-   # Or using Node.js:
-   npx http-server . -p 4173
-   ```
-3. Open in your browser:
-   ```
-   http://localhost:4173/index.html
-   ```
-
----
-
-## Installing on Mobile Devices (PWA)
-
-Run MSDS-Lite directly from your device home screen with native app performance and full offline functionality:
-
-* **Android (Chrome):** Open the [live demo](https://erdmsn77.github.io/msds-lite/), tap the browser menu (three dots) in the upper-right corner, and select **"Install app"** or **"Add to Home Screen"**.
-* **iOS / iPhone (Safari):** Open the address in Safari, tap the **Share** button at the bottom, and select **"Add to Home Screen"**.
-* **Instant QR Install:** Point your smartphone camera directly at the QR code below:
+* **Android (Chrome):** Open the [live application](https://erdmsn77.github.io/msds-lite/), tap the browser menu (three dots) in the top-right corner, and select **"Install app"** or **"Add to Home Screen"**.
+* **iOS / iPhone (Safari):** Open the address in Safari, tap the **Share** button at the bottom bar, and select **"Add to Home Screen"**.
+* **Instant QR Setup:** Point your smartphone camera directly at the code below to launch in seconds:
 
 <p align="center">
   <a href="https://erdmsn77.github.io/msds-lite/">
