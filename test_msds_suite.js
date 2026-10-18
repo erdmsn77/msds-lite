@@ -380,6 +380,93 @@ test('Gatekeeper ACCEPTS compliant REACH/GHS documents with >=3 sections includi
 });
 
 // ----------------------------------------------------
+// SECTION 5: REGRESSION & EDGE-CASE BUG HUNTER TESTS
+// ----------------------------------------------------
+console.log('\n🔍 [5/5] REGRESSION & EDGE-CASE BUG HUNTER TESTS:');
+
+test('GHS_METADATA completeness: GHS01 through GHS09 all defined with SVG & tr/en/de titles', () => {
+  const ghsMetaMatch = htmlContent.match(/const GHS_METADATA = \{([\s\S]*?)\n\s*\};/);
+  assert.ok(ghsMetaMatch, 'GHS_METADATA must be found');
+  const GHS_METADATA = new Function('return {' + ghsMetaMatch[1] + '};')();
+
+  const requiredCodes = ['GHS01', 'GHS02', 'GHS03', 'GHS04', 'GHS05', 'GHS06', 'GHS07', 'GHS08', 'GHS09'];
+  for (const code of requiredCodes) {
+    assert.ok(GHS_METADATA[code], `GHS code ${code} must exist in GHS_METADATA`);
+    assert.ok(GHS_METADATA[code].title_tr, `${code} must have title_tr`);
+    assert.ok(GHS_METADATA[code].title_en, `${code} must have title_en`);
+    assert.ok(GHS_METADATA[code].title_de, `${code} must have title_de`);
+    assert.ok(GHS_METADATA[code].svg && (GHS_METADATA[code].svg.includes('<path') || GHS_METADATA[code].svg.includes('<rect') || GHS_METADATA[code].svg.includes('<circle')), `${code} must have valid SVG graphic elements`);
+  }
+});
+
+test('Custom chemical category-based incompatibility resolution', () => {
+  const incompMatch = htmlContent.match(/const INCOMPATIBILITY_ALERTS = \{([\s\S]*?)\n\s*\};/);
+  const INCOMPATIBILITY_ALERTS = new Function('return {' + incompMatch[1] + '};')();
+
+  function resolveIncomp(chem) {
+    let incomp = INCOMPATIBILITY_ALERTS[chem.id];
+    if (!incomp) {
+      if (chem.category === 'peroksit') {
+        incomp = INCOMPATIBILITY_ALERTS['mek-p'];
+      } else if (chem.category === 'hizlandirici') {
+        incomp = INCOMPATIBILITY_ALERTS['cobalt-naphthenate'];
+      } else if (chem.category === 'sertlestirici' && (chem.ghs_codes || []).includes('GHS05')) {
+        incomp = INCOMPATIBILITY_ALERTS['epoxy-hardener-isophoronediamine'];
+      }
+    }
+    return incomp;
+  }
+
+  const customPeroxide = { id: 'sds_custom_butanox', category: 'peroksit' };
+  const alertPerox = resolveIncomp(customPeroxide);
+  assert.ok(alertPerox, 'Custom peroxide must trigger explosion incompatibility alert');
+  assert.strictEqual(alertPerox.level, 'critical');
+
+  const customCobalt = { id: 'sds_custom_cobalt', category: 'hizlandirici' };
+  const alertCobalt = resolveIncomp(customCobalt);
+  assert.ok(alertCobalt, 'Custom accelerator must trigger promoter incompatibility alert');
+  assert.strictEqual(alertCobalt.level, 'critical');
+});
+
+test('First aid segmentation does NOT bleed Solunması/Yutulması into Cilt teması', () => {
+  const s4 = `4.1 İlk yardım önlemleri
+Göz teması: Bol su ile yıkayın.
+Cilt teması: Sabunla yıkayın.
+Solunması: Temiz havaya çıkarın.
+Yutulması: Kusturmayın.`;
+
+  function getFirstAidSub(patterns) {
+    for (const pat of patterns) {
+      const re = new RegExp('(?:^|\\n)\\s*(?:[0-9]\\.[0-9]\\s*)?' + pat + '[:\\-\\s]+([\\s\\S]*?)(?=(?:\\n\\s*(?:[0-9]\\.[0-9]\\s*)?(?:G[öo]z|Eye|Augen|Cilt|Deri|Skin|Haut|Solun?ma|Inhalation|Einatmen|Yut(?:ul)?ma|Ingestion|Verschlucken|4\\.[0-9]|B[ÖO]L[ÜU]M|SECTION|ABSCHNITT)|$))', 'i');
+      const m = s4.match(re);
+      if (m && m[1].trim().length > 3) {
+        return m[1].trim().replace(/\s+/g, ' ');
+      }
+    }
+    return '';
+  }
+
+  const skin = getFirstAidSub(['(?:Cilt|Deri)(?:\\s*(?:ile\\s*)?Temas[ıi])?(?:\\s*halinde)?']);
+  const inh = getFirstAidSub(['Solun?mas?[ıi]?(?:\\s*halinde)?']);
+  const ing = getFirstAidSub(['Yut(?:ul)?mas?[ıi]?(?:\\s*halinde)?']);
+
+  assert.strictEqual(skin, 'Sabunla yıkayın.');
+  assert.strictEqual(inh, 'Temiz havaya çıkarın.');
+  assert.strictEqual(ing, 'Kusturmayın.');
+});
+
+test('Regex literal audit: zero double-backslash whitespace/digit escapes in index.html regex literals', () => {
+  const lines = htmlContent.split('\n');
+  const badRegexLines = [];
+  lines.forEach((line, idx) => {
+    if (/\/[^/\n]*\\\\[sSwWdDbB][^/\n]*\/[gimsuy]*/.test(line)) {
+      badRegexLines.push(`${idx + 1}: ${line.trim()}`);
+    }
+  });
+  assert.strictEqual(badRegexLines.length, 0, `Found broken double-backslash escapes in regex literals: \n${badRegexLines.join('\n')}`);
+});
+
+// ----------------------------------------------------
 // SUMMARY REPORT
 // ----------------------------------------------------
 console.log('\n====================================================');

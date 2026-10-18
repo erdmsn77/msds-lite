@@ -4150,6 +4150,15 @@
       };
 
       const GHS_METADATA = {
+        GHS01: {
+          title_tr: 'Patlayıcı / Şiddetli Reaksiyon',
+          title_en: 'Explosive / Mass Explosion',
+          title_de: 'Explosiv / Massenexplosion',
+          desc_tr: 'Kararsız patlayıcı, kütlesel patlama veya fırlama tehlikesi.',
+          desc_en: 'Unstable explosive, mass explosion or projection hazard.',
+          desc_de: 'Instabiler explosiver Stoff, Gefahr der Massenexplosion.',
+          svg: '<g fill="#111827"><circle cx="50" cy="50" r="10"/><path d="M50 25 l3 14 l7 -8 l-2 10 l12 -4 l-8 8 l14 3 l-13 4 l9 9 l-10 -1 l3 13 l-7 -8 l-4 13 l-3 -14 l-8 8 l3 -11 l-12 3 l8 -8 l-13 -3 l12 -4 l-9 -9 l11 2 z"/></g>'
+        },
         GHS02: {
           title_tr: 'Alevlenebilir / Yanıcı',
           title_en: 'Flammable',
@@ -4158,6 +4167,24 @@
           desc_en: 'Flammable gas, liquid, or solid. Keep away from heat and spark.',
           desc_de: 'Entzündbares Gas, Flüssigkeit oder Feststoff. Von Hitze und Funken fernhalten.',
           svg: '<path d="M50 24 c-2 7 -7 11 -7 18 c0 6 3 9 6 11 c-4 -2 -6 -7 -5 -12 c-4 5 -7 13 -4 20 c3 6 9 9 15 9 c8 -1 14 -8 13 -16 c-1 -7 -6 -12 -11 -15 c2 3 2 8 0 10 c-2 -4 -4 -12 -7 -25 z" fill="#111827"/>'
+        },
+        GHS03: {
+          title_tr: 'Oksitleyici / Peroksit Reaktif',
+          title_en: 'Oxidizing / Organic Peroxide',
+          title_de: 'Oxidierend / Organisches Peroxid',
+          desc_tr: 'Yangını şiddetlendirici; oksitleyici. Yanıcı maddelerle temastan kaçının.',
+          desc_en: 'May cause or intensify fire; oxidizer. Keep away from combustibles.',
+          desc_de: 'Kann Brand verursachen oder verstärken; Oxidationsmittel.',
+          svg: '<g fill="#111827"><circle cx="50" cy="56" r="13" fill="none" stroke="#111827" stroke-width="4"/><path d="M50 24 c-2 7 -6 10 -6 16 c0 4 2 7 5 9 c-3 -2 -4 -6 -4 -10 c-3 4 -5 10 -3 15 c2 5 7 7 11 7 c6 -1 11 -6 10 -13 c-1 -5 -5 -9 -9 -12 c1 2 2 6 0 8 c-2 -3 -3 -9 -4 -20 z"/></g>'
+        },
+        GHS04: {
+          title_tr: 'Basınçlı Gaz / Aerosol',
+          title_en: 'Gas Under Pressure / Aerosol',
+          title_de: 'Gase unter Druck / Aerosol',
+          desc_tr: 'Basınç altında gaz veya sıvılaştırılmış gaz. Isıtıldığında patlayabilir.',
+          desc_en: 'Contains gas under pressure; may explode if heated.',
+          desc_de: 'Enthält Gas unter Druck; kann bei Erwärmung explodieren.',
+          svg: '<g fill="#111827"><path d="M30 46 h36 c3.3 0 6 2.7 6 6 s-2.7 6 -6 6 h-36 c-3.3 0 -6 -2.7 -6 -6 s2.7 -6 6 -6 z M72 50 h4 v4 h-4 z M76 48 h3 v8 h-3 z"/></g>'
         },
         GHS05: {
           title_tr: 'Aşındırıcı / Korozif',
@@ -4931,7 +4958,7 @@
               </div>
 
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.8.0</span>
+                <span class="version-tag">MSDS-Lite v1.8.1</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>${t('checkUpdate')}</span>
@@ -4960,8 +4987,17 @@
         const riskText = chem.risk_level === 'KRİTİK' ? t('riskCritical') : chem.risk_level === 'YÜKSEK' ? t('riskHigh') : t('riskMedium');
         const catLabel = (CATEGORIES[chem.category] && CATEGORIES[chem.category][state.language]) || chem.category;
 
-        // Incompatibility alert
-        const incomp = INCOMPATIBILITY_ALERTS[chem.id];
+        // Incompatibility alert: match direct ID or category-based rules for custom additions
+        let incomp = INCOMPATIBILITY_ALERTS[chem.id];
+        if (!incomp) {
+          if (chem.category === 'peroksit') {
+            incomp = INCOMPATIBILITY_ALERTS['mek-p'];
+          } else if (chem.category === 'hizlandirici') {
+            incomp = INCOMPATIBILITY_ALERTS['cobalt-naphthenate'];
+          } else if (chem.category === 'sertlestirici' && (chem.ghs_codes || []).includes('GHS05')) {
+            incomp = INCOMPATIBILITY_ALERTS['epoxy-hardener-isophoronediamine'];
+          }
+        }
         let incompHtml = '';
         if (incomp) {
           const isCrit = incomp.level === 'critical';
@@ -5375,7 +5411,7 @@
             <!-- Kurulum QR Kartı -->
             <div class="expo-qr-card">
               <div class="expo-qr-box">
-                <img src="icons/qr-code.svg?v=1.7.8" alt="MSDS-Lite Kurulum QR Kodu" class="expo-qr-img" width="120" height="120" />
+                <img src="icons/qr-code.svg?v=1.8.1" alt="MSDS-Lite Kurulum QR Kodu" class="expo-qr-img" width="120" height="120" />
               </div>
               <div class="expo-qr-info">
                 <div class="expo-qr-title">${t('qrBoothTitle')}</div>
@@ -5837,7 +5873,7 @@
         // 6. Section 4: First Aid
         function getFirstAidSub(patterns) {
           for (const pat of patterns) {
-            const re = new RegExp('(?:^|\\n)\\s*(?:[0-9]\\.[0-9]\\s*)?' + pat + '[:\\-\\s]+([\\s\\S]*?)(?=(?:\\n\\s*(?:[0-9]\\.[0-9]\\s*)?(?:G[öo]z|Eye|Augen|Cilt|Deri|Skin|Haut|Soluma|Inhalation|Einatmen|Yutma|Ingestion|Verschlucken|4\\.[0-9]|B[ÖO]L[ÜU]M|SECTION|ABSCHNITT)|$))', 'i');
+            const re = new RegExp('(?:^|\\n)\\s*(?:[0-9]\\.[0-9]\\s*)?' + pat + '[:\\-\\s]+([\\s\\S]*?)(?=(?:\\n\\s*(?:[0-9]\\.[0-9]\\s*)?(?:G[öo]z|Eye|Augen|Cilt|Deri|Skin|Haut|Solun?ma|Inhalation|Einatmen|Yut(?:ul)?ma|Ingestion|Verschlucken|4\\.[0-9]|B[ÖO]L[ÜU]M|SECTION|ABSCHNITT)|$))', 'i');
             const m = s4.match(re);
             if (m && m[1].trim().length > 3) {
               return m[1].trim().replace(/\s+/g, ' ');
@@ -5845,10 +5881,10 @@
           }
           return '';
         }
-        const rawEye = getFirstAidSub(['G[öo]z(?:\\s*Temas[ıi])?', 'Eye(?:\\s*Contact)?', 'Augenkontakt', 'Nach\\s*Augenkontakt']);
-        const rawSkin = getFirstAidSub(['Cilt(?:\\s*Temas[ıi])?', 'Deri(?:\\s*Temas[ıi])?', 'Skin(?:\\s*Contact)?', 'Hautkontakt', 'Nach\\s*Hautkontakt']);
-        const rawInh = getFirstAidSub(['Soluma', 'Solunmas[ıi]', 'Inhalation', 'Nach\\s*Einatmen', 'Einatmen']);
-        const rawIng = getFirstAidSub(['Yutma', 'Yutulmas[ıi]', 'Ingestion', 'Nach\\s*Verschlucken', 'Verschlucken']);
+        const rawEye = getFirstAidSub(['G[öo]z(?:\\s*(?:ile\\s*)?Temas[ıi])?(?:\\s*halinde)?', 'Eye(?:\\s*Contact)?', 'If\\s*in\\s*eyes', 'Augenkontakt', 'Nach\\s*Augenkontakt']);
+        const rawSkin = getFirstAidSub(['(?:Cilt|Deri)(?:\\s*(?:ile\\s*)?Temas[ıi])?(?:\\s*halinde)?', 'Skin(?:\\s*Contact)?', 'If\\s*on\\s*skin', 'Hautkontakt', 'Nach\\s*Hautkontakt']);
+        const rawInh = getFirstAidSub(['Solun?mas?[ıi]?(?:\\s*halinde)?', 'Inhalation', 'If\\s*inhaled', 'Nach\\s*Einatmen', 'Einatmen']);
+        const rawIng = getFirstAidSub(['Yut(?:ul)?mas?[ıi]?(?:\\s*halinde)?', 'Ingestion', 'If\\s*swallowed', 'Nach\\s*Verschlucken', 'Verschlucken']);
 
         // Timer: extract minutes or default 15 (20 for corrosive GHS05)
         let timerMin = (ghsCodes.includes('GHS05') || category === 'peroksit' || category === 'sertlestirici') ? 20 : 15;
@@ -5860,11 +5896,11 @@
 
         // 7. Section 8: PPE (Gloves & Mask)
         let rawGloves = '';
-        const gloveMatch = s8.match(/(?:El(?:\\s*Korunmas[ıi])?|Handschutz|Glove(?:\\s*Compatibility)?|Hand\\s*Protection)[:\\s]*([^\n]+(?:\n[^\n]+)?)/i);
+        const gloveMatch = s8.match(/(?:El(?:\s*Korunmas[ıi])?|Handschutz|Glove(?:\s*Compatibility)?|Hand\s*Protection)[:\s]*([^\n]+(?:\n[^\n]+)?)/i);
         if (gloveMatch) rawGloves = gloveMatch[1].trim().replace(/\s+/g, ' ');
 
         let rawMask = '';
-        const maskMatch = s8.match(/(?:Solunum(?:\\s*Korunmas[ıi])?|Atemschutz|Respirator(?:\\s*Mask)?|Respiratory\\s*Protection)[:\\s]*([^\n]+(?:\n[^\n]+)?)/i);
+        const maskMatch = s8.match(/(?:Solunum(?:\s*Korunmas[ıi])?|Atemschutz|Respirator(?:\s*Mask)?|Respiratory\s*Protection)[:\s]*([^\n]+(?:\n[^\n]+)?)/i);
         if (maskMatch) rawMask = maskMatch[1].trim().replace(/\s+/g, ' ');
 
         const hasLatexWarning = /lateks.*uygun de[ğg]il|latex.*unsuitable|latex.*keinen schutz/i.test(s8 + ' ' + rawGloves);
@@ -5873,7 +5909,7 @@
 
         // 8. Section 9: Flash Point
         let flashVal = '';
-        const flashMatch = s9.match(/(?:Parlama\\s*Noktas[ıi]|Flammpunkt|Flash\\s*Point)[:\\s]*([^\n,;]+)/i);
+        const flashMatch = s9.match(/(?:Parlama\s*Noktas[ıi]|Flammpunkt|Flash\s*Point)[:\s]*([^\n,;]+)/i);
         if (flashMatch) flashVal = flashMatch[1].trim();
 
         // 9. Section 5: Firefighting
@@ -5882,12 +5918,12 @@
         if (fireSuitMatch) fireSuitable = fireSuitMatch[1].trim();
 
         let fireProhibited = '';
-        const fireProhibMatch = s5.match(/(?:Uygun\\s*Olmayan|Yasak|Unzul[äa]ssige|Prohibited|Inappropriate)\s*(?:S[öo]nd[üu]r[üu]c[üu]|L[öo]schmittel|Extinguish)[\w\s]*?[:\-]\s*([^\n]+)/i);
+        const fireProhibMatch = s5.match(/(?:Uygun\s*Olmayan|Yasak|Unzul[äa]ssige|Prohibited|Inappropriate)\s*(?:S[öo]nd[üu]r[üu]c[üu]|L[öo]schmittel|Extinguish)[\w\s]*?[:\-]\s*([^\n]+)/i);
         if (fireProhibMatch) fireProhibited = fireProhibMatch[1].trim();
 
         // 10. Section 7 & 10: Storage & Incompatible
         let storageCond = '';
-        const storMatch = s7.match(/(?:G[üu]venli\\s*Depolama|Lagerung|Storage|Handhabung|Elle[cç]leme|Handling)[\w\s]*?[:\-]\s*([^\n]+)/i);
+        const storMatch = s7.match(/(?:G[üu]venli\s*Depolama|Lagerung|Storage|Handhabung|Elle[cç]leme|Handling)[\w\s]*?[:\-]\s*([^\n]+)/i);
         if (storMatch) storageCond = storMatch[1].trim();
 
         let storageIncomp = '';
@@ -6101,10 +6137,14 @@
           `;
         }).join('');
 
-        const catOptions = ['recine', 'sertlestirici', 'peroksit', 'solvent', 'hizlandirici', 'toz', 'ayirici'].map(key => {
+        const catKeys = ['recine', 'sertlestirici', 'peroksit', 'solvent', 'hizlandirici', 'toz', 'ayirici'];
+        if (chem.category && !catKeys.includes(chem.category)) {
+          catKeys.push(chem.category);
+        }
+        const catOptions = catKeys.map(key => {
           const label = (CATEGORIES[key] && CATEGORIES[key][state.language]) || key;
           const selected = chem.category === key ? 'selected' : '';
-          return `<option value="${key}" ${selected}>${escape(label)}</option>`;
+          return `<option value="${escape(key)}" ${selected}>${escape(label)}</option>`;
         }).join('');
 
         previewBox.innerHTML = `
@@ -6237,13 +6277,10 @@
           </div>
         `;
 
-        // GHS interactive toggle handling
+        // GHS interactive toggle handling (change listener prevents double-toggle bug)
         previewBox.querySelectorAll('.sds-ghs-toggle').forEach(label => {
-          label.addEventListener('click', (e) => {
-            const checkbox = label.querySelector('input');
-            if (e.target !== checkbox) {
-              checkbox.checked = !checkbox.checked;
-            }
+          const checkbox = label.querySelector('input');
+          checkbox?.addEventListener('change', () => {
             label.classList.toggle('active', checkbox.checked);
           });
         });
@@ -6282,7 +6319,8 @@
           const catVal = document.getElementById('sdsReviewCat')?.value || original.category;
           const riskVal = document.getElementById('sdsReviewRisk')?.value || original.risk_level;
           const sigVal = document.getElementById('sdsReviewSignal')?.value || 'UYARI';
-          const timerVal = parseInt(document.getElementById('sdsReviewTimer')?.value || '15', 10);
+          const rawTimer = parseInt(document.getElementById('sdsReviewTimer')?.value || '15', 10);
+          const timerVal = (!isNaN(rawTimer) && rawTimer >= 5 && rawTimer <= 120) ? rawTimer : 15;
           const flashVal = document.getElementById('sdsReviewFlash')?.value?.trim() || getL(original.flash_point);
 
           const selectedGhs = [];
@@ -6432,6 +6470,7 @@
           const file = importInput.files?.[0];
           if (file) {
             importCustomBackup(file, (err, count) => {
+              importInput.value = '';
               if (err) {
                 alert(state.language === 'tr' ? 'Yedek dosyası okunamadı: ' + err.message : 'Failed to import backup: ' + err.message);
               } else {
@@ -6550,7 +6589,10 @@
 
         fileInput?.addEventListener('change', () => {
           const file = fileInput.files?.[0];
-          if (file) processFile(file);
+          if (file) {
+            processFile(file);
+            fileInput.value = '';
+          }
         });
 
         const parsePasteBtn = modal.querySelector('#sdsPasteParseBtn');
@@ -6810,7 +6852,7 @@
               if (sdsModalOpen) {
                 openSdsModal();
                 if (parsedCurrentChemical) {
-                  renderSdsPreview(parsedCurrentChemical);
+                  renderSdsReviewForm(parsedCurrentChemical, !!parsedCurrentChemical.is_custom);
                 }
               }
             }
@@ -7005,9 +7047,9 @@
               // 2. Güvenli önbellek yenileme (yeni dosyayı çek, sonra cache'e yaz - eski cache'i ASLA önceden silme)
               if ('caches' in window) {
                 const cacheNames = await caches.keys();
-                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.8.0';
+                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.8.1';
                 const cache = await caches.open(activeCacheName);
-                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg', './icons/qr-code.svg?v=1.8.0'];
+                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg', './icons/qr-code.svg?v=1.8.1'];
                 await Promise.allSettled(urlsToUpdate.map(async (url) => {
                   const res = await fetch(url, { cache: 'reload' });
                   if (res && res.ok) {
@@ -7187,9 +7229,9 @@
       toast.className = 'pwa-update-toast';
       const lang = (window.__msdsState && window.__msdsState.language) || localStorage.getItem('msds-language') || 'tr';
       const titles = {
-        tr: 'Yeni Sürüm Hazır (v1.8.0)',
-        en: 'New Version Ready (v1.8.0)',
-        de: 'Neue Version Bereit (v1.8.0)'
+        tr: 'Yeni Sürüm Hazır (v1.8.1)',
+        en: 'New Version Ready (v1.8.1)',
+        de: 'Neue Version Bereit (v1.8.1)'
       };
       const descs = {
         tr: 'Güncel güvenlik protokollerini yüklemek için dokunun.',
@@ -7216,7 +7258,7 @@
         if ('caches' in window) {
           try {
             const keys = await caches.keys();
-            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.8.0').map(k => caches.delete(k)));
+            await Promise.all(keys.filter(k => k !== 'msds-lite-v1.8.1').map(k => caches.delete(k)));
           } catch (e) {}
         }
         window.location.reload(true);

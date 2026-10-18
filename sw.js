@@ -1,4 +1,4 @@
-const CACHE_NAME = 'msds-lite-v1.8.0';
+const CACHE_NAME = 'msds-lite-v1.8.1';
 const APP_SHELL = [
   './',
   './index.html',
@@ -9,7 +9,7 @@ const APP_SHELL = [
   './icons/icon.svg',
   './icons/icon-maskable.svg',
   './icons/qr-code.svg',
-  './icons/qr-code.svg?v=1.8.0',
+  './icons/qr-code.svg?v=1.8.1',
   './vendor/pdf.min.js',
   './vendor/pdf.worker.min.js',
   './samples/sample_1_polipol_3401_tr.pdf',
@@ -68,7 +68,8 @@ self.addEventListener('fetch', (event) => {
       if (cached) {
         return cached;
       }
-      return (await networkFetch) || (await caches.match('./index.html')) || (await caches.match('./'));
+      const fallback = (await networkFetch) || (await caches.match('./index.html')) || (await caches.match('./'));
+      return fallback || new Response('Offline', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
     }
 
     // 2. Static Assets (Cache-First)
@@ -84,7 +85,8 @@ self.addEventListener('fetch', (event) => {
       }
       return response;
     } catch (err) {
-      return null;
+      // Return a valid offline Response fallback to prevent TypeError: The provided value is not a Response
+      return new Response('', { status: 408, statusText: 'Offline Network Request Failed' });
     }
   })());
 });
