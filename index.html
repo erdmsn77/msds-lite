@@ -4689,30 +4689,40 @@
       };
 
       const t = (key) => (translations[state.language] && translations[state.language][key]) || key;
-      const escape = (val) => String(val || '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[c]));
-      const getL = (val) => (typeof val === 'object' && val !== null && !Array.isArray(val)) ? (val[state.language] || val.tr || '') : (val || '');
+      const escape = (val) => (val == null ? '' : String(val)).replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' }[c]));
+      const getL = (val) => (typeof val === 'object' && val !== null && !Array.isArray(val)) ? (val[state.language] ?? val.tr ?? '') : (val ?? '');
 
       function renderGhsDiamond(code, sizeClass = 'ghs-diamond-mini') {
         const meta = GHS_METADATA[code] || GHS_METADATA.GHS07;
         return `<svg viewBox="0 0 100 100" class="${sizeClass}" aria-label="${escape(code)}"><polygon points="50,6 94,50 50,94 6,50" fill="#ffffff" stroke="#ef4444" stroke-width="7" stroke-linejoin="round"/>${meta.svg}</svg>`;
       }
 
+      function normStr(str) {
+        return String(str || '')
+          .replace(/İ/g, 'i')
+          .replace(/I/g, 'i')
+          .replace(/ı/g, 'i')
+          .toLocaleLowerCase('tr-TR')
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '');
+      }
+
       function getFilteredChemicals() {
-        const q = (state.searchQuery || '').trim().toLowerCase();
+        const q = normStr(state.searchQuery).trim();
         return state.chemicals.filter((chem) => {
           const matchCat = state.category === 'all' || (state.category === 'custom' ? !!chem.is_custom : chem.category === state.category);
           if (!matchCat) return false;
           if (!q) return true;
 
-          const nameTr = (chem.name?.tr || chem.name || '').toLowerCase();
-          const nameEn = (chem.name?.en || '').toLowerCase();
-          const nameDe = (chem.name?.de || '').toLowerCase();
-          const chemNameTr = (chem.chemical_name?.tr || chem.chemical_name || '').toLowerCase();
-          const chemNameEn = (chem.chemical_name?.en || '').toLowerCase();
-          const chemNameDe = (chem.chemical_name?.de || '').toLowerCase();
-          const cas = (chem.cas || '').toLowerCase();
-          const category = (chem.category || '').toLowerCase();
-          const ghs = (chem.ghs_codes || []).join(' ').toLowerCase();
+          const nameTr = normStr(chem.name?.tr || chem.name);
+          const nameEn = normStr(chem.name?.en);
+          const nameDe = normStr(chem.name?.de);
+          const chemNameTr = normStr(chem.chemical_name?.tr || chem.chemical_name);
+          const chemNameEn = normStr(chem.chemical_name?.en);
+          const chemNameDe = normStr(chem.chemical_name?.de);
+          const cas = normStr(chem.cas);
+          const category = normStr(chem.category);
+          const ghs = normStr((chem.ghs_codes || []).join(' '));
 
           return nameTr.includes(q) ||
                  nameEn.includes(q) ||
@@ -4798,14 +4808,20 @@
 
                 <div class="card-hazard-row">
                   <div class="card-ghs-diamonds">${ghsMiniHtml}</div>
-                  <div class="card-hazard-text">${escape(getL(chem.hazard_statement))}</div>
+                  <div class="card-hazard-text">${escape(getL(chem.hazard_statement) || (chem.signal_word ? `${getL(chem.signal_word)} (${(chem.ghs_codes || []).join(', ')})` : ''))}</div>
                 </div>
 
-                <div class="card-emergency-badges">
-                  <span class="badge-pill badge-fire">${escape(getL(chem.badges?.fire))}</span>
-                  <span class="badge-pill badge-health">${escape(getL(chem.badges?.health))}</span>
-                  <span class="badge-pill badge-env">${escape(getL(chem.badges?.environment))}</span>
-                </div>
+                ${(() => {
+                  const fireBadge = getL(chem.badges?.fire);
+                  const healthBadge = getL(chem.badges?.health);
+                  const envBadge = getL(chem.badges?.environment);
+                  const pills = [
+                    fireBadge ? `<span class="badge-pill badge-fire">${escape(fireBadge)}</span>` : '',
+                    healthBadge ? `<span class="badge-pill badge-health">${escape(healthBadge)}</span>` : '',
+                    envBadge ? `<span class="badge-pill badge-env">${escape(envBadge)}</span>` : ''
+                  ].filter(Boolean);
+                  return pills.length > 0 ? `<div class="card-emergency-badges">${pills.join('')}</div>` : '';
+                })()}
 
                 <div class="card-footer-row">
                   <span class="card-timer-badge"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>${t('atLeast')} ${chem.emergency_timer_min || 15} ${t('minutes')} ${t('emergencyWashShort')}</span>
@@ -4980,8 +4996,9 @@
         }).join('');
 
         const gloves = chem.ppe ? chem.ppe.gloves : { latex: false, nitrile: true, butyl: true, neoprene: true, warning: '' };
-        const sourceLinkHtml = chem.source_url 
-          ? `<a href="${escape(chem.source_url)}" class="source-link-btn" target="_blank" rel="noopener noreferrer" style="color:var(--marine-orange); font-weight:700; text-decoration:none;">${t('openSource')} ↗</a>`
+        const safeSourceUrl = (chem.source_url && /^https?:\/\//i.test(chem.source_url)) ? chem.source_url : '';
+        const sourceLinkHtml = safeSourceUrl 
+          ? `<a href="${escape(safeSourceUrl)}" class="source-link-btn" target="_blank" rel="noopener noreferrer" style="color:var(--marine-orange); font-weight:700; text-decoration:none;">${t('openSource')} ↗</a>`
           : `<span style="color:var(--text-dim);">${t('canonicalSource')}</span>`;
 
         const isDanger = (chem.signal_word && (chem.signal_word.tr === 'TEHLİKE' || chem.signal_word === 'TEHLİKE'));
@@ -5196,11 +5213,11 @@
               </div>
               <div style="font-size:11px; color:var(--text-muted); line-height:1.4;">${t('customChemInfo')}</div>
               <div style="display:flex; gap:8px; justify-content:flex-end; flex-wrap:wrap;">
-                <button type="button" class="sds-edit-btn" id="sdsEditBtn" data-id="${chem.id}" style="background:var(--bg-surface); border:1px solid var(--border-subtle); color:var(--text-main); border-radius:6px; padding:6px 14px; font-size:11.5px; font-weight:750; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
+                <button type="button" class="sds-edit-btn" id="sdsEditBtn" data-id="${escape(chem.id)}" style="background:var(--bg-surface); border:1px solid var(--border-subtle); color:var(--text-main); border-radius:6px; padding:6px 14px; font-size:11.5px; font-weight:750; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
                   <span>${t('btnEditRecord')}</span>
                 </button>
-                <button type="button" class="sds-delete-btn" id="sdsDeleteBtn" data-id="${chem.id}" style="background:transparent; border:1px solid #ef4444; color:#ef4444; border-radius:6px; padding:6px 14px; font-size:11.5px; font-weight:750; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
+                <button type="button" class="sds-delete-btn" id="sdsDeleteBtn" data-id="${escape(chem.id)}" style="background:transparent; border:1px solid #ef4444; color:#ef4444; border-radius:6px; padding:6px 14px; font-size:11.5px; font-weight:750; cursor:pointer; display:inline-flex; align-items:center; gap:5px;">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
                   <span>${t('btnDeleteRecord')}</span>
                 </button>
@@ -5469,7 +5486,12 @@
           chem.is_custom = true;
           chem.verified_at = chem.verified_at || new Date().toISOString().split('T')[0];
           existing.unshift(chem);
-          localStorage.setItem('msds-custom-chemicals', JSON.stringify(existing));
+          try {
+            localStorage.setItem('msds-custom-chemicals', JSON.stringify(existing));
+          } catch (storageErr) {
+            alert(state.language === 'tr' ? 'Hata: Tarayıcı yerel hafızası dolu, kimyasal kaydedilemedi!' : 'Error: Browser storage full, could not save chemical!');
+            return;
+          }
           const base = (state.chemicals || fallbackChemicals).filter(c => !existing.some(e => e.id === c.id));
           state.chemicals = [...existing, ...base];
           renderShell();
@@ -5576,19 +5598,55 @@
 
       function importCustomBackup(file, onComplete) {
         if (!file) return;
+        if (file.size > 2 * 1024 * 1024) {
+          if (onComplete) onComplete(new Error(state.language === 'tr' ? 'Yedek dosyası çok büyük (maksimum 2MB).' : 'Backup file too large (maximum 2MB).'), 0);
+          return;
+        }
         const reader = new FileReader();
         reader.onload = (e) => {
           try {
-            const parsed = JSON.parse(e.target.result);
-            if (!Array.isArray(parsed)) {
-              throw new Error('Geçersiz yedek formatı: Dizi bekleniyor.');
+            const rawParsed = JSON.parse(e.target.result);
+            if (!Array.isArray(rawParsed)) {
+              throw new Error(state.language === 'tr' ? 'Geçersiz yedek formatı: Dizi bekleniyor.' : 'Invalid backup format: Array expected.');
+            }
+            if (rawParsed.length > 100) {
+              throw new Error(state.language === 'tr' ? 'Yedek dosyasında en fazla 100 kayıt bulunabilir.' : 'Backup file cannot exceed 100 records.');
             }
             let addedCount = 0;
             const existing = loadCustomChemicals();
             const existingIds = new Set(existing.map(c => c.id));
-            for (const item of parsed) {
-              if (item && item.id && item.name) {
+
+            for (const item of rawParsed) {
+              if (item && typeof item === 'object' && !Array.isArray(item)) {
+                // Neutralize Prototype Pollution
+                delete item['__proto__'];
+                delete item['constructor'];
+                delete item['prototype'];
+
+                // Sanitize and validate ID
+                const rawId = String(item.id || '').trim().replace(/[^a-zA-Z0-9_-]/g, '-').slice(0, 64);
+                if (!rawId || rawId.length < 2) continue;
+
+                // Validate Name
+                const rawName = typeof item.name === 'object' ? getL(item.name) : String(item.name || '').trim();
+                if (!rawName) continue;
+
+                // Strip unverified or non-http source URLs
+                if (item.source_url && !/^https?:\/\//i.test(item.source_url)) {
+                  delete item.source_url;
+                }
+
+                // Sanitize GHS codes
+                if (Array.isArray(item.ghs_codes)) {
+                  item.ghs_codes = item.ghs_codes.filter(c => typeof c === 'string' && /^GHS0[1-9]$/i.test(c)).map(c => c.toUpperCase());
+                } else {
+                  item.ghs_codes = ['GHS07'];
+                }
+
+                item.id = rawId;
                 item.is_custom = true;
+                item.verified_at = item.verified_at || new Date().toISOString().split('T')[0];
+
                 if (!existingIds.has(item.id)) {
                   existing.push(item);
                   existingIds.add(item.id);
@@ -5596,7 +5654,11 @@
                 }
               }
             }
-            localStorage.setItem('msds-custom-chemicals', JSON.stringify(existing));
+            try {
+              localStorage.setItem('msds-custom-chemicals', JSON.stringify(existing));
+            } catch (storageErr) {
+              throw new Error(state.language === 'tr' ? 'Tarayıcı depolama alanı yetersiz (Kota aşıldı).' : 'Browser storage quota exceeded.');
+            }
             const base = (state.chemicals || fallbackChemicals).filter(c => !existing.some(e => e.id === c.id));
             state.chemicals = [...existing, ...base];
             renderShell();
@@ -5946,6 +6008,28 @@
             en: `User Parsed (${validation.count}/16 Sections Verified)`,
             de: `Vom Benutzer analysiert (${validation.count}/16 Abschnitte verifiziert)`
           },
+          hazard_statement: {
+            tr: `Sinyal: ${signalWordTr} (${ghsCodes.join(', ')})`,
+            en: `Signal: ${signalWordEn} (${ghsCodes.join(', ')})`,
+            de: `Signal: ${signalWordDe} (${ghsCodes.join(', ')})`
+          },
+          badges: {
+            fire: {
+              tr: flashVal ? `Parlama: ${flashVal}` : (ghsCodes.includes('GHS02') ? 'Alevlenir Madde' : ''),
+              en: flashVal ? `Flash: ${flashVal}` : (ghsCodes.includes('GHS02') ? 'Flammable' : ''),
+              de: flashVal ? `Flammpunkt: ${flashVal}` : (ghsCodes.includes('GHS02') ? 'Entzündbar' : '')
+            },
+            health: {
+              tr: ghsCodes.includes('GHS06') ? 'Akut Toksisite (Zehirli)' : (ghsCodes.includes('GHS05') ? 'Ciddi Korozif / Yanık Riski' : (ghsCodes.includes('GHS08') ? 'Sağlık Tehlikesi' : 'Zararlı Madde')),
+              en: ghsCodes.includes('GHS06') ? 'Acute Toxicity' : (ghsCodes.includes('GHS05') ? 'Severe Corrosive Risk' : (ghsCodes.includes('GHS08') ? 'Health Hazard' : 'Harmful Substance')),
+              de: ghsCodes.includes('GHS06') ? 'Akute Toxizität' : (ghsCodes.includes('GHS05') ? 'Schwere Verätzungsgefahr' : (ghsCodes.includes('GHS08') ? 'Gesundheitsgefahr' : 'Gesundheitsschädlich'))
+            },
+            environment: {
+              tr: ghsCodes.includes('GHS09') ? 'Sucul Ortam İçin Zararlı' : '',
+              en: ghsCodes.includes('GHS09') ? 'Hazardous to Environment' : '',
+              de: ghsCodes.includes('GHS09') ? 'Umweltgefährdend' : ''
+            }
+          },
           verified_at: new Date().toISOString().split('T')[0]
         };
       }
@@ -6257,6 +6341,28 @@
             storage: {
               conditions: { tr: storVal, en: storVal, de: storVal },
               incompatible: { tr: incompVal, en: incompVal, de: incompVal }
+            },
+            hazard_statement: {
+              tr: `Sinyal: ${sigObj.tr} (${selectedGhs.join(', ')})`,
+              en: `Signal: ${sigObj.en} (${selectedGhs.join(', ')})`,
+              de: `Signal: ${sigObj.de} (${selectedGhs.join(', ')})`
+            },
+            badges: {
+              fire: {
+                tr: flashVal ? `Parlama: ${flashVal}` : (selectedGhs.includes('GHS02') ? 'Alevlenir Madde' : ''),
+                en: flashVal ? `Flash: ${flashVal}` : (selectedGhs.includes('GHS02') ? 'Flammable' : ''),
+                de: flashVal ? `Flammpunkt: ${flashVal}` : (selectedGhs.includes('GHS02') ? 'Entzündbar' : '')
+              },
+              health: {
+                tr: selectedGhs.includes('GHS06') ? 'Akut Toksisite (Zehirli)' : (selectedGhs.includes('GHS05') ? 'Ciddi Korozif / Yanık Riski' : (selectedGhs.includes('GHS08') ? 'Sağlık Tehlikesi' : 'Zararlı Madde')),
+                en: selectedGhs.includes('GHS06') ? 'Acute Toxicity' : (selectedGhs.includes('GHS05') ? 'Severe Corrosive Risk' : (selectedGhs.includes('GHS08') ? 'Health Hazard' : 'Harmful Substance')),
+                de: selectedGhs.includes('GHS06') ? 'Akute Toxizität' : (selectedGhs.includes('GHS05') ? 'Schwere Verätzungsgefahr' : (selectedGhs.includes('GHS08') ? 'Gesundheitsgefahr' : 'Gesundheitsschädlich'))
+              },
+              environment: {
+                tr: selectedGhs.includes('GHS09') ? 'Sucul Ortam İçin Zararlı' : '',
+                en: selectedGhs.includes('GHS09') ? 'Hazardous to Environment' : '',
+                de: selectedGhs.includes('GHS09') ? 'Umweltgefährdend' : ''
+              }
             }
           };
         }
@@ -7116,6 +7222,29 @@
         window.location.reload(true);
       });
     }
+
+    if (typeof window !== 'undefined') {
+      window.__MSDS__ = {
+        state,
+        escape,
+        getL,
+        parseSdsText,
+        sliceSdsSections,
+        validateSdsDocument,
+        saveCustomChemical,
+        deleteCustomChemical,
+        loadCustomChemicals,
+        importCustomBackup,
+        renderChemicalList,
+        renderDrawerContent,
+        renderSdsReviewForm,
+        openDrawer,
+        closeDrawer,
+        openSdsModal,
+        closeSdsModal
+      };
+    }
+  })();
   </script>
 </body>
 </html>
