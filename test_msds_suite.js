@@ -1,15 +1,17 @@
 /**
- * MSDS-Lite Automated Test Suite (v1.8.0)
+ * MSDS-Lite Automated Test Suite (v1.8.2)
  * Tests:
  * 1. Bug & Null-Safety Tests
  * 2. Exploit & Vulnerability Tests (XSS, Prototype Pollution, ReDoS)
  * 3. Read / Write / Edit (CRUD) Lifecycle Tests
  * 4. SDS Gatekeeper & Parser Verification
+ * 5. Regression, Syntax & Edge-Case Bug Hunter Tests
  */
 
 const fs = require('fs');
 const path = require('path');
 const assert = require('assert');
+const vm = require('vm');
 
 console.log('====================================================');
 console.log('🧪 MSDS-LITE COMPREHENSIVE AUTOMATED TEST SUITE');
@@ -464,6 +466,28 @@ test('Regex literal audit: zero double-backslash whitespace/digit escapes in ind
     }
   });
   assert.strictEqual(badRegexLines.length, 0, `Found broken double-backslash escapes in regex literals: \n${badRegexLines.join('\n')}`);
+});
+
+test('Syntax & compilation audit: all inline scripts in index.html compile with zero syntax errors', () => {
+  const scriptRegex = /<script\b[^>]*>([\s\S]*?)<\/script>/gi;
+  let match;
+  let scriptIndex = 0;
+  while ((match = scriptRegex.exec(htmlContent)) !== null) {
+    const code = match[1].trim();
+    if (!code) continue;
+    assert.doesNotThrow(() => {
+      new vm.Script(code, { filename: `index.html[script-${scriptIndex}]` });
+    }, `Inline script #${scriptIndex} failed to compile in V8 vm.Script`);
+    scriptIndex++;
+  }
+  assert.ok(scriptIndex >= 2, 'Must have validated at least 2 inline scripts');
+});
+
+test('Syntax & compilation audit: sw.js compiles with zero syntax errors', () => {
+  const swContent = fs.readFileSync(path.join(__dirname, 'sw.js'), 'utf-8');
+  assert.doesNotThrow(() => {
+    new vm.Script(swContent, { filename: 'sw.js' });
+  }, 'sw.js failed to compile in V8 vm.Script');
 });
 
 // ----------------------------------------------------
