@@ -68,9 +68,8 @@ Durch Antippen einer Gefahrstoffkarte öffnet sich ein Schiebepanel mit 4 Notfal
 * **Werkstatt- und Nachtmodus:** Ein kontrastreicher Tageslichtmodus (`#F8FAFC` Hintergrund mit `#0F172A` Text) garantiert beste Lesbarkeit bei grellem Sonnenlicht in offenen Werfthallen. Umschaltbar auf einen augenschonenden Dunkelmodus für Nachtschichten (gespeichert im lokalen Speicher).
 * **Native Touch- und Wischgesten:** Im Vollbild-PWA-Modus schließt eine Wischbewegung vom Bildschirmrand oder die Zurück-Taste des Telefons sanft das Notfallpanel, anstatt die Anwendung zu beenden (`history.pushState` und `popstate`).
 * **Dreisprachig (TR / EN / DE):** Vollständige Lokalisierung für Türkisch, Englisch und Deutsch, abgestimmt auf die Fachterminologie in Werften und im europäischen Komposit-Bootsbau.
-* **Null externe Abhängigkeiten (Pure Vanilla JS und CSS):** Keinerlei Fremdbibliotheken oder Frameworks (weder Tailwind noch Bootstrap, React oder Vue). Unter 150 KB Gesamtgröße für blitzschnellen Start auch auf älteren Werkstatt-Smartphones.
+* **Keine schweren Framework-Abhängigkeiten (Pure Vanilla JS und CSS):** Keinerlei Fremdbibliotheken oder Frameworks (weder Tailwind noch Bootstrap, React oder Vue). Extrem schlanke und optimierte native Architektur für blitzschnellen Start auch auf älteren Werkstatt-Smartphones.
 * **Hundert Prozent Offline-fähig (PWA):** Service-Worker-basiert. Funktioniert zuverlässig in Kellern, abgeschirmten Hallen oder auf See ohne Mobilfunkempfang.
-* **Messestand- und Schnellinstallationsmodus (QR-Code und Projektprofil):** Speziell für Fachmessen, Werftbesuche und Hochschulpräsentationen entwickeltes Profilmodal mit integriertem Offline-SVG-QR-Code, mit dem Besucher die App direkt auf ihr Smartphone laden können.
 * **Direktverlinkung (Deep-Linking):** Stoff-IDs können direkt an die URL angehängt werden (beispielsweise `/#mek-p`), ideal für QR-Code-Aufkleber an Chemikalienschränken.
 
 ---
@@ -83,15 +82,15 @@ Die 11 gefährlichsten und häufigsten Arbeitsstoffe in modernen Komposit-Werkst
 |---|---|---|---|---|
 | **MEK-P** (Methylethylketonperoxid) | Peroxid | 1338-23-4 | **KRITISCH** | Niemals direkt mit Kobaltbeschleuniger mischen (Explosionsgefahr). Gefahr dauerhaften Sehverlusts bei Augenkontakt; mindestens 15 Minuten ununterbrochen drucklos spülen. |
 | **Kobaltnaphthenat** (6%) | Beschleuniger | 61789-51-3 | **KRITISCH** | In separatem Schrank getrennt von Peroxiden lagern. Starker Hautsensibilisator; erfordert mindestens 20 Minuten Spüldauer. |
-| **Orthophthalsäure-Polyesterharz** | Harz | 25032-83-3 | **HOCH** | Enthält Styrolmonomer. Niemals Aceton zur Hautreinigung verwenden (Aceton transportiert Gefahrstoffe tief in die Poren). |
-| **Vinylesterharz** | Harz | 36425-15-7 | **HOCH** | Sehr reaktionsfreudig. A2-Atemschutzfilter und chemikalienbeständige Nitrilhandschuhe sind zwingend erforderlich. |
+| **Orthophthalsäure-Polyesterharz** | Harz | 100-42-5 (Styrol) / 25035-68-2 | **HOCH** | Enthält Styrolmonomer. Niemals Aceton zur Hautreinigung verwenden (Aceton transportiert Gefahrstoffe tief in die Poren). |
+| **Vinylesterharz** | Harz | 100-42-5 (Styrol) / 36425-15-7 | **HOCH** | Sehr reaktionsfreudig. A2-Atemschutzfilter und chemikalienbeständige Nitrilhandschuhe sind zwingend erforderlich. |
 | **Epoxidharz (DGEBA)** | Harz | 25068-38-6 | **HOCH** | Stark hautreizend; wiederholter Kontakt führt zu chronischer Kontaktdermatitis. Latexhandschuhe sind durchlässig; nur Nitril verwenden. |
-| **Epoxidhärter (IPDA)** | Härter | 2855-13-2 | **KRITISCH** | Ätzendes aliphatisches Amin. Größere Mischmengen in tiefen Behältern führen zu gefährlicher exothermer Selbsterhitzung (Hitze und Rauchentwicklung). |
-| **Technisches Aceton** | Lösungsmittel | 67-64-1 | **MITTEL** | Extrem niedriger Flammpunkt (-17°C). Strikt verboten zur Hautreinigung; ausschließlich zum Auswaschen von Pinseln und Werkzeugen bestimmt. |
-| **Kohlefasern / CFK-Staub** | Staub & Fasern | 7440-44-0 | **HOCH** | Mikroskopische Fasern zerkratzen die Hornhaut bei Augenreiben. P3/FFP3-Partikelmaske Pflicht. Staub stets absaugen, niemals trocken fegen. |
-| **Gelcoat (Isophthalsäure)** | Harz | 25032-83-3 | **HOCH** | Enthält Pigmente und Styrol. Beim Spritzauftrag ist eine Vollmaske mit kombiniertem A2P3-Filter vorgeschrieben. |
-| **PVA-Folientrennmittel** | Trennmittel | 9002-89-5 | **MITTEL** | Alkoholträger kann entzündbare Dämpfe erzeugen. Lässt sich mit warmem Wasser rückstandslos von der Haut abwaschen. |
-| **Trennwachs / Carnaubawachs** | Trennmittel | 64742-88-7 | **MITTEL** | Enthält Erdöldestillate. Beim Polieren großer Bootsrümpfe stets für ausreichende Querlüftung sorgen. |
+| **Epoxidhärter (IPDA)** | Härter | 2855-13-2 (IPDA) / 9046-10-0 | **KRITISCH** | Ätzendes aliphatisches Amin. Größere Mischmengen in tiefen Behältern führen zu gefährlicher exothermer Selbsterhitzung (Hitze und Rauchentwicklung). |
+| **Technisches Aceton** | Lösungsmittel | 67-64-1 | **MITTEL** | Extrem niedriger Flammpunkt (-17°C). Strikt verboten zur Hautreinigung; ausschließlich zum Auswaschen von Pinseln und Werkzeugen bestimmt. Butylkautschuk-Handschuhe erforderlich. |
+| **Kohlefasern / CFK-Staub** | Staub & Fasern | 7440-44-0 (Kohlenstoff) | **HOCH** | Mikroskopische Fasern zerkratzen die Hornhaut bei Augenreiben. P3/FFP3-Partikelmaske Pflicht. Staub stets absaugen, niemals trocken fegen. |
+| **Gelcoat (Isophthalsäure)** | Harz | 100-42-5 (Styrol) | **HOCH** | Enthält Pigmente und Styrol. Beim Spritzauftrag ist eine Vollmaske mit kombiniertem A2P3-Filter vorgeschrieben. |
+| **PVA-Folientrennmittel** | Trennmittel | 9002-89-5 (PVA) / 67-63-0 (IPA) | **MITTEL** | Alkoholträger kann entzündbare Dämpfe erzeugen. Lässt sich mit warmem Wasser rückstandslos von der Haut abwaschen. |
+| **Trennwachs / Carnaubawachs** | Trennmittel | 8015-86-9 (Carnauba) / 64742-48-9 | **MITTEL** | Enthält Erdöldestillate und Carnaubawachs. Beim Polieren großer Bootsrümpfe stets für ausreichende Querlüftung sorgen. |EL** | Enthält Erdöldestillate. Beim Polieren großer Bootsrümpfe stets für ausreichende Querlüftung sorgen. |
 
 ---
 

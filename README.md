@@ -68,9 +68,8 @@ Karta dokunulduğunda sağdan kayarak açılan, sekmelerle hızlı geçiş yapı
 * **Saha ve Gece Teması:** Parlak güneş ışığı alan açık hangar ve tersane ortamlarında metinlerin net okunabilmesi için açık gri/beyaz zemin (`#F8FAFC`) ile koyu arduvaz metin (`#0F172A`) kontrastı uygulandı. Gece vardiyaları için tek dokunuşla koyu temaya geçilebilir (seçim cihaz hafızasında saklanır).
 * **Mobil Geri Gitme ve Kaydırma Desteği (Native Gesture UX):** Mobil tarayıcılarda veya tam ekran PWA modunda detay çekmecesi açıkken ekranın kenarından geri kaydırıldığında veya cihazın geri tuşuna basıldığında uygulamanın kapanması engellenmiştir. Tarayıcı geçmişi (`history.pushState` ve `popstate`) ve dokunmatik sağa kaydırma hareketiyle çekmece yumuşakça kapanır ve ana menüye dönülür.
 * **Üç Dilli Altyapı (TR / EN / DE):** Türkçe, İngilizce ve Almanca dil desteği. Türkiye'deki tersanelerin yanı sıra Avrupa'daki kompozit ve yat imalatı staj ve kariyer hedefleri gözetilerek terminolojiye uygun olarak eksiksiz çevrildi.
-* **Sıfır Dış Bağımlılık (Pure Vanilla JS ve CSS):** Hiçbir harici CSS kütüphanesi (Bootstrap, Tailwind vb.) veya JavaScript çatısı (React, Vue vb.) kullanılmamıştır. 150 KB'ın altındaki toplam boyutuyla en eski veya zayıf donanımlı atölye telefonlarında bile anında açılır.
+* **Sıfır Ağır Framework Bağımlılığı (Pure Vanilla JS ve CSS):** Hiçbir harici CSS kütüphanesi (Bootstrap, Tailwind vb.) veya JavaScript çatısı (React, Vue vb.) kullanılmamıştır. Optimize edilmiş yerel mimarisiyle en eski veya zayıf donanımlı atölye telefonlarında bile anında açılır.
 * **Yüzde Yüz Çevrimdışı Çalışma (PWA):** Service Worker altyapısı sayesinde uygulama bir kez yüklendikten sonra bodrum katında, hangar içinde veya açık denizde hücresel veri olmadan tam fonksiyonla çalışır.
-* **Fuar ve Stand Hızlı Erişim Modu (QR Kod ve Künye):** Sektörel fuarlar, atölye ziyaretleri ve üniversite tanıtım stantları için geliştirilen tek dokunuşlu künye modalı ve yerel SVG QR kodu sayesinde ziyaretçiler kamerayla okutup uygulamayı anında telefonlarına yükleyebilir.
 * **Doğrudan Bağlantı (Deep-Linking):** URL sonuna kimyasal kimliği eklenerek (örneğin `/#mek-p`) karekod veya doğrudan bağlantı üzerinden ilgili kimyasal kartı açtırılabilir.
 
 ---
@@ -83,15 +82,15 @@ Atölyelerde en sık karşılaşılan ve kaza riski taşıyan 11 temel kimyasal 
 |---|---|---|---|---|
 | **MEK-P** (Metil Etil Keton Peroksit) | Peroksit | 1338-23-4 | **KRİTİK** | Kobalt hızlandırıcı ile doğrudan karıştırılamaz (şiddetli patlama riski). Göze temasta kalıcı görme kaybı riski; tazyiksiz suyla en az 15 dk kesintisiz yıkama. |
 | **Kobalt Naftenat** (%6) | Hızlandırıcı | 61789-51-3 | **KRİTİK** | Peroksitlerden ayrı dolapta tutulmalıdır. Cilt hassaslaştırıcıdır; en az 20 dk yıkama gerektirir. |
-| **Ortoftalik Polyester Reçine** | Reçine | 25032-83-3 | **YÜKSEK** | Stiren monomeri içerir. Cilde bulaştığında aseton ile temizlenmemelidir (aseton kimyasalı gözeneklere iter). |
-| **Vinilester Reçine** | Reçine | 36425-15-7 | **YÜKSEK** | Yüksek reaktiviteye sahiptir. A2 organik buhar filtresi ve nitril eldiven zorunludur. |
+| **Ortoftalik Polyester Reçine** | Reçine | 100-42-5 (Stiren) / 25035-68-2 | **YÜKSEK** | Stiren monomeri içerir. Cilde bulaştığında aseton ile temizlenmemelidir (aseton kimyasalı gözeneklere iter). |
+| **Vinilester Reçine** | Reçine | 100-42-5 (Stiren) / 36425-15-7 | **YÜKSEK** | Yüksek reaktiviteye sahiptir. A2 organik buhar filtresi ve nitril eldiven zorunludur. |
 | **Epoksi Reçine (DGEBA)** | Reçine | 25068-38-6 | **YÜKSEK** | Güçlü cilt hassaslaştırıcıdır; tekrarlayan temas kalıcı mesleki dermatite yol açar. Lateks eldiven geçirgendir, nitril kullanılmalıdır. |
-| **Epoksi Sertleştirici (IPDA)** | Sertleştirici | 2855-13-2 | **KRİTİK** | Aşındırıcı alifatik amin. Derin kapta fazla miktarda karıştırıldığında kontrolsüz egzotermik termal kaçak (aşırı ısınma ve duman) oluşturur. |
-| **Teknik Aseton** | Solvent | 67-64-1 | **ORTA** | Çok düşük parlama noktası (-17°C). Cilt temizliğinde kesinlikle kullanılmamalı; yalnızca alet ve fırça yıkamada kullanılmalıdır. |
-| **Karbon Elyaf Tozu** | Toz & Elyaf | 7440-44-0 | **YÜKSEK** | Mekanik kesim/zımparada mikro lifler korneayı çizer (göz ovuşturulmamalıdır). P3/FFP3 partikül maskesi şarttır. Toz süpürülmemeli, vakumlanmalıdır. |
-| **Gelcoat (İzoftalik)** | Reçine | 25032-83-3 | **YÜKSEK** | Pigment ve stiren içerir. Tabanca ile püskürtme sırasında A2P3 kombine filtreli tam yüz maskesi kullanılmalıdır. |
-| **PVA Ayırıcı Ajan** | Kalıp Ayırıcı | 9002-89-5 | **ORTA** | Alkol taşıyıcı nedeniyle yanıcı buhar üretebilir. Bol su ile yıkanarak ciltten kolayca uzaklaştırılır. |
-| **Kalıp Vaksu / Wax** | Kalıp Ayırıcı | 64742-88-7 | **ORTA** | Petrol distilatı ve karnauba mumu içerir. Geniş yüzeylere sürülürken yeterli havalandırma sağlanmalıdır. |
+| **Epoksi Sertleştirici (IPDA)** | Sertleştirici | 2855-13-2 (IPDA) / 9046-10-0 | **KRİTİK** | Aşındırıcı alifatik amin. Derin kapta fazla miktarda karıştırıldığında kontrolsüz egzotermik termal kaçak (aşırı ısınma ve duman) oluşturur. |
+| **Teknik Aseton** | Solvent | 67-64-1 | **ORTA** | Çok düşük parlama noktası (-17°C). Cilt temizliğinde kesinlikle kullanılmamalı; yalnızca alet ve fırça yıkamada kullanılmalıdır. Bütil kauçuk eldiven gerektirir. |
+| **Karbon Elyaf Tozu** | Toz & Elyaf | 7440-44-0 (Karbon) | **YÜKSEK** | Mekanik kesim/zımparada mikro lifler korneayı çizer (göz ovuşturulmamalıdır). P3/FFP3 partikül maskesi şarttır. Toz süpürülmemeli, vakumlanmalıdır. |
+| **Gelcoat (İzoftalik)** | Reçine | 100-42-5 (Stiren) | **YÜKSEK** | Pigment ve stiren içerir. Tabanca ile püskürtme sırasında A2P3 kombine filtreli tam yüz maskesi kullanılmalıdır. |
+| **PVA Ayırıcı Ajan** | Kalıp Ayırıcı | 9002-89-5 (PVA) / 67-63-0 (İPA) | **ORTA** | Alkol taşıyıcı nedeniyle yanıcı buhar üretebilir. Bol su ile yıkanarak ciltten kolayca uzaklaştırılır. |
+| **Kalıp Vaksu / Wax** | Kalıp Ayırıcı | 8015-86-9 (Karnauba) / 64742-48-9 | **ORTA** | Petrol distilatı ve karnauba mumu içerir. Geniş yüzeylere sürülürken yeterli havalandırma sağlanmalıdır. |
 
 ---
 

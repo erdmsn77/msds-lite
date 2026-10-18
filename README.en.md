@@ -68,9 +68,8 @@ Tapping any chemical card opens a slide-in drawer organized into 4 critical emer
 * **Field and Night Themes:** A high-contrast daylight theme (`#F8FAFC` background with `#0F172A` text) ensures immediate readability under direct sunlight in open shipyard bays. A dedicated dark theme is available for evening shifts, persisted in local storage.
 * **Native Mobile Gesture Navigation:** In fullscreen PWA or mobile browsers, swiping back from the edge or using device hardware back buttons smoothly closes the drawer rather than exiting the application (powered by `history.pushState`, `popstate`, and touch gesture listeners).
 * **Trilingual Architecture (TR / EN / DE):** Full localization across Turkish, English, and German, utilizing authentic composite and marine manufacturing terminology.
-* **Zero External Dependencies (Pure Vanilla JS and CSS):** Built without external CSS or JavaScript frameworks (no Tailwind, Bootstrap, React, or Vue). With an overall payload under 150 KB, it launches instantaneously on standard or rugged workshop devices.
+* **Zero Heavy Framework Dependencies (Pure Vanilla JS and CSS):** Built without external CSS or JavaScript frameworks (no Tailwind, Bootstrap, React, or Vue). With an optimized, lightweight native footprint, it launches instantaneously on standard or rugged workshop devices.
 * **One Hundred Percent Offline-First (PWA):** Powered by an optimized Service Worker cache. Once loaded, the application functions with complete reliability inside enclosed hulls, basements, or offshore with zero network connectivity.
-* **Expo Booth and Rapid Install Mode (QR Code and Project Credits):** Built-in one-tap credit modal featuring an embedded offline SVG QR code designed for trade expos, academic conferences, and boatyard demonstrations, enabling instant installation on visitors' mobile devices.
 * **Direct Deep-Linking:** Chemical identifiers can be appended to the URL (e.g., `/#mek-p`) to open specific cards directly, making it suitable for QR code stickers placed on workshop chemical storage cabinets.
 
 ---
@@ -83,15 +82,15 @@ The application covers the 11 most hazardous and commonly utilized substances in
 |---|---|---|---|---|
 | **MEK-P** (Methyl Ethyl Ketone Peroxide) | Peroxide | 1338-23-4 | **CRITICAL** | Never mix directly with cobalt promoter (severe explosion risk). Causes permanent corneal damage on eye contact; flush continuously with low-pressure water for at least 15 minutes. |
 | **Cobalt Naphthenate** (6%) | Accelerator | 61789-51-3 | **CRITICAL** | Store in a dedicated cabinet separate from peroxides. Potent skin sensitizer; requires at least 20 minutes of continuous washing upon contact. |
-| **Orthophthalic Polyester Resin** | Resin | 25032-83-3 | **HIGH** | Contains styrene monomer. Never use acetone for skin cleaning (acetone drives hazardous chemicals deeper into pores). |
-| **Vinyl Ester Resin** | Resin | 36425-15-7 | **HIGH** | Highly reactive resin. A2 organic vapor filter and chemical-resistant nitrile gloves are mandatory. |
+| **Orthophthalic Polyester Resin** | Resin | 100-42-5 (Styrene) / 25035-68-2 | **HIGH** | Contains styrene monomer. Never use acetone for skin cleaning (acetone drives hazardous chemicals deeper into pores). |
+| **Vinyl Ester Resin** | Resin | 100-42-5 (Styrene) / 36425-15-7 | **HIGH** | Highly reactive resin. A2 organic vapor filter and chemical-resistant nitrile gloves are mandatory. |
 | **Epoxy Resin (DGEBA)** | Resin | 25068-38-6 | **HIGH** | Potent skin sensitizer; repeated contact leads to chronic occupational contact dermatitis. Latex gloves are permeable; nitrile must be used. |
-| **Epoxy Hardener (IPDA)** | Hardener | 2855-13-2 | **CRITICAL** | Corrosive aliphatic amine. Mixing bulk quantities in deep containers triggers uncontrolled exothermic thermal runaway (severe heat and fumes). |
-| **Technical Acetone** | Solvent | 67-64-1 | **MEDIUM** | Extremely low flash point (-17°C). Strictly prohibited for skin cleaning; use exclusively for tool and brush washing. |
-| **Carbon Fiber Dust** | Dust & Fiber | 7440-44-0 | **HIGH** | Microscopic airborne fibers abrade the cornea during mechanical trimming or sanding. P3/FFP3 masks are required. Always vacuum; never dry sweep. |
-| **Gelcoat (Isophthalic)** | Resin | 25032-83-3 | **HIGH** | Contains styrene and pigments. A full-face respirator with combined A2P3 filters is required during spray application. |
-| **PVA Release Agent** | Release Agent | 9002-89-5 | **MEDIUM** | Alcohol carrier produces flammable vapors. Easily removed from skin by washing thoroughly with water. |
-| **Mold Release Wax** | Release Agent | 64742-88-7 | **MEDIUM** | Formulated with petroleum distillates and carnauba wax. Ensure adequate cross-ventilation when buffing large hull surfaces. |
+| **Epoxy Hardener (IPDA)** | Hardener | 2855-13-2 (IPDA) / 9046-10-0 | **CRITICAL** | Corrosive aliphatic amine. Mixing bulk quantities in deep containers triggers uncontrolled exothermic thermal runaway (severe heat and fumes). |
+| **Technical Acetone** | Solvent | 67-64-1 | **MEDIUM** | Extremely low flash point (-17°C). Strictly prohibited for skin cleaning; use exclusively for tool and brush washing. Butyl rubber gloves required. |
+| **Carbon Fiber Dust** | Dust & Fiber | 7440-44-0 (Carbon) | **HIGH** | Microscopic airborne fibers abrade the cornea during mechanical trimming or sanding. P3/FFP3 masks are required. Always vacuum; never dry sweep. |
+| **Gelcoat (Isophthalic)** | Resin | 100-42-5 (Styrene) | **HIGH** | Contains styrene and pigments. A full-face respirator with combined A2P3 filters is required during spray application. |
+| **PVA Release Agent** | Release Agent | 9002-89-5 (PVA) / 67-63-0 (IPA) | **MEDIUM** | Alcohol carrier produces flammable vapors. Easily removed from skin by washing thoroughly with water. |
+| **Mold Release Wax** | Release Agent | 8015-86-9 (Carnauba) / 64742-48-9 | **MEDIUM** | Formulated with petroleum distillates and carnauba wax. Ensure adequate cross-ventilation when buffing large hull surfaces. |
 
 ---
 
