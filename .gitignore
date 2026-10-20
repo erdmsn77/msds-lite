@@ -18,3 +18,4 @@ npm-debug.log*
 
 # Antigravity workspace rules (local only)
 .agents/
+scratch/
