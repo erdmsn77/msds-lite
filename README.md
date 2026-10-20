@@ -4,11 +4,11 @@
 
 [ Türkçe ](README.md) • [ English ](README.en.md) • [ Deutsch ](README.de.md)
 
-[![Version](https://img.shields.io/badge/Version-v1.8.2-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
+[![Version](https://img.shields.io/badge/Version-v1.9.0-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/erdmsn77/msds-lite/deploy-pages.yml?branch=main&style=flat-square&label=Deploy&color=success)](https://github.com/erdmsn77/msds-lite/actions/workflows/deploy-pages.yml)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-22d3ee?style=flat-square&logo=pwa)](https://erdmsn77.github.io/msds-lite/)
 [![Offline First](https://img.shields.io/badge/Offline-100%25-emerald?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
-[![Languages](https://img.shields.io/badge/Languages-TR%20%7C%20EN%20%7C%20DE-blue?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
+[![Languages](https://img.shields.io/badge/Languages-6%20Dilli%20(TR%20%7C%20EN%20%7C%20DE%20%7C%20FR%20%7C%20ZH%20%7C%20JA)-blue?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
 [![License](https://img.shields.io/badge/License-MIT%20%2F%20Open-yellow?style=flat-square)](LICENSE)
 
 ---
@@ -67,7 +67,7 @@ Karta dokunulduğunda sağdan kayarak açılan, sekmelerle hızlı geçiş yapı
 
 * **Saha ve Gece Teması:** Parlak güneş ışığı alan açık hangar ve tersane ortamlarında metinlerin net okunabilmesi için açık gri/beyaz zemin (`#F8FAFC`) ile koyu arduvaz metin (`#0F172A`) kontrastı uygulandı. Gece vardiyaları için tek dokunuşla koyu temaya geçilebilir (seçim cihaz hafızasında saklanır).
 * **Mobil Geri Gitme ve Kaydırma Desteği (Native Gesture UX):** Mobil tarayıcılarda veya tam ekran PWA modunda detay çekmecesi açıkken ekranın kenarından geri kaydırıldığında veya cihazın geri tuşuna basıldığında uygulamanın kapanması engellenmiştir. Tarayıcı geçmişi (`history.pushState` ve `popstate`) ve dokunmatik sağa kaydırma hareketiyle çekmece yumuşakça kapanır ve ana menüye dönülür.
-* **Üç Dilli Altyapı (TR / EN / DE):** Türkçe, İngilizce ve Almanca dil desteği. Türkiye'deki tersanelerin yanı sıra Avrupa'daki kompozit ve yat imalatı staj ve kariyer hedefleri gözetilerek terminolojiye uygun olarak eksiksiz çevrildi.
+* **6 Dilli Uluslararası Altyapı (TR / EN / DE / FR / ZH / JA):** Türkçe, İngilizce, Almanca, Fransızca, Çince (Basitleştirilmiş) ve Japonca tam dil desteği. Türkiye'deki tersanelerin ve TURKCOMPOSITE gibi küresel fuarlara katılan uluslararası kompozit devlerinin yerinde güvenle kullanabileceği standart GHS kimya terminolojisi.
 * **Sıfır Ağır Framework Bağımlılığı (Pure Vanilla JS ve CSS):** Hiçbir harici CSS kütüphanesi (Bootstrap, Tailwind vb.) veya JavaScript çatısı (React, Vue vb.) kullanılmamıştır. Optimize edilmiş yerel mimarisiyle en eski veya zayıf donanımlı atölye telefonlarında bile anında açılır.
 * **Yüzde Yüz Çevrimdışı Çalışma (PWA):** Service Worker altyapısı sayesinde uygulama bir kez yüklendikten sonra bodrum katında, hangar içinde veya açık denizde hücresel veri olmadan tam fonksiyonla çalışır.
 * **Doğrudan Bağlantı (Deep-Linking):** URL sonuna kimyasal kimliği eklenerek (örneğin `/#mek-p`) karekod veya doğrudan bağlantı üzerinden ilgili kimyasal kartı açtırılabilir.

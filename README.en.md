@@ -4,11 +4,11 @@
 
 [ Türkçe ](README.md) • [ English ](README.en.md) • [ Deutsch ](README.de.md)
 
-[![Version](https://img.shields.io/badge/Version-v1.8.2-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
+[![Version](https://img.shields.io/badge/Version-v1.9.0-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/erdmsn77/msds-lite/deploy-pages.yml?branch=main&style=flat-square&label=Deploy&color=success)](https://github.com/erdmsn77/msds-lite/actions/workflows/deploy-pages.yml)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-22d3ee?style=flat-square&logo=pwa)](https://erdmsn77.github.io/msds-lite/)
 [![Offline First](https://img.shields.io/badge/Offline-100%25-emerald?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
-[![Languages](https://img.shields.io/badge/Languages-TR%20%7C%20EN%20%7C%20DE-blue?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
+[![Languages](https://img.shields.io/badge/Languages-6%20Langs%20(TR%20%7C%20EN%20%7C%20DE%20%7C%20FR%20%7C%20ZH%20%7C%20JA)-blue?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
 [![License](https://img.shields.io/badge/License-MIT%20%2F%20Open-yellow?style=flat-square)](LICENSE)
 
 ---
@@ -67,7 +67,7 @@ Tapping any chemical card opens a slide-in drawer organized into 4 critical emer
 
 * **Field and Night Themes:** A high-contrast daylight theme (`#F8FAFC` background with `#0F172A` text) ensures immediate readability under direct sunlight in open shipyard bays. A dedicated dark theme is available for evening shifts, persisted in local storage.
 * **Native Mobile Gesture Navigation:** In fullscreen PWA or mobile browsers, swiping back from the edge or using device hardware back buttons smoothly closes the drawer rather than exiting the application (powered by `history.pushState`, `popstate`, and touch gesture listeners).
-* **Trilingual Architecture (TR / EN / DE):** Full localization across Turkish, English, and German, utilizing authentic composite and marine manufacturing terminology.
+* **6-Language International Architecture (TR / EN / DE / FR / ZH / JA):** Full localization across Turkish, English, German, French, Simplified Chinese, and Japanese, utilizing authentic REACH/GHS marine composite manufacturing terminology.
 * **Zero Heavy Framework Dependencies (Pure Vanilla JS and CSS):** Built without external CSS or JavaScript frameworks (no Tailwind, Bootstrap, React, or Vue). With an optimized, lightweight native footprint, it launches instantaneously on standard or rugged workshop devices.
 * **One Hundred Percent Offline-First (PWA):** Powered by an optimized Service Worker cache. Once loaded, the application functions with complete reliability inside enclosed hulls, basements, or offshore with zero network connectivity.
 * **Direct Deep-Linking:** Chemical identifiers can be appended to the URL (e.g., `/#mek-p`) to open specific cards directly, making it suitable for QR code stickers placed on workshop chemical storage cabinets.

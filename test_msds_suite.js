@@ -1,5 +1,5 @@
 /**
- * MSDS-Lite Automated Test Suite (v1.8.2)
+ * MSDS-Lite Automated Test Suite (v1.9.0)
  * Tests:
  * 1. Bug & Null-Safety Tests
  * 2. Exploit & Vulnerability Tests (XSS, Prototype Pollution, ReDoS)
@@ -489,6 +489,123 @@ test('Syntax & compilation audit: sw.js compiles with zero syntax errors', () =>
     new vm.Script(swContent, { filename: 'sw.js' });
   }, 'sw.js failed to compile in V8 vm.Script');
 });
+
+// ----------------------------------------------------
+// SECTION 6: INTERNATIONALIZATION (i18n: TR / EN / DE / FR / ZH / JA)
+// ----------------------------------------------------
+console.log('\n🌐 [6/6] INTERNATIONALIZATION (i18n) TESTS:');
+
+test('translations dictionary contains all 6 languages with complete key parity', () => {
+  const transMatch = htmlContent.match(/const translations = \{([\s\S]*?)\n\s*\};\s*\n\s*function detectInitialTheme/);
+  assert.ok(transMatch, 'translations dictionary must be found in index.html');
+  const translations = new Function('return {' + transMatch[1] + '};')();
+
+  const requiredLangs = ['tr', 'en', 'de', 'fr', 'zh', 'ja'];
+  requiredLangs.forEach(lang => {
+    assert.ok(translations[lang], `Language '${lang}' must exist in translations`);
+  });
+
+  const baseKeys = Object.keys(translations.tr);
+  assert.ok(baseKeys.length >= 70, `Expected at least 70 translation keys, found ${baseKeys.length}`);
+
+  for (const lang of requiredLangs) {
+    const missingKeys = baseKeys.filter(k => !translations[lang][k] || typeof translations[lang][k] !== 'string');
+    assert.strictEqual(missingKeys.length, 0, `Language '${lang}' missing keys: ${missingKeys.join(', ')}`);
+  }
+});
+
+test('CATEGORIES dictionary contains complete labels for all 6 languages', () => {
+  const catMatch = htmlContent.match(/const CATEGORIES = \{([\s\S]*?)\n\s*\};/);
+  assert.ok(catMatch, 'CATEGORIES must be found');
+  const CATEGORIES = new Function('return {' + catMatch[1] + '};')();
+
+  const requiredLangs = ['tr', 'en', 'de', 'fr', 'zh', 'ja'];
+  for (const [catKey, labelObj] of Object.entries(CATEGORIES)) {
+    for (const lang of requiredLangs) {
+      assert.ok(labelObj[lang], `Category '${catKey}' missing translation for '${lang}'`);
+      assert.ok(labelObj[lang].trim().length > 0, `Category '${catKey}' translation for '${lang}' must not be empty`);
+    }
+  }
+});
+
+test('GHS_METADATA has complete titles and descriptions in all 6 languages', () => {
+  const ghsMetaMatch = htmlContent.match(/const GHS_METADATA = \{([\s\S]*?)\n\s*\};/);
+  const GHS_METADATA = new Function('return {' + ghsMetaMatch[1] + '};')();
+  const codes = ['GHS01', 'GHS02', 'GHS03', 'GHS04', 'GHS05', 'GHS06', 'GHS07', 'GHS08', 'GHS09'];
+  const langs = ['tr', 'en', 'de', 'fr', 'zh', 'ja'];
+
+  for (const code of codes) {
+    for (const lang of langs) {
+      assert.ok(GHS_METADATA[code]['title_' + lang], `${code} missing title_${lang}`);
+      assert.ok(GHS_METADATA[code]['desc_' + lang], `${code} missing desc_${lang}`);
+    }
+  }
+});
+
+test('INCOMPATIBILITY_ALERTS has complete title and text in all 6 languages', () => {
+  const incompMatch = htmlContent.match(/const INCOMPATIBILITY_ALERTS = \{([\s\S]*?)\n\s*\};/);
+  const INCOMPATIBILITY_ALERTS = new Function('return {' + incompMatch[1] + '};')();
+  const alertKeys = ['mek-p', 'cobalt-naphthenate', 'technical-acetone', 'epoxy-resin-dgeba', 'epoxy-hardener-isophoronediamine'];
+  const langs = ['tr', 'en', 'de', 'fr', 'zh', 'ja'];
+
+  for (const key of alertKeys) {
+    const alert = INCOMPATIBILITY_ALERTS[key];
+    assert.ok(alert, `Alert '${key}' must exist`);
+    for (const lang of langs) {
+      assert.ok(alert['title_' + lang], `Alert '${key}' missing title_${lang}`);
+      assert.ok(alert['text_' + lang], `Alert '${key}' missing text_${lang}`);
+    }
+  }
+});
+
+test('data/chemicals.json has complete TR, EN, DE, FR, ZH, JA translations for all 11 chemicals', () => {
+  const chemData = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'chemicals.json'), 'utf-8'));
+  assert.strictEqual(chemData.length, 11, 'Expected 11 chemicals in chemicals.json');
+
+  const langs = ['tr', 'en', 'de', 'fr', 'zh', 'ja'];
+  for (const c of chemData) {
+    const cid = c.id;
+    for (const l of langs) {
+      assert.ok(c.name && c.name[l], `${cid}: name.${l} missing`);
+      assert.ok(c.chemical_name && c.chemical_name[l], `${cid}: chemical_name.${l} missing`);
+      assert.ok(c.signal_word && c.signal_word[l], `${cid}: signal_word.${l} missing`);
+      assert.ok(c.hazard_statement && c.hazard_statement[l], `${cid}: hazard_statement.${l} missing`);
+      assert.ok(c.first_aid?.eye && c.first_aid.eye[l], `${cid}: first_aid.eye.${l} missing`);
+      assert.ok(c.first_aid?.skin && c.first_aid.skin[l], `${cid}: first_aid.skin.${l} missing`);
+      assert.ok(c.first_aid?.inhalation && c.first_aid.inhalation[l], `${cid}: first_aid.inhalation.${l} missing`);
+      assert.ok(c.first_aid?.ingestion && c.first_aid.ingestion[l], `${cid}: first_aid.ingestion.${l} missing`);
+      assert.ok(c.ppe?.gloves?.warning && c.ppe.gloves.warning[l], `${cid}: ppe.gloves.warning.${l} missing`);
+      assert.ok(c.ppe?.mask && c.ppe.mask[l], `${cid}: ppe.mask.${l} missing`);
+      assert.ok(c.ppe?.eye && c.ppe.eye[l], `${cid}: ppe.eye.${l} missing`);
+      assert.ok(c.fire_fighting?.suitable && c.fire_fighting.suitable[l], `${cid}: fire_fighting.suitable.${l} missing`);
+      assert.ok(c.fire_fighting?.prohibited && c.fire_fighting.prohibited[l], `${cid}: fire_fighting.prohibited.${l} missing`);
+      assert.ok(c.storage_incompatibility?.storage && c.storage_incompatibility.storage[l], `${cid}: storage.${l} missing`);
+      assert.ok(c.storage_incompatibility?.incompatible && c.storage_incompatibility.incompatible[l], `${cid}: incompatible.${l} missing`);
+    }
+  }
+});
+
+test('fallbackChemicals in index.html has complete TR, EN, DE, FR, ZH, JA translations', () => {
+  const fbMatch = htmlContent.match(/const fallbackChemicals = (\[[\s\S]*?\n\s*\]);/);
+  assert.ok(fbMatch, 'fallbackChemicals array must be found in index.html');
+  const fallbackChemicals = new Function('return ' + fbMatch[1] + ';')();
+  assert.strictEqual(fallbackChemicals.length, 11, 'Expected 11 chemicals in fallbackChemicals');
+
+  const langs = ['tr', 'en', 'de', 'fr', 'zh', 'ja'];
+  for (const c of fallbackChemicals) {
+    const cid = c.id;
+    for (const l of langs) {
+      assert.ok(c.name && c.name[l], `fallback ${cid}: name.${l} missing`);
+      assert.ok(c.chemical_name && c.chemical_name[l], `fallback ${cid}: chemical_name.${l} missing`);
+      assert.ok(c.signal_word && c.signal_word[l], `fallback ${cid}: signal_word.${l} missing`);
+      assert.ok(c.hazard_statement && c.hazard_statement[l], `fallback ${cid}: hazard_statement.${l} missing`);
+      assert.ok(c.first_aid?.eye && c.first_aid.eye[l], `fallback ${cid}: first_aid.eye.${l} missing`);
+      assert.ok(c.ppe?.gloves?.warning && c.ppe.gloves.warning[l], `fallback ${cid}: ppe.gloves.warning.${l} missing`);
+    }
+  }
+});
+
+
 
 // ----------------------------------------------------
 // SUMMARY REPORT

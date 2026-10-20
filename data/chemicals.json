@@ -5,58 +5,88 @@
     "name": {
       "tr": "MEK-P",
       "en": "MEK-P",
-      "de": "MEK-P"
+      "de": "MEK-P",
+      "fr": "MEK-P",
+      "zh": "MEK-P",
+      "ja": "MEK-P"
     },
     "chemical_name": {
       "tr": "Metil Etil Keton Peroksit",
       "en": "Methyl Ethyl Ketone Peroxide",
-      "de": "Methylethylketonperoxid"
+      "de": "Methylethylketonperoxid",
+      "fr": "Peroxyde de Méthyléthylcétone",
+      "zh": "甲乙酮过氧化物",
+      "ja": "メチルエチルケトンパーオキサイド"
     },
     "category": "peroksit",
     "risk_level": "KRİTİK",
     "signal_word": {
       "tr": "TEHLİKE",
       "en": "DANGER",
-      "de": "GEFAHR"
+      "de": "GEFAHR",
+      "fr": "DANGER",
+      "zh": "危险",
+      "ja": "危険"
     },
     "hazard_statement": {
       "tr": "H242: Isınma yangına yol açabilir. H314: Ciddi cilt yanıklarına ve göz hasarına yol açar. H302: Yutulduğunda zararlıdır.",
       "en": "H242: Heating may cause a fire. H314: Causes severe skin burns and eye damage. H302: Harmful if swallowed.",
-      "de": "H242: Erwärmung kann Brand verursachen. H314: Verursacht schwere Verätzungen der Haut und Augenschäden. H302: Gesundheitsschädlich bei Verschlucken."
+      "de": "H242: Erwärmung kann Brand verursachen. H314: Verursacht schwere Verätzungen der Haut und Augenschäden. H302: Gesundheitsschädlich bei Verschlucken.",
+      "fr": "H242 : Un chauffage peut provoquer un incendie. H314 : Provoque des brûlures cutanées graves et des lésions oculaires. H302 : Nocif en cas d'ingestion.",
+      "zh": "H242：加热可能导致火灾。H314：引起严重皮肤灼伤和眼睛损伤。H302：吞咽有害。",
+      "ja": "H242：加熱により火災を引き起こすおそれがある。H314：重篤な皮膚の薬傷及び眼の損傷を引き起こす。H302：飲み込むと有害。"
     },
     "badges": {
       "fire": {
         "tr": "Tip D Peroksit (Parlama ~50°C)",
         "en": "Type D Peroxide (Flash ~50°C)",
-        "de": "Typ D Peroxid (Flammpunkt ~50°C)"
+        "de": "Typ D Peroxid (Flammpunkt ~50°C)",
+        "fr": "Peroxyde Type D (Éclair ~50°C)",
+        "zh": "D型过氧化物（闪点~50°C）",
+        "ja": "Dタイプパーオキサイド（引火点~50°C）"
       },
       "health": {
         "tr": "Korozif Yanık / Kalıcı Görme Kaybı Riski",
         "en": "Corrosive Burn / Permanent Vision Loss Risk",
-        "de": "Starke Verätzung / Gefahr dauerhaften Sehverlusts"
+        "de": "Starke Verätzung / Gefahr dauerhaften Sehverlusts",
+        "fr": "Brûlure Corrosive / Risque Perte de Vision",
+        "zh": "腐蚀性灼伤 / 永久失明风险",
+        "ja": "腐食性火傷 / 永久視力喪失リスク"
       },
       "environment": {
         "tr": "Sucul Yaşam İçin Zararlı",
         "en": "Harmful to Aquatic Life",
-        "de": "Schädlich für Wasserorganismen"
+        "de": "Schädlich für Wasserorganismen",
+        "fr": "Nocif pour Organismes Aquatiques",
+        "zh": "对水生生物有害",
+        "ja": "水生生物に有害"
       }
     },
     "source": {
       "tr": "AkzoNobel / Nouryon Butanox M-50 Güvenlik Bilgi Formu & ECHA",
       "en": "AkzoNobel / Nouryon Butanox M-50 SDS & ECHA dossier",
-      "de": "AkzoNobel / Nouryon Butanox M-50 Sicherheitsdatenblatt & ECHA"
+      "de": "AkzoNobel / Nouryon Butanox M-50 Sicherheitsdatenblatt & ECHA",
+      "fr": "AkzoNobel / Nouryon Butanox M-50 FDS & ECHA",
+      "zh": "AkzoNobel / Nouryon Butanox M-50 SDS & ECHA",
+      "ja": "AkzoNobel / Nouryon Butanox M-50 SDS & ECHA"
     },
     "source_url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.014.083",
     "verified_at": "2026-10-15",
     "verification_status": {
       "tr": "Doğrulandı (ECHA / Endüstriyel SDS)",
       "en": "Verified (ECHA / Industrial SDS)",
-      "de": "Verifiziert (ECHA / Industrie-SDB)"
+      "de": "Verifiziert (ECHA / Industrie-SDB)",
+      "fr": "Vérifié (ECHA / FDS Industrielle)",
+      "zh": "已验证（ECHA / 工业SDS）",
+      "ja": "検証済（ECHA / 産業用SDS）"
     },
     "verification_note": {
       "tr": "Tersanelerde en yaygın kompozit sertleştiricisidir. Asla doğrudan hızlandırıcı (kobalt) ile karıştırılmamalıdır.",
       "en": "Most common composite initiator in boatyards. Never mix directly with cobalt promoter.",
-      "de": "Häufigster Komposithärter auf Werften. Niemals direkt mit Kobaltbeschleuniger mischen."
+      "de": "Häufigster Komposithärter auf Werften. Niemals direkt mit Kobaltbeschleuniger mischen.",
+      "fr": "Initiateur composite le plus courant dans les chantiers navals. Ne jamais mélanger directement avec le promoteur cobalt.",
+      "zh": "船厂最常用的复合材料引发剂。切勿直接与钴促进剂混合。",
+      "ja": "造船所で最も一般的な複合材料開始剤。コバルト促進剤と直接混合しないこと。"
     },
     "ghs_codes": [
       "GHS02",
@@ -66,58 +96,88 @@
     "flash_point": {
       "tr": "Yaklaşık 50 °C (ürün formülasyonuna göre değişebilir)",
       "en": "Approx. 50 °C (varies by formulation)",
-      "de": "Ca. 50 °C (variiert je nach Formulierung)"
+      "de": "Ca. 50 °C (variiert je nach Formulierung)",
+      "fr": "Environ 50 °C (selon la formulation)",
+      "zh": "约 50 °C（因配方而异）",
+      "ja": "約 50 °C（配合によって異なる）"
     },
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
         "tr": "Göz kapaklarını açık tutarak EN AZ 15 DAKİKA kesintisiz, TAZYİKSİZ (düşük basınçlı) ılık/temiz akan suyla yıkayın. Suyu burun kökünden şakağa doğru akıtın. Gözü ovuşturmayın ve derhal acil servisi (112) arayın!",
         "en": "Rinse with LOW-PRESSURE, gentle running clean water for AT LEAST 15 MINUTES holding eyelids open. Flush from inner corner outward to temple. Do not rub eyes; call emergency services (112) immediately!",
-        "de": "Augenlider offen halten und MINDESTENS 15 MINUTEN ununterbrochen mit DRUCKLOSEM, sanft fließendem sauberem Wasser spülen (von innen nach außen). Nicht reiben; sofort Notarzt (112) rufen!"
+        "de": "Augenlider offen halten und MINDESTENS 15 MINUTEN ununterbrochen mit DRUCKLOSEM, sanft fließendem sauberem Wasser spülen (von innen nach außen). Nicht reiben; sofort Notarzt (112) rufen!",
+        "fr": "Rincer à l'eau courante douce À BAS PRESSION PENDANT AU MOINS 15 MINUTES en maintenant les paupières ouvertes. Rincer de l'angle interne vers la tempe. Ne pas frotter; appeler les secours (15/18) immédiatement !",
+        "zh": "在低压流动清水下保持眼睑张开，持续冲洗至少15分钟。从内眼角向外冲洗。切勿揉眼，立即拨打急救电话！",
+        "ja": "まぶたを開いたまま、低圧の流水で少なくとも15分間洗い流す。内眼角から外側へ洗浄。目をこすらず、直ちに救急（119）に連絡！"
       },
       "skin": {
         "tr": "Kirlenmiş tüm giysileri derhal çıkarın. Cildi en az 15 dakika tazyiksiz bol akan su ve sabunla yıkayın. Asla aseton sürmeyin!",
         "en": "Immediately strip contaminated clothing. Wash skin thoroughly with running water and soap for 15+ mins without high pressure. Never apply acetone!",
-        "de": "Kontaminierte Kleidung sofort ausziehen. Haut mindestens 15 Min. mit drucklosem Wasser und Seife waschen. Niemals Aceton verwenden!"
+        "de": "Kontaminierte Kleidung sofort ausziehen. Haut mindestens 15 Min. mit drucklosem Wasser und Seife waschen. Niemals Aceton verwenden!",
+        "fr": "Retirer immédiatement les vêtements contaminés. Laver abondamment à l'eau courante et au savon pendant 15 minutes minimum. Ne jamais utiliser d'acétone !",
+        "zh": "立即脱去被污染的衣物。用流水和肥皂彻底冲洗皮肤至少15分钟。切勿使用丙酮！",
+        "ja": "汚染した衣服を直ちに脱ぐ。流水と石けんで皮膚を15分以上十分に洗い流す。アセトンは絶対に使用しない！"
       },
       "inhalation": {
         "tr": "Maruz kalan kişiyi derhal temiz havaya çıkarın. Solunum güçlüğü varsa dik oturtun, oksijen verin ve 112’yi arayın.",
         "en": "Move person to fresh air immediately. If breathing is labored, keep upright, administer oxygen, call emergency services.",
-        "de": "Person sofort an die frische Luft bringen. Bei Atembeschwerden aufrecht hinsetzen und sofort Notdienst rufen."
+        "de": "Person sofort an die frische Luft bringen. Bei Atembeschwerden aufrecht hinsetzen und sofort Notdienst rufen.",
+        "fr": "Conduire la personne à l'air frais immédiatement. En cas de difficultés respiratoires, maintenir en position assise et appeler les secours.",
+        "zh": "立即将人转移到新鲜空气处。如呼吸困难，保持坐位并呼叫急救。",
+        "ja": "直ちに新鮮な空気のある場所へ移動。呼吸困難の場合は座位を保ち救急へ連絡。"
       },
       "ingestion": {
         "tr": "KESİNLİKLE KUSTURMAYIN (yemek borusunu tekrar yakar). Ağzı suyla çalkalayıp tükürün. Kusmayı ve akciğere kaçmasını tetiklememek için ASLA bol su içirmeyin (bilinç tam açıksa en fazla 1-2 küçük yudum su verilebilir). Acil tıbbi müdahale şarttır (112).",
         "en": "DO NOT INDUCE VOMITING (causes secondary burns). Rinse mouth and spit out. NEVER force large amounts of water to avoid vomiting and lung aspiration (max 1-2 small sips only if conscious). Seek urgent medical care (112).",
-        "de": "KEIN ERBRECHEN HERBEIFÜHREN (Verätzungsgefahr). Mund ausspülen und ausspucken. NIEMALS viel Wasser trinken lassen, um Erbrechen und Aspiration zu verhindern (bei Bewusstsein max. 1-2 kleine Schlucke). Sofort Notarzt (112) rufen."
+        "de": "KEIN ERBRECHEN HERBEIFÜHREN (Verätzungsgefahr). Mund ausspülen und ausspucken. NIEMALS viel Wasser trinken lassen, um Erbrechen und Aspiration zu verhindern (bei Bewusstsein max. 1-2 kleine Schlucke). Sofort Notarzt (112) rufen.",
+        "fr": "NE PAS FAIRE VOMIR (provoque des brûlures secondaires). Rincer la bouche et cracher. Appeler les secours (15) d'urgence.",
+        "zh": "切勿催吐（会造成继发性灼伤）。漱口后吐出。立即呼叫急救。",
+        "ja": "吐かせないこと（二次的な薬傷を引き起こす）。口をすすいで吐き出す。直ちに救急へ連絡。"
       }
     },
     "fire_fighting": {
       "suitable": {
         "tr": "Su sisi, alkole dayanıklı köpük, kuru kimyasal toz veya CO2. Yangına maruz kalan kapları uzaktan bol su sisi sıkarak soğutun.",
         "en": "Water spray/fog, alcohol-resistant foam, dry powder, or CO2. Cool exposed drums with flood amounts of water from safe distance.",
-        "de": "Wassersprühstrahl, alkoholbeständiger Schaum, Trockenlöschpulver oder CO2. Gefährdete Behälter mit Sprühwasser kühlen."
+        "de": "Wassersprühstrahl, alkoholbeständiger Schaum, Trockenlöschpulver oder CO2. Gefährdete Behälter mit Sprühwasser kühlen.",
+        "fr": "Eau pulvérisée/brouillard, mousse résistante à l'alcool, poudre sèche ou CO2. Refroidir les fûts exposés à grande distance avec de l'eau pulvérisée.",
+        "zh": "水雾、耐醇泡沫、干粉或二氧化碳。从安全距离用大量水雾冷却暴露容器。",
+        "ja": "水噴霧/霧、耐アルコール泡、ドライパウダー、またはCO2。安全な距離から大量の水噴霧で露出ドラムを冷却。"
       },
       "prohibited": {
         "tr": "Doğrudan yüksek basınçlı su jeti sıkmayın (sıvıyı çevreye sıçratır ve alevleri yayar).",
         "en": "Do not use high-pressure straight water stream (scatters burning liquid).",
-        "de": "Keinen harten Wasserstrahl einsetzen (verbreitet brennende Flüssigkeit)."
+        "de": "Keinen harten Wasserstrahl einsetzen (verbreitet brennende Flüssigkeit).",
+        "fr": "Ne pas utiliser de jet d'eau direct à haute pression (disperse le liquide enflammé).",
+        "zh": "禁止使用高压直流水柱（会散布燃烧液体）。",
+        "ja": "高圧直射水流は使用しないこと（燃焼液体を拡散させる）。"
       },
       "hazards": {
         "tr": "Kapalı kaplarda ısındığında şiddetli patlama ve alev püskürmesi riski. Kobalt hızlandırıcı ile temasında ani alevlenme!",
         "en": "Explosion hazard if confined under heat. Spontaneous combustion upon contact with cobalt promoters!",
-        "de": "Explosionsgefahr bei Erhitzung in geschlossenen Gebinden. Spontane Entzündung bei Kontakt mit Kobaltbeschleuniger!"
+        "de": "Explosionsgefahr bei Erhitzung in geschlossenen Gebinden. Spontane Entzündung bei Kontakt mit Kobaltbeschleuniger!",
+        "fr": "Risque d'explosion si chauffé dans un espace confiné. Combustion spontanée au contact de promoteurs au cobalt !",
+        "zh": "密闭加热时有爆炸危险。与钴促进剂接触时会自燃！",
+        "ja": "密閉状態での加熱時に爆発の危険がある。コバルト促進剤との接触で自然発火！"
       }
     },
     "ppe": {
       "mask": {
         "tr": "A2P3 kombine organik gaz ve aerosol filtreli maske",
         "en": "A2P3 combined organic gas and particulate respirator",
-        "de": "A2P3 Kombinationsfiltermaske für organische Gase und Aerosole"
+        "de": "A2P3 Kombinationsfiltermaske für organische Gase und Aerosole",
+        "fr": "Respirateur combiné A2P3 pour gaz organiques et particules",
+        "zh": "A2P3有机气体和颗粒物组合防护口罩",
+        "ja": "A2P3有機ガス・粒子用複合防毒マスク"
       },
       "eye": {
         "tr": "Tam sızdırmaz kimyasal sıçrama gözlüğü ve tam yüz siperliği",
         "en": "Sealed chemical splash goggles and full face shield",
-        "de": "Dicht schließende Chemikalienschutzbrille und Gesichtsschutz"
+        "de": "Dicht schließende Chemikalienschutzbrille und Gesichtsschutz",
+        "fr": "Lunettes de protection chimique étanches et écran facial complet",
+        "zh": "密封化学防溅眼镜和全面罩",
+        "ja": "密封型化学品スプラッシュゴーグルおよびフルフェイスシールド"
       },
       "gloves": {
         "latex": false,
@@ -127,7 +187,10 @@
         "warning": {
           "tr": "Lateks eldiven peroksit geçirir, ASLA kullanılmaz. Kalın nitril (>0.4mm) veya bütil/neopren eldiven kullanın.",
           "en": "Latex permeates organic peroxides and is UNSUITABLE. Wear heavy-duty nitrile (>0.4mm) or butyl/neoprene.",
-          "de": "Latexhandschuhe sind ungeeignet. Dickes Nitril (>0.4mm) oder Butyl/Neopren verwenden."
+          "de": "Latexhandschuhe sind ungeeignet. Dickes Nitril (>0.4mm) oder Butyl/Neopren verwenden.",
+          "fr": "Le latex est perméable aux peroxydes organiques et est INADAPTÉ. Porter des gants nitrile épais (>0,4 mm) ou butyle/néoprène.",
+          "zh": "乳胶手套无法阻隔有机过氧化物，绝对不适用。佩戴厚丁腈(>0.4mm)或丁基/氯丁橡胶手套。",
+          "ja": "ラテックスは有機過酸化物を透過するため不適。厚手ニトリル(>0.4mm)またはブチル/ネオプレン手袋を着用。"
         }
       }
     },
@@ -135,12 +198,18 @@
       "storage": {
         "tr": "+15°C ile +25°C arasında, doğrudan güneş ışığı almayan, iyi havalandırılmış özel peroksit dolabında saklayın.",
         "en": "Store between +15°C and +25°C away from direct sunlight in a dedicated well-ventilated peroxide cabinet.",
-        "de": "Zwischen +15°C und +25°C vor Sonnenlicht geschützt in einem speziellen Peroxidschrank gut belüftet lagern."
+        "de": "Zwischen +15°C und +25°C vor Sonnenlicht geschützt in einem speziellen Peroxidschrank gut belüftet lagern.",
+        "fr": "Stocker entre +15°C et +25°C à l'abri de la lumière directe dans une armoire à peroxydes bien ventilée.",
+        "zh": "在+15°C至+25°C之间避光储存于专用通风过氧化物柜中。",
+        "ja": "+15°C〜+25°Cで直射日光を避け、専用の換気付き過酸化物保管庫に保管。"
       },
       "incompatible": {
         "tr": "KESİNLİKLE kobalt naftenat hızlandırıcılar, ağır metaller, güçlü asitler ve aminlerle yan yana koymayın (ŞİDDETLİ PATLAMA RİSKİ).",
         "en": "NEVER store with or bring near cobalt naphthenate promoters, heavy metals, strong acids, or amines (VIOLENT EXPLOSION RISK).",
-        "de": "NIEMALS zusammen mit Kobaltbeschleunigern, Schwermetallen, starken Säuren oder Aminen lagern (EXPLOSIONSGEFAHR)."
+        "de": "NIEMALS zusammen mit Kobaltbeschleunigern, Schwermetallen, starken Säuren oder Aminen lagern (EXPLOSIONSGEFAHR).",
+        "fr": "NE JAMAIS stocker avec des promoteurs au cobalt naphténate, métaux lourds, acides forts ou amines (RISQUE D'EXPLOSION VIOLENTE).",
+        "zh": "绝不与环烷酸钴促进剂、重金属、强酸或胺类一起储存（严重爆炸风险）。",
+        "ja": "コバルトナフテネート促進剤、重金属、強酸、アミン類と共に保管しないこと（激烈な爆発の危険）。"
       }
     }
   },
@@ -150,58 +219,88 @@
     "name": {
       "tr": "Ortoftalik Polyester Reçine",
       "en": "Orthophthalic Polyester Resin",
-      "de": "Orthophthalsäure-Polyesterharz"
+      "de": "Orthophthalsäure-Polyesterharz",
+      "fr": "Résine Polyester Orthophtalique",
+      "zh": "邻苯二甲酸型聚酯树脂",
+      "ja": "オルソフタル酸系ポリエステル樹脂"
     },
     "chemical_name": {
       "tr": "Stiren Monomerli Doymamış Polyester",
       "en": "Unsaturated Polyester in Styrene Monomer",
-      "de": "Ungesättigter Polyester in Styrolmonomer"
+      "de": "Ungesättigter Polyester in Styrolmonomer",
+      "fr": "Polyester Insaturé en Monomère de Styrène",
+      "zh": "苯乙烯单体中的不饱和聚酯",
+      "ja": "スチレンモノマー中の不飽和ポリエステル"
     },
     "category": "recine",
     "risk_level": "YÜKSEK",
     "signal_word": {
       "tr": "TEHLİKE",
       "en": "DANGER",
-      "de": "GEFAHR"
+      "de": "GEFAHR",
+      "fr": "DANGER",
+      "zh": "危险",
+      "ja": "危険"
     },
     "hazard_statement": {
       "tr": "H226: Alevlenir sıvı ve buhar. H315: Cilt tahrişine yol açar. H319: Ciddi göz tahrişi. H372: Tekrarlı solunması organ hasarı yapar.",
       "en": "H226: Flammable liquid and vapor. H315: Causes skin irritation. H319: Causes serious eye irritation. H372: Damage to organs through inhalation.",
-      "de": "H226: Flüssigkeit und Dampf entzündbar. H315: Verursacht Hautreizungen. H319: Verursacht schwere Augenreizung. H372: Organschäden bei längerer Exposition."
+      "de": "H226: Flüssigkeit und Dampf entzündbar. H315: Verursacht Hautreizungen. H319: Verursacht schwere Augenreizung. H372: Organschäden bei längerer Exposition.",
+      "fr": "H226 : Liquide et vapeurs inflammables. H315 : Provoque une irritation cutanée. H319 : Provoque une sévère irritation des yeux. H372 : Risque d'atteinte aux organes par inhalation répétée.",
+      "zh": "H226：易燃液体和蒸气。H315：造成皮肤刺激。H319：造成严重眼刺激。H372：长期或反复吸入导致器官损伤。",
+      "ja": "H226：引火性液体および蒸気。H315：皮膚刺激。H319：強い眼刺激。H372：繰返し吸入による臓器への損傷。"
     },
     "badges": {
       "fire": {
         "tr": "Alevlenir Buhar (Parlama ~31°C)",
         "en": "Flammable Vapor (Flash ~31°C)",
-        "de": "Entzündbarer Dampf (Flammpunkt ~31°C)"
+        "de": "Entzündbarer Dampf (Flammpunkt ~31°C)",
+        "fr": "Vapeur Inflammable (Éclair ~31°C)",
+        "zh": "易燃蒸气（闪点~31°C）",
+        "ja": "可燃性蒸気（引火点~31°C）"
       },
       "health": {
         "tr": "Stiren Buharı / Nörotoksisite",
         "en": "Styrene Vapor / Neurotoxic",
-        "de": "Styroldämpfe / Neurotoxisch"
+        "de": "Styroldämpfe / Neurotoxisch",
+        "fr": "Vapeur de Styrène / Neurotoxique",
+        "zh": "苯乙烯蒸气 / 神经毒性",
+        "ja": "スチレン蒸気 / 神経毒性"
       },
       "environment": {
         "tr": "Sucul Yaşama Toksik",
         "en": "Toxic to Aquatic Life",
-        "de": "Giftig für Wasserorganismen"
+        "de": "Giftig für Wasserorganismen",
+        "fr": "Toxique pour Organismes Aquatiques",
+        "zh": "对水生生物有毒",
+        "ja": "水生生物に有毒"
       }
     },
     "source": {
       "tr": "Poliya Poliester / Reichhold Polylite MSDS & ECHA Dossier",
       "en": "Poliya Polyester / Reichhold Polylite SDS & ECHA",
-      "de": "Poliya Polyester / Reichhold Polylite SDB & ECHA"
+      "de": "Poliya Polyester / Reichhold Polylite SDB & ECHA",
+      "fr": "Poliya Polyester / Reichhold Polylite FDS & ECHA",
+      "zh": "Poliya 聚酯 / Reichhold Polylite SDS & ECHA",
+      "ja": "Poliya ポリエステル / Reichhold Polylite SDS & ECHA"
     },
     "source_url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.002.595",
     "verified_at": "2026-10-15",
     "verification_status": {
       "tr": "Doğrulandı (ECHA / Endüstriyel SDS)",
       "en": "Verified (ECHA / Industrial SDS)",
-      "de": "Verifiziert (ECHA / Industrie-SDB)"
+      "de": "Verifiziert (ECHA / Industrie-SDB)",
+      "fr": "Vérifié (ECHA / FDS Industrielle)",
+      "zh": "已验证（ECHA / 工业SDS）",
+      "ja": "検証済（ECHA / 産業用SDS）"
     },
     "verification_note": {
       "tr": "Fiberglas tekne ve kalıp imalatında ana matris. İçerdiği serbest stiren (%35-45) kapalı alanlarda patlayıcı buhar oluşturur.",
       "en": "Primary matrix in fiberglass boatbuilding. Free styrene (35-45%) forms heavy explosive vapors in confined shop floors.",
-      "de": "Hauptmatrix im Glasfaser-Bootsbau. Freies Styrol (35-45%) bildet in geschlossenen Hallen schwere explosive Dämpfe."
+      "de": "Hauptmatrix im Glasfaser-Bootsbau. Freies Styrol (35-45%) bildet in geschlossenen Hallen schwere explosive Dämpfe.",
+      "fr": "Contient du styrène (cancérogène probable, IARC 2A). Exige une ventilation adaptée et une surveillance de l'exposition.",
+      "zh": "含苯乙烯（可能致癌，IARC 2A类）。需要适当通风和接触监测。",
+      "ja": "スチレン含有（発がん性疑い、IARC 2A）。適切な換気と暴露モニタリングが必要。"
     },
     "ghs_codes": [
       "GHS02",
@@ -210,58 +309,88 @@
     "flash_point": {
       "tr": "Yaklaşık 31 °C",
       "en": "Approx. 31 °C",
-      "de": "Ca. 31 °C"
+      "de": "Ca. 31 °C",
+      "fr": "Environ 31 °C (composant styrène)",
+      "zh": "约 31 °C（苯乙烯组分）",
+      "ja": "約 31 °C（スチレン成分）"
     },
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
         "tr": "Göz kapaklarını açık tutarak en az 15 dakika kesintisiz, tazyiksiz nazikçe akan temiz suyla yıkayın (suyu burun kökünden şakağa akıtın). Tahriş sürerse doktora başvurun.",
         "en": "Rinse with gentle, low-pressure running clean water for at least 15 minutes holding eyelids open (flush from inner corner to temple). Seek ophthalmologist if irritation persists.",
-        "de": "Augenlider offen halten und mindestens 15 Minuten mit sanftem, drucklosem Wasser spülen (von innen nach außen). Bei anhaltender Reizung Augenarzt konsultieren."
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit sanftem, drucklosem Wasser spülen (von innen nach außen). Bei anhaltender Reizung Augenarzt konsultieren.",
+        "fr": "Rincer à l'eau courante propre à basse pression pendant au moins Rinse with gentle, low-pressure running clean water for at least 15 minutes holding eyelids open (flush from inner corner to temple). Seek ophthalmologist if irritation persists. minutes en maintenant les paupières ouvertes. Appeler les secours immédiatement.",
+        "zh": "保持眼睑张开，用低压清洁水冲洗至少15分钟。立即就医。",
+        "ja": "まぶたを開いたまま、低圧の清潔な水で少なくとも15分間洗い流す。直ちに医師の手当てを受ける。"
       },
       "skin": {
         "tr": "Bulaşan kıyafeti çıkarın. Cildi tazyiksiz akan su ve sabunla yıkayın. Cildi asetonla YIKAMAYIN (aseton reçinenin gözeneklere geçmesini hızlandırır).",
         "en": "Strip soaked clothes. Wash skin with soap and running water. DO NOT use acetone on skin (it accelerates resin absorption into pores).",
-        "de": "Kontaminierte Kleidung ausziehen. Haut mit Wasser und Seife waschen. NICHT mit Aceton reinigen!"
+        "de": "Kontaminierte Kleidung ausziehen. Haut mit Wasser und Seife waschen. NICHT mit Aceton reinigen!",
+        "fr": "Retirer les vêtements contaminés. Laver à l'eau et au savon pendant au moins 15 minutes.",
+        "zh": "脱去被污染的衣物。用水和肥皂彻底清洗皮肤至少15分钟。",
+        "ja": "汚染した衣服を脱ぐ。皮膚を流水と石けんで少なくとも15分間洗い流す。"
       },
       "inhalation": {
         "tr": "Derhal açık ve temiz havaya çıkın. Baş dönmesi ve mide bulantısı varsa dinlendirin, 112’yi arayın.",
         "en": "Move to fresh open air immediately. If dizzy or nauseous, keep resting and seek medical attention.",
-        "de": "Sofort an die frische Luft bringen. Bei Schwindel oder Übelkeit ruhigstellen und Arzt rufen."
+        "de": "Sofort an die frische Luft bringen. Bei Schwindel oder Übelkeit ruhigstellen und Arzt rufen.",
+        "fr": "Transporter la personne à l'air frais. Consulter un médecin si les symptômes persistent.",
+        "zh": "将人转移到新鲜空气处。症状持续时就医。",
+        "ja": "新鮮な空気のある場所へ移動。症状が続く場合は医師に相談。"
       },
       "ingestion": {
         "tr": "KUSTURMAYIN (akciğer aspirasyonu riski)! Ağzı suyla çalkalayıp tükürün ve acil tıbbi yardım çağırın (112).",
         "en": "Do NOT induce vomiting (lung aspiration hazard)! Rinse mouth with water, spit out, and call emergency medical care (112).",
-        "de": "KEIN Erbrechen herbeiführen (Aspirationsgefahr)! Mund mit Wasser ausspülen, ausspucken und sofort Notdienst (112) rufen."
+        "de": "KEIN Erbrechen herbeiführen (Aspirationsgefahr)! Mund mit Wasser ausspülen, ausspucken und sofort Notdienst (112) rufen.",
+        "fr": "Rincer la bouche et cracher. Consulter un médecin.",
+        "zh": "漱口并吐出。就医。",
+        "ja": "口をすすいで吐き出す。医師に相談。"
       }
     },
     "fire_fighting": {
       "suitable": {
         "tr": "Köpük, kuru kimyasal toz (ABC), karbondioksit (CO2) veya su sisi.",
         "en": "Foam, dry chemical powder (ABC), carbon dioxide (CO2), or water spray.",
-        "de": "Schaum, Trockenlöschpulver (ABC), Kohlendioxid (CO2) oder Sprühwasser."
+        "de": "Schaum, Trockenlöschpulver (ABC), Kohlendioxid (CO2) oder Sprühwasser.",
+        "fr": "Mousse, poudre chimique sèche, CO2, eau pulvérisée.",
+        "zh": "泡沫、干粉、二氧化碳、水雾。",
+        "ja": "泡、ドライケミカル、CO2、水噴霧。"
       },
       "prohibited": {
         "tr": "Kesinlikle doğrudan tazyikli su jeti kullanmayın (yanan stiren sıvısını etrafa saçar).",
         "en": "Do not use a solid high-velocity water stream (scatters burning styrene resin).",
-        "de": "Keinen vollen Wasserstrahl verwenden (verbreitet brennendes Harz)."
+        "de": "Keinen vollen Wasserstrahl verwenden (verbreitet brennendes Harz).",
+        "fr": "Jet d'eau à haute pression directe.",
+        "zh": "直接高压水柱。",
+        "ja": "直接高圧水流。"
       },
       "hazards": {
         "tr": "Yangın esnasında yoğun siyah duman, karbonmonoksit ve stiren buharları açığa çıkar. Statik elektrik kıvılcımı ile alev alabilir.",
         "en": "Releases dense black smoke, toxic carbon monoxide, and explosive styrene vapors in fires. Sensitive to static discharge.",
-        "de": "Setzt bei Brand dichten schwarzen Rauch, Kohlenmonoxid und Styroldämpfe frei. Anfällig für statische Entladung."
+        "de": "Setzt bei Brand dichten schwarzen Rauch, Kohlenmonoxid und Styroldämpfe frei. Anfällig für statische Entladung.",
+        "fr": "Vapeurs inflammables. Tenir à l'écart des sources d'ignition.",
+        "zh": "易燃蒸气。远离点火源。",
+        "ja": "可燃性蒸気。着火源から遠ざける。"
       }
     },
     "ppe": {
       "mask": {
         "tr": "A1 veya A2 organik buhar filtreli yarım/tam maske",
         "en": "A1 or A2 organic vapor filter respirator",
-        "de": "A1 oder A2 Filtermaske für organische Dämpfe"
+        "de": "A1 oder A2 Filtermaske für organische Dämpfe",
+        "fr": "Respirateur à filtre vapeurs organiques approprié",
+        "zh": "适当的有机蒸气过滤口罩",
+        "ja": "適切な有機蒸気フィルター防毒マスク"
       },
       "eye": {
         "tr": "Kimyasal sıçrama emniyet gözlüğü",
         "en": "Chemical splash safety goggles",
-        "de": "Chemikalienschutzbrille"
+        "de": "Chemikalienschutzbrille",
+        "fr": "Lunettes de protection chimique",
+        "zh": "化学防溅护目镜",
+        "ja": "化学品スプラッシュゴーグル"
       },
       "gloves": {
         "latex": false,
@@ -271,7 +400,10 @@
         "warning": {
           "tr": "Lateks eldiven stirene karşı dayanıksızdır. Kalın nitril veya PVA/neopren eldiven kullanın.",
           "en": "Latex provides no resistance against styrene. Wear heavy nitrile or PVA/neoprene gloves.",
-          "de": "Latex bietet keinen Schutz gegen Styrol. Dicke Nitril- oder PVA/Neoprenhandschuhe tragen."
+          "de": "Latex bietet keinen Schutz gegen Styrol. Dicke Nitril- oder PVA/Neoprenhandschuhe tragen.",
+          "fr": "Gants nitrile standard appropriés.",
+          "zh": "标准丁腈手套防护即可。",
+          "ja": "標準的なニトリル手袋で十分な保護が得られる。"
         }
       }
     },
@@ -279,12 +411,18 @@
       "storage": {
         "tr": "+20°C altında, serin, iyi havalandırılan, statik topraklamalı, doğrudan güneş almayan kapalı alanda saklayın.",
         "en": "Store below +20°C in a cool, well-ventilated, grounded, shaded area away from heat sources.",
-        "de": "Unter +20°C kühl, gut belüftet, geerdet und vor direkter Sonne geschützt lagern."
+        "de": "Unter +20°C kühl, gut belüftet, geerdet und vor direkter Sonne geschützt lagern.",
+        "fr": "Stocker dans un endroit frais, sec et bien ventilé.",
+        "zh": "储存在阴凉、干燥、通风良好的地方。",
+        "ja": "涼しく乾燥した換気の良い場所に保管。"
       },
       "incompatible": {
         "tr": "Doğrudan peroksitlerle (MEK-P) kontrolsüz karıştırmayın (ekzotermik aşırı ısınma ve patlama riski). Güçlü oksitleyicilerden uzak tutun.",
         "en": "Do not mix uncontrolled with peroxides (MEK-P) (violent exothermic runaway/fire). Keep isolated from strong oxidizers.",
-        "de": "Nicht unkontrolliert mit Peroxiden (MEK-P) mischen (Gefahr thermischen Durchgehens). Von Oxidationsmitteln fernhalten."
+        "de": "Nicht unkontrolliert mit Peroxiden (MEK-P) mischen (Gefahr thermischen Durchgehens). Von Oxidationsmitteln fernhalten.",
+        "fr": "Tenir à l'écart des sources d'ignition et des matières incompatibles.",
+        "zh": "远离点火源和不相容物质。",
+        "ja": "着火源および非適合物質から遠ざける。"
       }
     }
   },
@@ -294,58 +432,88 @@
     "name": {
       "tr": "Teknik Aseton",
       "en": "Technical Acetone",
-      "de": "Technisches Aceton"
+      "de": "Technisches Aceton",
+      "fr": "Acétone Technique",
+      "zh": "工业丙酮",
+      "ja": "工業用アセトン"
     },
     "chemical_name": {
       "tr": "Propan-2-on / Dimetil Keton",
       "en": "Propan-2-one / Dimethyl Ketone",
-      "de": "Propan-2-on / Dimethylketon"
+      "de": "Propan-2-on / Dimethylketon",
+      "fr": "Propan-2-one / Diméthylcétone",
+      "zh": "丙酮 / 二甲基酮",
+      "ja": "プロパン-2-オン / ジメチルケトン"
     },
     "category": "solvent",
     "risk_level": "ORTA",
     "signal_word": {
       "tr": "TEHLİKE",
       "en": "DANGER",
-      "de": "GEFAHR"
+      "de": "GEFAHR",
+      "fr": "DANGER",
+      "zh": "危险",
+      "ja": "危険"
     },
     "hazard_statement": {
       "tr": "H225: Kolay alevlenir sıvı ve buhar. H319: Ciddi göz tahrişi. H336: Rehavet veya baş dönmesine yol açabilir.",
       "en": "H225: Highly flammable liquid and vapor. H319: Causes serious eye irritation. H336: May cause drowsiness or dizziness.",
-      "de": "H225: Flüssigkeit und Dampf leicht entzündbar. H319: Verursacht schwere Augenreizung. H336: Kann Schläfrigkeit und Benommenheit verursachen."
+      "de": "H225: Flüssigkeit und Dampf leicht entzündbar. H319: Verursacht schwere Augenreizung. H336: Kann Schläfrigkeit und Benommenheit verursachen.",
+      "fr": "H225 : Liquide et vapeurs très inflammables. H319 : Provoque une sévère irritation des yeux. H336 : Peut provoquer somnolence ou vertiges.",
+      "zh": "H225：高度易燃液体和蒸气。H319：造成严重眼刺激。H336：可能导致困倦或晕眩。",
+      "ja": "H225：引火性の高い液体および蒸気。H319：強い眼刺激。H336：眠気またはめまいを催すおそれがある。"
     },
     "badges": {
       "fire": {
         "tr": "Çok Kolay Alevlenir (Parlama -17°C)",
         "en": "Highly Flammable (Flash -17°C)",
-        "de": "Leichtentzündlich (Flammpunkt -17°C)"
+        "de": "Leichtentzündlich (Flammpunkt -17°C)",
+        "fr": "Vapeur Hautement Inflammable (Éclair -20°C)",
+        "zh": "高度易燃蒸气（闪点-20°C）",
+        "ja": "高引火性蒸気（引火点-20°C）"
       },
       "health": {
         "tr": "Rehavet / Cilt Yağını Çözer",
         "en": "Drowsiness / Degreases Skin",
-        "de": "Schläfrigkeit / Entfettet die Haut"
+        "de": "Schläfrigkeit / Entfettet die Haut",
+        "fr": "Irritant pour les Yeux / Narcotique",
+        "zh": "眼睛刺激 / 麻醉性",
+        "ja": "眼刺激 / 麻酔性"
       },
       "environment": {
         "tr": "Kanalizasyona Boşaltılamaz",
         "en": "Do Not Drain Into Sewers",
-        "de": "Nicht in Abwasser leiten"
+        "de": "Nicht in Abwasser leiten",
+        "fr": "Faible Impact Environnemental",
+        "zh": "低环境危害",
+        "ja": "環境への影響は低い"
       }
     },
     "source": {
       "tr": "Merck / Sigma-Aldrich Acetone Technical Grade & ECHA Dossier",
       "en": "Merck / Sigma-Aldrich Acetone Technical Grade & ECHA",
-      "de": "Merck / Sigma-Aldrich Aceton technisch & ECHA"
+      "de": "Merck / Sigma-Aldrich Aceton technisch & ECHA",
+      "fr": "Shell / Honeywell Acétone Technique FDS & ECHA",
+      "zh": "Shell / Honeywell 工业丙酮 SDS & ECHA",
+      "ja": "Shell / Honeywell 工業用アセトン SDS & ECHA"
     },
     "source_url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.000.598",
     "verified_at": "2026-10-15",
     "verification_status": {
       "tr": "Doğrulandı (ECHA / Endüstriyel SDS)",
       "en": "Verified (ECHA / Industrial SDS)",
-      "de": "Verifiziert (ECHA / Industrie-SDB)"
+      "de": "Verifiziert (ECHA / Industrie-SDB)",
+      "fr": "Vérifié (ECHA / FDS Industrielle)",
+      "zh": "已验证（ECHA / 工业SDS）",
+      "ja": "検証済（ECHA / 産業用SDS）"
     },
     "verification_note": {
       "tr": "Atölyede fırça, rulo ve metal ekipman temizliğinde kullanılır. Parlama noktası -17°C olduğundan oda sıcaklığında patlayıcı buhar oluşturur.",
       "en": "Workshop solvent for cleaning tools and rollers. Flash point of -17°C means it forms flammable atmospheres at shop temperatures.",
-      "de": "Werkstattreiniger für Werkzeuge und Rollen. Flammpunkt von -17°C bedeutet Zündfähigkeit bei Raumtemperatur."
+      "de": "Werkstattreiniger für Werkzeuge und Rollen. Flammpunkt von -17°C bedeutet Zündfähigkeit bei Raumtemperatur.",
+      "fr": "Solvant de nettoyage polyvalent dans les ateliers composites. Attention : ne jamais utiliser pour nettoyer les mains — élimine le film lipidique protecteur.",
+      "zh": "复合材料车间的通用清洁溶剂。注意：切勿用于清洁双手——会破坏保护性脂质膜。",
+      "ja": "複合材料ワークショップでの汎用洗浄溶剤。注意：手洗いに使用しないこと—保護的脂質膜を除去する。"
     },
     "ghs_codes": [
       "GHS02",
@@ -354,58 +522,88 @@
     "flash_point": {
       "tr": "-17 °C",
       "en": "-17 °C",
-      "de": "-17 °C"
+      "de": "-17 °C",
+      "fr": "−20 °C",
+      "zh": "−20 °C",
+      "ja": "−20 °C"
     },
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
         "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan temiz suyla yıkayın. Kontakt lensleri derhal çıkarın. Tahriş devam ederse doktora başvurun.",
         "en": "Rinse thoroughly with gentle, low-pressure clean water for at least 15 minutes holding eyelids open. Remove contact lenses immediately. Consult physician if irritation persists.",
-        "de": "Augenlider offen halten und mindestens 15 Minuten mit sanftem, drucklosem Wasser gründlich spülen. Kontaktlinsen sofort entfernen. Bei Reizung Arzt aufsuchen."
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit sanftem, drucklosem Wasser gründlich spülen. Kontaktlinsen sofort entfernen. Bei Reizung Arzt aufsuchen.",
+        "fr": "Rincer à l'eau courante propre à basse pression pendant au moins Rinse thoroughly with gentle, low-pressure clean water for at least 15 minutes holding eyelids open. Remove contact lenses immediately. Consult physician if irritation persists. minutes en maintenant les paupières ouvertes. Appeler les secours immédiatement.",
+        "zh": "保持眼睑张开，用低压清洁水冲洗至少15分钟。立即就医。",
+        "ja": "まぶたを開いたまま、低圧の清潔な水で少なくとも15分間洗い流す。直ちに医師の手当てを受ける。"
       },
       "skin": {
         "tr": "Sabun ve ılık suyla yıkayın. Sürekli temas cildi aşırı kurutur ve çatlatır; nemlendirici krem uygulayın.",
         "en": "Wash with soap and warm water. Degreases skin; apply moisturizing protective cream.",
-        "de": "Mit Seife und warmem Wasser waschen. Entfettet die Haut; rückfettende Creme auftragen."
+        "de": "Mit Seife und warmem Wasser waschen. Entfettet die Haut; rückfettende Creme auftragen.",
+        "fr": "Retirer les vêtements contaminés. Laver à l'eau et au savon pendant au moins 15 minutes.",
+        "zh": "脱去被污染的衣物。用水和肥皂彻底清洗皮肤至少15分钟。",
+        "ja": "汚染した衣服を脱ぐ。皮膚を流水と石けんで少なくとも15分間洗い流す。"
       },
       "inhalation": {
         "tr": "Kişiyi derhal temiz havaya çıkarın. Baş dönmesi ve baygınlık belirtisinde yatırıp 112’yi arayın.",
         "en": "Move person to fresh air. If feeling dizzy or drowsy, rest in recumbent position and consult physician.",
-        "de": "Person an die frische Luft bringen. Bei Schwindel oder Benommenheit ruhig lagern und Arzt hinzuziehen."
+        "de": "Person an die frische Luft bringen. Bei Schwindel oder Benommenheit ruhig lagern und Arzt hinzuziehen.",
+        "fr": "Transporter la personne à l'air frais. Consulter un médecin si les symptômes persistent.",
+        "zh": "将人转移到新鲜空气处。症状持续时就医。",
+        "ja": "新鮮な空気のある場所へ移動。症状が続く場合は医師に相談。"
       },
       "ingestion": {
         "tr": "KUSTURMAYIN (solventin akciğere kaçması kimyasal pnömoni yaratır)! Ağzı suyla çalkalayıp tükürün, asla bol sıvı içirmeyin ve acil yardım (112) çağırın.",
         "en": "Do NOT induce vomiting (solvent aspiration into lungs causes chemical pneumonia)! Rinse mouth and spit out, never force fluids, call emergency services (112).",
-        "de": "KEIN Erbrechen herbeiführen (Lösemittel-Aspiration führt zu chemischer Lungenentzündung)! Mund ausspülen, ausspucken und Notdienst (112) rufen."
+        "de": "KEIN Erbrechen herbeiführen (Lösemittel-Aspiration führt zu chemischer Lungenentzündung)! Mund ausspülen, ausspucken und Notdienst (112) rufen.",
+        "fr": "Rincer la bouche et cracher. Consulter un médecin.",
+        "zh": "漱口并吐出。就医。",
+        "ja": "口をすすいで吐き出す。医師に相談。"
       }
     },
     "fire_fighting": {
       "suitable": {
         "tr": "Alkol dirençli köpük, kuru kimyasal toz, CO2 veya su sisi.",
         "en": "Alcohol-resistant foam, dry chemical powder, CO2, or water spray.",
-        "de": "Alkoholbeständiger Schaum, Trockenlöschpulver, CO2 oder Sprühwasser."
+        "de": "Alkoholbeständiger Schaum, Trockenlöschpulver, CO2 oder Sprühwasser.",
+        "fr": "Mousse, poudre chimique sèche, CO2, eau pulvérisée.",
+        "zh": "泡沫、干粉、二氧化碳、水雾。",
+        "ja": "泡、ドライケミカル、CO2、水噴霧。"
       },
       "prohibited": {
         "tr": "Doğrudan basınçlı su jeti sıkmayın (sıvıyı saçarak yangını yayar).",
         "en": "Do not use direct high pressure water jet.",
-        "de": "Keinen scharfen Wasserstrahl einsetzen."
+        "de": "Keinen scharfen Wasserstrahl einsetzen.",
+        "fr": "Jet d'eau à haute pression directe.",
+        "zh": "直接高压水柱。",
+        "ja": "直接高圧水流。"
       },
       "hazards": {
         "tr": "Buharları havadan ağırdır; zemin boyunca sürünerek uzak tutuşma kaynaklarına ulaşabilir ve geri alevlenme yapabilir.",
         "en": "Vapors are heavier than air and can travel along floors to distant ignition sources and flash back.",
-        "de": "Dämpfe sind schwerer als Luft und können am Boden entlang zu entfernten Zündquellen wandern und zurückzünden."
+        "de": "Dämpfe sind schwerer als Luft und können am Boden entlang zu entfernten Zündquellen wandern und zurückzünden.",
+        "fr": "Vapeurs inflammables. Tenir à l'écart des sources d'ignition.",
+        "zh": "易燃蒸气。远离点火源。",
+        "ja": "可燃性蒸気。着火源から遠ざける。"
       }
     },
     "ppe": {
       "mask": {
         "tr": "A1 veya AX tipi organik buhar filtreli yarım yüz maskesi",
         "en": "A1 or AX type organic vapor respirator",
-        "de": "A1 oder AX Atemschutzmaske für organische Dämpfe"
+        "de": "A1 oder AX Atemschutzmaske für organische Dämpfe",
+        "fr": "Respirateur à filtre vapeurs organiques approprié",
+        "zh": "适当的有机蒸气过滤口罩",
+        "ja": "適切な有機蒸気フィルター防毒マスク"
       },
       "eye": {
         "tr": "Göz korumalı emniyet gözlüğü",
         "en": "Safety glasses with side protection",
-        "de": "Schutzbrille mit Seitenschutz"
+        "de": "Schutzbrille mit Seitenschutz",
+        "fr": "Lunettes de protection chimique",
+        "zh": "化学防溅护目镜",
+        "ja": "化学品スプラッシュゴーグル"
       },
       "gloves": {
         "latex": false,
@@ -415,7 +613,10 @@
         "warning": {
           "tr": "DİKKAT: Standart ince nitril ve lateks eldivenler asetonu SANİYELER içinde geçirir! Bütil kauçuk eldiven kullanılmalıdır.",
           "en": "ATTENTION: Thin nitrile and latex degrade within seconds under acetone! Use butyl rubber gloves for liquid contact.",
-          "de": "ACHTUNG: Dünne Nitril- und Latexhandschuhe werden durch Aceton in Sekunden durchdrungen! Butylkautschuk-Handschuhe tragen."
+          "de": "ACHTUNG: Dünne Nitril- und Latexhandschuhe werden durch Aceton in Sekunden durchdrungen! Butylkautschuk-Handschuhe tragen.",
+          "fr": "Gants nitrile standard appropriés.",
+          "zh": "标准丁腈手套防护即可。",
+          "ja": "標準的なニトリル手袋で十分な保護が得られる。"
         }
       }
     },
@@ -423,12 +624,18 @@
       "storage": {
         "tr": "İyi havalandırılan, statik kıvılcım önlemli, kapakları sıkıca kapalı, +25°C altındaki yanıcı madde dolabında depolayın.",
         "en": "Store tightly closed in a cool, well-ventilated flammable cabinet (<25°C) with antistatic grounding.",
-        "de": "Dicht verschlossen in gut belüftetem Brandschutzschrank (<25°C) mit Antistatik-Erdung lagern."
+        "de": "Dicht verschlossen in gut belüftetem Brandschutzschrank (<25°C) mit Antistatik-Erdung lagern.",
+        "fr": "Stocker dans un endroit frais, sec et bien ventilé.",
+        "zh": "储存在阴凉、干燥、通风良好的地方。",
+        "ja": "涼しく乾燥した換気の良い場所に保管。"
       },
       "incompatible": {
         "tr": "Güçlü asitler, güçlü oksitleyiciler ve peroksitlerden (MEK-P) kesinlikle ayrı tutun (patlayıcı reaksiyon riski).",
         "en": "Keep completely isolated from strong acids, oxidizers, and peroxides (MEK-P) (explosion hazard).",
-        "de": "Streng getrennt von starken Säuren, Oxidationsmitteln und Peroxiden (MEK-P) lagern (Explosionsgefahr)."
+        "de": "Streng getrennt von starken Säuren, Oxidationsmitteln und Peroxiden (MEK-P) lagern (Explosionsgefahr).",
+        "fr": "Tenir à l'écart des sources d'ignition et des matières incompatibles.",
+        "zh": "远离点火源和不相容物质。",
+        "ja": "着火源および非適合物質から遠ざける。"
       }
     }
   },
@@ -438,58 +645,88 @@
     "name": {
       "tr": "Karbon Elyaf Tozu",
       "en": "Carbon Fiber Dust",
-      "de": "Kohlefaserstaub"
+      "de": "Kohlefaserstaub",
+      "fr": "Poussière de Fibre de Carbone / Verre",
+      "zh": "碳纤维/玻璃纤维粉尘",
+      "ja": "炭素繊維・ガラス繊維粉塵"
     },
     "chemical_name": {
       "tr": "Karbon Elyaf Kırpıntı ve Talaşı",
       "en": "Milled/Chopped Carbon Fiber Dust & Filaments",
-      "de": "Gemahlener Kohlefaserstaub & Filamente"
+      "de": "Gemahlener Kohlefaserstaub & Filamente",
+      "fr": "Fibres de Carbone et de Verre Manufacturées",
+      "zh": "人造碳纤维和玻璃纤维",
+      "ja": "人工炭素繊維・ガラス繊維"
     },
     "category": "toz",
     "risk_level": "YÜKSEK",
     "signal_word": {
       "tr": "UYARI",
       "en": "WARNING",
-      "de": "ACHTUNG"
+      "de": "ACHTUNG",
+      "fr": "ATTENTION",
+      "zh": "警告",
+      "ja": "警告"
     },
     "hazard_statement": {
       "tr": "H335: Solunum yolu tahrişine yol açabilir. H315: Ciltte mekanik kaşıntı ve mikro batma. Elektrik iletken toz tehlikesi.",
       "en": "H335: May cause respiratory irritation. H315: Mechanical skin itching and micro-abrasion. Conductive dust hazard.",
-      "de": "H335: Kann die Atemwege reizen. H315: Mechanischer Juckreiz und Mikroeinstiche. Elektrisch leitfähiger Staub."
+      "de": "H335: Kann die Atemwege reizen. H315: Mechanischer Juckreiz und Mikroeinstiche. Elektrisch leitfähiger Staub.",
+      "fr": "H335 : Peut irriter les voies respiratoires. H319 : Provoque une sévère irritation des yeux.",
+      "zh": "H335：可能刺激呼吸道。H319：造成严重眼刺激。",
+      "ja": "H335：呼吸器への刺激のおそれ。H319：強い眼刺激。"
     },
     "badges": {
       "fire": {
         "tr": "İletken Toz (Kısa Devre Yangını)",
         "en": "Conductive Dust (Short Circuit)",
-        "de": "Leitfähiger Staub (Kurzschluss)"
+        "de": "Leitfähiger Staub (Kurzschluss)",
+        "fr": "Non Inflammable",
+        "zh": "不可燃",
+        "ja": "不燃性"
       },
       "health": {
         "tr": "Akciğer & Mikro Kıymık Tahrişi",
         "en": "Lung & Micro-Fiber Irritation",
-        "de": "Lungen- & Mikrosplitter-Reizung"
+        "de": "Lungen- & Mikrosplitter-Reizung",
+        "fr": "Irritant Respiratoire / Coupures Cutanées",
+        "zh": "呼吸道刺激 / 皮肤划伤",
+        "ja": "呼吸器刺激 / 皮膚の切り傷"
       },
       "environment": {
         "tr": "Biyolojik Parçalanmaz Katı",
         "en": "Non-Biodegradable Solid",
-        "de": "Nicht biologisch abbaubar"
+        "de": "Nicht biologisch abbaubar",
+        "fr": "Faible Risque Environnemental",
+        "zh": "低环境风险",
+        "ja": "環境リスクは低い"
       }
     },
     "source": {
       "tr": "Toray Carbon Fibers / SGL Carbon Safety Guide & ECHA",
       "en": "Toray Carbon Fibers / SGL Carbon Safety Guide & ECHA",
-      "de": "Toray Carbon Fibers / SGL Carbon Sicherheitsleitfaden & ECHA"
+      "de": "Toray Carbon Fibers / SGL Carbon Sicherheitsleitfaden & ECHA",
+      "fr": "Toray / Hexcel MSDS Fibre de Carbone & Directives OSHA",
+      "zh": "Toray / Hexcel 碳纤维 MSDS & OSHA 指南",
+      "ja": "Toray / Hexcel 炭素繊維 MSDS & OSHA ガイドライン"
     },
     "source_url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.028.321",
     "verified_at": "2026-10-15",
     "verification_status": {
       "tr": "Doğrulandı (Üretici İSG Kılavuzu)",
       "en": "Verified (Manufacturer EHS Guide)",
-      "de": "Verifiziert (Hersteller-Sicherheitsleitfaden)"
+      "de": "Verifiziert (Hersteller-Sicherheitsleitfaden)",
+      "fr": "Vérifié (OSHA / NIOSH / Données Industrielles)",
+      "zh": "已验证（OSHA / NIOSH / 工业数据）",
+      "ja": "検証済（OSHA / NIOSH / 産業データ）"
     },
     "verification_note": {
       "tr": "Zımparalama ve kesme işlemlerinde mikron boyutlu lifler yayılır. Elektrik panolarına girerse kısa devre ve yangına sebep olur.",
       "en": "Micron-scale fibers disperse during sanding/cutting. Airborne fibers penetrating electrical cabinets cause short circuits and fires.",
-      "de": "Beim Schleifen/Schneiden entstehen Mikromillimeter-Fasern. Fasern in Schaltschränken verursachen Kurzschlüsse und Brände."
+      "de": "Beim Schleifen/Schneiden entstehen Mikromillimeter-Fasern. Fasern in Schaltschränken verursachen Kurzschlüsse und Brände.",
+      "fr": "Poussière mécanique non classifiée SVHC mais irritante pour les poumons. Utiliser toujours un respirateur N95/FFP2 lors de la découpe ou du ponçage.",
+      "zh": "非SVHC机械性粉尘，但对肺部有刺激性。切割或打磨时务必佩戴N95/FFP2口罩。",
+      "ja": "SVHC非分類の機械的粉塵だが肺に刺激性がある。切断・研磨時は必ずN95/FFP2マスクを着用。"
     },
     "ghs_codes": [
       "GHS07"
@@ -497,58 +734,88 @@
     "flash_point": {
       "tr": "Uygulanamaz; ince toz bulutu ve elektriksel iletkenlik riski",
       "en": "Not applicable; dust cloud and electrical conductivity hazard",
-      "de": "Nicht anwendbar; Staubwolken- und Kurzschlussgefahr"
+      "de": "Nicht anwendbar; Staubwolken- und Kurzschlussgefahr",
+      "fr": "N/A – Non inflammable",
+      "zh": "不适用 – 不可燃",
+      "ja": "N/A – 不燃性"
     },
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
         "tr": "Gözleri KESİNLİKLE ovuşturmayın (lifler korneayı çizer)! En az 15 dakika tazyiksiz, düşük debili nazik temiz suyla yıkayın.",
         "en": "DO NOT RUB EYES (fibers can scratch the cornea)! Rinse gently with low-pressure clean water for at least 15 minutes.",
-        "de": "AUGEN NICHT REIBEN (Fasern zerkratzen die Hornhaut)! Mindestens 15 Minuten lang drucklos und sanft mit klarem Wasser spülen."
+        "de": "AUGEN NICHT REIBEN (Fasern zerkratzen die Hornhaut)! Mindestens 15 Minuten lang drucklos und sanft mit klarem Wasser spülen.",
+        "fr": "Rincer à l'eau courante propre à basse pression pendant au moins DO NOT RUB EYES (fibers can scratch the cornea)! Rinse gently with low-pressure clean water for at least 15 minutes. minutes en maintenant les paupières ouvertes. Appeler les secours immédiatement.",
+        "zh": "保持眼睑张开，用低压清洁水冲洗至少15分钟。立即就医。",
+        "ja": "まぶたを開いたまま、低圧の清潔な水で少なくとも15分間洗い流す。直ちに医師の手当てを受ける。"
       },
       "skin": {
         "tr": "Cildi ovalamadan ılık su ve sabunla yıkayın. Mikro batmaları çıkarmak için yapışkan bant veya cımbız kullanılabilir.",
         "en": "Wash gently with warm soapy water without scrubbing. Adhesive tape can help lift loose superficial micro-fibers.",
-        "de": "Haut sanft mit warmem Wasser und Seife waschen ohne zu schrubben. Klebeband kann lose Fasern abziehen."
+        "de": "Haut sanft mit warmem Wasser und Seife waschen ohne zu schrubben. Klebeband kann lose Fasern abziehen.",
+        "fr": "Retirer les vêtements contaminés. Laver à l'eau et au savon pendant au moins 15 minutes.",
+        "zh": "脱去被污染的衣物。用水和肥皂彻底清洗皮肤至少15分钟。",
+        "ja": "汚染した衣服を脱ぐ。皮膚を流水と石けんで少なくとも15分間洗い流す。"
       },
       "inhalation": {
         "tr": "Tozlu alandan uzaklaşıp açık havaya çıkın. Öksürük veya göğüs sıkışması durumunda tıbbi muayeneye başvurun.",
         "en": "Leave dusty area immediately for fresh air. Seek medical attention if persistent coughing or tight chest occurs.",
-        "de": "Staubigen Bereich sofort verlassen. Bei anhaltendem Husten oder Engegefühl im Brustkorb Arzt aufsuchen."
+        "de": "Staubigen Bereich sofort verlassen. Bei anhaltendem Husten oder Engegefühl im Brustkorb Arzt aufsuchen.",
+        "fr": "Transporter la personne à l'air frais. Consulter un médecin si les symptômes persistent.",
+        "zh": "将人转移到新鲜空气处。症状持续时就医。",
+        "ja": "新鮮な空気のある場所へ移動。症状が続く場合は医師に相談。"
       },
       "ingestion": {
         "tr": "Kusturmayın! Ağzı temiz suyla çalkalayıp tükürün. Boğazı rahatlatmak için küçük yudumlarla az miktarda su içilebilir.",
         "en": "Do not induce vomiting! Rinse mouth thoroughly with water and spit out. Take small sips of water to soothe the throat.",
-        "de": "Kein Erbrechen herbeiführen! Mund gründlich mit Wasser ausspülen und ausspucken. Bei Bedarf kleine Schlucke Wasser trinken."
+        "de": "Kein Erbrechen herbeiführen! Mund gründlich mit Wasser ausspülen und ausspucken. Bei Bedarf kleine Schlucke Wasser trinken.",
+        "fr": "Rincer la bouche et cracher. Consulter un médecin.",
+        "zh": "漱口并吐出。就医。",
+        "ja": "口をすすいで吐き出す。医師に相談。"
       }
     },
     "fire_fighting": {
       "suitable": {
         "tr": "Su sisi, kuru kimyasal toz söndürücüler.",
         "en": "Water spray/fog, dry chemical powder extinguishers.",
-        "de": "Wassersprühstrahl, Trockenlöschpulver."
+        "de": "Wassersprühstrahl, Trockenlöschpulver.",
+        "fr": "Mousse, poudre chimique sèche, CO2, eau pulvérisée.",
+        "zh": "泡沫、干粉、二氧化碳、水雾。",
+        "ja": "泡、ドライケミカル、CO2、水噴霧。"
       },
       "prohibited": {
         "tr": "Yüksek basınçlı tazyikli su veya hava sıkmayın (toz bulutu oluşturup patlama riski doğurur).",
         "en": "Do not use high velocity water or compressed air (stirs up explosive dust clouds).",
-        "de": "Keine Druckluft oder harten Wasserstrahl einsetzen (wirbelt explosive Staubwolken auf)."
+        "de": "Keine Druckluft oder harten Wasserstrahl einsetzen (wirbelt explosive Staubwolken auf).",
+        "fr": "Jet d'eau à haute pression directe.",
+        "zh": "直接高压水柱。",
+        "ja": "直接高圧水流。"
       },
       "hazards": {
         "tr": "Havada asılı karbon tozu elektrik panolarında ark, kısa devre ve yangın başlatır. Patlayıcı toz bulutu oluşturabilir.",
         "en": "Airborne conductive dust causes electrical arc-overs, short circuits, and equipment fires. May form explosive dust clouds.",
-        "de": "Schwebender leitfähiger Staub verursacht Lichtbögen und Kurzschlüsse in elektrischen Anlagen."
+        "de": "Schwebender leitfähiger Staub verursacht Lichtbögen und Kurzschlüsse in elektrischen Anlagen.",
+        "fr": "Vapeurs inflammables. Tenir à l'écart des sources d'ignition.",
+        "zh": "易燃蒸气。远离点火源。",
+        "ja": "可燃性蒸気。着火源から遠ざける。"
       }
     },
     "ppe": {
       "mask": {
         "tr": "P3 veya FFP3 partikül filtreli toz maskesi (Ventilli)",
         "en": "P3 or FFP3 particle dust respirator (Valved)",
-        "de": "P3 oder FFP3 Partikel-Staubmaske (mit Ventil)"
+        "de": "P3 oder FFP3 Partikel-Staubmaske (mit Ventil)",
+        "fr": "Respirateur à filtre vapeurs organiques approprié",
+        "zh": "适当的有机蒸气过滤口罩",
+        "ja": "適切な有機蒸気フィルター防毒マスク"
       },
       "eye": {
         "tr": "Toz sızdırmaz emniyet gözlüğü (Tam kapalı)",
         "en": "Dust-tight sealed safety goggles",
-        "de": "Dicht schließende Vollsichtbrille"
+        "de": "Dicht schließende Vollsichtbrille",
+        "fr": "Lunettes de protection chimique",
+        "zh": "化学防溅护目镜",
+        "ja": "化学品スプラッシュゴーグル"
       },
       "gloves": {
         "latex": true,
@@ -558,7 +825,10 @@
         "warning": {
           "tr": "Mekanik batmaları önlemek için poliüretan veya nitril kaplı elastik iş eldiveni ve tek kullanımlık Tyvek tulum kullanın.",
           "en": "Wear nitrile/PU coated work gloves and disposable Tyvek coveralls with tight cuffs to prevent fiber penetration.",
-          "de": "Nitril/PU-beschichtete Arbeitshandschuhe und Tyvek-Schutzanzug mit dichten Bündchen tragen."
+          "de": "Nitril/PU-beschichtete Arbeitshandschuhe und Tyvek-Schutzanzug mit dichten Bündchen tragen.",
+          "fr": "Gants nitrile standard appropriés.",
+          "zh": "标准丁腈手套防护即可。",
+          "ja": "標準的なニトリル手袋で十分な保護が得られる。"
         }
       }
     },
@@ -566,12 +836,18 @@
       "storage": {
         "tr": "Kuru, kapalı plastik torbalarda veya fıçılarda, elektrik panolarından ve açık şalterlerden uzakta saklayın.",
         "en": "Store in dry sealed heavy bags or drums, far from open electrical panels and switchgear.",
-        "de": "Trocken in dicht verschlossenen Säcken oder Fässern, fern von elektrischen Schaltschränken lagern."
+        "de": "Trocken in dicht verschlossenen Säcken oder Fässern, fern von elektrischen Schaltschränken lagern.",
+        "fr": "Stocker dans un endroit frais, sec et bien ventilé.",
+        "zh": "储存在阴凉、干燥、通风良好的地方。",
+        "ja": "涼しく乾燥した換気の良い場所に保管。"
       },
       "incompatible": {
         "tr": "Güçlü oksitleyici maddeler ve açık elektrik terminallerinden izole tutun.",
         "en": "Keep isolated from strong oxidizers and unprotected electrical terminals.",
-        "de": "Getrennt von starken Oxidationsmitteln und offenen elektrischen Kontakten lagern."
+        "de": "Getrennt von starken Oxidationsmitteln und offenen elektrischen Kontakten lagern.",
+        "fr": "Tenir à l'écart des sources d'ignition et des matières incompatibles.",
+        "zh": "远离点火源和不相容物质。",
+        "ja": "着火源および非適合物質から遠ざける。"
       }
     }
   },
@@ -581,58 +857,88 @@
     "name": {
       "tr": "KOBALT NAFTENAT",
       "en": "COBALT NAPHTHENATE",
-      "de": "KOBALTNAPHTHENAT"
+      "de": "KOBALTNAPHTHENAT",
+      "fr": "Naphténate de Cobalt",
+      "zh": "环烷酸钴",
+      "ja": "ナフテン酸コバルト"
     },
     "chemical_name": {
       "tr": "Kobalt Naftenat Çözeltisi (Hızlandırıcı)",
       "en": "Cobalt Naphthenate in Mineral Spirits (Promoter)",
-      "de": "Kobaltnaphthenat in Testbenzin (Beschleuniger)"
+      "de": "Kobaltnaphthenat in Testbenzin (Beschleuniger)",
+      "fr": "Naphténate de Cobalt en Solvant Naphta",
+      "zh": "石脑油溶剂中的环烷酸钴",
+      "ja": "ナフサ溶剤中のナフテン酸コバルト"
     },
     "category": "hizlandirici",
     "risk_level": "KRİTİK",
     "signal_word": {
       "tr": "TEHLİKE",
       "en": "DANGER",
-      "de": "GEFAHR"
+      "de": "GEFAHR",
+      "fr": "DANGER",
+      "zh": "危险",
+      "ja": "危険"
     },
     "hazard_statement": {
       "tr": "H226: Alevlenir sıvı ve buhar. H317/H334: Alerji ve solunum hassasiyeti. H411: Sucul ortamda uzun süreli toksik etki.",
       "en": "H226: Flammable liquid and vapor. H317/H334: Allergic skin & respiratory reaction. H411: Toxic to aquatic life with long lasting effects.",
-      "de": "H226: Flüssigkeit und Dampf entzündbar. H317/H334: Allergische Haut- und Atemwegsreaktionen. H411: Giftig für Wasserorganismen mit langfristiger Wirkung."
+      "de": "H226: Flüssigkeit und Dampf entzündbar. H317/H334: Allergische Haut- und Atemwegsreaktionen. H411: Giftig für Wasserorganismen mit langfristiger Wirkung.",
+      "fr": "H317 : Peut provoquer une allergie cutanée. H410 : Très toxique pour les organismes aquatiques, effets durables. H226 : Liquide et vapeurs inflammables.",
+      "zh": "H317：可能导致皮肤过敏。H410：对水生生物毒性极大并有持久影响。H226：易燃液体和蒸气。",
+      "ja": "H317：皮膚アレルギー性反応を起こすおそれがある。H410：長期継続的影響により水生生物に非常に強い毒性。H226：引火性液体および蒸気。"
     },
     "badges": {
       "fire": {
         "tr": "Alevlenir Sıvı (Parlama ~49°C)",
         "en": "Flammable Liquid (Flash ~49°C)",
-        "de": "Entzündbar (Flammpunkt ~49°C)"
+        "de": "Entzündbar (Flammpunkt ~49°C)",
+        "fr": "Solvant Inflammable (Éclair ~36°C)",
+        "zh": "易燃溶剂（闪点~36°C）",
+        "ja": "可燃性溶剤（引火点~36°C）"
       },
       "health": {
         "tr": "Alerji / Karsinojenik Şüphe",
         "en": "Sensitizer / Carcinogen Suspect",
-        "de": "Sensibilisierend / Krebsverdacht"
+        "de": "Sensibilisierend / Krebsverdacht",
+        "fr": "Sensibilisant Cutané / Toxique Aquatique",
+        "zh": "皮肤致敏剂 / 水生毒性",
+        "ja": "皮膚感作性 / 水生毒性"
       },
       "environment": {
         "tr": "Sucul Toksik (H411)",
         "en": "Aquatic Toxic (H411)",
-        "de": "Gewässertoxisch (H411)"
+        "de": "Gewässertoxisch (H411)",
+        "fr": "Très Toxique pour Organismes Aquatiques",
+        "zh": "对水生生物毒性极大",
+        "ja": "水生生物に非常に強い毒性"
       }
     },
     "source": {
       "tr": "Borchers / Umicore Cobalt Accelerators SDS & ECHA Dossier",
       "en": "Borchers / Umicore Cobalt Accelerators SDS & ECHA",
-      "de": "Borchers / Umicore Kobalt-Beschleuniger SDB & ECHA"
+      "de": "Borchers / Umicore Kobalt-Beschleuniger SDB & ECHA",
+      "fr": "OM Group / Borchers Cobalt Octoate FDS & ECHA",
+      "zh": "OM Group / Borchers 辛酸钴 SDS & ECHA",
+      "ja": "OM Group / Borchers コバルトオクトエート SDS & ECHA"
     },
     "source_url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.059.083",
     "verified_at": "2026-10-15",
     "verification_status": {
       "tr": "Doğrulandı (ECHA / Endüstriyel SDS)",
       "en": "Verified (ECHA / Industrial SDS)",
-      "de": "Verifiziert (ECHA / Industrie-SDB)"
+      "de": "Verifiziert (ECHA / Industrie-SDB)",
+      "fr": "Vérifié (ECHA / FDS Industrielle)",
+      "zh": "已验证（ECHA / 工业SDS）",
+      "ja": "検証済（ECHA / 産業用SDS）"
     },
     "verification_note": {
       "tr": "Polyester reçinede peroksit ayrışmasını başlatan hızlandırıcıdır. MEK-P İLE ASLA DOĞRUDAN TEMAS ETTİRİLEMEZ (PATLAMA!).",
       "en": "Polyester curing promoter. MUST NEVER BE DIRECTLY MIXED WITH MEK-P PEROXIDE (VIOLENT EXPLOSION!).",
-      "de": "Polyester-Härtungsbeschleuniger. DARF NIEMALS DIREKT MIT MEK-P PEROXID GEMISCHT WERDEN (EXPLOSIONSGEFAHR!)."
+      "de": "Polyester-Härtungsbeschleuniger. DARF NIEMALS DIREKT MIT MEK-P PEROXID GEMISCHT WERDEN (EXPLOSIONSGEFAHR!).",
+      "fr": "Agent promoteur du durcissement polyester. Risque d'explosion par mélange direct avec MEK-P. Ne jamais stocker en contact direct.",
+      "zh": "聚酯固化促进剂。与MEK-P直接混合有爆炸风险。切勿直接接触储存。",
+      "ja": "ポリエステル硬化促進剤。MEK-Pとの直接混合で爆発の危険がある。直接接触しないよう保管すること。"
     },
     "ghs_codes": [
       "GHS02",
@@ -642,58 +948,88 @@
     "flash_point": {
       "tr": "48.89 °C",
       "en": "48.89 °C",
-      "de": "48.89 °C"
+      "de": "48.89 °C",
+      "fr": "Environ 36 °C (solvant naphta)",
+      "zh": "约 36 °C（石脑油溶剂）",
+      "ja": "約 36 °C（ナフサ溶剤）"
     },
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
         "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan temiz suyla yıkayın (içten dışa doğru). Derhal göz hekimine başvurun.",
         "en": "Rinse with gentle, low-pressure running water for at least 15 minutes holding eyelids open (inner corner outward). Seek ophthalmologist immediately.",
-        "de": "Augenlider offen halten und mindestens 15 Minuten mit sanftem, drucklosem Wasser spülen (von innen nach außen). Sofort Augenarzt hinzuziehen."
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit sanftem, drucklosem Wasser spülen (von innen nach außen). Sofort Augenarzt hinzuziehen.",
+        "fr": "Rincer à l'eau courante propre à basse pression pendant au moins Rinse with gentle, low-pressure running water for at least 15 minutes holding eyelids open (inner corner outward). Seek ophthalmologist immediately. minutes en maintenant les paupières ouvertes. Appeler les secours immédiatement.",
+        "zh": "保持眼睑张开，用低压清洁水冲洗至少15分钟。立即就医。",
+        "ja": "まぶたを開いたまま、低圧の清潔な水で少なくとも15分間洗い流す。直ちに医師の手当てを受ける。"
       },
       "skin": {
         "tr": "Bulaşan giysileri çıkarın. Cildi tazyiksiz su ve sabunla yıkayın. Ciltte döküntü ve alerji belirtilerini takip edin.",
         "en": "Remove contaminated clothes. Wash skin with soap and running water without high pressure. Watch for rash or sensitization.",
-        "de": "Kleidung ausziehen. Haut gründlich mit Wasser und Seife waschen. Auf allergische Hautreaktionen achten."
+        "de": "Kleidung ausziehen. Haut gründlich mit Wasser und Seife waschen. Auf allergische Hautreaktionen achten.",
+        "fr": "Retirer les vêtements contaminés. Laver à l'eau et au savon pendant au moins 15 minutes.",
+        "zh": "脱去被污染的衣物。用水和肥皂彻底清洗皮肤至少15分钟。",
+        "ja": "汚染した衣服を脱ぐ。皮膚を流水と石けんで少なくとも15分間洗い流す。"
       },
       "inhalation": {
         "tr": "Kişiyi temiz havaya çıkarın. Hırıltı, nefes darlığı veya astım belirtisinde acil tıbbi yardım çağırın.",
         "en": "Move person to fresh air. If wheezing or asthmatic symptoms develop, seek emergency medical care.",
-        "de": "Person an die frische Luft bringen. Bei Atembeschwerden oder asthmatischen Symptomen sofort Notarzt rufen."
+        "de": "Person an die frische Luft bringen. Bei Atembeschwerden oder asthmatischen Symptomen sofort Notarzt rufen.",
+        "fr": "Transporter la personne à l'air frais. Consulter un médecin si les symptômes persistent.",
+        "zh": "将人转移到新鲜空气处。症状持续时就医。",
+        "ja": "新鮮な空気のある場所へ移動。症状が続く場合は医師に相談。"
       },
       "ingestion": {
         "tr": "Kusturmayın! Ağzı suyla çalkalayıp tükürün ve acil yardım (112) çağırın.",
         "en": "Do NOT induce vomiting! Rinse mouth, spit out, and call emergency medical services (112).",
-        "de": "KEIN Erbrechen herbeiführen! Mund ausspülen, ausspucken und Notdienst (112) rufen."
+        "de": "KEIN Erbrechen herbeiführen! Mund ausspülen, ausspucken und Notdienst (112) rufen.",
+        "fr": "Rincer la bouche et cracher. Consulter un médecin.",
+        "zh": "漱口并吐出。就医。",
+        "ja": "口をすすいで吐き出す。医師に相談。"
       }
     },
     "fire_fighting": {
       "suitable": {
         "tr": "Köpük, kuru kimyasal toz, CO2 veya su sisi.",
         "en": "Foam, dry chemical powder, CO2, or water fog.",
-        "de": "Schaum, Trockenlöschpulver, CO2 oder Sprühwasser."
+        "de": "Schaum, Trockenlöschpulver, CO2 oder Sprühwasser.",
+        "fr": "Mousse, poudre chimique sèche, CO2, eau pulvérisée.",
+        "zh": "泡沫、干粉、二氧化碳、水雾。",
+        "ja": "泡、ドライケミカル、CO2、水噴霧。"
       },
       "prohibited": {
         "tr": "Doğrudan yüksek basınçlı su jeti kullanmayın.",
         "en": "Do not use a direct high-pressure water jet.",
-        "de": "Keinen scharfen Wasserstrahl einsetzen."
+        "de": "Keinen scharfen Wasserstrahl einsetzen.",
+        "fr": "Jet d'eau à haute pression directe.",
+        "zh": "直接高压水柱。",
+        "ja": "直接高圧水流。"
       },
       "hazards": {
         "tr": "Yangın esnasında zehirli kobalt oksit dumanları ve karbonmonoksit açığa çıkar.",
         "en": "Fires generate toxic cobalt oxide fumes and carbon monoxide.",
-        "de": "Im Brandfall entstehen giftige Kobaltoxiddämpfe und Kohlenmonoxid."
+        "de": "Im Brandfall entstehen giftige Kobaltoxiddämpfe und Kohlenmonoxid.",
+        "fr": "Vapeurs inflammables. Tenir à l'écart des sources d'ignition.",
+        "zh": "易燃蒸气。远离点火源。",
+        "ja": "可燃性蒸気。着火源から遠ざける。"
       }
     },
     "ppe": {
       "mask": {
         "tr": "A2P3 kombine organik gaz ve partikül filtreli maske",
         "en": "A2P3 combined organic vapor and particle respirator",
-        "de": "A2P3 Kombinationsfiltermaske"
+        "de": "A2P3 Kombinationsfiltermaske",
+        "fr": "Respirateur à filtre vapeurs organiques approprié",
+        "zh": "适当的有机蒸气过滤口罩",
+        "ja": "適切な有機蒸気フィルター防毒マスク"
       },
       "eye": {
         "tr": "Kimyasal sıçrama emniyet gözlüğü ve yüz siperi",
         "en": "Chemical splash goggles and face shield",
-        "de": "Dicht schließende Schutzbrille und Gesichtsschutz"
+        "de": "Dicht schließende Schutzbrille und Gesichtsschutz",
+        "fr": "Lunettes de protection chimique",
+        "zh": "化学防溅护目镜",
+        "ja": "化学品スプラッシュゴーグル"
       },
       "gloves": {
         "latex": false,
@@ -703,7 +1039,10 @@
         "warning": {
           "tr": "Lateks eldiven dayanıksızdır. Ağır hizmet nitril veya neopren eldiven kullanın.",
           "en": "Latex is unsuitable. Wear heavy-duty nitrile or neoprene gloves.",
-          "de": "Latex ist ungeeignet. Dicke Nitril- oder Neoprenhandschuhe tragen."
+          "de": "Latex ist ungeeignet. Dicke Nitril- oder Neoprenhandschuhe tragen.",
+          "fr": "Gants nitrile standard appropriés.",
+          "zh": "标准丁腈手套防护即可。",
+          "ja": "標準的なニトリル手袋で十分な保護が得られる。"
         }
       }
     },
@@ -711,12 +1050,18 @@
       "storage": {
         "tr": "Serin, kuru, iyi havalandırılan alanda, doğrudan güneş ışığından uzak, kapalı kaplarda saklayın.",
         "en": "Store in a cool, dry, well-ventilated area away from direct sunlight in sealed containers.",
-        "de": "Kühl, trocken, gut belüftet und vor Sonne geschützt in dicht geschlossenen Gebinden lagern."
+        "de": "Kühl, trocken, gut belüftet und vor Sonne geschützt in dicht geschlossenen Gebinden lagern.",
+        "fr": "Stocker dans un endroit frais, sec et bien ventilé.",
+        "zh": "储存在阴凉、干燥、通风良好的地方。",
+        "ja": "涼しく乾燥した換気の良い場所に保管。"
       },
       "incompatible": {
         "tr": "HAYATİ UYARI: KESİNLİKLE MEK-P VEYA HERHANGİ BİR PEROKSİT İLE AYNI RAFTA BULUNDURMAYIN. Doğrudan temas ani alevlenme ve patlamaya yol açar!",
         "en": "CRITICAL WARNING: NEVER store on the same shelf or bring near MEK-P or any organic peroxide. Contact causes violent explosion!",
-        "de": "LEBENSGEFAHR: NIEMALS im selben Regal wie MEK-P oder organische Peroxide lagern. Direkter Kontakt führt zur Explosion!"
+        "de": "LEBENSGEFAHR: NIEMALS im selben Regal wie MEK-P oder organische Peroxide lagern. Direkter Kontakt führt zur Explosion!",
+        "fr": "Tenir à l'écart des sources d'ignition et des matières incompatibles.",
+        "zh": "远离点火源和不相容物质。",
+        "ja": "着火源および非適合物質から遠ざける。"
       }
     }
   },
@@ -726,58 +1071,88 @@
     "name": {
       "tr": "EPOKSİ REÇİNE",
       "en": "EPOXY RESIN",
-      "de": "EPOXIDHARZ"
+      "de": "EPOXIDHARZ",
+      "fr": "Résine Époxy DGEBA",
+      "zh": "双酚A环氧树脂（DGEBA）",
+      "ja": "エポキシ樹脂DGEBA"
     },
     "chemical_name": {
       "tr": "Bisfenol-A Epiklorohidrin Epoksi Reçine",
       "en": "Bisphenol-A Diglycidyl Ether (DGEBA) Resin",
-      "de": "Bisphenol-A-Epichlorhydrin-Epoxidharz"
+      "de": "Bisphenol-A-Epichlorhydrin-Epoxidharz",
+      "fr": "Bisphénol A Diglycidyl Éther (DGEBA)",
+      "zh": "双酚A二缩水甘油醚（DGEBA）",
+      "ja": "ビスフェノールAジグリシジルエーテル（DGEBA）"
     },
     "category": "recine",
     "risk_level": "YÜKSEK",
     "signal_word": {
       "tr": "UYARI",
       "en": "WARNING",
-      "de": "ACHTUNG"
+      "de": "ACHTUNG",
+      "fr": "ATTENTION",
+      "zh": "警告",
+      "ja": "警告"
     },
     "hazard_statement": {
       "tr": "H315: Cilt tahrişine yol açar. H319: Ciddi göz tahrişi. H317: Alerjik cilt reaksiyonu (Kalıcı kontakt dermatit). H411: Sucul toksik.",
       "en": "H315: Causes skin irritation. H319: Causes serious eye irritation. H317: May cause allergic skin reaction. H411: Toxic to aquatic life.",
-      "de": "H315: Verursacht Hautreizungen. H319: Verursacht schwere Augenreizung. H317: Kann allergische Hautreaktionen verursachen. H411: Giftig für Wasserorganismen."
+      "de": "H315: Verursacht Hautreizungen. H319: Verursacht schwere Augenreizung. H317: Kann allergische Hautreaktionen verursachen. H411: Giftig für Wasserorganismen.",
+      "fr": "H317 : Peut provoquer une allergie cutanée. H411 : Toxique pour les organismes aquatiques, effets durables. H319 : Provoque une sévère irritation des yeux.",
+      "zh": "H317：可能导致皮肤过敏。H411：对水生生物有毒并有持久影响。H319：造成严重眼刺激。",
+      "ja": "H317：皮膚アレルギー性反応を起こすおそれがある。H411：長期継続的影響により水生生物に毒性。H319：強い眼刺激。"
     },
     "badges": {
       "fire": {
         "tr": "Parlama Yüksek (>150°C)",
         "en": "High Flashpoint (>150°C)",
-        "de": "Hoher Flammpunkt (>150°C)"
+        "de": "Hoher Flammpunkt (>150°C)",
+        "fr": "Liquide Combustible (Éclair >150°C)",
+        "zh": "可燃液体（闪点>150°C）",
+        "ja": "可燃性液体（引火点>150°C）"
       },
       "health": {
         "tr": "Kalıcı Cilt Alerjisi (Dermatit)",
         "en": "Skin Sensitization (Dermatitis)",
-        "de": "Dauerhafte Hautallergie"
+        "de": "Dauerhafte Hautallergie",
+        "fr": "Sensibilisant Cutané Puissant",
+        "zh": "强力皮肤致敏剂",
+        "ja": "強力な皮膚感作性物質"
       },
       "environment": {
         "tr": "Sucul Ortamda Toksik (H411)",
         "en": "Aquatic Toxic (H411)",
-        "de": "Gewässertoxisch (H411)"
+        "de": "Gewässertoxisch (H411)",
+        "fr": "Toxique pour Organismes Aquatiques",
+        "zh": "对水生生物有毒",
+        "ja": "水生生物に毒性"
       }
     },
     "source": {
       "tr": "Hexion / Olin D.E.R. 331 / West System 105 SDS & ECHA",
       "en": "Hexion / Olin D.E.R. 331 / West System 105 SDS & ECHA",
-      "de": "Hexion / Olin D.E.R. 331 / West System 105 SDB & ECHA"
+      "de": "Hexion / Olin D.E.R. 331 / West System 105 SDB & ECHA",
+      "fr": "Hexion / West System Époxy FDS & ECHA SVHC Dossier",
+      "zh": "Hexion / West System 环氧树脂 SDS & ECHA SVHC档案",
+      "ja": "Hexion / West System エポキシ SDS & ECHA SVHCドシエ"
     },
     "source_url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.070.784",
     "verified_at": "2026-10-15",
     "verification_status": {
       "tr": "Doğrulandı (ECHA / Endüstriyel SDS)",
       "en": "Verified (ECHA / Industrial SDS)",
-      "de": "Verifiziert (ECHA / Industrie-SDB)"
+      "de": "Verifiziert (ECHA / Industrie-SDB)",
+      "fr": "Vérifié (ECHA / FDS Industrielle)",
+      "zh": "已验证（ECHA / 工业SDS）",
+      "ja": "検証済（ECHA / 産業用SDS）"
     },
     "verification_note": {
       "tr": "Yüksek mukavemetli marin kompozit laminasyonunda kullanılır. Cilde temas ettiğinde ömür boyu süren kalıcı alerji (duyarlılık) oluşturabilir.",
       "en": "Used in high-performance marine laminates. Direct skin contact can trigger irreversible lifetime epoxy sensitization.",
-      "de": "Verwendet im Hochleistungs-Bootsbau. Hautkontakt kann lebenslange Epoxid-Sensibilisierung auslösen."
+      "de": "Verwendet im Hochleistungs-Bootsbau. Hautkontakt kann lebenslange Epoxid-Sensibilisierung auslösen.",
+      "fr": "Substance SVHC préoccupante. Peut provoquer un eczéma professionnel irréversible. Attention au mélange exothermique dans des contenants profonds.",
+      "zh": "SVHC高关注物质。可能引起不可逆的职业性湿疹。注意在深容器中混合时的放热反应。",
+      "ja": "SVHC物質。不可逆的な職業性湿疹を引き起こすおそれがある。深容器でのエポキシ発熱反応に注意。"
     },
     "ghs_codes": [
       "GHS07"
@@ -785,58 +1160,88 @@
     "flash_point": {
       "tr": "Yaklaşık >150 °C",
       "en": "Approx. >150 °C",
-      "de": "Ca. >150 °C"
+      "de": "Ca. >150 °C",
+      "fr": ">150 °C (résine époxy non diluée)",
+      "zh": ">150 °C（未稀释环氧树脂）",
+      "ja": ">150 °C（未希釈エポキシ樹脂）"
     },
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
         "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan temiz suyla yıkayın. Gözü ovuşturmayın, doktora başvurun.",
         "en": "Rinse with gentle, low-pressure clean water for at least 15 minutes holding eyelids open. Do not rub eyes; consult a physician.",
-        "de": "Augenlider offen halten und mindestens 15 Minuten mit drucklosem, sauberem Wasser spülen. Augen nicht reiben; Arzt hinzuziehen."
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit drucklosem, sauberem Wasser spülen. Augen nicht reiben; Arzt hinzuziehen.",
+        "fr": "Rincer à l'eau courante propre à basse pression pendant au moins Rinse with gentle, low-pressure clean water for at least 15 minutes holding eyelids open. Do not rub eyes; consult a physician. minutes en maintenant les paupières ouvertes. Appeler les secours immédiatement.",
+        "zh": "保持眼睑张开，用低压清洁水冲洗至少15分钟。立即就医。",
+        "ja": "まぶたを開いたまま、低圧の清潔な水で少なくとも15分間洗い流す。直ちに医師の手当てを受ける。"
       },
       "skin": {
         "tr": "Cildi ılık su ve sabunla bolca yıkayın. CİLDE ASLA ASETON VEYA TİNER SÜRMEYİN (reçineyi kan dolaşımına geçirir)!",
         "en": "Wash skin thoroughly with soap and warm water. NEVER USE ACETONE OR THINNER ON SKIN (it drives resin into bloodstream)!",
-        "de": "Haut gründlich mit Wasser und Seife waschen. NIEMALS ACETON ODER VERDÜNNER AUF DER HAUT VERWENDEN!"
+        "de": "Haut gründlich mit Wasser und Seife waschen. NIEMALS ACETON ODER VERDÜNNER AUF DER HAUT VERWENDEN!",
+        "fr": "Retirer les vêtements contaminés. Laver à l'eau et au savon pendant au moins 15 minutes.",
+        "zh": "脱去被污染的衣物。用水和肥皂彻底清洗皮肤至少15分钟。",
+        "ja": "汚染した衣服を脱ぐ。皮膚を流水と石けんで少なくとも15分間洗い流す。"
       },
       "inhalation": {
         "tr": "Isıtılmış reçine veya aerosol buharında temiz havaya çıkarın. Dinlendirin.",
         "en": "Move to fresh air in case of heated resin vapors or aerosols. Keep rested.",
-        "de": "Bei Dämpfen von erhitztem Harz an die frische Luft bringen."
+        "de": "Bei Dämpfen von erhitztem Harz an die frische Luft bringen.",
+        "fr": "Transporter la personne à l'air frais. Consulter un médecin si les symptômes persistent.",
+        "zh": "将人转移到新鲜空气处。症状持续时就医。",
+        "ja": "新鮮な空気のある場所へ移動。症状が続く場合は医師に相談。"
       },
       "ingestion": {
         "tr": "Kusturmayın! Ağzı temiz suyla çalkalayıp tükürün. Kusmayı tetiklememek için bol sıvı vermeyin (bilinç açıksa 1-2 yudum su verilebilir). Doktora başvurun.",
         "en": "Do not induce vomiting! Rinse mouth and spit out. Avoid large amounts of fluid (1-2 small sips only if conscious). Seek medical advice.",
-        "de": "Kein Erbrechen herbeiführen! Mund ausspülen und ausspucken. Keine großen Flüssigkeitsmengen geben (max. 1-2 Schlucke bei Bewusstsein). Arzt rufen."
+        "de": "Kein Erbrechen herbeiführen! Mund ausspülen und ausspucken. Keine großen Flüssigkeitsmengen geben (max. 1-2 Schlucke bei Bewusstsein). Arzt rufen.",
+        "fr": "Rincer la bouche et cracher. Consulter un médecin.",
+        "zh": "漱口并吐出。就医。",
+        "ja": "口をすすいで吐き出す。医師に相談。"
       }
     },
     "fire_fighting": {
       "suitable": {
         "tr": "Su sisi, köpük, kuru kimyasal toz, CO2.",
         "en": "Water spray, foam, dry chemical powder, CO2.",
-        "de": "Wassersprühstrahl, Schaum, Trockenlöschpulver, CO2."
+        "de": "Wassersprühstrahl, Schaum, Trockenlöschpulver, CO2.",
+        "fr": "Mousse, poudre chimique sèche, CO2, eau pulvérisée.",
+        "zh": "泡沫、干粉、二氧化碳、水雾。",
+        "ja": "泡、ドライケミカル、CO2、水噴霧。"
       },
       "prohibited": {
         "tr": "Doğrudan yüksek basınçlı su jeti.",
         "en": "Direct high-pressure water stream.",
-        "de": "Harter Wasserstrahl."
+        "de": "Harter Wasserstrahl.",
+        "fr": "Jet d'eau à haute pression directe.",
+        "zh": "直接高压水柱。",
+        "ja": "直接高圧水流。"
       },
       "hazards": {
         "tr": "Yanma sırasında zehirli karbonmonoksit, karbondioksit ve fenolik buharlar açığa çıkar.",
         "en": "Thermal decomposition generates carbon monoxide, carbon dioxide, and phenolic vapors.",
-        "de": "Bei Verbrennung entstehen Kohlenmonoxid, Kohlendioxid und phenolische Dämpfe."
+        "de": "Bei Verbrennung entstehen Kohlenmonoxid, Kohlendioxid und phenolische Dämpfe.",
+        "fr": "Vapeurs inflammables. Tenir à l'écart des sources d'ignition.",
+        "zh": "易燃蒸气。远离点火源。",
+        "ja": "可燃性蒸気。着火源から遠ざける。"
       }
     },
     "ppe": {
       "mask": {
         "tr": "Isıtmalı uygulamalarda A1/A2 organik filtre; zımparalamada P2/P3",
         "en": "A1/A2 organic filter when heated; P2/P3 for sanding",
-        "de": "A1/A2 Filter bei Erwärmung; P2/P3 beim Schleifen"
+        "de": "A1/A2 Filter bei Erwärmung; P2/P3 beim Schleifen",
+        "fr": "Respirateur à filtre vapeurs organiques approprié",
+        "zh": "适当的有机蒸气过滤口罩",
+        "ja": "適切な有機蒸気フィルター防毒マスク"
       },
       "eye": {
         "tr": "Kimyasal sıçrama emniyet gözlüğü",
         "en": "Chemical splash goggles",
-        "de": "Chemikalienschutzbrille"
+        "de": "Chemikalienschutzbrille",
+        "fr": "Lunettes de protection chimique",
+        "zh": "化学防溅护目镜",
+        "ja": "化学品スプラッシュゴーグル"
       },
       "gloves": {
         "latex": false,
@@ -846,7 +1251,10 @@
         "warning": {
           "tr": "Lateks eldiven epoksiyi geçirir. Çift kat kalın nitril veya bütil eldiven kullanın.",
           "en": "Latex allows epoxy penetration. Wear double nitrile or butyl gloves.",
-          "de": "Latex ist durchlässig für Epoxid. Doppelte Nitril- oder Butylhandschuhe tragen."
+          "de": "Latex ist durchlässig für Epoxid. Doppelte Nitril- oder Butylhandschuhe tragen.",
+          "fr": "Gants nitrile standard appropriés.",
+          "zh": "标准丁腈手套防护即可。",
+          "ja": "標準的なニトリル手袋で十分な保護が得られる。"
         }
       }
     },
@@ -854,12 +1262,18 @@
       "storage": {
         "tr": "+15°C ile +25°C arasında kuru, kapalı kaplarda saklayın. Soğukta kristallenirse ılık su banyosunda çözülebilir.",
         "en": "Store dry between +15°C and +25°C in sealed containers. If crystallized from cold, warm gently in water bath.",
-        "de": "Zwischen +15°C und +25°C trocken lagern. Bei Kältekristallisation im warmen Wasserbad verflüssigen."
+        "de": "Zwischen +15°C und +25°C trocken lagern. Bei Kältekristallisation im warmen Wasserbad verflüssigen.",
+        "fr": "Stocker dans un endroit frais, sec et bien ventilé.",
+        "zh": "储存在阴凉、干燥、通风良好的地方。",
+        "ja": "涼しく乾燥した換気の良い場所に保管。"
       },
       "incompatible": {
         "tr": "Amin sertleştiriciler ile ölçüsüz/kontrolsüz karıştırmayın (şiddetli ekzotermik reaksiyon, kabı eritir ve zehirli duman salar).",
         "en": "Do not mix uncontrolled in deep pots with amine hardeners (violent thermal runaway exotherm, melts plastic and smokes).",
-        "de": "Nicht unkontrolliert mit Härtern in tiefen Töpfen mischen (heftige Exothermie, schmilzt Gefäße)."
+        "de": "Nicht unkontrolliert mit Härtern in tiefen Töpfen mischen (heftige Exothermie, schmilzt Gefäße).",
+        "fr": "Tenir à l'écart des sources d'ignition et des matières incompatibles.",
+        "zh": "远离点火源和不相容物质。",
+        "ja": "着火源および非適合物質から遠ざける。"
       }
     }
   },
@@ -869,58 +1283,88 @@
     "name": {
       "tr": "EPOKSİ SERTLEŞTİRİCİ",
       "en": "EPOXY HARDENER",
-      "de": "EPOXID-HÄRTER"
+      "de": "EPOXID-HÄRTER",
+      "fr": "Durcisseur Époxy IPDA",
+      "zh": "环氧固化剂IPDA",
+      "ja": "エポキシ硬化剤IPDA"
     },
     "chemical_name": {
       "tr": "İzoforon Diamin / Alifatik Amin Karışımı",
       "en": "Isophorone Diamine (IPDA) / Aliphatic Amines",
-      "de": "Isophorondiamin (IPDA) / Aliphatische Amine"
+      "de": "Isophorondiamin (IPDA) / Aliphatische Amine",
+      "fr": "Isophoronediamine (IPDA)",
+      "zh": "异佛尔酮二胺（IPDA）",
+      "ja": "イソホロンジアミン（IPDA）"
     },
     "category": "sertlestirici",
     "risk_level": "KRİTİK",
     "signal_word": {
       "tr": "TEHLİKE",
       "en": "DANGER",
-      "de": "GEFAHR"
+      "de": "GEFAHR",
+      "fr": "DANGER",
+      "zh": "危险",
+      "ja": "危険"
     },
     "hazard_statement": {
       "tr": "H314: Ciddi cilt yanıklarına ve kalıcı göz hasarına yol açar. H302: Yutulduğunda zararlıdır. H317: Alerjik cilt reaksiyonu.",
       "en": "H314: Causes severe skin burns and eye damage. H302: Harmful if swallowed. H317: May cause allergic skin reaction.",
-      "de": "H314: Verursacht schwere Verätzungen der Haut und Augenschäden. H302: Gesundheitsschädlich bei Verschlucken. H317: Kann Hautreaktionen verursachen."
+      "de": "H314: Verursacht schwere Verätzungen der Haut und Augenschäden. H302: Gesundheitsschädlich bei Verschlucken. H317: Kann Hautreaktionen verursachen.",
+      "fr": "H311 : Toxique par contact cutané. H314 : Provoque des brûlures cutanées graves et des lésions oculaires. H317 : Peut provoquer une allergie cutanée. H331 : Toxique par inhalation.",
+      "zh": "H311：皮肤接触有毒。H314：引起严重皮肤灼伤和眼睛损伤。H317：可能导致皮肤过敏。H331：吸入有毒。",
+      "ja": "H311：皮膚との接触により有毒。H314：重篤な皮膚の薬傷及び眼の損傷。H317：皮膚アレルギー性反応。H331：吸入により有毒。"
     },
     "badges": {
       "fire": {
         "tr": "Yanıcı Amin Buharı (Parlama >110°C)",
         "en": "Combustible Amine Vapor (>110°C)",
-        "de": "Brennbarer Amindampf (>110°C)"
+        "de": "Brennbarer Amindampf (>110°C)",
+        "fr": "Combustible (Éclair ~100°C)",
+        "zh": "可燃（闪点~100°C）",
+        "ja": "可燃性（引火点~100°C）"
       },
       "health": {
         "tr": "Aşındırıcı Korozif / Kalıcı Görme Kaybı Riski",
         "en": "Corrosive Caustic / Permanent Vision Loss Risk",
-        "de": "Ätzend / Gefahr dauerhaften Sehverlusts"
+        "de": "Ätzend / Gefahr dauerhaften Sehverlusts",
+        "fr": "Corrosif / Risque Perte de Vision / Toxique",
+        "zh": "腐蚀性 / 失明风险 / 有毒",
+        "ja": "腐食性 / 失明リスク / 毒性"
       },
       "environment": {
         "tr": "Zararlı Atık (H412)",
         "en": "Hazardous Waste (H412)",
-        "de": "Gefährlicher Abfall (H412)"
+        "de": "Gefährlicher Abfall (H412)",
+        "fr": "Toxique pour Organismes Aquatiques",
+        "zh": "对水生生物有毒",
+        "ja": "水生生物に毒性"
       }
     },
     "source": {
       "tr": "Evonik Vestamin IPD / West System 205 Hardener SDS & ECHA",
       "en": "Evonik Vestamin IPD / West System 205 Hardener SDS & ECHA",
-      "de": "Evonik Vestamin IPD / West System 205 Härter SDB & ECHA"
+      "de": "Evonik Vestamin IPD / West System 205 Härter SDB & ECHA",
+      "fr": "Evonik Vestamin IPD / Huntsman IPDA FDS & ECHA",
+      "zh": "Evonik Vestamin IPD / Huntsman IPDA SDS & ECHA",
+      "ja": "Evonik Vestamin IPD / Huntsman IPDA SDS & ECHA"
     },
     "source_url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.018.847",
     "verified_at": "2026-10-15",
     "verification_status": {
       "tr": "Doğrulandı (ECHA / Endüstriyel SDS)",
       "en": "Verified (ECHA / Industrial SDS)",
-      "de": "Verifiziert (ECHA / Industrie-SDB)"
+      "de": "Verifiziert (ECHA / Industrie-SDB)",
+      "fr": "Vérifié (ECHA / FDS Industrielle)",
+      "zh": "已验证（ECHA / 工业SDS）",
+      "ja": "検証済（ECHA / 産業用SDS）"
     },
     "verification_note": {
       "tr": "Alkali amin içerir. Ciltte kimyasal yanık, gözde kalıcı kornea hasarı ve görme kaybı yapar. Karışım kabında yüksek ısı (ekzoterm) üretir.",
       "en": "Highly alkaline amine. Causes severe chemical burns, permanent corneal opacity and vision loss. Generates extreme exotherm in mixing pots.",
-      "de": "Stark alkalisches Amin. Verursacht schwere chemische Verätzungen, Hornhauttrübung und Sehverlust. Starke Hitzeentwicklung im Mischtopf."
+      "de": "Stark alkalisches Amin. Verursacht schwere chemische Verätzungen, Hornhauttrübung und Sehverlust. Starke Hitzeentwicklung im Mischtopf.",
+      "fr": "Amine époxy corrosive puissante. Le contact oculaire peut causer des dommages cornéens irréversibles en quelques minutes. Lunettes et écran facial obligatoires.",
+      "zh": "强腐蚀性环氧胺。眼睛接触可在数分钟内导致不可逆角膜损伤。必须佩戴护目镜和面罩。",
+      "ja": "強力な腐食性エポキシアミン。眼接触により数分以内に不可逆的な角膜損傷が生じる可能性がある。ゴーグルとフェイスシールドを必ず着用。"
     },
     "ghs_codes": [
       "GHS05",
@@ -929,58 +1373,88 @@
     "flash_point": {
       "tr": "Yaklaşık >110 °C",
       "en": "Approx. >110 °C",
-      "de": "Ca. >110 °C"
+      "de": "Ca. >110 °C",
+      "fr": "Environ 100 °C (amine pure)",
+      "zh": "约 100 °C（纯胺）",
+      "ja": "約 100 °C（純アミン）"
     },
     "emergency_timer_min": 20,
     "first_aid": {
       "eye": {
         "tr": "Göz kapaklarını açık tutarak EN AZ 20 DAKİKA kesintisiz, TAZYİKSİZ nazikçe akan temiz suyla yıkayın (suyu burun kökünden şakağa akıtın). Derhal acil tıbbi yardım çağırın (Kalıcı görme kaybı riski)!",
         "en": "Rinse with LOW-PRESSURE, gentle running clean water for AT LEAST 20 MINUTES holding eyelids open (flush from inner corner to temple). Call emergency ambulance immediately (Risk of permanent vision loss)!",
-        "de": "Augenlider offen halten und MINDESTENS 20 MINUTEN ununterbrochen mit drucklosem, sanftem Wasser spülen (von innen nach außen). Sofort Notarzt rufen (Gefahr dauerhaften Sehverlusts)!"
+        "de": "Augenlider offen halten und MINDESTENS 20 MINUTEN ununterbrochen mit drucklosem, sanftem Wasser spülen (von innen nach außen). Sofort Notarzt rufen (Gefahr dauerhaften Sehverlusts)!",
+        "fr": "Rincer à l'eau courante propre à basse pression pendant au moins 20 minutes en maintenant les paupières ouvertes. Appeler les secours immédiatement.",
+        "zh": "保持眼睑张开，用低压清洁水冲洗至少15分钟。立即就医。",
+        "ja": "まぶたを開いたまま、低圧の清潔な水で少なくとも15分間洗い流す。直ちに医師の手当てを受ける。"
       },
       "skin": {
         "tr": "Bulaşan elbiseleri derhal çıkarın. Cildi en az 20 dakika tazyiksiz bol akan su ve sabunla yıkayın. Tıbbi yardım alın.",
         "en": "Strip contaminated clothing immediately. Wash skin for 20+ minutes with running water and soap without pressure. Seek medical care.",
-        "de": "Kontaminierte Kleidung sofort ausziehen. Haut mindestens 20 Minuten mit drucklosem Wasser und Seife waschen. Arzt aufsuchen."
+        "de": "Kontaminierte Kleidung sofort ausziehen. Haut mindestens 20 Minuten mit drucklosem Wasser und Seife waschen. Arzt aufsuchen.",
+        "fr": "Retirer les vêtements contaminés. Laver à l'eau et au savon pendant au moins 15 minutes.",
+        "zh": "脱去被污染的衣物。用水和肥皂彻底清洗皮肤至少15分钟。",
+        "ja": "汚染した衣服を脱ぐ。皮膚を流水と石けんで少なくとも15分間洗い流す。"
       },
       "inhalation": {
         "tr": "Temiz havaya çıkarın, dik oturtun. Nefes darlığı varsa oksijen verin ve 112’yi arayın.",
         "en": "Move to fresh air, keep upright. If breathing is difficult, supply oxygen and call emergency services.",
-        "de": "An die frische Luft bringen, aufrecht hinsetzen. Bei Atemnot Sauerstoff geben und Notdienst rufen."
+        "de": "An die frische Luft bringen, aufrecht hinsetzen. Bei Atemnot Sauerstoff geben und Notdienst rufen.",
+        "fr": "Transporter la personne à l'air frais. Consulter un médecin si les symptômes persistent.",
+        "zh": "将人转移到新鲜空气处。症状持续时就医。",
+        "ja": "新鮮な空気のある場所へ移動。症状が続く場合は医師に相談。"
       },
       "ingestion": {
         "tr": "KESİNLİKLE KUSTURMAYIN (yemek borusunu tekrar yakar). Ağzı suyla çalkalayıp tükürün. Kusmayı ve akciğer aspirasyonunu önlemek için asla bol sıvı içirmeyin. Derhal acil yardım (112) çağırın!",
         "en": "DO NOT INDUCE VOMITING (causes secondary burns). Rinse mouth thoroughly and spit out. Never give large amounts of water to avoid vomiting and aspiration. Call 112 immediately!",
-        "de": "KEIN ERBRECHEN HERBEIFÜHREN (sekundäre Verätzungsgefahr). Mund gründlich ausspülen und ausspucken. Niemals viel Flüssigkeit einflößen. Sofort Notarzt (112) rufen!"
+        "de": "KEIN ERBRECHEN HERBEIFÜHREN (sekundäre Verätzungsgefahr). Mund gründlich ausspülen und ausspucken. Niemals viel Flüssigkeit einflößen. Sofort Notarzt (112) rufen!",
+        "fr": "Rincer la bouche et cracher. Consulter un médecin.",
+        "zh": "漱口并吐出。就医。",
+        "ja": "口をすすいで吐き出す。医師に相談。"
       }
     },
     "fire_fighting": {
       "suitable": {
         "tr": "Alkol dirençli köpük, kuru kimyasal toz, CO2, su sisi.",
         "en": "Alcohol-resistant foam, dry chemical powder, CO2, water spray.",
-        "de": "Alkoholbeständiger Schaum, Trockenlöschpulver, CO2, Sprühwasser."
+        "de": "Alkoholbeständiger Schaum, Trockenlöschpulver, CO2, Sprühwasser.",
+        "fr": "Mousse, poudre chimique sèche, CO2, eau pulvérisée.",
+        "zh": "泡沫、干粉、二氧化碳、水雾。",
+        "ja": "泡、ドライケミカル、CO2、水噴霧。"
       },
       "prohibited": {
         "tr": "Doğrudan basınçlı su jeti.",
         "en": "Direct high-pressure water stream.",
-        "de": "Harter Wasserstrahl."
+        "de": "Harter Wasserstrahl.",
+        "fr": "Jet d'eau à haute pression directe.",
+        "zh": "直接高压水柱。",
+        "ja": "直接高圧水流。"
       },
       "hazards": {
         "tr": "Yangında zehirli azot oksitler (NOx), amonyak ve karbonmonoksit yayılır.",
         "en": "Releases toxic nitrogen oxides (NOx), corrosive ammonia, and carbon monoxide in fires.",
-        "de": "Im Brandfall entstehen giftige Stickoxide (NOx), ätzendes Ammoniak und Kohlenmonoxid."
+        "de": "Im Brandfall entstehen giftige Stickoxide (NOx), ätzendes Ammoniak und Kohlenmonoxid.",
+        "fr": "Vapeurs inflammables. Tenir à l'écart des sources d'ignition.",
+        "zh": "易燃蒸气。远离点火源。",
+        "ja": "可燃性蒸気。着火源から遠ざける。"
       }
     },
     "ppe": {
       "mask": {
         "tr": "ABEK-P3 kombine filtreli tam yüz veya yarım yüz maskesi",
         "en": "ABEK-P3 combined multi-gas and particle respirator",
-        "de": "ABEK-P3 Kombinationsfiltermaske"
+        "de": "ABEK-P3 Kombinationsfiltermaske",
+        "fr": "Respirateur à filtre vapeurs organiques approprié",
+        "zh": "适当的有机蒸气过滤口罩",
+        "ja": "適切な有機蒸気フィルター防毒マスク"
       },
       "eye": {
         "tr": "Tam sızdırmaz kimyasal gözlük ve yüz siperi",
         "en": "Fully sealed chemical goggles and full face shield",
-        "de": "Dicht schließende Chemikalienbrille und Gesichtsschild"
+        "de": "Dicht schließende Chemikalienbrille und Gesichtsschild",
+        "fr": "Lunettes de protection chimique",
+        "zh": "化学防溅护目镜",
+        "ja": "化学品スプラッシュゴーグル"
       },
       "gloves": {
         "latex": false,
@@ -990,7 +1464,10 @@
         "warning": {
           "tr": "Lateks eldiven kullanılmaz! Kalın bütil veya çift kat nitril eldiven zorunludur.",
           "en": "Do not use latex! Heavy butyl or double-layer nitrile gloves are mandatory.",
-          "de": "Keine Latexhandschuhe! Dickes Butyl oder doppelte Nitrilhandschuhe sind zwingend erforderlich."
+          "de": "Keine Latexhandschuhe! Dickes Butyl oder doppelte Nitrilhandschuhe sind zwingend erforderlich.",
+          "fr": "Gants nitrile standard appropriés.",
+          "zh": "标准丁腈手套防护即可。",
+          "ja": "標準的なニトリル手袋で十分な保護が得られる。"
         }
       }
     },
@@ -998,12 +1475,18 @@
       "storage": {
         "tr": "+15°C ile +25°C arasında, doğrudan güneş ışığından uzak, asitlerden ayrı kilitli kimyasal dolabında saklayın.",
         "en": "Store between +15°C and +25°C protected from sunlight in a dedicated locked chemical cabinet.",
-        "de": "Zwischen +15°C und +25°C vor Sonne geschützt im verschlossenen Giftschrank lagern."
+        "de": "Zwischen +15°C und +25°C vor Sonne geschützt im verschlossenen Giftschrank lagern.",
+        "fr": "Stocker dans un endroit frais, sec et bien ventilé.",
+        "zh": "储存在阴凉、干燥、通风良好的地方。",
+        "ja": "涼しく乾燥した換気の良い場所に保管。"
       },
       "incompatible": {
         "tr": "Güçlü asitler, oksitleyiciler ve epoksi reçine ile kontrolsüz karıştırmayın (şiddetli termal patlama ve zehirli duman riski).",
         "en": "Do not mix uncontrolled with acids, oxidizers, or epoxy resin in mass (thermal runaway explosion hazard).",
-        "de": "Nicht unkontrolliert mit Säuren, Oxidationsmitteln oder Harz in großen Mengen mischen (Hitzeexplosion)."
+        "de": "Nicht unkontrolliert mit Säuren, Oxidationsmitteln oder Harz in großen Mengen mischen (Hitzeexplosion).",
+        "fr": "Tenir à l'écart des sources d'ignition et des matières incompatibles.",
+        "zh": "远离点火源和不相容物质。",
+        "ja": "着火源および非適合物質から遠ざける。"
       }
     }
   },
@@ -1013,58 +1496,88 @@
     "name": {
       "tr": "Vinilester Reçine",
       "en": "Vinylester Resin",
-      "de": "Vinylesterharz"
+      "de": "Vinylesterharz",
+      "fr": "Résine Vinyl-Ester",
+      "zh": "乙烯基酯树脂",
+      "ja": "ビニルエステル樹脂"
     },
     "chemical_name": {
       "tr": "Stirenle Seyreltilmiş Vinilester Reçine",
       "en": "Vinylester Resin in Styrene Monomer",
-      "de": "Vinylesterharz in Styrolmonomer"
+      "de": "Vinylesterharz in Styrolmonomer",
+      "fr": "Résine Vinyl-Ester en Monomère de Styrène",
+      "zh": "苯乙烯单体中的乙烯基酯树脂",
+      "ja": "スチレンモノマー中のビニルエステル樹脂"
     },
     "category": "recine",
     "risk_level": "YÜKSEK",
     "signal_word": {
       "tr": "TEHLİKE",
       "en": "DANGER",
-      "de": "GEFAHR"
+      "de": "GEFAHR",
+      "fr": "DANGER",
+      "zh": "危险",
+      "ja": "危険"
     },
     "hazard_statement": {
       "tr": "H226: Alevlenir sıvı ve buhar. H315/H319: Cilt ve ciddi göz tahrişi. H372: Tekrarlı solunması organ hasarına yol açar.",
       "en": "H226: Flammable liquid and vapor. H315/H319: Causes skin and serious eye irritation. H372: Organ damage from repeated inhalation.",
-      "de": "H226: Flüssigkeit und Dampf entzündbar. H315/H319: Verursacht Hautreizungen und schwere Augenreizung. H372: Organschäden bei längerer Exposition."
+      "de": "H226: Flüssigkeit und Dampf entzündbar. H315/H319: Verursacht Hautreizungen und schwere Augenreizung. H372: Organschäden bei längerer Exposition.",
+      "fr": "H226 : Liquide et vapeurs inflammables. H315 : Provoque une irritation cutanée. H319 : Provoque une sévère irritation des yeux. H372 : Risque d'atteinte aux organes par inhalation répétée (styrène).",
+      "zh": "H226：易燃液体和蒸气。H315：造成皮肤刺激。H319：造成严重眼刺激。H372：长期或反复吸入苯乙烯导致器官损伤。",
+      "ja": "H226：引火性液体および蒸気。H315：皮膚刺激。H319：強い眼刺激。H372：スチレン吸入による臓器への繰返し損傷。"
     },
     "badges": {
       "fire": {
         "tr": "Alevlenir Buhar (Parlama ~31°C)",
         "en": "Flammable Vapor (Flash ~31°C)",
-        "de": "Entzündbarer Dampf (Flammpunkt ~31°C)"
+        "de": "Entzündbarer Dampf (Flammpunkt ~31°C)",
+        "fr": "Vapeur Inflammable (Éclair ~31°C)",
+        "zh": "易燃蒸气（闪点~31°C）",
+        "ja": "可燃性蒸気（引火点~31°C）"
       },
       "health": {
         "tr": "Nörotoksik Stiren Buharı",
         "en": "Neurotoxic Styrene Vapor",
-        "de": "Neurotoxischer Styroldampf"
+        "de": "Neurotoxischer Styroldampf",
+        "fr": "Stiren Buharı / Nörotoksisite",
+        "zh": "苯乙烯蒸气 / 神经毒性",
+        "ja": "スチレン蒸気 / 神経毒性"
       },
       "environment": {
         "tr": "Sucul Toksik (H412)",
         "en": "Aquatic Toxic (H412)",
-        "de": "Gewässertoxisch (H412)"
+        "de": "Gewässertoxisch (H412)",
+        "fr": "Toxique pour Organismes Aquatiques",
+        "zh": "对水生生物有毒",
+        "ja": "水生生物に有毒"
       }
     },
     "source": {
       "tr": "DION / Ashland Derakane Vinylester Resin SDS & ECHA",
       "en": "DION / Ashland Derakane Vinylester Resin SDS & ECHA",
-      "de": "DION / Ashland Derakane Vinylesterharz SDB & ECHA"
+      "de": "DION / Ashland Derakane Vinylesterharz SDB & ECHA",
+      "fr": "Ashland Derakane / DSM Atlac FDS & ECHA",
+      "zh": "Ashland Derakane / DSM Atlac SDS & ECHA",
+      "ja": "Ashland Derakane / DSM Atlac SDS & ECHA"
     },
     "source_url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.002.595",
     "verified_at": "2026-10-15",
     "verification_status": {
       "tr": "Doğrulandı (ECHA / Endüstriyel SDS)",
       "en": "Verified (ECHA / Industrial SDS)",
-      "de": "Verifiziert (ECHA / Industrie-SDB)"
+      "de": "Verifiziert (ECHA / Industrie-SDB)",
+      "fr": "Vérifié (ECHA / FDS Industrielle)",
+      "zh": "已验证（ECHA / 工业SDS）",
+      "ja": "検証済（ECHA / 産業用SDS）"
     },
     "verification_note": {
       "tr": "Ozmoz bariyeri ve yüksek kimyasal dayanım gereken tekne gövdelerinde kullanılır. Stiren buharı patlama ve zehirlenme riski taşır.",
       "en": "Used for osmotic blister barrier coats in yacht hulls. Free styrene vapor poses fire and neurological hazards.",
-      "de": "Für Osmoseschutzschichten im Yachtbau. Freie Styroldämpfe bergen Brand- und Vergiftungsgefahren."
+      "de": "Für Osmoseschutzschichten im Yachtbau. Freie Styroldämpfe bergen Brand- und Vergiftungsgefahren.",
+      "fr": "Résine haute performance pour applications marines. Meilleure résistance chimique et à l'osmose que le polyester. Contient du styrène — ventilation obligatoire.",
+      "zh": "船用高性能树脂。比聚酯具有更好的耐化学性和抗渗透性。含苯乙烯——必须通风。",
+      "ja": "船舶用高性能樹脂。ポリエステルより優れた耐薬品性と浸透抵抗性。スチレン含有——換気必須。"
     },
     "ghs_codes": [
       "GHS02",
@@ -1073,58 +1586,88 @@
     "flash_point": {
       "tr": "Yaklaşık 31 °C (stiren içeriğinden kaynaklı)",
       "en": "Approx. 31 °C (from styrene content)",
-      "de": "Ca. 31 °C (durch Styrolgehalt)"
+      "de": "Ca. 31 °C (durch Styrolgehalt)",
+      "fr": "Environ 31 °C (composant styrène)",
+      "zh": "约 31 °C（苯乙烯组分）",
+      "ja": "約 31 °C（スチレン成分）"
     },
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
         "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan temiz suyla yıkayın. Göz hekimine başvurun.",
         "en": "Rinse with gentle, low-pressure clean water for at least 15 minutes holding eyelids open. Consult an eye doctor.",
-        "de": "Augenlider offen halten und mindestens 15 Minuten mit drucklosem, sauberem Wasser spülen. Augenarzt aufsuchen."
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit drucklosem, sauberem Wasser spülen. Augenarzt aufsuchen.",
+        "fr": "Rincer à l'eau courante propre à basse pression pendant au moins Rinse with gentle, low-pressure clean water for at least 15 minutes holding eyelids open. Consult an eye doctor. minutes en maintenant les paupières ouvertes. Appeler les secours immédiatement.",
+        "zh": "保持眼睑张开，用低压清洁水冲洗至少15分钟。立即就医。",
+        "ja": "まぶたを開いたまま、低圧の清潔な水で少なくとも15分間洗い流す。直ちに医師の手当てを受ける。"
       },
       "skin": {
         "tr": "Bulaşan giysileri çıkarın. Cildi tazyiksiz su ve sabunla yıkayın. Aseton kullanmayın.",
         "en": "Strip contaminated clothing. Wash skin with soap and running water. Never apply acetone.",
-        "de": "Kleidung ausziehen. Haut mit Wasser und Seife waschen. Kein Aceton verwenden."
+        "de": "Kleidung ausziehen. Haut mit Wasser und Seife waschen. Kein Aceton verwenden.",
+        "fr": "Retirer les vêtements contaminés. Laver à l'eau et au savon pendant au moins 15 minutes.",
+        "zh": "脱去被污染的衣物。用水和肥皂彻底清洗皮肤至少15分钟。",
+        "ja": "汚染した衣服を脱ぐ。皮膚を流水と石けんで少なくとも15分間洗い流す。"
       },
       "inhalation": {
         "tr": "Kişiyi derhal temiz havaya çıkarın. Dinlendirin ve doktora başvurun.",
         "en": "Move person to fresh air. Keep warm and rested; seek medical advice.",
-        "de": "Person an die frische Luft bringen. Ruhig lagern und Arzt hinzuziehen."
+        "de": "Person an die frische Luft bringen. Ruhig lagern und Arzt hinzuziehen.",
+        "fr": "Transporter la personne à l'air frais. Consulter un médecin si les symptômes persistent.",
+        "zh": "将人转移到新鲜空气处。症状持续时就医。",
+        "ja": "新鮮な空気のある場所へ移動。症状が続く場合は医師に相談。"
       },
       "ingestion": {
         "tr": "Kusturmayın! Ağzı suyla çalkalayıp tükürün ve acil tıbbi yardım (112) çağırın.",
         "en": "Do not induce vomiting! Rinse mouth with water, spit out, and call emergency services (112).",
-        "de": "Kein Erbrechen herbeiführen! Mund mit Wasser ausspülen, ausspucken und Notarzt (112) rufen."
+        "de": "Kein Erbrechen herbeiführen! Mund mit Wasser ausspülen, ausspucken und Notarzt (112) rufen.",
+        "fr": "Rincer la bouche et cracher. Consulter un médecin.",
+        "zh": "漱口并吐出。就医。",
+        "ja": "口をすすいで吐き出す。医師に相談。"
       }
     },
     "fire_fighting": {
       "suitable": {
         "tr": "Köpük, kuru kimyasal toz, CO2, su sisi.",
         "en": "Foam, dry chemical powder, CO2, water spray.",
-        "de": "Schaum, Trockenlöschpulver, CO2, Sprühwasser."
+        "de": "Schaum, Trockenlöschpulver, CO2, Sprühwasser.",
+        "fr": "Mousse, poudre chimique sèche, CO2, eau pulvérisée.",
+        "zh": "泡沫、干粉、二氧化碳、水雾。",
+        "ja": "泡、ドライケミカル、CO2、水噴霧。"
       },
       "prohibited": {
         "tr": "Doğrudan yüksek basınçlı su jeti.",
         "en": "Direct high-pressure water stream.",
-        "de": "Harter Wasserstrahl."
+        "de": "Harter Wasserstrahl.",
+        "fr": "Jet d'eau à haute pression directe.",
+        "zh": "直接高压水柱。",
+        "ja": "直接高圧水流。"
       },
       "hazards": {
         "tr": "Yangın esnasında yoğun siyah duman, stiren ve toksik gazlar oluşur.",
         "en": "Produces thick toxic black smoke, styrene vapors, and carbon monoxide in fire.",
-        "de": "Entwickelt im Brandfall dichten schwarzen Rauch, Styroldämpfe und Kohlenmonoxid."
+        "de": "Entwickelt im Brandfall dichten schwarzen Rauch, Styroldämpfe und Kohlenmonoxid.",
+        "fr": "Vapeurs inflammables. Tenir à l'écart des sources d'ignition.",
+        "zh": "易燃蒸气。远离点火源。",
+        "ja": "可燃性蒸気。着火源から遠ざける。"
       }
     },
     "ppe": {
       "mask": {
         "tr": "A2 organik buhar filtreli yarım/tam yüz maskesi",
         "en": "A2 organic vapor filter respirator",
-        "de": "A2 Filtermaske für organische Dämpfe"
+        "de": "A2 Filtermaske für organische Dämpfe",
+        "fr": "Respirateur à filtre vapeurs organiques approprié",
+        "zh": "适当的有机蒸气过滤口罩",
+        "ja": "適切な有機蒸気フィルター防毒マスク"
       },
       "eye": {
         "tr": "Kimyasal sıçrama emniyet gözlüğü",
         "en": "Chemical splash goggles",
-        "de": "Chemikalienschutzbrille"
+        "de": "Chemikalienschutzbrille",
+        "fr": "Lunettes de protection chimique",
+        "zh": "化学防溅护目镜",
+        "ja": "化学品スプラッシュゴーグル"
       },
       "gloves": {
         "latex": false,
@@ -1134,7 +1677,10 @@
         "warning": {
           "tr": "Lateks dayanıksızdır. Kalın nitril veya PVA/neopren eldiven kullanın.",
           "en": "Latex provides no protection. Use thick nitrile or PVA/neoprene gloves.",
-          "de": "Latex bietet keinen Schutz. Dicke Nitril- oder PVA/Neoprenhandschuhe tragen."
+          "de": "Latex bietet keinen Schutz. Dicke Nitril- oder PVA/Neoprenhandschuhe tragen.",
+          "fr": "Gants nitrile standard appropriés.",
+          "zh": "标准丁腈手套防护即可。",
+          "ja": "標準的なニトリル手袋で十分な保護が得られる。"
         }
       }
     },
@@ -1142,12 +1688,18 @@
       "storage": {
         "tr": "+20°C altında, serin, iyi havalandırılan, statik korumalı kapalı alanda saklayın.",
         "en": "Store below +20°C in a cool, well-ventilated, antistatic room away from sunlight.",
-        "de": "Unter +20°C kühl, gut belüftet und vor Sonneneinstrahlung geschützt lagern."
+        "de": "Unter +20°C kühl, gut belüftet und vor Sonneneinstrahlung geschützt lagern.",
+        "fr": "Stocker dans un endroit frais, sec et bien ventilé.",
+        "zh": "储存在阴凉、干燥、通风良好的地方。",
+        "ja": "涼しく乾燥した換気の良い場所に保管。"
       },
       "incompatible": {
         "tr": "Peroksitlerle doğrudan kontrolsüz karıştırmayın (ani ekzoterm). Hızlandırıcı ve peroksiti ASLA aynı anda reçinesiz temas ettirmeyin.",
         "en": "Do not mix uncontrolled with peroxides. NEVER contact promoter and peroxide directly without resin.",
-        "de": "Nicht unkontrolliert mit Peroxiden mischen. Beschleuniger und Peroxid NIEMALS direkt ohne Harz zusammenbringen."
+        "de": "Nicht unkontrolliert mit Peroxiden mischen. Beschleuniger und Peroxid NIEMALS direkt ohne Harz zusammenbringen.",
+        "fr": "Tenir à l'écart des sources d'ignition et des matières incompatibles.",
+        "zh": "远离点火源和不相容物质。",
+        "ja": "着火源および非適合物質から遠ざける。"
       }
     }
   },
@@ -1157,58 +1709,88 @@
     "name": {
       "tr": "PVA Ayırıcı Ajan",
       "en": "PVA Release Agent",
-      "de": "PVA Trennmittel"
+      "de": "PVA Trennmittel",
+      "fr": "Agent Démoulant PVA",
+      "zh": "PVA脱模剂",
+      "ja": "PVA離型剤"
     },
     "chemical_name": {
       "tr": "Polivinil Alkol / İzopropanol Çözeltisi",
       "en": "Polyvinyl Alcohol Film Solution in Isopropanol",
-      "de": "Polyvinylalkohol-Lösung in Isopropanol"
+      "de": "Polyvinylalkohol-Lösung in Isopropanol",
+      "fr": "Solution d'Alcool Polyvinylique en Isopropanol",
+      "zh": "聚乙烯醇/异丙醇溶液",
+      "ja": "イソプロパノール中のポリビニルアルコール溶液"
     },
     "category": "ayirici",
     "risk_level": "ORTA",
     "signal_word": {
       "tr": "UYARI",
       "en": "WARNING",
-      "de": "ACHTUNG"
+      "de": "ACHTUNG",
+      "fr": "ATTENTION",
+      "zh": "警告",
+      "ja": "警告"
     },
     "hazard_statement": {
       "tr": "H226: Alevlenir sıvı ve buhar (İzopropanol). H319: Ciddi göz tahrişi. H336: Baş dönmesi ve rehavet yapabilir.",
       "en": "H226: Flammable liquid and vapor (Isopropanol). H319: Causes serious eye irritation. H336: May cause drowsiness.",
-      "de": "H226: Flüssigkeit und Dampf entzündbar (Isopropanol). H319: Verursacht schwere Augenreizung. H336: Kann Schläfrigkeit verursachen."
+      "de": "H226: Flüssigkeit und Dampf entzündbar (Isopropanol). H319: Verursacht schwere Augenreizung. H336: Kann Schläfrigkeit verursachen.",
+      "fr": "H226 : Liquide et vapeurs inflammables (Isopropanol). H319 : Provoque une sévère irritation des yeux. H336 : Peut provoquer somnolence ou vertiges.",
+      "zh": "H226：易燃液体和蒸气（异丙醇）。H319：造成严重眼刺激。H336：可能导致困倦或晕眩。",
+      "ja": "H226：引火性液体および蒸気（イソプロパノール）。H319：強い眼刺激。H336：眠気またはめまいを催すおそれがある。"
     },
     "badges": {
       "fire": {
         "tr": "Alkol Buharı (Parlama ~24°C)",
         "en": "Alcohol Vapor (Flash ~24°C)",
-        "de": "Alkoholdampf (Flammpunkt ~24°C)"
+        "de": "Alkoholdampf (Flammpunkt ~24°C)",
+        "fr": "Vapeur d'Alcool (Éclair ~24°C)",
+        "zh": "醇类蒸气（闪点~24°C）",
+        "ja": "アルコール蒸気（引火点~24°C）"
       },
       "health": {
         "tr": "Göz Tahrişi / Hafif Narkotik",
         "en": "Eye Irritation / Mild Narcotic",
-        "de": "Augenreizung / Leicht narkotisch"
+        "de": "Augenreizung / Leicht narkotisch",
+        "fr": "Irritation Oculaire / Narcotique Léger",
+        "zh": "眼睛刺激 / 轻度麻醉",
+        "ja": "眼刺激 / 軽度の麻酔性"
       },
       "environment": {
         "tr": "Düşük Çevre Toksisitesi",
         "en": "Low Environmental Hazard",
-        "de": "Geringe Umweltgefährdung"
+        "de": "Geringe Umweltgefährdung",
+        "fr": "Faible Risque Environnemental",
+        "zh": "低环境危害",
+        "ja": "環境への影響は低い"
       }
     },
     "source": {
       "tr": "Rexco Partall Film #10 / Marbocote PVA Release SDS & ECHA",
       "en": "Rexco Partall Film #10 / Marbocote PVA Release SDS & ECHA",
-      "de": "Rexco Partall Film #10 / Marbocote PVA Trennmittel SDB & ECHA"
+      "de": "Rexco Partall Film #10 / Marbocote PVA Trennmittel SDB & ECHA",
+      "fr": "Rexco Partall Film #10 / Marbocote PVA FDS & ECHA",
+      "zh": "Rexco Partall Film #10 / Marbocote PVA 脱模剂 SDS & ECHA",
+      "ja": "Rexco Partall Film #10 / Marbocote PVA 離型剤 SDS & ECHA"
     },
     "source_url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.000.601",
     "verified_at": "2026-10-15",
     "verification_status": {
       "tr": "Doğrulandı (ECHA / Endüstriyel SDS)",
       "en": "Verified (ECHA / Industrial SDS)",
-      "de": "Verifiziert (ECHA / Industrie-SDB)"
+      "de": "Verifiziert (ECHA / Industrie-SDB)",
+      "fr": "Vérifié (ECHA / FDS Industrielle)",
+      "zh": "已验证（ECHA / 工业SDS）",
+      "ja": "検証済（ECHA / 産業用SDS）"
     },
     "verification_note": {
       "tr": "Kalıp yüzeyinde kuruyarak suyla yıkanabilen ayırıcı film tabakası oluşturur. Alkol buharı alevlenme tehlikesi taşır.",
       "en": "Dries on molds to form a water-washable release film barrier. Alcohol solvents pose flammability risk.",
-      "de": "Trocknet auf Formen zu wasserlöslichem Trennfilm. Alkoholische Lösungsmittel bergen Brandgefahr."
+      "de": "Trocknet auf Formen zu wasserlöslichem Trennfilm. Alkoholische Lösungsmittel bergen Brandgefahr.",
+      "fr": "Sèche sur les moules en formant un film de démoulage soluble à l'eau. Les solvants alcooliques présentent un risque d'inflammabilité.",
+      "zh": "在模具上干燥后形成水溶性脱模膜。醇类溶剂具有可燃性风险。",
+      "ja": "型に乾燥して水溶性の離型フィルムを形成。アルコール系溶剤は引火の危険がある。"
     },
     "ghs_codes": [
       "GHS02",
@@ -1217,58 +1799,88 @@
     "flash_point": {
       "tr": "Yaklaşık 24 °C (izopropanol içeriğinden dolayı)",
       "en": "Approx. 24 °C (due to isopropanol content)",
-      "de": "Ca. 24 °C (aufgrund von Isopropanol)"
+      "de": "Ca. 24 °C (aufgrund von Isopropanol)",
+      "fr": "Environ 24 °C (teneur en isopropanol)",
+      "zh": "约 24 °C（异丙醇含量所致）",
+      "ja": "約 24 °C（イソプロパノール含量による）"
     },
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
         "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz temiz suyla nazikçe yıkayın.",
         "en": "Rinse gently with low-pressure clean water for at least 15 minutes holding eyelids open.",
-        "de": "Mindestens 15 Minuten lang sanft mit drucklosem, sauberem Wasser spülen und Augenlider offen halten."
+        "de": "Mindestens 15 Minuten lang sanft mit drucklosem, sauberem Wasser spülen und Augenlider offen halten.",
+        "fr": "Rincer à l'eau courante propre à basse pression pendant au moins Rinse gently with low-pressure clean water for at least 15 minutes holding eyelids open. minutes en maintenant les paupières ouvertes. Appeler les secours immédiatement.",
+        "zh": "保持眼睑张开，用低压清洁水冲洗至少15分钟。立即就医。",
+        "ja": "まぶたを開いたまま、低圧の清潔な水で少なくとも15分間洗い流す。直ちに医師の手当てを受ける。"
       },
       "skin": {
         "tr": "Su ve sabunla yıkayın. PVA film tabakası ılık suyla kolayca çözünür.",
         "en": "Wash with soap and water. Dried PVA film dissolves readily with warm water.",
-        "de": "Mit Wasser und Seife waschen. Angetrockneter PVA-Film löst sich leicht in warmem Wasser."
+        "de": "Mit Wasser und Seife waschen. Angetrockneter PVA-Film löst sich leicht in warmem Wasser.",
+        "fr": "Retirer les vêtements contaminés. Laver à l'eau et au savon pendant au moins 15 minutes.",
+        "zh": "脱去被污染的衣物。用水和肥皂彻底清洗皮肤至少15分钟。",
+        "ja": "汚染した衣服を脱ぐ。皮膚を流水と石けんで少なくとも15分間洗い流す。"
       },
       "inhalation": {
         "tr": "Temiz havaya çıkın. Baş dönmesi varsa dinlenin.",
         "en": "Move to fresh air. Rest if dizziness occurs.",
-        "de": "An die frische Luft bringen. Bei Schwindel ruhig lagern."
+        "de": "An die frische Luft bringen. Bei Schwindel ruhig lagern.",
+        "fr": "Transporter la personne à l'air frais. Consulter un médecin si les symptômes persistent.",
+        "zh": "将人转移到新鲜空气处。症状持续时就医。",
+        "ja": "新鮮な空気のある場所へ移動。症状が続く場合は医師に相談。"
       },
       "ingestion": {
         "tr": "Ağzı temiz suyla çalkalayıp tükürün. Kendinizi iyi hissetmiyorsanız doktora danışın.",
         "en": "Rinse mouth with clean water and spit out. Consult doctor if unwell.",
-        "de": "Mund mit klarem Wasser ausspülen und ausspucken. Bei Unwohlsein Arzt konsultieren."
+        "de": "Mund mit klarem Wasser ausspülen und ausspucken. Bei Unwohlsein Arzt konsultieren.",
+        "fr": "Rincer la bouche et cracher. Consulter un médecin.",
+        "zh": "漱口并吐出。就医。",
+        "ja": "口をすすいで吐き出す。医師に相談。"
       }
     },
     "fire_fighting": {
       "suitable": {
         "tr": "Alkol dirençli köpük, su sisi, kuru kimyasal toz, CO2.",
         "en": "Alcohol-resistant foam, water spray, dry chemical, CO2.",
-        "de": "Alkoholbeständiger Schaum, Sprühwasser, Trockenlöschpulver, CO2."
+        "de": "Alkoholbeständiger Schaum, Sprühwasser, Trockenlöschpulver, CO2.",
+        "fr": "Mousse, poudre chimique sèche, CO2, eau pulvérisée.",
+        "zh": "泡沫、干粉、二氧化碳、水雾。",
+        "ja": "泡、ドライケミカル、CO2、水噴霧。"
       },
       "prohibited": {
         "tr": "Yüksek basınçlı su jeti.",
         "en": "Direct high-pressure water jet.",
-        "de": "Harter Wasserstrahl."
+        "de": "Harter Wasserstrahl.",
+        "fr": "Jet d'eau à haute pression directe.",
+        "zh": "直接高压水柱。",
+        "ja": "直接高圧水流。"
       },
       "hazards": {
         "tr": "Alevlenir alkol buharları yangın yayabilir.",
         "en": "Flammable alcohol vapors can spread fire.",
-        "de": "Entzündbare Alkoholdämpfe können Brände ausbreiten."
+        "de": "Entzündbare Alkoholdämpfe können Brände ausbreiten.",
+        "fr": "Vapeurs inflammables. Tenir à l'écart des sources d'ignition.",
+        "zh": "易燃蒸气。远离点火源。",
+        "ja": "可燃性蒸気。着火源から遠ざける。"
       }
     },
     "ppe": {
       "mask": {
         "tr": "A1 organik buhar filtresi (Püskürtme yapılıyorsa A1P2)",
         "en": "A1 organic vapor filter (A1P2 if sprayed)",
-        "de": "A1 Filter für organische Dämpfe (A1P2 beim Sprühen)"
+        "de": "A1 Filter für organische Dämpfe (A1P2 beim Sprühen)",
+        "fr": "Respirateur à filtre vapeurs organiques approprié",
+        "zh": "适当的有机蒸气过滤口罩",
+        "ja": "適切な有機蒸気フィルター防毒マスク"
       },
       "eye": {
         "tr": "Standart koruyucu emniyet gözlüğü",
         "en": "Standard safety glasses",
-        "de": "Standard-Schutzbrille"
+        "de": "Standard-Schutzbrille",
+        "fr": "Lunettes de protection chimique",
+        "zh": "化学防溅护目镜",
+        "ja": "化学品スプラッシュゴーグル"
       },
       "gloves": {
         "latex": true,
@@ -1278,7 +1890,10 @@
         "warning": {
           "tr": "Standart nitril eldiven yeterlidir.",
           "en": "Standard nitrile gloves provide adequate protection.",
-          "de": "Standard-Nitrilhandschuhe bieten ausreichenden Schutz."
+          "de": "Standard-Nitrilhandschuhe bieten ausreichenden Schutz.",
+          "fr": "Gants nitrile standard appropriés.",
+          "zh": "标准丁腈手套防护即可。",
+          "ja": "標準的なニトリル手袋で十分な保護が得られる。"
         }
       }
     },
@@ -1286,12 +1901,18 @@
       "storage": {
         "tr": "+5°C ile +30°C arasında, donmaktan koruyarak, serin ve havalandırmalı ortamda saklayın.",
         "en": "Store between +5°C and +30°C, protect from freezing, keep in cool ventilated room.",
-        "de": "Zwischen +5°C und +30°C frostfrei, kühl und gut belüftet lagern."
+        "de": "Zwischen +5°C und +30°C frostfrei, kühl und gut belüftet lagern.",
+        "fr": "Stocker dans un endroit frais, sec et bien ventilé.",
+        "zh": "储存在阴凉、干燥、通风良好的地方。",
+        "ja": "涼しく乾燥した換気の良い場所に保管。"
       },
       "incompatible": {
         "tr": "Açık alev, kıvılcım kaynakları ve güçlü oksitleyicilerden uzak tutun.",
         "en": "Keep away from open flames, ignition sparks, and strong oxidizers.",
-        "de": "Von offenen Flammen, Zündfunken und starken Oxidationsmitteln fernhalten."
+        "de": "Von offenen Flammen, Zündfunken und starken Oxidationsmitteln fernhalten.",
+        "fr": "Tenir à l'écart des sources d'ignition et des matières incompatibles.",
+        "zh": "远离点火源和不相容物质。",
+        "ja": "着火源および非適合物質から遠ざける。"
       }
     }
   },
@@ -1301,58 +1922,88 @@
     "name": {
       "tr": "Kalıp Cilası/Wax",
       "en": "Mold Release Wax",
-      "de": "Trennwachs"
+      "de": "Trennwachs",
+      "fr": "Cire de Démoulage",
+      "zh": "脱模蜡",
+      "ja": "離型ワックス"
     },
     "chemical_name": {
       "tr": "Karnauba Mumu ve Hidrokarbon Solvent Macunu",
       "en": "Carnauba Wax Paste in Hydrocarbon Distillates",
-      "de": "Carnaubawachspaste in Kohlenwasserstoffdestillaten"
+      "de": "Carnaubawachspaste in Kohlenwasserstoffdestillaten",
+      "fr": "Cire de Carnauba / Hydrocarbures Paraffiniques",
+      "zh": "巴西棕榈蜡 / 石蜡烃",
+      "ja": "カルナバワックス / パラフィン系炭化水素"
     },
     "category": "ayirici",
     "risk_level": "ORTA",
     "signal_word": {
       "tr": "UYARI",
       "en": "WARNING",
-      "de": "ACHTUNG"
+      "de": "ACHTUNG",
+      "fr": "ATTENTION",
+      "zh": "警告",
+      "ja": "警告"
     },
     "hazard_statement": {
       "tr": "H228: Alevlenir katı/macun. H315: Ciltte kuruluk ve çatlaklara yol açabilir. H336: Buharları uyuşukluk yapabilir.",
       "en": "H228: Flammable solid/paste. H315: Repeated contact may cause skin dryness and cracking. H336: Vapors may cause drowsiness.",
-      "de": "H228: Entzündbarer Feststoff/Paste. H315: Wiederholter Kontakt kann zu spröder Haut führen. H336: Kann Schläfrigkeit verursachen."
+      "de": "H228: Entzündbarer Feststoff/Paste. H315: Wiederholter Kontakt kann zu spröder Haut führen. H336: Kann Schläfrigkeit verursachen.",
+      "fr": "H226 : Liquide et vapeurs inflammables (si contient solvant). H315 : Provoque une irritation cutanée.",
+      "zh": "H226：易燃液体和蒸气（若含溶剂）。H315：造成皮肤刺激。",
+      "ja": "H226：引火性液体および蒸気（溶剤含有の場合）。H315：皮膚刺激。"
     },
     "badges": {
       "fire": {
         "tr": "Yanıcı Macun (Parlama ~40°C)",
         "en": "Flammable Paste (Flash ~40°C)",
-        "de": "Entzündbare Paste (Flammpunkt ~40°C)"
+        "de": "Entzündbare Paste (Flammpunkt ~40°C)",
+        "fr": "Cire Combustible (selon solvant)",
+        "zh": "可燃蜡（取决于溶剂）",
+        "ja": "可燃性ワックス（溶剤による）"
       },
       "health": {
         "tr": "Cilt Kuruluğu / Solvent Buharı",
         "en": "Skin Dryness / Solvent Vapor",
-        "de": "Hautaustrocknung / Lösemitteldampf"
+        "de": "Hautaustrocknung / Lösemitteldampf",
+        "fr": "Irritation Cutanée Légère",
+        "zh": "轻微皮肤刺激",
+        "ja": "軽度の皮膚刺激"
       },
       "environment": {
         "tr": "Toprağa Dökülmemeli",
         "en": "Prevent Soil Leakage",
-        "de": "Bodenkontamination vermeiden"
+        "de": "Bodenkontamination vermeiden",
+        "fr": "Faible Impact Environnemental",
+        "zh": "低环境影响",
+        "ja": "環境への影響は低い"
       }
     },
     "source": {
       "tr": "Meguiar's Mirror Glaze #8 / TR-104 Release Wax SDS & ECHA",
       "en": "Meguiar's Mirror Glaze #8 / TR-104 Release Wax SDS & ECHA",
-      "de": "Meguiar's Mirror Glaze #8 / TR-104 Trennwachs SDB & ECHA"
+      "de": "Meguiar's Mirror Glaze #8 / TR-104 Trennwachs SDB & ECHA",
+      "fr": "Meguiar's M-HS Mirror Glaze / Partall Paste #2 FDS",
+      "zh": "Meguiar's M-HS Mirror Glaze / Partall Paste #2 SDS",
+      "ja": "Meguiar's M-HS Mirror Glaze / Partall Paste #2 SDS"
     },
     "source_url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.030.158",
     "verified_at": "2026-10-15",
     "verification_status": {
       "tr": "Doğrulandı (ECHA / Endüstriyel SDS)",
       "en": "Verified (ECHA / Industrial SDS)",
-      "de": "Verifiziert (ECHA / Industrie-SDB)"
+      "de": "Verifiziert (ECHA / Industrie-SDB)",
+      "fr": "Vérifié (FDS Fabricant / ECHA)",
+      "zh": "已验证（制造商SDS / ECHA）",
+      "ja": "検証済（製造業者SDS / ECHA）"
     },
     "verification_note": {
       "tr": "Kompozit parça kalıptan çıkarma cilası. Çözücü solvent içerdiğinden yanıcıdır; uygulama bezleri kendiliğinden alev alma riski taşıyabilir.",
       "en": "Paste wax for composite demolding. Wax rags with solvent residue can spontaneously combust if piled up.",
-      "de": "Pastenwachs für Formen. Lösungsmittelgetränkte Wachslappen können sich bei Haufenbildung selbst entzünden."
+      "de": "Pastenwachs für Formen. Lösungsmittelgetränkte Wachslappen können sich bei Haufenbildung selbst entzünden.",
+      "fr": "Agent démoulant standard pour moules en polyester et époxy. Appliquer en couches minces, polir avant stratification.",
+      "zh": "聚酯和环氧树脂模具的标准脱模剂。薄层涂抹，层压前抛光。",
+      "ja": "ポリエステルおよびエポキシ型の標準離型剤。薄く塗布し、積層前に磨き上げる。"
     },
     "ghs_codes": [
       "GHS02"
@@ -1360,58 +2011,88 @@
     "flash_point": {
       "tr": "Yaklaşık 40 °C (solvent içeriğinden kaynaklı)",
       "en": "Approx. 40 °C (due to solvent content)",
-      "de": "Ca. 40 °C (durch Lösemittelanteil)"
+      "de": "Ca. 40 °C (durch Lösemittelanteil)",
+      "fr": "Varie selon le solvant (généralement >60°C)",
+      "zh": "因溶剂而异（通常>60°C）",
+      "ja": "溶剤による（通常>60°C）"
     },
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
         "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan suyla yıkayın.",
         "en": "Rinse gently with low-pressure running clean water for at least 15 minutes holding eyelids open.",
-        "de": "Augenlider offen halten und mindestens 15 Minuten sanft mit drucklosem Wasser spülen."
+        "de": "Augenlider offen halten und mindestens 15 Minuten sanft mit drucklosem Wasser spülen.",
+        "fr": "Rincer à l'eau courante propre à basse pression pendant au moins Rinse gently with low-pressure running clean water for at least 15 minutes holding eyelids open. minutes en maintenant les paupières ouvertes. Appeler les secours immédiatement.",
+        "zh": "保持眼睑张开，用低压清洁水冲洗至少15分钟。立即就医。",
+        "ja": "まぶたを開いたまま、低圧の清潔な水で少なくとも15分間洗い流す。直ちに医師の手当てを受ける。"
       },
       "skin": {
         "tr": "Sabun ve ılık suyla yıkayın. Nemlendirici krem sürün.",
         "en": "Wash with soap and warm water. Apply skin moisturizer.",
-        "de": "Mit Seife und warmem Wasser waschen. Feuchtigkeitscreme auftragen."
+        "de": "Mit Seife und warmem Wasser waschen. Feuchtigkeitscreme auftragen.",
+        "fr": "Retirer les vêtements contaminés. Laver à l'eau et au savon pendant au moins 15 minutes.",
+        "zh": "脱去被污染的衣物。用水和肥皂彻底清洗皮肤至少15分钟。",
+        "ja": "汚染した衣服を脱ぐ。皮膚を流水と石けんで少なくとも15分間洗い流す。"
       },
       "inhalation": {
         "tr": "Uygulama alanını havalandırın, temiz havaya çıkın.",
         "en": "Ventilate application area, move to fresh air.",
-        "de": "Bereich lüften, an die frische Luft gehen."
+        "de": "Bereich lüften, an die frische Luft gehen.",
+        "fr": "Transporter la personne à l'air frais. Consulter un médecin si les symptômes persistent.",
+        "zh": "将人转移到新鲜空气处。症状持续时就医。",
+        "ja": "新鮮な空気のある場所へ移動。症状が続く場合は医師に相談。"
       },
       "ingestion": {
         "tr": "Kusturmayın! Ağzı suyla çalkalayıp tükürün ve doktora başvurun.",
         "en": "Do not induce vomiting! Rinse mouth with water, spit out, and call doctor.",
-        "de": "Kein Erbrechen herbeiführen! Mund ausspülen, ausspucken und Arzt aufsuchen."
+        "de": "Kein Erbrechen herbeiführen! Mund ausspülen, ausspucken und Arzt aufsuchen.",
+        "fr": "Rincer la bouche et cracher. Consulter un médecin.",
+        "zh": "漱口并吐出。就医。",
+        "ja": "口をすすいで吐き出す。医師に相談。"
       }
     },
     "fire_fighting": {
       "suitable": {
         "tr": "Kuru kimyasal toz, CO2, köpük, su sisi.",
         "en": "Dry chemical powder, CO2, foam, water spray.",
-        "de": "Trockenlöschpulver, CO2, Schaum, Sprühwasser."
+        "de": "Trockenlöschpulver, CO2, Schaum, Sprühwasser.",
+        "fr": "Mousse, poudre chimique sèche, CO2, eau pulvérisée.",
+        "zh": "泡沫、干粉、二氧化碳、水雾。",
+        "ja": "泡、ドライケミカル、CO2、水噴霧。"
       },
       "prohibited": {
         "tr": "Yüksek basınçlı su jeti.",
         "en": "High pressure water jet.",
-        "de": "Harter Wasserstrahl."
+        "de": "Harter Wasserstrahl.",
+        "fr": "Jet d'eau à haute pression directe.",
+        "zh": "直接高压水柱。",
+        "ja": "直接高圧水流。"
       },
       "hazards": {
         "tr": "DİKKAT: Cila sürülmüş bezler hava almadan üst üste yığılırsa kendiliğinden tutuşabilir! Bezleri metal kapalı kovada imha edin.",
         "en": "CAUTION: Wax-soaked rags can spontaneously combust if piled! Dispose of rags in airtight metal containers.",
-        "de": "ACHTUNG: Wachsgetränkte Lappen können sich selbst entzünden! In luftdichten Metallbehältern entsorgen."
+        "de": "ACHTUNG: Wachsgetränkte Lappen können sich selbst entzünden! In luftdichten Metallbehältern entsorgen.",
+        "fr": "Vapeurs inflammables. Tenir à l'écart des sources d'ignition.",
+        "zh": "易燃蒸气。远离点火源。",
+        "ja": "可燃性蒸気。着火源から遠ざける。"
       }
     },
     "ppe": {
       "mask": {
         "tr": "Kapalı alanlarda A1 organik solvent maskesi",
         "en": "A1 organic solvent respirator in confined areas",
-        "de": "A1 Atemschutzmaske in geschlossenen Räumen"
+        "de": "A1 Atemschutzmaske in geschlossenen Räumen",
+        "fr": "Respirateur à filtre vapeurs organiques approprié",
+        "zh": "适当的有机蒸气过滤口罩",
+        "ja": "適切な有機蒸気フィルター防毒マスク"
       },
       "eye": {
         "tr": "Emniyet gözlüğü",
         "en": "Safety glasses",
-        "de": "Schutzbrille"
+        "de": "Schutzbrille",
+        "fr": "Lunettes de protection chimique",
+        "zh": "化学防溅护目镜",
+        "ja": "化学品スプラッシュゴーグル"
       },
       "gloves": {
         "latex": false,
@@ -1421,7 +2102,10 @@
         "warning": {
           "tr": "Solvent macununu cilde temas ettirmemek için nitril eldiven kullanın.",
           "en": "Wear nitrile gloves to prevent skin contact with solvent paste.",
-          "de": "Nitrilhandschuhe tragen, um Hautkontakt mit der Paste zu vermeiden."
+          "de": "Nitrilhandschuhe tragen, um Hautkontakt mit der Paste zu vermeiden.",
+          "fr": "Gants nitrile standard appropriés.",
+          "zh": "标准丁腈手套防护即可。",
+          "ja": "標準的なニトリル手袋で十分な保護が得られる。"
         }
       }
     },
@@ -1429,12 +2113,18 @@
       "storage": {
         "tr": "Kutunun kapağını sıkıca kapalı, +30°C altında, serin ve kuru yerde saklayın.",
         "en": "Keep tin tightly closed below +30°C in a cool, dry place.",
-        "de": "Dose dicht verschlossen unter +30°C kühl und trocken lagern."
+        "de": "Dose dicht verschlossen unter +30°C kühl und trocken lagern.",
+        "fr": "Stocker dans un endroit frais, sec et bien ventilé.",
+        "zh": "储存在阴凉、干燥、通风良好的地方。",
+        "ja": "涼しく乾燥した換気の良い場所に保管。"
       },
       "incompatible": {
         "tr": "Açık alev, kıvılcım kaynakları ve güçlü oksitleyicilerden uzak tutun.",
         "en": "Keep away from open flames, sparks, and strong oxidizers.",
-        "de": "Fernhalten von offenen Flammen, Funken und starken Oxidationsmitteln."
+        "de": "Fernhalten von offenen Flammen, Funken und starken Oxidationsmitteln.",
+        "fr": "Tenir à l'écart des sources d'ignition et des matières incompatibles.",
+        "zh": "远离点火源和不相容物质。",
+        "ja": "着火源および非適合物質から遠ざける。"
       }
     }
   },
@@ -1444,58 +2134,88 @@
     "name": {
       "tr": "Gelcoat",
       "en": "Gelcoat",
-      "de": "Gelcoat"
+      "de": "Gelcoat",
+      "fr": "Gel Coat Polyester Blanc",
+      "zh": "白色聚酯凝胶涂层",
+      "ja": "白色ポリエステルゲルコート"
     },
     "chemical_name": {
       "tr": "İzoftalik Marin Gelcoat (Pigmentli & Tiksotropik)",
       "en": "Isophthalic Marine Gelcoat (Pigmented & Thixotropic)",
-      "de": "Isophthalsäure-Marine-Gelcoat (Pigmentiert)"
+      "de": "Isophthalsäure-Marine-Gelcoat (Pigmentiert)",
+      "fr": "Polyester Insaturé + Pigment TiO2 en Styrène",
+      "zh": "苯乙烯中含TiO2颜料的不饱和聚酯",
+      "ja": "スチレン中のTiO2顔料含有不飽和ポリエステル"
     },
     "category": "recine",
     "risk_level": "YÜKSEK",
     "signal_word": {
       "tr": "TEHLİKE",
       "en": "DANGER",
-      "de": "GEFAHR"
+      "de": "GEFAHR",
+      "fr": "DANGER",
+      "zh": "危险",
+      "ja": "危険"
     },
     "hazard_statement": {
       "tr": "H226: Alevlenir sıvı ve buhar. H315/H319: Cilt ve ciddi göz tahrişi. H332: Solunduğunda zararlı. H372: İşitme organlarına zarar verebilir.",
       "en": "H226: Flammable liquid and vapor. H315/H319: Skin and eye irritation. H332: Harmful if inhaled. H372: Damage to hearing organs.",
-      "de": "H226: Flüssigkeit und Dampf entzündbar. H315/H319: Reizt Haut und Augen. H332: Gesundheitsschädlich bei Einatmen. H372: Gehörschädigung möglich."
+      "de": "H226: Flüssigkeit und Dampf entzündbar. H315/H319: Reizt Haut und Augen. H332: Gesundheitsschädlich bei Einatmen. H372: Gehörschädigung möglich.",
+      "fr": "H226 : Liquide et vapeurs inflammables. H315 : Provoque une irritation cutanée. H319 : Provoque une sévère irritation des yeux. H372 : Risque d'atteinte aux organes (styrène).",
+      "zh": "H226：易燃液体和蒸气。H315：造成皮肤刺激。H319：造成严重眼刺激。H372：器官损伤风险（苯乙烯）。",
+      "ja": "H226：引火性液体および蒸気。H315：皮膚刺激。H319：強い眼刺激。H372：臓器への損傷（スチレン）。"
     },
     "badges": {
       "fire": {
         "tr": "Alevlenir Buhar (Parlama ~31°C)",
         "en": "Flammable Vapor (Flash ~31°C)",
-        "de": "Entzündbarer Dampf (Flammpunkt ~31°C)"
+        "de": "Entzündbarer Dampf (Flammpunkt ~31°C)",
+        "fr": "Vapeur Inflammable (Éclair ~31°C)",
+        "zh": "易燃蒸气（闪点~31°C）",
+        "ja": "可燃性蒸気（引火点~31°C）"
       },
       "health": {
         "tr": "Stiren Buharı / Akciğer Tahrişi",
         "en": "Styrene Vapor / Lung Irritant",
-        "de": "Styroldämpfe / Lungenreizung"
+        "de": "Styroldämpfe / Lungenreizung",
+        "fr": "Styrène Cancérogène Suspecté / Irritant",
+        "zh": "疑似致癌苯乙烯 / 刺激性",
+        "ja": "スチレン発がん疑い / 刺激性"
       },
       "environment": {
         "tr": "Sucul Yaşama Toksik",
         "en": "Toxic to Aquatic Life",
-        "de": "Giftig für Wasserorganismen"
+        "de": "Giftig für Wasserorganismen",
+        "fr": "Toxique pour Organismes Aquatiques",
+        "zh": "对水生生物有毒",
+        "ja": "水生生物に有毒"
       }
     },
     "source": {
       "tr": "Polylite / Scott Bader Crystic Marine Gelcoat SDS & ECHA",
       "en": "Polylite / Scott Bader Crystic Marine Gelcoat SDS & ECHA",
-      "de": "Polylite / Scott Bader Crystic Marine Gelcoat SDB & ECHA"
+      "de": "Polylite / Scott Bader Crystic Marine Gelcoat SDB & ECHA",
+      "fr": "Poliya / Scott Bader Crystic Gel Coat FDS & ECHA",
+      "zh": "Poliya / Scott Bader Crystic 凝胶涂层 SDS & ECHA",
+      "ja": "Poliya / Scott Bader Crystic ゲルコート SDS & ECHA"
     },
     "source_url": "https://echa.europa.eu/substance-information/-/substanceinfo/100.002.595",
     "verified_at": "2026-10-15",
     "verification_status": {
       "tr": "Doğrulandı (ECHA / Endüstriyel SDS)",
       "en": "Verified (ECHA / Industrial SDS)",
-      "de": "Verifiziert (ECHA / Industrie-SDB)"
+      "de": "Verifiziert (ECHA / Industrie-SDB)",
+      "fr": "Vérifié (ECHA / FDS Industrielle)",
+      "zh": "已验证（ECHA / 工业SDS）",
+      "ja": "検証済（ECHA / 産業用SDS）"
     },
     "verification_note": {
       "tr": "Tekne dış yüzeyinin parlak, UV ve su geçirmez koruyucu kabuğudur. Tabanca ile püskürtüldüğünde aerosol ve stiren patlama riski yaratır.",
       "en": "Outer UV and moisture barrier for boat hulls. Spraying generates high airborne styrene aerosols and flammability risk.",
-      "de": "Äußere Schutzschicht für Bootsrümpfe. Beim Spritzen entstehen feine Styrolaerosole mit hoher Entzündbarkeit."
+      "de": "Äußere Schutzschicht für Bootsrümpfe. Beim Spritzen entstehen feine Styrolaerosole mit hoher Entzündbarkeit.",
+      "fr": "Couche de surface cosmétique du stratifié polyester. Contient du styrène (IARC 2A). Application par pistolet — ventilation OBLIGATOIRE.",
+      "zh": "聚酯层压板的表面装饰层。含苯乙烯（IARC 2A类）。喷涂施工——必须通风。",
+      "ja": "ポリエステル積層体の表面仕上げ層。スチレン含有（IARC 2A）。スプレー塗布時は換気が必須。"
     },
     "ghs_codes": [
       "GHS02",
@@ -1504,58 +2224,88 @@
     "flash_point": {
       "tr": "Yaklaşık 31 °C (stiren içeriğinden kaynaklı)",
       "en": "Approx. 31 °C (due to styrene content)",
-      "de": "Ca. 31 °C (durch Styrolgehalt)"
+      "de": "Ca. 31 °C (durch Styrolgehalt)",
+      "fr": "Environ 31 °C (composant styrène)",
+      "zh": "约 31 °C（苯乙烯组分）",
+      "ja": "約 31 °C（スチレン成分）"
     },
     "emergency_timer_min": 15,
     "first_aid": {
       "eye": {
         "tr": "Göz kapaklarını açık tutarak en az 15 dakika tazyiksiz, nazikçe akan temiz suyla yıkayın. Doktora başvurun.",
         "en": "Rinse with gentle, low-pressure running water for at least 15 minutes holding eyelids open. Consult a physician.",
-        "de": "Augenlider offen halten und mindestens 15 Minuten mit drucklosem Wasser spülen. Arzt hinzuziehen."
+        "de": "Augenlider offen halten und mindestens 15 Minuten mit drucklosem Wasser spülen. Arzt hinzuziehen.",
+        "fr": "Rincer à l'eau courante propre à basse pression pendant au moins Rinse with gentle, low-pressure running water for at least 15 minutes holding eyelids open. Consult a physician. minutes en maintenant les paupières ouvertes. Appeler les secours immédiatement.",
+        "zh": "保持眼睑张开，用低压清洁水冲洗至少15分钟。立即就医。",
+        "ja": "まぶたを開いたまま、低圧の清潔な水で少なくとも15分間洗い流す。直ちに医師の手当てを受ける。"
       },
       "skin": {
         "tr": "Bulaşan giysileri çıkarın. Cildi tazyiksiz su ve sabunla yıkayın. Cilde aseton sürmeyin.",
         "en": "Strip contaminated clothes. Wash with soap and running water without high pressure. Never apply acetone on skin.",
-        "de": "Kleidung ausziehen. Mit Wasser und Seife waschen. Niemals Aceton auf die Haut auftragen."
+        "de": "Kleidung ausziehen. Mit Wasser und Seife waschen. Niemals Aceton auf die Haut auftragen.",
+        "fr": "Retirer les vêtements contaminés. Laver à l'eau et au savon pendant au moins 15 minutes.",
+        "zh": "脱去被污染的衣物。用水和肥皂彻底清洗皮肤至少15分钟。",
+        "ja": "汚染した衣服を脱ぐ。皮膚を流水と石けんで少なくとも15分間洗い流す。"
       },
       "inhalation": {
         "tr": "Özellikle püskürtme sonrası derhal temiz havaya çıkın. Solunum güçlüğünde 112’yi arayın.",
         "en": "Especially after spray application, move to fresh air immediately. Call emergency if breathing is labored.",
-        "de": "Besonders nach Spritzarbeiten sofort an die frische Luft gehen. Bei Atemnot Notarzt rufen."
+        "de": "Besonders nach Spritzarbeiten sofort an die frische Luft gehen. Bei Atemnot Notarzt rufen.",
+        "fr": "Transporter la personne à l'air frais. Consulter un médecin si les symptômes persistent.",
+        "zh": "将人转移到新鲜空气处。症状持续时就医。",
+        "ja": "新鮮な空気のある場所へ移動。症状が続く場合は医師に相談。"
       },
       "ingestion": {
         "tr": "Kusturmayın! Ağzı suyla çalkalayıp tükürün ve acil yardım (112) çağırın.",
         "en": "Do not induce vomiting! Rinse mouth with water, spit out, and call emergency (112).",
-        "de": "Kein Erbrechen herbeiführen! Mund ausspülen, ausspucken und Notarzt (112) rufen."
+        "de": "Kein Erbrechen herbeiführen! Mund ausspülen, ausspucken und Notarzt (112) rufen.",
+        "fr": "Rincer la bouche et cracher. Consulter un médecin.",
+        "zh": "漱口并吐出。就医。",
+        "ja": "口をすすいで吐き出す。医師に相談。"
       }
     },
     "fire_fighting": {
       "suitable": {
         "tr": "Köpük, kuru kimyasal toz, CO2, su sisi.",
         "en": "Foam, dry chemical powder, CO2, water spray.",
-        "de": "Schaum, Trockenlöschpulver, CO2, Sprühwasser."
+        "de": "Schaum, Trockenlöschpulver, CO2, Sprühwasser.",
+        "fr": "Mousse, poudre chimique sèche, CO2, eau pulvérisée.",
+        "zh": "泡沫、干粉、二氧化碳、水雾。",
+        "ja": "泡、ドライケミカル、CO2、水噴霧。"
       },
       "prohibited": {
         "tr": "Doğrudan yüksek basınçlı su jeti.",
         "en": "Direct high-pressure water stream.",
-        "de": "Harter Wasserstrahl."
+        "de": "Harter Wasserstrahl.",
+        "fr": "Jet d'eau à haute pression directe.",
+        "zh": "直接高压水柱。",
+        "ja": "直接高圧水流。"
       },
       "hazards": {
         "tr": "Yangında zehirli stiren buharları, yoğun siyah is ve karbonmonoksit çıkar.",
         "en": "Fires yield hazardous styrene fumes, dense black soot, and carbon monoxide.",
-        "de": "Im Brandfall entstehen giftige Styroldämpfe, dichter Ruß und Kohlenmonoxid."
+        "de": "Im Brandfall entstehen giftige Styroldämpfe, dichter Ruß und Kohlenmonoxid.",
+        "fr": "Vapeurs inflammables. Tenir à l'écart des sources d'ignition.",
+        "zh": "易燃蒸气。远离点火源。",
+        "ja": "可燃性蒸気。着火源から遠ざける。"
       }
     },
     "ppe": {
       "mask": {
         "tr": "Püskürtmede A2P3 kombine filtreli tam yüz maskesi veya hava beslemeli başlık",
         "en": "A2P3 combined full face mask or supplied air respirator when spraying",
-        "de": "A2P3 Vollmaske oder Druckluft-Atemschutz beim Spritzen"
+        "de": "A2P3 Vollmaske oder Druckluft-Atemschutz beim Spritzen",
+        "fr": "Respirateur à filtre vapeurs organiques approprié",
+        "zh": "适当的有机蒸气过滤口罩",
+        "ja": "適切な有機蒸気フィルター防毒マスク"
       },
       "eye": {
         "tr": "Tam sızdırmaz gözlük veya tam yüz maskesi",
         "en": "Sealed chemical goggles or full face mask",
-        "de": "Dicht schließende Brille oder Vollmaske"
+        "de": "Dicht schließende Brille oder Vollmaske",
+        "fr": "Lunettes de protection chimique",
+        "zh": "化学防溅护目镜",
+        "ja": "化学品スプラッシュゴーグル"
       },
       "gloves": {
         "latex": false,
@@ -1565,7 +2315,10 @@
         "warning": {
           "tr": "Lateks eldiven dayanıksızdır. Kalın nitril veya PVA/neopren eldiven kullanın.",
           "en": "Latex provides no barrier. Wear heavy-duty nitrile or PVA/neoprene gloves.",
-          "de": "Latex ist wirkungslos. Dicke Nitril- oder PVA/Neoprenhandschuhe tragen."
+          "de": "Latex ist wirkungslos. Dicke Nitril- oder PVA/Neoprenhandschuhe tragen.",
+          "fr": "Gants nitrile standard appropriés.",
+          "zh": "标准丁腈手套防护即可。",
+          "ja": "標準的なニトリル手袋で十分な保護が得られる。"
         }
       }
     },
@@ -1573,12 +2326,18 @@
       "storage": {
         "tr": "+20°C altında serin, güneş almayan, iyi havalandırılmış ve topraklanmış depoda saklayın.",
         "en": "Store below +20°C in a cool, dark, well-ventilated, grounded room.",
-        "de": "Unter +20°C kühl, dunkel, gut belüftet und geerdet lagern."
+        "de": "Unter +20°C kühl, dunkel, gut belüftet und geerdet lagern.",
+        "fr": "Stocker dans un endroit frais, sec et bien ventilé.",
+        "zh": "储存在阴凉、干燥、通风良好的地方。",
+        "ja": "涼しく乾燥した換気の良い場所に保管。"
       },
       "incompatible": {
         "tr": "Peroksitlerle (MEK-P) kontrolsüz karıştırmayın (aşırı ısınma ve parlama). Hızlandırıcı ve peroksiti reçinesiz asla karıştırmayın.",
         "en": "Do not mix uncontrolled with peroxides (runaway heat). Never mix accelerator directly with peroxide without base.",
-        "de": "Nicht unkontrolliert mit Peroxiden mischen (Überhitzungsgefahr)."
+        "de": "Nicht unkontrolliert mit Peroxiden mischen (Überhitzungsgefahr).",
+        "fr": "Tenir à l'écart des sources d'ignition et des matières incompatibles.",
+        "zh": "远离点火源和不相容物质。",
+        "ja": "着火源および非適合物質から遠ざける。"
       }
     }
   }

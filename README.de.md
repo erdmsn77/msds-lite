@@ -4,11 +4,11 @@
 
 [ Türkçe ](README.md) • [ English ](README.en.md) • [ Deutsch ](README.de.md)
 
-[![Version](https://img.shields.io/badge/Version-v1.8.2-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
+[![Version](https://img.shields.io/badge/Version-v1.9.0-orange?style=flat-square)](https://github.com/erdmsn77/msds-lite/releases)
 [![Deploy](https://img.shields.io/github/actions/workflow/status/erdmsn77/msds-lite/deploy-pages.yml?branch=main&style=flat-square&label=Deploy&color=success)](https://github.com/erdmsn77/msds-lite/actions/workflows/deploy-pages.yml)
 [![PWA Ready](https://img.shields.io/badge/PWA-Ready-22d3ee?style=flat-square&logo=pwa)](https://erdmsn77.github.io/msds-lite/)
 [![Offline First](https://img.shields.io/badge/Offline-100%25-emerald?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
-[![Languages](https://img.shields.io/badge/Languages-TR%20%7C%20EN%20%7C%20DE-blue?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
+[![Languages](https://img.shields.io/badge/Languages-6%20Sprachen%20(TR%20%7C%20EN%20%7C%20DE%20%7C%20FR%20%7C%20ZH%20%7C%20JA)-blue?style=flat-square)](https://erdmsn77.github.io/msds-lite/)
 [![License](https://img.shields.io/badge/License-MIT%20%2F%20Open-yellow?style=flat-square)](LICENSE)
 
 ---
@@ -67,7 +67,7 @@ Durch Antippen einer Gefahrstoffkarte öffnet sich ein Schiebepanel mit 4 Notfal
 
 * **Werkstatt- und Nachtmodus:** Ein kontrastreicher Tageslichtmodus (`#F8FAFC` Hintergrund mit `#0F172A` Text) garantiert beste Lesbarkeit bei grellem Sonnenlicht in offenen Werfthallen. Umschaltbar auf einen augenschonenden Dunkelmodus für Nachtschichten (gespeichert im lokalen Speicher).
 * **Native Touch- und Wischgesten:** Im Vollbild-PWA-Modus schließt eine Wischbewegung vom Bildschirmrand oder die Zurück-Taste des Telefons sanft das Notfallpanel, anstatt die Anwendung zu beenden (`history.pushState` und `popstate`).
-* **Dreisprachig (TR / EN / DE):** Vollständige Lokalisierung für Türkisch, Englisch und Deutsch, abgestimmt auf die Fachterminologie in Werften und im europäischen Komposit-Bootsbau.
+* **6 Sprachen International (TR / EN / DE / FR / ZH / JA):** Vollständige Lokalisierung für Türkisch, Englisch, Deutsch, Französisch, Chinesisch (Vereinfacht) und Japanisch, abgestimmt auf weltweite Werft- und REACH/GHS-Sicherheitsstandards.
 * **Keine schweren Framework-Abhängigkeiten (Pure Vanilla JS und CSS):** Keinerlei Fremdbibliotheken oder Frameworks (weder Tailwind noch Bootstrap, React oder Vue). Extrem schlanke und optimierte native Architektur für blitzschnellen Start auch auf älteren Werkstatt-Smartphones.
 * **Hundert Prozent Offline-fähig (PWA):** Service-Worker-basiert. Funktioniert zuverlässig in Kellern, abgeschirmten Hallen oder auf See ohne Mobilfunkempfang.
 * **Direktverlinkung (Deep-Linking):** Stoff-IDs können direkt an die URL angehängt werden (beispielsweise `/#mek-p`), ideal für QR-Code-Aufkleber an Chemikalienschränken.
