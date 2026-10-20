@@ -605,6 +605,42 @@ test('fallbackChemicals in index.html has complete TR, EN, DE, FR, ZH, JA transl
   }
 });
 
+test('Forensic i18n: zero English splice leaks in French, and data/chemicals.json equals fallbackChemicals', () => {
+  const chems = JSON.parse(fs.readFileSync(path.join(__dirname, 'data', 'chemicals.json'), 'utf-8'));
+  const fbMatch = htmlContent.match(/const fallbackChemicals = (\[[\s\S]*?\n\s*\]);/);
+  const fallbackChemicals = new Function('return ' + fbMatch[1] + ';')();
+
+  assert.strictEqual(JSON.stringify(chems), JSON.stringify(fallbackChemicals), 'chemicals.json and fallbackChemicals must be 100% identical');
+
+  for (const c of chems) {
+    for (const [k, fa] of Object.entries(c.first_aid)) {
+      assert(!fa.fr.includes('Rinse with'), `English leaked in ${c.id}.first_aid.${k}.fr`);
+      assert(!fa.fr.includes('holding eyelids'), `English leaked in ${c.id}.first_aid.${k}.fr`);
+      assert(!fa.fr.includes('Do not rub'), `English leaked in ${c.id}.first_aid.${k}.fr`);
+    }
+  }
+
+  // Check critical safety instructions in all languages
+  const acetone = chems.find(x => x.id === 'technical-acetone');
+  assert(acetone.ppe.gloves.warning.fr.includes('butyle'), 'FR acetone glove warning must require butyl');
+  assert(acetone.ppe.gloves.warning.zh.includes('丁基'), 'ZH acetone glove warning must require butyl');
+  assert(acetone.ppe.gloves.warning.ja.includes('ブチル'), 'JA acetone glove warning must require butyl');
+
+  for (const id of ['polyester-resin', 'vinylester-resin', 'gelcoat']) {
+    const c = chems.find(x => x.id === id);
+    assert(c.first_aid.skin.fr.toLowerCase().includes('acétone'), `Missing acetone skin warning in FR ${id}`);
+    assert(c.first_aid.skin.zh.includes('丙酮'), `Missing acetone skin warning in ZH ${id}`);
+    assert(c.first_aid.skin.ja.includes('アセトン'), `Missing acetone skin warning in JA ${id}`);
+  }
+
+  for (const id of ['mek-p', 'polyester-resin', 'technical-acetone', 'cobalt-naphthenate', 'epoxy-resin-dgeba', 'epoxy-hardener-isophoronediamine', 'vinylester-resin', 'mold-release-wax', 'gelcoat']) {
+    const c = chems.find(x => x.id === id);
+    assert(c.first_aid.ingestion.fr.toLowerCase().includes('faire vomir'), `Missing do not vomit in FR ${id}`);
+    assert(c.first_aid.ingestion.zh.includes('催吐'), `Missing do not vomit in ZH ${id}`);
+    assert(c.first_aid.ingestion.ja.includes('吐かせない'), `Missing do not vomit in JA ${id}`);
+  }
+});
+
 
 
 // ----------------------------------------------------
