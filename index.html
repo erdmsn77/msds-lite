@@ -5906,6 +5906,7 @@
         const hasLatexWarning = /lateks.*uygun de[ğg]il|latex.*unsuitable|latex.*keinen schutz/i.test(s8 + ' ' + rawGloves);
         const isButyl = /butyl|b[üu]til/i.test(s8 + ' ' + rawGloves);
         const isNitrile = /nitril|nitrile/i.test(s8 + ' ' + rawGloves);
+        const isNeoprene = /neopren|neoprene/i.test(s8 + ' ' + rawGloves);
 
         // 8. Section 9: Flash Point
         let flashVal = '';
@@ -5991,8 +5992,8 @@
             gloves: {
               latex: !hasLatexWarning,
               nitrile: isNitrile || !hasLatexWarning,
-              butyl: isButyl || true,
-              neoprene: true,
+              butyl: isButyl,
+              neoprene: isNeoprene,
               warning: {
                 tr: rawGloves || notSpecified,
                 en: rawGloves || notSpecified,
@@ -6364,9 +6365,9 @@
             ppe: {
               gloves: {
                 latex: !/uygun de|unsuitable|keinen/i.test(glovesVal),
-                nitrile: /nitril/i.test(glovesVal) || true,
-                butyl: /butyl|butil/i.test(glovesVal) || true,
-                neoprene: true,
+                nitrile: /nitril|nitrile/i.test(glovesVal),
+                butyl: /butyl|butil/i.test(glovesVal),
+                neoprene: /neopren/i.test(glovesVal),
                 warning: { tr: glovesVal, en: glovesVal, de: glovesVal }
               },
               mask: { tr: maskVal, en: maskVal, de: maskVal }
