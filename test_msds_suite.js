@@ -567,6 +567,7 @@ test('data/chemicals.json has complete TR, EN, DE, FR, ZH, JA translations for a
     const cid = c.id;
     for (const l of langs) {
       assert.ok(c.name && c.name[l], `${cid}: name.${l} missing`);
+      assert.ok(c.cas && c.cas[l], `${cid}: cas.${l} missing`);
       assert.ok(c.chemical_name && c.chemical_name[l], `${cid}: chemical_name.${l} missing`);
       assert.ok(c.signal_word && c.signal_word[l], `${cid}: signal_word.${l} missing`);
       assert.ok(c.hazard_statement && c.hazard_statement[l], `${cid}: hazard_statement.${l} missing`);
@@ -596,6 +597,7 @@ test('fallbackChemicals in index.html has complete TR, EN, DE, FR, ZH, JA transl
     const cid = c.id;
     for (const l of langs) {
       assert.ok(c.name && c.name[l], `fallback ${cid}: name.${l} missing`);
+      assert.ok(c.cas && c.cas[l], `fallback ${cid}: cas.${l} missing`);
       assert.ok(c.chemical_name && c.chemical_name[l], `fallback ${cid}: chemical_name.${l} missing`);
       assert.ok(c.signal_word && c.signal_word[l], `fallback ${cid}: signal_word.${l} missing`);
       assert.ok(c.hazard_statement && c.hazard_statement[l], `fallback ${cid}: hazard_statement.${l} missing`);
@@ -638,6 +640,38 @@ test('Forensic i18n: zero English splice leaks in French, and data/chemicals.jso
     assert(c.first_aid.ingestion.fr.toLowerCase().includes('faire vomir'), `Missing do not vomit in FR ${id}`);
     assert(c.first_aid.ingestion.zh.includes('催吐'), `Missing do not vomit in ZH ${id}`);
     assert(c.first_aid.ingestion.ja.includes('吐かせない'), `Missing do not vomit in JA ${id}`);
+  }
+
+  // Verify CAS multilingual correctness (zero Turkish words in EN/DE/FR/ZH/JA)
+  for (const c of chems) {
+    if (['polyester-resin', 'vinylester-resin', 'gelcoat'].includes(c.id)) {
+      assert(c.cas.en.includes('Styrene'), `EN ${c.id} CAS must contain Styrene`);
+      assert(c.cas.de.includes('Styrol'), `DE ${c.id} CAS must contain Styrol`);
+      assert(c.cas.fr.includes('Styrène'), `FR ${c.id} CAS must contain Styrène`);
+      assert(c.cas.zh.includes('苯乙烯'), `ZH ${c.id} CAS must contain 苯乙烯`);
+      assert(c.cas.ja.includes('スチレン'), `JA ${c.id} CAS must contain スチレン`);
+      assert(!c.cas.en.includes('Stiren'), `EN ${c.id} CAS leaked Turkish Stiren`);
+      assert(!c.cas.de.includes('Stiren'), `DE ${c.id} CAS leaked Turkish Stiren`);
+      assert(!c.cas.fr.includes('Stiren'), `FR ${c.id} CAS leaked Turkish Stiren`);
+      assert(!c.cas.zh.includes('Stiren'), `ZH ${c.id} CAS leaked Turkish Stiren`);
+      assert(!c.cas.ja.includes('Stiren'), `JA ${c.id} CAS leaked Turkish Stiren`);
+    }
+    if (c.id === 'carbon-fiber-dust') {
+      assert(c.cas.en.includes('Carbon'), `EN carbon-fiber-dust CAS must contain Carbon`);
+      assert(c.cas.de.includes('Kohlenstoff'), `DE carbon-fiber-dust CAS must contain Kohlenstoff`);
+      assert(c.cas.fr.includes('Carbone'), `FR carbon-fiber-dust CAS must contain Carbone`);
+      assert(c.cas.zh.includes('碳'), `ZH carbon-fiber-dust CAS must contain 碳`);
+      assert(c.cas.ja.includes('炭素'), `JA carbon-fiber-dust CAS must contain 炭素`);
+      assert(!c.cas.en.includes('Karbon'), `EN carbon-fiber-dust CAS leaked Turkish Karbon`);
+      assert(!c.cas.de.includes('Karbon'), `DE carbon-fiber-dust CAS leaked Turkish Karbon`);
+      assert(!c.cas.fr.includes('Karbon'), `FR carbon-fiber-dust CAS leaked Turkish Karbon`);
+      assert(!c.cas.zh.includes('Karbon'), `ZH carbon-fiber-dust CAS leaked Turkish Karbon`);
+      assert(!c.cas.ja.includes('Karbon'), `JA carbon-fiber-dust CAS leaked Turkish Karbon`);
+    }
+    if (c.id === 'mold-release-wax') {
+      assert(c.cas.en.includes('Carnauba'), `EN mold-release-wax CAS must contain Carnauba`);
+      assert(!c.cas.en.includes('Karnauba'), `EN mold-release-wax CAS leaked Turkish Karnauba`);
+    }
   }
 });
 

@@ -1,4 +1,4 @@
-const CACHE_NAME = 'msds-lite-v1.9.1';
+const CACHE_NAME = 'msds-lite-v1.9.2';
 const APP_SHELL = [
   './',
   './index.html',
@@ -9,7 +9,7 @@ const APP_SHELL = [
   './icons/icon.svg',
   './icons/icon-maskable.svg',
   './icons/qr-code.svg',
-  './icons/qr-code.svg?v=1.9.1',
+  './icons/qr-code.svg?v=1.9.2',
   './vendor/pdf.min.js',
   './vendor/pdf.worker.min.js',
   './samples/sample_1_polipol_3401_tr.pdf',

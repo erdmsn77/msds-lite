@@ -1,7 +1,14 @@
 [
         {
                 "id": "mek-p",
-                "cas": "1338-23-4",
+                "cas": {
+                        "tr": "1338-23-4",
+                        "en": "1338-23-4",
+                        "de": "1338-23-4",
+                        "fr": "1338-23-4",
+                        "zh": "1338-23-4",
+                        "ja": "1338-23-4"
+                },
                 "name": {
                         "tr": "MEK-P",
                         "en": "MEK-P",
@@ -215,7 +222,14 @@
         },
         {
                 "id": "polyester-resin",
-                "cas": "100-42-5 (Stiren) / 25035-68-2",
+                "cas": {
+                        "tr": "100-42-5 (Stiren) / 25035-68-2",
+                        "en": "100-42-5 (Styrene) / 25035-68-2",
+                        "de": "100-42-5 (Styrol) / 25035-68-2",
+                        "fr": "100-42-5 (Styrène) / 25035-68-2",
+                        "zh": "100-42-5 (苯乙烯) / 25035-68-2",
+                        "ja": "100-42-5 (スチレン) / 25035-68-2"
+                },
                 "name": {
                         "tr": "Ortoftalik Polyester Reçine",
                         "en": "Orthophthalic Polyester Resin",
@@ -428,7 +442,14 @@
         },
         {
                 "id": "technical-acetone",
-                "cas": "67-64-1",
+                "cas": {
+                        "tr": "67-64-1",
+                        "en": "67-64-1",
+                        "de": "67-64-1",
+                        "fr": "67-64-1",
+                        "zh": "67-64-1",
+                        "ja": "67-64-1"
+                },
                 "name": {
                         "tr": "Teknik Aseton",
                         "en": "Technical Acetone",
@@ -641,7 +662,14 @@
         },
         {
                 "id": "carbon-fiber-dust",
-                "cas": "7440-44-0 (Karbon)",
+                "cas": {
+                        "tr": "7440-44-0 (Karbon)",
+                        "en": "7440-44-0 (Carbon)",
+                        "de": "7440-44-0 (Kohlenstoff)",
+                        "fr": "7440-44-0 (Carbone)",
+                        "zh": "7440-44-0 (碳)",
+                        "ja": "7440-44-0 (炭素)"
+                },
                 "name": {
                         "tr": "Karbon Elyaf Tozu",
                         "en": "Carbon Fiber Dust",
@@ -853,7 +881,14 @@
         },
         {
                 "id": "cobalt-naphthenate",
-                "cas": "61789-51-3",
+                "cas": {
+                        "tr": "61789-51-3",
+                        "en": "61789-51-3",
+                        "de": "61789-51-3",
+                        "fr": "61789-51-3",
+                        "zh": "61789-51-3",
+                        "ja": "61789-51-3"
+                },
                 "name": {
                         "tr": "KOBALT NAFTENAT",
                         "en": "COBALT NAPHTHENATE",
@@ -1067,7 +1102,14 @@
         },
         {
                 "id": "epoxy-resin-dgeba",
-                "cas": "25068-38-6",
+                "cas": {
+                        "tr": "25068-38-6",
+                        "en": "25068-38-6",
+                        "de": "25068-38-6",
+                        "fr": "25068-38-6",
+                        "zh": "25068-38-6",
+                        "ja": "25068-38-6"
+                },
                 "name": {
                         "tr": "EPOKSİ REÇİNE",
                         "en": "EPOXY RESIN",
@@ -1279,7 +1321,14 @@
         },
         {
                 "id": "epoxy-hardener-isophoronediamine",
-                "cas": "2855-13-2 (IPDA) / 9046-10-0",
+                "cas": {
+                        "tr": "2855-13-2 (IPDA) / 9046-10-0",
+                        "en": "2855-13-2 (IPDA) / 9046-10-0",
+                        "de": "2855-13-2 (IPDA) / 9046-10-0",
+                        "fr": "2855-13-2 (IPDA) / 9046-10-0",
+                        "zh": "2855-13-2 (IPDA) / 9046-10-0",
+                        "ja": "2855-13-2 (IPDA) / 9046-10-0"
+                },
                 "name": {
                         "tr": "EPOKSİ SERTLEŞTİRİCİ",
                         "en": "EPOXY HARDENER",
@@ -1492,7 +1541,14 @@
         },
         {
                 "id": "vinylester-resin",
-                "cas": "100-42-5 (Stiren) / 36425-15-7",
+                "cas": {
+                        "tr": "100-42-5 (Stiren) / 36425-15-7",
+                        "en": "100-42-5 (Styrene) / 36425-15-7",
+                        "de": "100-42-5 (Styrol) / 36425-15-7",
+                        "fr": "100-42-5 (Styrène) / 36425-15-7",
+                        "zh": "100-42-5 (苯乙烯) / 36425-15-7",
+                        "ja": "100-42-5 (スチレン) / 36425-15-7"
+                },
                 "name": {
                         "tr": "Vinilester Reçine",
                         "en": "Vinylester Resin",
@@ -1705,7 +1761,14 @@
         },
         {
                 "id": "pva-release-agent",
-                "cas": "9002-89-5 (PVA) / 67-63-0 (İPA)",
+                "cas": {
+                        "tr": "9002-89-5 (PVA) / 67-63-0 (İPA)",
+                        "en": "9002-89-5 (PVA) / 67-63-0 (IPA)",
+                        "de": "9002-89-5 (PVA) / 67-63-0 (IPA)",
+                        "fr": "9002-89-5 (PVA) / 67-63-0 (IPA)",
+                        "zh": "9002-89-5 (PVA) / 67-63-0 (IPA)",
+                        "ja": "9002-89-5 (PVA) / 67-63-0 (IPA)"
+                },
                 "name": {
                         "tr": "PVA Ayırıcı Ajan",
                         "en": "PVA Release Agent",
@@ -1918,7 +1981,14 @@
         },
         {
                 "id": "mold-release-wax",
-                "cas": "8015-86-9 (Karnauba) / 64742-48-9",
+                "cas": {
+                        "tr": "8015-86-9 (Karnauba) / 64742-48-9",
+                        "en": "8015-86-9 (Carnauba) / 64742-48-9",
+                        "de": "8015-86-9 (Carnauba) / 64742-48-9",
+                        "fr": "8015-86-9 (Carnauba) / 64742-48-9",
+                        "zh": "8015-86-9 (巴西棕榈蜡) / 64742-48-9",
+                        "ja": "8015-86-9 (カルナバ蝋) / 64742-48-9"
+                },
                 "name": {
                         "tr": "Kalıp Cilası/Wax",
                         "en": "Mold Release Wax",
@@ -2130,7 +2200,14 @@
         },
         {
                 "id": "gelcoat",
-                "cas": "100-42-5 (Stiren)",
+                "cas": {
+                        "tr": "100-42-5 (Stiren)",
+                        "en": "100-42-5 (Styrene)",
+                        "de": "100-42-5 (Styrol)",
+                        "fr": "100-42-5 (Styrène)",
+                        "zh": "100-42-5 (苯乙烯)",
+                        "ja": "100-42-5 (スチレン)"
+                },
                 "name": {
                         "tr": "Gelcoat",
                         "en": "Gelcoat",
