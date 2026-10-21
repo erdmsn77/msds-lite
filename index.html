@@ -6240,10 +6240,7 @@
                   <input type="text" id="searchInput" class="search-input" placeholder="${t('searchPlaceholder')}" value="${escape(state.searchQuery)}" autocomplete="off" spellcheck="false" />
                   <button type="button" id="searchClearBtn" class="search-clear-btn ${state.searchQuery ? 'visible' : ''}" aria-label="${t('clearSearch')}"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
                 </div>
-                <button type="button" class="sds-import-trigger-btn" id="sdsImportTriggerBtn" title="${t('importSdsTitle')}">
-                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="12" y1="18" x2="12" y2="12"/><polyline points="9 15 12 12 15 15"/></svg>
-                  <span>${t('importSdsBtn')}</span>
-                </button>
+                <!-- SDS Importer UI temporarily hidden for Expo presentation mode -->
               </div>
 
               <div class="category-grid" id="categoryGrid">
@@ -6270,7 +6267,7 @@
               </div>
 
               <div class="footer-meta">
-                <span class="version-tag">MSDS-Lite v1.9.0</span>
+                <span class="version-tag">MSDS-Lite v1.9.1</span>
                 <button type="button" class="footer-refresh-btn" id="btnForceRefresh" title="Önbelleği temizle ve güncellemeleri yükle">
                   <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block;vertical-align:-1px;margin-right:4px;"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"/></svg>
                   <span>${t('checkUpdate')}</span>
@@ -8360,9 +8357,9 @@
               // 2. Güvenli önbellek yenileme (yeni dosyayı çek, sonra cache'e yaz - eski cache'i ASLA önceden silme)
               if ('caches' in window) {
                 const cacheNames = await caches.keys();
-                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.9.0';
+                const activeCacheName = cacheNames.find(c => c.startsWith('msds-lite-')) || 'msds-lite-v1.9.1';
                 const cache = await caches.open(activeCacheName);
-                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg', './icons/qr-code.svg?v=1.9.0'];
+                const urlsToUpdate = ['./', './index.html', './data/chemicals.json', './manifest.json', './icons/qr-code.svg', './icons/qr-code.svg?v=1.9.1'];
                 await Promise.allSettled(urlsToUpdate.map(async (url) => {
                   const res = await fetch(url, { cache: 'reload' });
                   if (res && res.ok) {
